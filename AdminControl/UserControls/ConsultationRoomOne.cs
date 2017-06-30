@@ -148,7 +148,7 @@ namespace AdminControl
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 1, Length - 1);
+                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
                 frm_Main.Log.WriteLog("会诊室设备状态：" + StrMsg);
             }
         }
@@ -205,7 +205,7 @@ namespace AdminControl
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 1, Length - 1);
+                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
                 frm_Main.Log.WriteLog("接收到会诊室客户端指令：" + StrMsg);
 
                 /*

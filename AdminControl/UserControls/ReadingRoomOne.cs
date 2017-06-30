@@ -125,7 +125,7 @@ namespace AdminControl
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 1, Length - 1);
+                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
                 frm_Main.Log.WriteLog("接收到阅片室控制端数据：" + StrMsg);
             }
         }
@@ -181,7 +181,7 @@ namespace AdminControl
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 1, Length - 1);
+                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
                 frm_Main.Log.WriteLog("接收到阅片室客户端指令：" + StrMsg);
             }
         }

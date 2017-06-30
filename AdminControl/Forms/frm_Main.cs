@@ -11,8 +11,11 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+
 using LogService;
 using DataHandleService;
+using CommandHandleService;
+using DataEncryptService;
 
 namespace AdminControl
 {
@@ -56,6 +59,16 @@ namespace AdminControl
         /// 数据解析实例
         /// </summary>
         public DataHandleHelper DataHandle;
+
+        /// <summary>
+        /// 指令解析实例
+        /// </summary>
+        public CommandHandleHelper CommandHandle;
+
+        /// <summary>
+        /// 数据加密实例
+        /// </summary>
+        public DataEncryptHelper DataEncrypt;
 
         /// <summary>
         /// 会诊室1控件
@@ -193,11 +206,15 @@ namespace AdminControl
         {
             StartLog();
             StartDataHandle();
+            StartCommandHandle();
+            StartDataEncrypt();
             StartTime();
             ReadConfig();
             StartServer();
             StartUserControl();
         }
+
+
         #endregion
 
         #region 启动日志记录服务
@@ -228,6 +245,26 @@ namespace AdminControl
         private void StartDataHandle()
         {
             DataHandle = new DataHandleHelper();
+        }
+        #endregion
+
+        #region 启动指令解析服务
+        /// <summary>
+        /// 指令解析服务
+        /// </summary>
+        private void StartCommandHandle()
+        {
+            CommandHandle = new CommandHandleHelper();
+        }
+        #endregion
+
+        #region 启动数据加密服务
+        /// <summary>
+        /// 数据加密服务
+        /// </summary>
+        private void StartDataEncrypt()
+        {
+            DataEncrypt = new DataEncryptHelper();
         }
         #endregion
 
