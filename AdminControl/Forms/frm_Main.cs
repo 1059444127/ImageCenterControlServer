@@ -549,7 +549,7 @@ namespace AdminControl
                 //启动设备状态接收线程
                 HZOne.RecvDeviceStatusThreadStart(UserConnection);
             }
-            else
+            else if (ClientIP.Equals(ClientTypeConfig[3]))
             {
                 //会诊室客户端连接
                 Log.WriteLog(string.Format("会诊室客户端{0}连接成功", ClientIP));
