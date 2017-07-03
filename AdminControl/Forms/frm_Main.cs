@@ -192,7 +192,6 @@ namespace AdminControl
             AnimateWindow(this.Handle, 500, AW_BLEND + AW_HIDE);
             ServerStop();
             Log.WriteLog("程序安全退出");
-            Log.StopWriteLog();
         }
         #endregion
 
@@ -557,6 +556,10 @@ namespace AdminControl
 
                 //启动客户端指令接收线程
                 HZOne.RecvClientCommandThreadStart(UserConnection);
+            }
+            else
+            {
+                MessageBox.Show(ClientIP);
             }
         }
         #endregion

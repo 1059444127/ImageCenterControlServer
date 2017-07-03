@@ -72,21 +72,5 @@ namespace LogService
             LogSW.Flush();
             LogFS.Flush();
         }
-
-        /// <summary>
-        /// 清理资源
-        /// </summary>
-        public void StopWriteLog()
-        {
-            try
-            {
-                LogSW.Close();
-                LogFS.Close();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }
