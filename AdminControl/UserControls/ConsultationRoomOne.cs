@@ -256,11 +256,11 @@ namespace AdminControl
             try
             {
                 ControlSocket.Send(Command);
-                frm_Main.Log.WriteLog("指令发送成功");
+                //frm_Main.Log.WriteLog("指令发送成功");
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("指令发送失败");
+                frm_Main.Log.WriteLog("会诊室控制指令发送失败，控制端不在线");
                 MessageBox.Show(ex.Message, "控制端已离线");
             }
         }
