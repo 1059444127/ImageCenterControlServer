@@ -20,6 +20,16 @@ namespace AdminControl
     {
         #region 全局变量
         /// <summary>
+        /// 客户端连接标志位
+        /// </summary>
+        private volatile bool is_ClientConnect = false;
+
+        /// <summary>
+        /// 控制器连接标志位
+        /// </summary>
+        private volatile bool is_ControlConnect = false;
+
+        /// <summary>
         /// 主窗体
         /// </summary>
         private frm_Main frm_Main;
@@ -99,6 +109,8 @@ namespace AdminControl
         public void RecvDeviceStatusThreadStart(Socket Connection)
         {
             ControlSocket = Connection;
+            is_ControlConnect = true;
+
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
@@ -133,6 +145,7 @@ namespace AdminControl
                     if (Length == 0)
                     {
                         frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                        is_ControlConnect = false;
                         ControlStatusChange("未连接", Color.Red);
                         RefreshButtons(false, gBx_Lights);
                         RefreshButtons(false, gBx_Mutrix);
@@ -142,6 +155,7 @@ namespace AdminControl
                 catch (Exception ex)
                 {
                     frm_Main.Log.WriteLog("会诊室控制端异常：" + ex.Message);
+                    is_ControlConnect = false;
                     ControlStatusChange("未连接", Color.Red);
                     RefreshButtons(false, gBx_Lights);
                     RefreshButtons(false, gBx_Mutrix);
@@ -150,18 +164,25 @@ namespace AdminControl
 
                 StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
                 frm_Main.Log.WriteLog("会诊室设备状态：" + StrMsg);
+
+                if (is_ClientConnect)
+                {
+                    SendDeviceStatus(StrMsg);
+                }
             }
         }
         #endregion
 
         #region 接受客户端指令
         /// <summary>
-        /// 启动客户端指令接收线程
+        /// 接收客户端指令线程启动
         /// </summary>
         /// <param name="Connection"></param>
         public void RecvClientCommandThreadStart(Socket Connection)
         {
             ClientSocket = Connection;
+            is_ClientConnect = true;
+
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
             RecvClientCommandThread.IsBackground = true;
             RecvClientCommandThread.Start(Connection);
@@ -194,6 +215,7 @@ namespace AdminControl
                     if (Length == 0)
                     {
                         frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                        is_ClientConnect = false;
                         ClientStatusChange("未连接", Color.Red);
                         break;
                     }
@@ -201,6 +223,7 @@ namespace AdminControl
                 catch (Exception ex)
                 {
                     frm_Main.Log.WriteLog("会诊室客户端异常：" + ex.Message);
+                    is_ClientConnect = false;
                     ClientStatusChange("未连接", Color.Red);
                     break;
                 }
@@ -211,6 +234,11 @@ namespace AdminControl
                 /*
                 指令解析
                 */
+
+                if (is_ControlConnect)
+                {
+                    SendControlCommand(StrMsg);
+                }
             }
         }
         #endregion
@@ -231,6 +259,7 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
+                frm_Main.Log.WriteLog("指令发送失败");
                 MessageBox.Show(ex.Message, "控制端已离线");
             }
         }
@@ -240,9 +269,21 @@ namespace AdminControl
         /// <summary>
         /// 发送设备状态
         /// </summary>
-        private void SendDeviceStatus()
+        /// <param name="Status"></param>
+        private void SendDeviceStatus(string Status)
         {
+            byte[] STS = Encoding.UTF8.GetBytes(Status);
 
+            try
+            {
+                ClientSocket.Send(STS);
+                frm_Main.Log.WriteLog("设备状态发送成功");
+            }
+            catch (Exception ex)
+            {
+                frm_Main.Log.WriteLog("设备状态发送失败");
+                MessageBox.Show(ex.Message, "客户端已离线");
+            }
         }
         #endregion
 

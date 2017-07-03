@@ -505,8 +505,9 @@ namespace AdminControl
                     //判断客户端类型
                     SwitchClientType(UserConnection.RemoteEndPoint.ToString().Split(':')[0], UserConnection);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Log.WriteLog("服务器异常：" + ex.Message);
                     break;
                 }
             }
