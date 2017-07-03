@@ -567,7 +567,7 @@ namespace AdminControl
             }
             else
             {
-                MessageBox.Show(ClientIP);
+                MessageBox.Show("非法连接！" + ClientIP);
             }
         }
         #endregion
