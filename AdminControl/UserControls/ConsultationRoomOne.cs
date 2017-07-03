@@ -114,6 +114,7 @@ namespace AdminControl
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
+
             RefreshButtons(true, gBx_Lights);
             RefreshButtons(true, gBx_Mutrix);
         }
