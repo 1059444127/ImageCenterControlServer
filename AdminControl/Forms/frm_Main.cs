@@ -183,7 +183,7 @@ namespace AdminControl
         }
 
         /// <summary>
-        /// 窗体关闭
+        /// 窗体关闭前
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -191,6 +191,15 @@ namespace AdminControl
         {
             AnimateWindow(this.Handle, 500, AW_BLEND + AW_HIDE);
             ServerStop();
+        }
+
+        /// <summary>
+        /// 窗体关闭后
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
             Log.WriteLog("程序安全退出");
         }
         #endregion
@@ -504,9 +513,8 @@ namespace AdminControl
                     //判断客户端类型
                     SwitchClientType(UserConnection.RemoteEndPoint.ToString().Split(':')[0], UserConnection);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Log.WriteLog("服务器异常：" + ex.Message);
                     break;
                 }
             }
@@ -573,7 +581,7 @@ namespace AdminControl
             try
             {
                 WatchSocket.Close();
-                Log.WriteLog("服务器正常关闭");
+                Log.WriteLog("服务器关闭成功");
             }
             catch (Exception ex)
             {

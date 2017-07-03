@@ -47,8 +47,8 @@
             this.btn_ConsultationRoomTwo = new System.Windows.Forms.Button();
             this.btn_ConsultationRoomOne = new System.Windows.Forms.Button();
             this.panel_UserControl = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel_Information.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index4)).BeginInit();
@@ -92,7 +92,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(797, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 28);
+            this.label1.Size = new System.Drawing.Size(212, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "湖北省妇幼保健院";
             // 
@@ -114,7 +114,7 @@
             this.label_Week.ForeColor = System.Drawing.Color.White;
             this.label_Week.Location = new System.Drawing.Point(197, 28);
             this.label_Week.Name = "label_Week";
-            this.label_Week.Size = new System.Drawing.Size(113, 39);
+            this.label_Week.Size = new System.Drawing.Size(116, 39);
             this.label_Week.TabIndex = 3;
             this.label_Week.Text = "星期五";
             // 
@@ -301,16 +301,6 @@
             this.panel_UserControl.Size = new System.Drawing.Size(864, 520);
             this.panel_UserControl.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(145, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(600, 56);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "欢迎使用影像中心总控系统";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -320,6 +310,16 @@
             this.label5.Size = new System.Drawing.Size(274, 21);
             this.label5.TabIndex = 1;
             this.label5.Text = "点击左侧按钮使用详细功能";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(145, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(624, 56);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "欢迎使用影像中心总控系统";
             // 
             // frm_Main
             // 
@@ -336,6 +336,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "影像中心总控端";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Main_FormClosed);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.panel_Information.ResumeLayout(false);
             this.panel_Information.PerformLayout();
