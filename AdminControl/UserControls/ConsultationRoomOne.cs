@@ -30,6 +30,9 @@ namespace AdminControl
         /// </summary>
         private volatile bool is_ControlConnect = false;
 
+        /// <summary>
+        /// 数据传输服务实例
+        /// </summary>
         private DataTransfer Data;
 
         /// <summary>
@@ -215,17 +218,15 @@ namespace AdminControl
         /// <param name="CMD"></param>
         private void SendControlCommand(string CMD)
         {
-            byte[] Command = Encoding.UTF8.GetBytes(CMD);
-
             try
             {
-                ControlSocket.Send(Command);
-                //frm_Main.Log.WriteLog("指令发送成功");
+                Data.SendData(ControlSocket, CMD);
             }
             catch (Exception ex)
             {
                 frm_Main.Log.WriteLog("会诊室控制指令发送失败，控制端不在线");
                 MessageBox.Show(ex.Message, "控制端已离线");
+                is_ControlConnect = false;
             }
         }
         #endregion
@@ -237,17 +238,15 @@ namespace AdminControl
         /// <param name="Status"></param>
         private void SendDeviceStatus(string Status)
         {
-            byte[] STS = Encoding.UTF8.GetBytes(Status);
-
             try
             {
-                ClientSocket.Send(STS);
-                frm_Main.Log.WriteLog("设备状态发送成功");
+                Data.SendData(ClientSocket, Status);
             }
             catch (Exception ex)
             {
                 frm_Main.Log.WriteLog("设备状态发送失败");
                 MessageBox.Show(ex.Message, "客户端已离线");
+                is_ClientConnect = false;
             }
         }
         #endregion

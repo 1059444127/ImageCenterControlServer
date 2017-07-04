@@ -15,7 +15,7 @@ namespace DataTransferService
         /// <summary>
         /// 接收数据
         /// </summary>
-        /// <param name="Connection"></param>
+        /// <param name="Connection">连接套接字</param>
         /// <returns></returns>
         public string RecvData(Socket Connection)
         {
@@ -44,11 +44,20 @@ namespace DataTransferService
         /// <summary>
         /// 发送数据
         /// </summary>
-        /// <param name="Connection"></param>
-        /// <param name="Data"></param>
-        public void SendData(Socket Connection, byte[] Data)
+        /// <param name="Connection">连接套接字</param>
+        /// <param name="RawData">原始数据</param>
+        public void SendData(Socket Connection, string RawData)
         {
+            byte[] Data = Encoding.UTF8.GetBytes(RawData);
 
+            try
+            {
+                Connection.Send(Data);
+            }
+            catch (Exception)
+            {
+                throw new Exception("连接已断开");
+            }
         }
     }
 }
