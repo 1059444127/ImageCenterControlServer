@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
+using DataTransferService;
 
 namespace AdminControl
 {
@@ -28,6 +29,8 @@ namespace AdminControl
         /// 控制器连接标志位
         /// </summary>
         private volatile bool is_ControlConnect = false;
+
+        private DataTransfer Data;
 
         /// <summary>
         /// 主窗体
@@ -96,6 +99,7 @@ namespace AdminControl
         private void InitItems(frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
+            Data = new DataTransfer();
             RefreshButtons(false, gBx_Lights);
             RefreshButtons(false, gBx_Mutrix);
         }
@@ -127,35 +131,17 @@ namespace AdminControl
         {
             Socket Socket = Connection as Socket;
 
-            //接收数据长度
-            int Length;
-
-            //接收消息字符串
-            string StrMsg = null;
+            string Status = null;
 
             while (true)
             {
-                //定义2M缓冲区
-                byte[] MsgRecv = new byte[1024 * 1024 * 2];
-
                 try
                 {
-                    //阻塞接收数据
-                    Length = Socket.Receive(MsgRecv);
-
-                    if (Length == 0)
-                    {
-                        frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
-                        is_ControlConnect = false;
-                        ControlStatusChange("未连接", Color.Red);
-                        RefreshButtons(false, gBx_Lights);
-                        RefreshButtons(false, gBx_Mutrix);
-                        break;
-                    }
+                    Status = Data.RecvData(Socket);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    frm_Main.Log.WriteLog("会诊室控制端异常：" + ex.Message);
+                    frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ControlConnect = false;
                     ControlStatusChange("未连接", Color.Red);
                     RefreshButtons(false, gBx_Lights);
@@ -163,12 +149,11 @@ namespace AdminControl
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
-                frm_Main.Log.WriteLog("会诊室设备状态：" + StrMsg);
+                frm_Main.Log.WriteLog("会诊室设备状态：" + Status);
 
                 if (is_ClientConnect)
                 {
-                    SendDeviceStatus(StrMsg);
+                    SendDeviceStatus(Status);
                 }
             }
         }
@@ -197,48 +182,27 @@ namespace AdminControl
         {
             Socket Socket = Connection as Socket;
 
-            //接收数据长度
-            int Length;
-
-            //接收消息字符串
-            string StrMsg = null;
+            string Command = null;
 
             while (true)
             {
-                //定义2M缓冲区
-                byte[] MsgRecv = new byte[1024 * 1024 * 2];
-
                 try
                 {
-                    //阻塞接收数据
-                    Length = Socket.Receive(MsgRecv);
-
-                    if (Length == 0)
-                    {
-                        frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
-                        is_ClientConnect = false;
-                        ClientStatusChange("未连接", Color.Red);
-                        break;
-                    }
+                    Command = Data.RecvData(Socket);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    frm_Main.Log.WriteLog("会诊室客户端异常：" + ex.Message);
+                    frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ClientConnect = false;
                     ClientStatusChange("未连接", Color.Red);
                     break;
                 }
 
-                StrMsg = Encoding.UTF8.GetString(MsgRecv, 0, Length);
-                frm_Main.Log.WriteLog("接收到会诊室客户端指令：" + StrMsg);
-
-                /*
-                指令解析
-                */
+                frm_Main.Log.WriteLog("接收到会诊室客户端指令：" + Command);
 
                 if (is_ControlConnect)
                 {
-                    SendControlCommand(StrMsg);
+                    SendControlCommand(Command);
                 }
             }
         }

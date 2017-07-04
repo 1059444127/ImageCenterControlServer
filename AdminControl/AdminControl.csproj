@@ -44,6 +44,9 @@
     <Reference Include="DataHandleService">
       <HintPath>..\DataHandleService\bin\Debug\DataHandleService.dll</HintPath>
     </Reference>
+    <Reference Include="DataTransferService">
+      <HintPath>..\DataTransferService\bin\Debug\DataTransferService.dll</HintPath>
+    </Reference>
     <Reference Include="LogService">
       <HintPath>..\LogService\bin\Debug\LogService.dll</HintPath>
     </Reference>
