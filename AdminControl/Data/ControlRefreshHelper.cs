@@ -27,7 +27,6 @@ namespace AdminControl
         /// <param name="Status"></param>
         private delegate void RefreshButtonStatusDelegate(Button Button_Item, bool Status);
 
-
         /// <summary>
         /// 刷新标签状态
         /// </summary>
