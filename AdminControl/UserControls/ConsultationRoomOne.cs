@@ -86,7 +86,9 @@ namespace AdminControl
         private void InitItems(frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
+
             Data = new DataTransfer();
+
             ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_Mutrix, false);
