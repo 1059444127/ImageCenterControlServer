@@ -17,6 +17,11 @@ namespace DataBaseService
 
         }
 
+        private void InitDataBaseService()
+        {
+
+        }
+
         public void InsertData()
         {
 
