@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ControlRefreshHelper.cs" />
     <Compile Include="UserControls\ConsultationRoomOne.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,7 +135,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Resources\background\" />
   </ItemGroup>
   <ItemGroup>

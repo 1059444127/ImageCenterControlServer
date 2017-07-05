@@ -51,18 +51,18 @@ namespace AdminControl
         private Socket ControlSocket;
 
         /// <summary>
-        /// 控制端状态刷新委托
+        /// 标签状态刷新委托
         /// </summary>
         /// <param name="Status"></param>
         /// <param name="ForeColor"></param>
         private delegate void LabelStatusChangeDelegate(Label Label_Item, string Status, Color ForeColor);
 
         /// <summary>
-        /// 刷新按钮状态委托
+        /// 按钮状态刷新委托
         /// </summary>
         /// <param name="Control"></param>
         /// <param name="Status"></param>
-        private delegate void RefreshButtonsStatusDelegate(Button Button, bool Status);
+        private delegate void RefreshButtonsStatusDelegate(Button Button_Item, bool Status);
         #endregion
 
         #region 构造器
