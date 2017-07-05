@@ -7,8 +7,34 @@ using MySql.Data;
 
 namespace DataBaseService
 {
+    /// <summary>
+    /// 数据库操作服务
+    /// </summary>
     public class DataBaseHelper
     {
+        public DataBaseHelper()
+        {
 
+        }
+
+        public void InsertData()
+        {
+
+        }
+
+        public void DeleteData()
+        {
+
+        }
+
+        public void UpdateData()
+        {
+
+        }
+
+        public void SelectData()
+        {
+
+        }
     }
 }
