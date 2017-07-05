@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace DataBaseService
 {
@@ -12,14 +13,34 @@ namespace DataBaseService
     /// </summary>
     public class DataBaseHelper
     {
-        public DataBaseHelper()
-        {
+        /// <summary>
+        /// 数据库连接实例
+        /// </summary>
+        private MySqlConnection Connection;
 
+        /// <summary>
+        /// 构造器
+        /// </summary>
+        /// <param name="SQLConnection">数据库连接语句</param>
+        public DataBaseHelper(string SQLConnection)
+        {
+            InitDataBaseService(SQLConnection);
         }
 
-        private void InitDataBaseService()
+        /// <summary>
+        /// 初始化数据库连接
+        /// </summary>
+        /// <param name="SQLConnection"></param>
+        private void InitDataBaseService(string SQLConnection)
         {
-
+            try
+            {
+                Connection = new MySqlConnection(SQLConnection);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void InsertData()
