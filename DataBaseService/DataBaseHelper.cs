@@ -36,6 +36,7 @@ namespace DataBaseService
             try
             {
                 Connection = new MySqlConnection(SQLConnection);
+                Connection.Open();
             }
             catch (Exception)
             {
