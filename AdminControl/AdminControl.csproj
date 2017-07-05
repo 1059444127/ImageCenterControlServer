@@ -38,6 +38,9 @@
     <Reference Include="CommandHandleService">
       <HintPath>..\CommandHandleService\bin\Debug\CommandHandleService.dll</HintPath>
     </Reference>
+    <Reference Include="DataBaseService">
+      <HintPath>..\DataBaseService\bin\Debug\DataBaseService.dll</HintPath>
+    </Reference>
     <Reference Include="DataEncryptService">
       <HintPath>..\DataEncryptService\bin\Debug\DataEncryptService.dll</HintPath>
     </Reference>

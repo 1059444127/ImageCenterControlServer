@@ -16,6 +16,7 @@ using LogService;
 using DataHandleService;
 using CommandHandleService;
 using DataEncryptService;
+using DataBaseService;
 
 namespace AdminControl
 {
@@ -41,6 +42,11 @@ namespace AdminControl
         private string[] ClientTypeConfig = new string[4];
 
         /// <summary>
+        /// 数据库配置信息
+        /// </summary>
+        private string DataBaseConfig;
+
+        /// <summary>
         /// 监听套接字
         /// </summary>
         private Socket WatchSocket;
@@ -59,6 +65,11 @@ namespace AdminControl
         /// 数据解析实例
         /// </summary>
         public DataHandleHelper DataHandle;
+
+        /// <summary>
+        /// 数据库实例
+        /// </summary>
+        public DataBaseHelper DataBase;
 
         /// <summary>
         /// 指令解析实例
@@ -218,8 +229,9 @@ namespace AdminControl
             StartDataEncrypt();
             StartTime();
             ReadConfig();
-            StartServer();
             StartUserControl();
+            StartDataBase();
+            StartServer();
         }
 
         #endregion
@@ -456,6 +468,63 @@ namespace AdminControl
                 Log.WriteLog("客户端类型配置文件格式错误，程序无法启动");
                 System.Environment.Exit(0);
             }
+
+            try
+            {
+                StreamReader Reader = new StreamReader(Application.StartupPath + "\\Config\\DataBaseConfig.bin");
+                DataBaseConfig = Reader.ReadLine();
+                Reader.Close();
+                Log.WriteLog("数据库配置文件读取成功");
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("数据库配置文件丢失！请重新安装程序！", "错误");
+                Log.WriteLog("数据库配置文件丢失，程序无法启动");
+                System.Environment.Exit(0);
+            }
+        }
+        #endregion
+
+        #region 初始化用户控件
+        /// <summary>
+        /// 初始化用户控件
+        /// </summary>
+        private void StartUserControl()
+        {
+            try
+            {
+                HZOne = new ConsultationRoomOne(this);
+                HZTwo = new ConsultationRoomTwo(this);
+                YPOne = new ReadingRoomOne(this);
+                YPTwo = new ReadingRoomTwo(this);
+                Log.WriteLog("用户控件初始化成功");
+            }
+            catch (Exception)
+            {
+                Log.WriteLog("用户控件初始化失败");
+                MessageBox.Show("用户控件初始化失败", "错误");
+                System.Environment.Exit(0);
+            }
+        }
+        #endregion
+
+        #region 初始化数据库
+        /// <summary>
+        /// 初始化数据库
+        /// </summary>
+        private void StartDataBase()
+        {
+            try
+            {
+                DataBase = new DataBaseHelper(DataBaseConfig);
+                Log.WriteLog("数据库初始化成功");
+            }
+            catch (Exception ex)
+            {
+                Log.WriteLog("数据库初始化失败：" + ex.Message);
+                MessageBox.Show(ex.Message, "错误");
+                System.Environment.Exit(0);
+            }
         }
         #endregion
 
@@ -583,19 +652,6 @@ namespace AdminControl
             {
                 Log.WriteLog("服务器关闭异常：" + ex.Message);
             }
-        }
-        #endregion
-
-        #region 初始化用户控件
-        /// <summary>
-        /// 初始化用户控件
-        /// </summary>
-        private void StartUserControl()
-        {
-            HZOne = new ConsultationRoomOne(this);
-            HZTwo = new ConsultationRoomTwo(this);
-            YPOne = new ReadingRoomOne(this);
-            YPTwo = new ReadingRoomTwo(this);
         }
         #endregion
 

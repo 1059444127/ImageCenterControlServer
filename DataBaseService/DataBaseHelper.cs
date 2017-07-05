@@ -39,7 +39,7 @@ namespace DataBaseService
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception("数据库连接失败，请检查数据库配置");
             }
         }
 
