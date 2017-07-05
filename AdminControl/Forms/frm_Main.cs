@@ -533,7 +533,6 @@ namespace AdminControl
             {
                 //阅片室控制端连接
                 Log.WriteLog(string.Format("阅片室控制端{0}连接成功", ClientIP));
-                YPOne.ControlStatusChange("已连接", Color.Black);
 
                 //启动传感器数据和灯光状态接收线程
                 YPOne.RecvDeviceDataThreadStart(UserConnection);
@@ -542,7 +541,6 @@ namespace AdminControl
             {
                 //阅片室客户端连接
                 Log.WriteLog(string.Format("阅片室客户端{0}连接成功", ClientIP));
-                YPOne.ClientStatusChange("已连接", Color.Black);
 
                 //启动客户端指令接收线程
                 YPOne.RecvClientCommandThreadStart(UserConnection);
