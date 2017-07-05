@@ -36,6 +36,11 @@ namespace AdminControl
         private DataTransfer Data;
 
         /// <summary>
+        /// 控件刷新服务实例
+        /// </summary>
+        private ControlRefreshHelper ControlRefresh;
+
+        /// <summary>
         /// 主窗体
         /// </summary>
         private frm_Main frm_Main;
@@ -49,20 +54,6 @@ namespace AdminControl
         /// 控制端套接字
         /// </summary>
         private Socket ControlSocket;
-
-        /// <summary>
-        /// 标签状态刷新委托
-        /// </summary>
-        /// <param name="Status"></param>
-        /// <param name="ForeColor"></param>
-        private delegate void LabelStatusChangeDelegate(Label Label_Item, string Status, Color ForeColor);
-
-        /// <summary>
-        /// 按钮状态刷新委托
-        /// </summary>
-        /// <param name="Control"></param>
-        /// <param name="Status"></param>
-        private delegate void RefreshButtonsStatusDelegate(Button Button_Item, bool Status);
         #endregion
 
         #region 构造器
@@ -96,8 +87,10 @@ namespace AdminControl
         {
             this.frm_Main = frm_Main;
             Data = new DataTransfer();
-            RefreshButtons(false, gBx_Lights);
-            RefreshButtons(false, gBx_Mutrix);
+            ControlRefresh = new ControlRefreshHelper();
+
+            ControlRefresh.RefreshButtons(gBx_Mutrix, false);
+            ControlRefresh.RefreshButtons(gBx_Lights, false);
         }
         #endregion
 
@@ -111,14 +104,14 @@ namespace AdminControl
             ControlSocket = Connection;
             is_ControlConnect = true;
 
-            LabelStatusChange(label_ControlStatus, "已连接", Color.Black);
+            ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
 
-            RefreshButtons(true, gBx_Lights);
-            RefreshButtons(true, gBx_Mutrix);
+            ControlRefresh.RefreshButtons(gBx_Mutrix, true);
+            ControlRefresh.RefreshButtons(gBx_Lights, true);
         }
 
         /// <summary>
@@ -141,9 +134,12 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ControlConnect = false;
-                    LabelStatusChange(label_ControlStatus,"未连接", Color.Red);
-                    RefreshButtons(false, gBx_Lights);
-                    RefreshButtons(false, gBx_Mutrix);
+
+                    ControlRefresh.RefreshLabelStatus(label_ControlStatus, "未连接", Color.Red);
+
+                    ControlRefresh.RefreshButtons(gBx_Mutrix, false);
+                    ControlRefresh.RefreshButtons(gBx_Lights, false);
+
                     break;
                 }
 
@@ -167,7 +163,7 @@ namespace AdminControl
             ClientSocket = Connection;
             is_ClientConnect = true;
 
-            LabelStatusChange(label_ClientStatus, "已连接", Color.Black);
+            ControlRefresh.RefreshLabelStatus(label_ClientStatus, "已连接", Color.Black);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
             RecvClientCommandThread.IsBackground = true;
@@ -194,7 +190,9 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ClientConnect = false;
-                    LabelStatusChange(label_ClientStatus,"未连接", Color.Red);
+
+                    ControlRefresh.RefreshLabelStatus(label_ClientStatus, "未连接", Color.Red);
+
                     break;
                 }
 
@@ -244,63 +242,6 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("设备状态发送失败");
                 MessageBox.Show(ex.Message, "客户端已离线");
                 is_ClientConnect = false;
-            }
-        }
-        #endregion
-
-        #region 标签状态刷新
-        /// <summary>
-        /// 控制器连接状态修改
-        /// </summary>
-        /// <param name="Status"></param>
-        public void LabelStatusChange(Label Label_Item, string Status, Color ForeColor)
-        {
-            if (Label_Item.InvokeRequired)
-            {
-                LabelStatusChangeDelegate Change = new LabelStatusChangeDelegate(LabelStatusChange);
-                Label_Item.Invoke(Change, Label_Item, Status, ForeColor);
-            }
-            else
-            {
-                Label_Item.Text = Status;
-                Label_Item.ForeColor = ForeColor;
-            }
-        }
-
-        #endregion
-
-        #region 按钮状态刷新
-        /// <summary>
-        /// 刷新指定区域按钮
-        /// </summary>
-        /// <param name="Status"></param>
-        /// <param name="Group"></param>
-        private void RefreshButtons(bool Status,GroupBox Group)
-        {
-            foreach (Control item in Group.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.Button")
-                {
-                    RefreshButtonStatus(item as Button, Status);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 刷新按钮状态
-        /// </summary>
-        /// <param name="Button"></param>
-        /// <param name="Status"></param>
-        private void RefreshButtonStatus(Button Button, bool Status)
-        {
-            if (Button.InvokeRequired)
-            {
-                RefreshButtonsStatusDelegate Refresh = new RefreshButtonsStatusDelegate(RefreshButtonStatus);
-                Button.Invoke(Refresh, Button, Status);
-            }
-            else
-            {
-                Button.Enabled = Status;
             }
         }
         #endregion
