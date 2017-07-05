@@ -51,14 +51,14 @@
             this.label_Control = new System.Windows.Forms.Label();
             this.label_ClientStatus = new System.Windows.Forms.Label();
             this.label_Client = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_Camera_Status = new System.Windows.Forms.Label();
+            this.label_Camera = new System.Windows.Forms.Label();
+            this.label_Windows_Status = new System.Windows.Forms.Label();
+            this.label_Windows = new System.Windows.Forms.Label();
+            this.label_ProjectorTwo_Status = new System.Windows.Forms.Label();
+            this.label_ProjectorTwo = new System.Windows.Forms.Label();
+            this.label_ProjectorOne_Status = new System.Windows.Forms.Label();
+            this.label_ProjectorOne = new System.Windows.Forms.Label();
             this.gBx_Lights.SuspendLayout();
             this.gBx_Mutrix.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(335, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 56);
+            this.label4.Size = new System.Drawing.Size(200, 56);
             this.label4.TabIndex = 1;
             this.label4.Text = "会诊室1";
             // 
@@ -437,103 +437,103 @@
             this.label_Client.TabIndex = 12;
             this.label_Client.Text = "客户端:";
             // 
-            // label1
+            // label_Camera_Status
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(435, 283);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 25);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "初始化";
+            this.label_Camera_Status.AutoSize = true;
+            this.label_Camera_Status.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Camera_Status.ForeColor = System.Drawing.Color.Black;
+            this.label_Camera_Status.Location = new System.Drawing.Point(435, 283);
+            this.label_Camera_Status.Name = "label_Camera_Status";
+            this.label_Camera_Status.Size = new System.Drawing.Size(78, 25);
+            this.label_Camera_Status.TabIndex = 15;
+            this.label_Camera_Status.Text = "初始化";
             // 
-            // label2
+            // label_Camera
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(354, 283);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 25);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Camera:";
+            this.label_Camera.AutoSize = true;
+            this.label_Camera.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Camera.Location = new System.Drawing.Point(354, 283);
+            this.label_Camera.Name = "label_Camera";
+            this.label_Camera.Size = new System.Drawing.Size(88, 25);
+            this.label_Camera.TabIndex = 14;
+            this.label_Camera.Text = "Camera:";
             // 
-            // label3
+            // label_Windows_Status
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(435, 336);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "初始化";
+            this.label_Windows_Status.AutoSize = true;
+            this.label_Windows_Status.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Windows_Status.ForeColor = System.Drawing.Color.Black;
+            this.label_Windows_Status.Location = new System.Drawing.Point(435, 336);
+            this.label_Windows_Status.Name = "label_Windows_Status";
+            this.label_Windows_Status.Size = new System.Drawing.Size(78, 25);
+            this.label_Windows_Status.TabIndex = 17;
+            this.label_Windows_Status.Text = "初始化";
             // 
-            // label5
+            // label_Windows
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(368, 336);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "窗帘:";
+            this.label_Windows.AutoSize = true;
+            this.label_Windows.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Windows.Location = new System.Drawing.Point(368, 336);
+            this.label_Windows.Name = "label_Windows";
+            this.label_Windows.Size = new System.Drawing.Size(61, 25);
+            this.label_Windows.TabIndex = 16;
+            this.label_Windows.Text = "窗帘:";
             // 
-            // label6
+            // label_ProjectorTwo_Status
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(435, 230);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 25);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "初始化";
+            this.label_ProjectorTwo_Status.AutoSize = true;
+            this.label_ProjectorTwo_Status.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorTwo_Status.ForeColor = System.Drawing.Color.Black;
+            this.label_ProjectorTwo_Status.Location = new System.Drawing.Point(435, 230);
+            this.label_ProjectorTwo_Status.Name = "label_ProjectorTwo_Status";
+            this.label_ProjectorTwo_Status.Size = new System.Drawing.Size(78, 25);
+            this.label_ProjectorTwo_Status.TabIndex = 19;
+            this.label_ProjectorTwo_Status.Text = "初始化";
             // 
-            // label7
+            // label_ProjectorTwo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(351, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 25);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "投影机2:";
+            this.label_ProjectorTwo.AutoSize = true;
+            this.label_ProjectorTwo.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorTwo.Location = new System.Drawing.Point(351, 230);
+            this.label_ProjectorTwo.Name = "label_ProjectorTwo";
+            this.label_ProjectorTwo.Size = new System.Drawing.Size(94, 25);
+            this.label_ProjectorTwo.TabIndex = 18;
+            this.label_ProjectorTwo.Text = "投影机2:";
             // 
-            // label8
+            // label_ProjectorOne_Status
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(435, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 25);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "初始化";
+            this.label_ProjectorOne_Status.AutoSize = true;
+            this.label_ProjectorOne_Status.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorOne_Status.ForeColor = System.Drawing.Color.Black;
+            this.label_ProjectorOne_Status.Location = new System.Drawing.Point(435, 177);
+            this.label_ProjectorOne_Status.Name = "label_ProjectorOne_Status";
+            this.label_ProjectorOne_Status.Size = new System.Drawing.Size(78, 25);
+            this.label_ProjectorOne_Status.TabIndex = 21;
+            this.label_ProjectorOne_Status.Text = "初始化";
             // 
-            // label9
+            // label_ProjectorOne
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(351, 177);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 25);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "投影机1:";
+            this.label_ProjectorOne.AutoSize = true;
+            this.label_ProjectorOne.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorOne.Location = new System.Drawing.Point(351, 177);
+            this.label_ProjectorOne.Name = "label_ProjectorOne";
+            this.label_ProjectorOne.Size = new System.Drawing.Size(94, 25);
+            this.label_ProjectorOne.TabIndex = 20;
+            this.label_ProjectorOne.Text = "投影机1:";
             // 
             // ConsultationRoomOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_ProjectorOne_Status);
+            this.Controls.Add(this.label_ProjectorOne);
+            this.Controls.Add(this.label_ProjectorTwo_Status);
+            this.Controls.Add(this.label_ProjectorTwo);
+            this.Controls.Add(this.label_Windows_Status);
+            this.Controls.Add(this.label_Windows);
+            this.Controls.Add(this.label_Camera_Status);
+            this.Controls.Add(this.label_Camera);
             this.Controls.Add(this.label_ClientStatus);
             this.Controls.Add(this.label_Client);
             this.Controls.Add(this.label_ControlStatus);
@@ -576,13 +576,13 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_Camera_Status;
+        private System.Windows.Forms.Label label_Camera;
+        private System.Windows.Forms.Label label_Windows_Status;
+        private System.Windows.Forms.Label label_Windows;
+        private System.Windows.Forms.Label label_ProjectorTwo_Status;
+        private System.Windows.Forms.Label label_ProjectorTwo;
+        private System.Windows.Forms.Label label_ProjectorOne_Status;
+        private System.Windows.Forms.Label label_ProjectorOne;
     }
 }
