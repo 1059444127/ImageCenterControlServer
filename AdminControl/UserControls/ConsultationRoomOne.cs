@@ -62,7 +62,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="Control"></param>
         /// <param name="Status"></param>
-        private delegate void RefreshButtonsStatusDelegate(Control Control, bool Status);
+        private delegate void RefreshButtonsStatusDelegate(Button Button, bool Status);
         #endregion
 
         #region 构造器
@@ -279,7 +279,10 @@ namespace AdminControl
         {
             foreach (Control item in Group.Controls)
             {
-                RefreshButtonsStatus(item, Status);
+                if (item.GetType().ToString() == "System.Windows.Forms.Button")
+                {
+                    RefreshButtonStatus(item as Button, Status);
+                }
             }
         }
 
@@ -288,11 +291,11 @@ namespace AdminControl
         /// </summary>
         /// <param name="Button"></param>
         /// <param name="Status"></param>
-        private void RefreshButtonsStatus(Control Button, bool Status)
+        private void RefreshButtonStatus(Button Button, bool Status)
         {
             if (Button.InvokeRequired)
             {
-                RefreshButtonsStatusDelegate Refresh = new RefreshButtonsStatusDelegate(RefreshButtonsStatus);
+                RefreshButtonsStatusDelegate Refresh = new RefreshButtonsStatusDelegate(RefreshButtonStatus);
                 Button.Invoke(Refresh, Button, Status);
             }
             else
