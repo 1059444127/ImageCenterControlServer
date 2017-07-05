@@ -551,7 +551,6 @@ namespace AdminControl
             {
                 //会诊室控制端连接
                 Log.WriteLog(string.Format("会诊室控制端{0}连接成功", ClientIP));
-                HZOne.ControlStatusChange("已连接", Color.Black);
 
                 //启动设备状态接收线程
                 HZOne.RecvDeviceStatusThreadStart(UserConnection);
@@ -560,7 +559,6 @@ namespace AdminControl
             {
                 //会诊室客户端连接
                 Log.WriteLog(string.Format("会诊室客户端{0}连接成功", ClientIP));
-                HZOne.ClientStatusChange("已连接", Color.Black);
 
                 //启动客户端指令接收线程
                 HZOne.RecvClientCommandThreadStart(UserConnection);

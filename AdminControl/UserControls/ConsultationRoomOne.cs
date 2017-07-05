@@ -55,14 +55,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="Status"></param>
         /// <param name="ForeColor"></param>
-        private delegate void ControlStatusChangeDelegate(string Status, Color ForeColor);
-
-        /// <summary>
-        /// 客户端状态刷新委托
-        /// </summary>
-        /// <param name="Status"></param>
-        /// <param name="ForeColor"></param>
-        private delegate void ClientStatusChangeDelegate(string Status, Color ForeColor);
+        private delegate void LabelStatusChangeDelegate(Label Label_Item, string Status, Color ForeColor);
 
         /// <summary>
         /// 刷新按钮状态委托
@@ -118,6 +111,8 @@ namespace AdminControl
             ControlSocket = Connection;
             is_ControlConnect = true;
 
+            LabelStatusChange(label_ControlStatus, "已连接", Color.Black);
+
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
@@ -146,7 +141,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ControlConnect = false;
-                    ControlStatusChange("未连接", Color.Red);
+                    LabelStatusChange(label_ControlStatus,"未连接", Color.Red);
                     RefreshButtons(false, gBx_Lights);
                     RefreshButtons(false, gBx_Mutrix);
                     break;
@@ -171,6 +166,8 @@ namespace AdminControl
         {
             ClientSocket = Connection;
             is_ClientConnect = true;
+
+            LabelStatusChange(label_ClientStatus, "已连接", Color.Black);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
             RecvClientCommandThread.IsBackground = true;
@@ -197,7 +194,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
                     is_ClientConnect = false;
-                    ClientStatusChange("未连接", Color.Red);
+                    LabelStatusChange(label_ClientStatus,"未连接", Color.Red);
                     break;
                 }
 
@@ -251,42 +248,25 @@ namespace AdminControl
         }
         #endregion
 
-        #region 连接状态刷新
+        #region 标签状态刷新
         /// <summary>
         /// 控制器连接状态修改
         /// </summary>
         /// <param name="Status"></param>
-        public void ControlStatusChange(string Status, Color ForeColor)
+        public void LabelStatusChange(Label Label_Item, string Status, Color ForeColor)
         {
-            if (label_ControlStatus.InvokeRequired)
+            if (Label_Item.InvokeRequired)
             {
-                ControlStatusChangeDelegate Change = new ControlStatusChangeDelegate(ControlStatusChange);
-                label_ControlStatus.Invoke(Change, Status, ForeColor);
+                LabelStatusChangeDelegate Change = new LabelStatusChangeDelegate(LabelStatusChange);
+                Label_Item.Invoke(Change, Label_Item, Status, ForeColor);
             }
             else
             {
-                label_ControlStatus.Text = Status;
-                label_ControlStatus.ForeColor = ForeColor;
+                Label_Item.Text = Status;
+                Label_Item.ForeColor = ForeColor;
             }
         }
 
-        /// <summary>
-        /// 客户端连接状态修改
-        /// </summary>
-        /// <param name="Status"></param>
-        public void ClientStatusChange(string Status, Color ForeColor)
-        {
-            if (label_ClientStatus.InvokeRequired)
-            {
-                ClientStatusChangeDelegate Change = new ClientStatusChangeDelegate(ClientStatusChange);
-                label_ClientStatus.Invoke(Change, Status, ForeColor);
-            }
-            else
-            {
-                label_ClientStatus.Text = Status;
-                label_ClientStatus.ForeColor = ForeColor;
-            }
-        }
         #endregion
 
         #region 按钮状态刷新
