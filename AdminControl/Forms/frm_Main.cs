@@ -223,14 +223,31 @@ namespace AdminControl
         /// </summary>
         private void InitService()
         {
+            //日志服务
             StartLog();
+
+            //数据解析服务
             StartDataHandle();
+
+            //指令解析服务
             StartCommandHandle();
+
+            //数据加密服务
             StartDataEncrypt();
+
+            //时间刷新服务
             StartTime();
+
+            //读取配置
             ReadConfig();
+
+            //用户控件
             StartUserControl();
+
+            //数据库服务
             StartDataBase();
+
+            //服务器启动
             StartServer();
         }
 
