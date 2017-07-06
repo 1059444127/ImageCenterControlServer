@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Data;
 using MySql.Data.MySqlClient;
+using MySql.Data;
 
 namespace DataBaseService
 {
@@ -44,22 +46,31 @@ namespace DataBaseService
             }
         }
 
-        public void InsertData()
+        /// <summary>
+        /// 增删改查数据表
+        /// </summary>
+        /// <param name="SQLString"></param>
+        /// <returns></returns>
+        public bool UpdateTable(string SQLString)
+        {
+            try
+            {
+                MySqlCommand Command = new MySqlCommand(SQLString, Connection);
+                Command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public void SelectTable(string SQLString)
         {
 
         }
 
-        public void DeleteData()
-        {
-
-        }
-
-        public void UpdateData()
-        {
-
-        }
-
-        public void SelectData()
+        public void Dispose()
         {
 
         }
