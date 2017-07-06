@@ -146,6 +146,10 @@ namespace AdminControl
 
                 frm_Main.Log.WriteLog("会诊室设备状态：" + Status);
 
+                /*
+                状态解析
+                */
+
                 if (is_ClientConnect)
                 {
                     SendDeviceStatus(Status);
@@ -198,6 +202,10 @@ namespace AdminControl
                 }
 
                 frm_Main.Log.WriteLog("接收到会诊室客户端指令：" + Command);
+
+                /*
+                指令解析
+                */
 
                 if (is_ControlConnect)
                 {
