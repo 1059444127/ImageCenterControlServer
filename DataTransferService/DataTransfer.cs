@@ -29,7 +29,7 @@ namespace DataTransferService
             byte[] MsgRecv = new byte[1024 * 1024 * 2];
 
             //阻塞接收数据
-            Length = Connection.Receive(MsgRecv);
+            Length = Connection.Receive(MsgRecv, MsgRecv.Length, 0);
 
             if (Length == 0)
             {
@@ -52,7 +52,7 @@ namespace DataTransferService
 
             try
             {
-                Connection.Send(Data);
+                Connection.Send(Data, Data.Length, 0);
             }
             catch (Exception)
             {

@@ -663,6 +663,7 @@ namespace AdminControl
             try
             {
                 WatchSocket.Close();
+                DataBase.Dispose();
                 Log.WriteLog("服务器关闭成功");
             }
             catch (Exception ex)
