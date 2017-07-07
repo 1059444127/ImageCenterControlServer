@@ -107,6 +107,12 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
+            string SQLString = string.Format("insert into tb_clientinformation(client_name,client_ip,client_status) values(\"{0}\",\"{1}\",\"{2}\");", "会诊室控制器", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online");
+
+            MessageBox.Show(SQLString);
+
+            frm_Main.DataBase.UpdateTable(SQLString);
+
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
