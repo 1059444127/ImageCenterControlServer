@@ -107,10 +107,7 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("insert into tb_clientinformation(client_name,client_ip,client_status) values(\"{0}\",\"{1}\",\"{2}\");", "会诊室控制器", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online");
-
-            MessageBox.Show(SQLString);
-
+            string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Online", "会诊室控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
@@ -140,6 +137,10 @@ namespace AdminControl
                 catch (Exception)
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+
+                    string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Offline", "会诊室控制器");
+                    frm_Main.DataBase.UpdateTable(SQLString);
+
                     is_ControlConnect = false;
 
                     ControlRefresh.RefreshLabelStatus(label_ControlStatus, "未连接", Color.Red);
@@ -176,6 +177,9 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ClientStatus, "已连接", Color.Black);
 
+            string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Online", "会诊室客户端");
+            frm_Main.DataBase.UpdateTable(SQLString);
+
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
             RecvClientCommandThread.IsBackground = true;
             RecvClientCommandThread.Start(Connection);
@@ -200,6 +204,10 @@ namespace AdminControl
                 catch (Exception)
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+
+                    string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Offline", "会诊室客户端");
+                    frm_Main.DataBase.UpdateTable(SQLString);
+
                     is_ClientConnect = false;
 
                     ControlRefresh.RefreshLabelStatus(label_ClientStatus, "未连接", Color.Red);
