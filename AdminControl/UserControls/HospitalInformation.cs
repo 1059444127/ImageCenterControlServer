@@ -86,10 +86,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_BUGReportBack_Click(object sender, EventArgs e)
         {
-            DeleteLogFile();
-            panel_BUGReport.Visible = false;
-            txt_EmailTitle.Text = string.Empty;
-            richtxt_EmailContent.Text = string.Empty;
+            CleanBUGReportLog();
         }
         #endregion
 
@@ -167,9 +164,41 @@ namespace AdminControl
         #endregion
 
         #region 邮件发送
+        /// <summary>
+        /// 邮件发送
+        /// </summary>
         private void SendEmail()
         {
+            Email.mailFrom = "jie.jie.1102@qq.com";
+            Email.host = "smtp.qq.com";
+            Email.mailPwd = "yhtuutdwaqyubeea";
+            Email.mailBody = richtxt_EmailContent.Text;
+            Email.mailSubject = txt_EmailTitle.Text;
+            Email.mailToArray = new string[] { "jiejie941102@163.com" };
+            Email.isbodyHtml = true;
 
+            Email.attachmentsPath = new string[] { ZipLogFilePath };
+
+            try
+            {
+                Email.Send();
+                MessageBox.Show("反馈成功！感谢您的参与！", "提示");
+                CleanBUGReportLog();
+            }
+            catch (Exception)
+            {
+                throw new Exception("邮件发送失败！");
+            }
+        }
+        #endregion
+
+        #region 清理反馈记录
+        private void CleanBUGReportLog()
+        {
+            DeleteLogFile();
+            panel_BUGReport.Visible = false;
+            txt_EmailTitle.Text = string.Empty;
+            richtxt_EmailContent.Text = string.Empty;
         }
         #endregion
     }

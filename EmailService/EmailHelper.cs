@@ -147,6 +147,7 @@ namespace EmailService
             {
                 //将邮件发送到SMTP邮件服务器
                 smtp.Send(myMail);
+                myMail.Dispose();
                 return true;
             }
             catch (SmtpException)
