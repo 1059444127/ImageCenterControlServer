@@ -53,6 +53,9 @@
     <Reference Include="EmailService">
       <HintPath>..\EmailService\bin\Debug\EmailService.dll</HintPath>
     </Reference>
+    <Reference Include="FileZipService">
+      <HintPath>..\FileZipService\bin\Debug\FileZipService.dll</HintPath>
+    </Reference>
     <Reference Include="LogService">
       <HintPath>..\LogService\bin\Debug\LogService.dll</HintPath>
     </Reference>
