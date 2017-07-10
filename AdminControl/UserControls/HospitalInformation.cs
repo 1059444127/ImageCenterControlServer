@@ -34,17 +34,12 @@ namespace AdminControl
         private FileZipHelper Zip;
 
         /// <summary>
-        /// 主窗体实例
-        /// </summary>
-        private frm_Main frm_Main;
-
-        /// <summary>
         /// 构造器
         /// </summary>
-        public HospitalInformation(frm_Main frm_Main)
+        public HospitalInformation()
         {
             InitializeComponent();
-            InitItems(frm_Main);
+            InitItems();
         }
 
         /// <summary>
@@ -95,12 +90,11 @@ namespace AdminControl
         /// <summary>
         /// 初始化
         /// </summary>
-        private void InitItems(frm_Main frm_Main)
+        private void InitItems()
         {
             panel_BUGReport.Visible = false;
             Email = new EmailHelper();
             Zip = new FileZipHelper();
-            this.frm_Main = frm_Main;
             ReadConfig();
         }
 
@@ -130,7 +124,6 @@ namespace AdminControl
 
             try
             {
-                //frm_Main.Log.StopWriteLog();
                 Zip.CreateZip(Application.StartupPath + "\\Log", LogFile);
                 return LogFile;
             }

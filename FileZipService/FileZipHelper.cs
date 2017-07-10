@@ -11,6 +11,9 @@ using ICSharpCode.SharpZipLib.Core;
 
 namespace FileZipService
 {
+    /// <summary>
+    /// 文件压缩服务
+    /// </summary>
     public class FileZipHelper
     {
         /// <summary>

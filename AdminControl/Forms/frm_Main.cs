@@ -530,7 +530,7 @@ namespace AdminControl
                 HZTwo = new ConsultationRoomTwo(this);
                 YPOne = new ReadingRoomOne(this);
                 YPTwo = new ReadingRoomTwo(this);
-                HI = new HospitalInformation(this);
+                HI = new HospitalInformation();
                 Log.WriteLog("用户控件初始化成功");
             }
             catch (Exception)
