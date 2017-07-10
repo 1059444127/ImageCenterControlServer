@@ -649,7 +649,8 @@ namespace AdminControl
             }
             else
             {
-                MessageBox.Show("非法连接！" + ClientIP);
+                Log.WriteLog(string.Format("检测到非法连接：{0} 已强制下线", ClientIP));
+                UserConnection.Close();
             }
         }
         #endregion
