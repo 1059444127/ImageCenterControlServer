@@ -11,6 +11,9 @@ using EmailService;
 
 namespace AdminControl
 {
+    /// <summary>
+    /// 信息提示控件
+    /// </summary>
     public partial class HospitalInformation : UserControl
     {
         /// <summary>
@@ -37,6 +40,9 @@ namespace AdminControl
 
         }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
         private void InitItems()
         {
             Email = new EmailHelper();
