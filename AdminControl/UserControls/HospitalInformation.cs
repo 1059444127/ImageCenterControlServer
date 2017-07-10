@@ -18,6 +18,7 @@ namespace AdminControl
     /// </summary>
     public partial class HospitalInformation : UserControl
     {
+        #region 全局变量
         /// <summary>
         /// 日志压缩包路径
         /// </summary>
@@ -32,7 +33,9 @@ namespace AdminControl
         /// 文件压缩实例
         /// </summary>
         private FileZipHelper Zip;
+        #endregion
 
+        #region 构造器
         /// <summary>
         /// 构造器
         /// </summary>
@@ -41,7 +44,9 @@ namespace AdminControl
             InitializeComponent();
             InitItems();
         }
+        #endregion
 
+        #region 用户事件
         /// <summary>
         /// 窗体加载
         /// </summary>
@@ -86,7 +91,9 @@ namespace AdminControl
             txt_EmailTitle.Text = string.Empty;
             richtxt_EmailContent.Text = string.Empty;
         }
+        #endregion
 
+        #region 初始化
         /// <summary>
         /// 初始化
         /// </summary>
@@ -97,7 +104,9 @@ namespace AdminControl
             Zip = new FileZipHelper();
             ReadConfig();
         }
+        #endregion
 
+        #region 读取配置
         /// <summary>
         /// 读取配置文件
         /// </summary>
@@ -113,7 +122,9 @@ namespace AdminControl
 
             Reader.Close();
         }
+        #endregion
 
+        #region 打包日志
         /// <summary>
         /// 创建日志压缩包
         /// </summary>
@@ -133,7 +144,9 @@ namespace AdminControl
                 return null;
             }
         }
+        #endregion
 
+        #region 删除日志
         /// <summary>
         /// 删除日志文件
         /// </summary>
@@ -151,5 +164,6 @@ namespace AdminControl
                 }
             }
         }
+        #endregion
     }
 }
