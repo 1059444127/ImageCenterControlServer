@@ -76,7 +76,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_BUGReportSend_Click(object sender, EventArgs e)
         {
-
+            SendEmail();
         }
 
         /// <summary>
@@ -163,6 +163,13 @@ namespace AdminControl
                     MessageBox.Show("删除文件失败：" + ex.Message, "错误");
                 }
             }
+        }
+        #endregion
+
+        #region 邮件发送
+        private void SendEmail()
+        {
+
         }
         #endregion
     }
