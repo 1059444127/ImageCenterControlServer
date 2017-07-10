@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using EmailService;
 using FileZipService;
 
@@ -61,7 +62,15 @@ namespace AdminControl
         /// </summary>
         private void ReadConfig()
         {
+            StreamReader Reader = new StreamReader(Application.StartupPath + "\\Config\\HospitalInformationConfig.bin");
+            string Config = string.Empty;
 
+            while ((Config = Reader.ReadLine()) != null)
+            {
+                txt_ApplicationInformation.Text += Config + "\r\n";
+            }
+
+            Reader.Close();
         }
     }
 }
