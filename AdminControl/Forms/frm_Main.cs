@@ -102,6 +102,11 @@ namespace AdminControl
         private ReadingRoomTwo YPTwo;
 
         /// <summary>
+        /// 信息提示控件
+        /// </summary>
+        private HospitalInformation HI;
+
+        /// <summary>
         /// 保存用户连接的集合
         /// </summary>
         public Dictionary<string, Socket> DictSockets = new Dictionary<string, Socket>();
@@ -191,6 +196,17 @@ namespace AdminControl
         {
             ShowSelectedIndex(4);
             ShowSelectUserControl(YPTwo);
+        }
+
+        /// <summary>
+        /// 信息提示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            ShowSelectedIndex(5);
+            ShowSelectUserControl(HI);
         }
 
         /// <summary>
@@ -514,6 +530,7 @@ namespace AdminControl
                 HZTwo = new ConsultationRoomTwo(this);
                 YPOne = new ReadingRoomOne(this);
                 YPTwo = new ReadingRoomTwo(this);
+                HI = new HospitalInformation();
                 Log.WriteLog("用户控件初始化成功");
             }
             catch (Exception)
@@ -688,24 +705,35 @@ namespace AdminControl
                     pBx_Index2.Visible = false;
                     pBx_Index3.Visible = false;
                     pBx_Index4.Visible = false;
+                    pBx_Index5.Visible = false;
                     break;
                 case 2:
                     pBx_Index1.Visible = false;
                     pBx_Index2.Visible = true;
                     pBx_Index3.Visible = false;
                     pBx_Index4.Visible = false;
+                    pBx_Index5.Visible = false;
                     break;
                 case 3:
                     pBx_Index1.Visible = false;
                     pBx_Index2.Visible = false;
                     pBx_Index3.Visible = true;
                     pBx_Index4.Visible = false;
+                    pBx_Index5.Visible = false;
                     break;
                 case 4:
                     pBx_Index1.Visible = false;
                     pBx_Index2.Visible = false;
                     pBx_Index3.Visible = false;
                     pBx_Index4.Visible = true;
+                    pBx_Index5.Visible = false;
+                    break;
+                case 5:
+                    pBx_Index1.Visible = false;
+                    pBx_Index2.Visible = false;
+                    pBx_Index3.Visible = false;
+                    pBx_Index4.Visible = false;
+                    pBx_Index5.Visible = true;
                     break;
                 default:
                     break;

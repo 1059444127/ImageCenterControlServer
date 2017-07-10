@@ -90,8 +90,8 @@ namespace AdminControl
 
             ControlRefresh = new ControlRefreshHelper();
 
-            ControlRefresh.RefreshButtons(gBx_Mutrix, false);
-            ControlRefresh.RefreshButtons(gBx_Lights, false);
+            ControlRefresh.RefreshButtons(gBx_LightsControl, false);
+            ControlRefresh.RefreshButtons(gBx_ModeChange, false);
         }
         #endregion
 
@@ -114,8 +114,8 @@ namespace AdminControl
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(Connection);
 
-            ControlRefresh.RefreshButtons(gBx_Mutrix, true);
-            ControlRefresh.RefreshButtons(gBx_Lights, true);
+            //ControlRefresh.RefreshButtons(gBx_Mutrix, true);
+            //ControlRefresh.RefreshButtons(gBx_Lights, true);
         }
 
         /// <summary>
@@ -144,9 +144,8 @@ namespace AdminControl
                     is_ControlConnect = false;
 
                     ControlRefresh.RefreshLabelStatus(label_ControlStatus, "未连接", Color.Red);
-
-                    ControlRefresh.RefreshButtons(gBx_Mutrix, false);
-                    ControlRefresh.RefreshButtons(gBx_Lights, false);
+                    //ControlRefresh.RefreshButtons(gBx_Mutrix, false);
+                    //ControlRefresh.RefreshButtons(gBx_Lights, false);
 
                     break;
                 }
@@ -211,7 +210,6 @@ namespace AdminControl
                     is_ClientConnect = false;
 
                     ControlRefresh.RefreshLabelStatus(label_ClientStatus, "未连接", Color.Red);
-
                     break;
                 }
 

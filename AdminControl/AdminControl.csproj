@@ -67,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ControlRefreshHelper.cs" />
+    <Compile Include="UserControls\HospitalInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HospitalInformation.Designer.cs">
+      <DependentUpon>HospitalInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ConsultationRoomOne.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\HospitalInformation.resx">
+      <DependentUpon>HospitalInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ReadingRoomOne.resx">
       <DependentUpon>ReadingRoomOne.cs</DependentUpon>
     </EmbeddedResource>

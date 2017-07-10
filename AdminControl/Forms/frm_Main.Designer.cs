@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.panel_Information = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label_Date = new System.Windows.Forms.Label();
             this.label_Week = new System.Windows.Forms.Label();
             this.label_Minute = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_Hour = new System.Windows.Forms.Label();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.pBx_Index5 = new System.Windows.Forms.PictureBox();
+            this.btn_About = new System.Windows.Forms.Button();
             this.pBx_Index4 = new System.Windows.Forms.PictureBox();
             this.pBx_Index3 = new System.Windows.Forms.PictureBox();
             this.pBx_Index2 = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel_Information.SuspendLayout();
             this.panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index2)).BeginInit();
@@ -62,7 +64,6 @@
             // 
             this.panel_Information.BackColor = System.Drawing.Color.Gray;
             this.panel_Information.Controls.Add(this.label3);
-            this.panel_Information.Controls.Add(this.label1);
             this.panel_Information.Controls.Add(this.label_Date);
             this.panel_Information.Controls.Add(this.label_Week);
             this.panel_Information.Controls.Add(this.label_Minute);
@@ -77,24 +78,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("楷体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(840, 48);
+            this.label3.Location = new System.Drawing.Point(718, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 14);
+            this.label3.Size = new System.Drawing.Size(303, 35);
             this.label3.TabIndex = 6;
             this.label3.Text = "影像中心控制系统";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(797, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 28);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "湖北省妇幼保健院";
             // 
             // label_Date
             // 
@@ -156,6 +146,8 @@
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.LightGray;
+            this.panel_Menu.Controls.Add(this.pBx_Index5);
+            this.panel_Menu.Controls.Add(this.btn_About);
             this.panel_Menu.Controls.Add(this.pBx_Index4);
             this.panel_Menu.Controls.Add(this.pBx_Index3);
             this.panel_Menu.Controls.Add(this.pBx_Index2);
@@ -170,10 +162,40 @@
             this.panel_Menu.Size = new System.Drawing.Size(160, 520);
             this.panel_Menu.TabIndex = 1;
             // 
+            // pBx_Index5
+            // 
+            this.pBx_Index5.Image = global::AdminControl.Properties.Resources.zhankai;
+            this.pBx_Index5.Location = new System.Drawing.Point(116, 414);
+            this.pBx_Index5.Name = "pBx_Index5";
+            this.pBx_Index5.Size = new System.Drawing.Size(44, 25);
+            this.pBx_Index5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBx_Index5.TabIndex = 8;
+            this.pBx_Index5.TabStop = false;
+            this.pBx_Index5.Visible = false;
+            // 
+            // btn_About
+            // 
+            this.btn_About.BackColor = System.Drawing.Color.Transparent;
+            this.btn_About.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_About.FlatAppearance.BorderSize = 0;
+            this.btn_About.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_About.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_About.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_About.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_About.ForeColor = System.Drawing.Color.White;
+            this.btn_About.Location = new System.Drawing.Point(9, 402);
+            this.btn_About.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_About.Name = "btn_About";
+            this.btn_About.Size = new System.Drawing.Size(110, 50);
+            this.btn_About.TabIndex = 7;
+            this.btn_About.Text = "关于";
+            this.btn_About.UseVisualStyleBackColor = false;
+            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
+            // 
             // pBx_Index4
             // 
             this.pBx_Index4.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index4.Location = new System.Drawing.Point(116, 425);
+            this.pBx_Index4.Location = new System.Drawing.Point(116, 329);
             this.pBx_Index4.Name = "pBx_Index4";
             this.pBx_Index4.Size = new System.Drawing.Size(44, 25);
             this.pBx_Index4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,7 +206,7 @@
             // pBx_Index3
             // 
             this.pBx_Index3.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index3.Location = new System.Drawing.Point(116, 306);
+            this.pBx_Index3.Location = new System.Drawing.Point(116, 243);
             this.pBx_Index3.Name = "pBx_Index3";
             this.pBx_Index3.Size = new System.Drawing.Size(44, 25);
             this.pBx_Index3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +217,7 @@
             // pBx_Index2
             // 
             this.pBx_Index2.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index2.Location = new System.Drawing.Point(116, 188);
+            this.pBx_Index2.Location = new System.Drawing.Point(116, 157);
             this.pBx_Index2.Name = "pBx_Index2";
             this.pBx_Index2.Size = new System.Drawing.Size(44, 25);
             this.pBx_Index2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +246,7 @@
             this.btn_ReadingRoomTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ReadingRoomTwo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_ReadingRoomTwo.ForeColor = System.Drawing.Color.White;
-            this.btn_ReadingRoomTwo.Location = new System.Drawing.Point(9, 412);
+            this.btn_ReadingRoomTwo.Location = new System.Drawing.Point(9, 316);
             this.btn_ReadingRoomTwo.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ReadingRoomTwo.Name = "btn_ReadingRoomTwo";
             this.btn_ReadingRoomTwo.Size = new System.Drawing.Size(110, 50);
@@ -243,7 +265,7 @@
             this.btn_ReadingRoomOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ReadingRoomOne.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_ReadingRoomOne.ForeColor = System.Drawing.Color.White;
-            this.btn_ReadingRoomOne.Location = new System.Drawing.Point(9, 294);
+            this.btn_ReadingRoomOne.Location = new System.Drawing.Point(9, 230);
             this.btn_ReadingRoomOne.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ReadingRoomOne.Name = "btn_ReadingRoomOne";
             this.btn_ReadingRoomOne.Size = new System.Drawing.Size(110, 50);
@@ -262,7 +284,7 @@
             this.btn_ConsultationRoomTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ConsultationRoomTwo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_ConsultationRoomTwo.ForeColor = System.Drawing.Color.White;
-            this.btn_ConsultationRoomTwo.Location = new System.Drawing.Point(9, 176);
+            this.btn_ConsultationRoomTwo.Location = new System.Drawing.Point(9, 144);
             this.btn_ConsultationRoomTwo.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ConsultationRoomTwo.Name = "btn_ConsultationRoomTwo";
             this.btn_ConsultationRoomTwo.Size = new System.Drawing.Size(110, 50);
@@ -341,6 +363,7 @@
             this.panel_Information.ResumeLayout(false);
             this.panel_Information.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index2)).EndInit();
@@ -366,13 +389,14 @@
         private System.Windows.Forms.Label label_Week;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pBx_Index4;
         private System.Windows.Forms.PictureBox pBx_Index3;
         private System.Windows.Forms.PictureBox pBx_Index2;
         private System.Windows.Forms.PictureBox pBx_Index1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pBx_Index5;
+        private System.Windows.Forms.Button btn_About;
     }
 }
 
