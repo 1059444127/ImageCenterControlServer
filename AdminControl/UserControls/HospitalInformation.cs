@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EmailService;
+using FileZipService;
 
 namespace AdminControl
 {
@@ -20,6 +21,11 @@ namespace AdminControl
         /// 邮件发送实例
         /// </summary>
         private EmailHelper Email;
+
+        /// <summary>
+        /// 文件压缩实例
+        /// </summary>
+        private FileZipHelper Zip;
 
         /// <summary>
         /// 构造器
@@ -46,6 +52,16 @@ namespace AdminControl
         private void InitItems()
         {
             Email = new EmailHelper();
+            Zip = new FileZipHelper();
+            ReadConfig();
+        }
+
+        /// <summary>
+        /// 读取配置文件
+        /// </summary>
+        private void ReadConfig()
+        {
+
         }
     }
 }
