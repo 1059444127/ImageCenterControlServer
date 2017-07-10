@@ -19,6 +19,11 @@ namespace AdminControl
     public partial class HospitalInformation : UserControl
     {
         /// <summary>
+        /// 日志压缩包路径
+        /// </summary>
+        private string ZipLogFilePath;
+
+        /// <summary>
         /// 邮件发送实例
         /// </summary>
         private EmailHelper Email;
@@ -29,12 +34,17 @@ namespace AdminControl
         private FileZipHelper Zip;
 
         /// <summary>
+        /// 主窗体实例
+        /// </summary>
+        private frm_Main frm_Main;
+
+        /// <summary>
         /// 构造器
         /// </summary>
-        public HospitalInformation()
+        public HospitalInformation(frm_Main frm_Main)
         {
             InitializeComponent();
-            InitItems();
+            InitItems(frm_Main);
         }
 
         /// <summary>
@@ -55,6 +65,8 @@ namespace AdminControl
         private void btn_BUGReport_Click(object sender, EventArgs e)
         {
             panel_BUGReport.Visible = true;
+            ZipLogFilePath = ZipLogFiles();
+            txt_EmailFilePath.Text = ZipLogFilePath;
         }
 
         /// <summary>
@@ -74,6 +86,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_BUGReportBack_Click(object sender, EventArgs e)
         {
+            DeleteLogFile();
             panel_BUGReport.Visible = false;
             txt_EmailTitle.Text = string.Empty;
             richtxt_EmailContent.Text = string.Empty;
@@ -82,11 +95,12 @@ namespace AdminControl
         /// <summary>
         /// 初始化
         /// </summary>
-        private void InitItems()
+        private void InitItems(frm_Main frm_Main)
         {
             panel_BUGReport.Visible = false;
             Email = new EmailHelper();
             Zip = new FileZipHelper();
+            this.frm_Main = frm_Main;
             ReadConfig();
         }
 
@@ -104,6 +118,45 @@ namespace AdminControl
             }
 
             Reader.Close();
+        }
+
+        /// <summary>
+        /// 创建日志压缩包
+        /// </summary>
+        /// <returns></returns>
+        private string ZipLogFiles()
+        {
+            string LogFile = string.Format("{0}\\Log_{1}.zip", Application.StartupPath, DateTime.Now.ToString("yyMMdd"));
+
+            try
+            {
+                //frm_Main.Log.StopWriteLog();
+                Zip.CreateZip(Application.StartupPath + "\\Log", LogFile);
+                return LogFile;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 删除日志文件
+        /// </summary>
+        private void DeleteLogFile()
+        {
+            if (File.Exists(ZipLogFilePath))
+            {
+                try
+                {
+                    File.Delete(ZipLogFilePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("删除文件失败：" + ex.Message, "错误");
+                }
+            }
         }
     }
 }
