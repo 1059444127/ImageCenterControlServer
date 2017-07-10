@@ -48,10 +48,43 @@ namespace AdminControl
         }
 
         /// <summary>
+        /// 显示BUG反馈界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_BUGReport_Click(object sender, EventArgs e)
+        {
+            panel_BUGReport.Visible = true;
+        }
+
+        /// <summary>
+        /// 发送反馈邮件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_BUGReportSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 取消BUG反馈
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_BUGReportBack_Click(object sender, EventArgs e)
+        {
+            panel_BUGReport.Visible = false;
+            txt_EmailTitle.Text = string.Empty;
+            richtxt_EmailContent.Text = string.Empty;
+        }
+
+        /// <summary>
         /// 初始化
         /// </summary>
         private void InitItems()
         {
+            panel_BUGReport.Visible = false;
             Email = new EmailHelper();
             Zip = new FileZipHelper();
             ReadConfig();
