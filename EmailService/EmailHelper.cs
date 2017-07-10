@@ -105,8 +105,10 @@ namespace EmailService
             //电子邮件正文的编码
             myMail.BodyEncoding = Encoding.Default;
 
-            myMail.Priority = MailPriority.High;
+            //电子邮件优先级
+            myMail.Priority = MailPriority.Normal;
 
+            //是否是HTML格式
             myMail.IsBodyHtml = isbodyHtml;
 
             //在有附件的情况下添加附件

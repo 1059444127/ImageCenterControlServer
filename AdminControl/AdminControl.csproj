@@ -50,6 +50,9 @@
     <Reference Include="DataTransferService">
       <HintPath>..\DataTransferService\bin\Debug\DataTransferService.dll</HintPath>
     </Reference>
+    <Reference Include="EmailService">
+      <HintPath>..\EmailService\bin\Debug\EmailService.dll</HintPath>
+    </Reference>
     <Reference Include="LogService">
       <HintPath>..\LogService\bin\Debug\LogService.dll</HintPath>
     </Reference>
