@@ -533,10 +533,10 @@ namespace AdminControl
                 HI = new HospitalInformation();
                 Log.WriteLog("用户控件初始化成功");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Log.WriteLog("用户控件初始化失败");
-                MessageBox.Show("用户控件初始化失败" + ex.Message, "错误");
+                MessageBox.Show("用户控件初始化失败", "错误");
                 System.Environment.Exit(0);
             }
         }
