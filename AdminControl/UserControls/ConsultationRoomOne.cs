@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
 using DataTransferService;
-using System.Runtime.InteropServices;
 
 namespace AdminControl
 {
