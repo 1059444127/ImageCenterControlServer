@@ -37,19 +37,25 @@ namespace DataTransferService
 
             return Data;
         }
-
+       
         /// <summary>
         /// 发送数据
         /// </summary>
-        /// <param name="Connection">连接套接字</param>
-        /// <param name="RawData">原始数据</param>
-        public void SendData(Socket Connection, string RawData)
+        /// <param name="Connection"></param>
+        /// <param name="RawData"></param>
+        /// <returns>发送的字节数</returns>
+        public int SendData(Socket Connection, string RawData)
         {
+            int Length;
+
+            Connection.SendTimeout = 1000;
+
             byte[] Data = Encoding.UTF8.GetBytes(RawData);
 
             try
             {
-                Connection.Send(Data, Data.Length, 0);
+                Length = Connection.Send(Data, Data.Length, 0);
+                return Length;
             }
             catch (Exception)
             {
