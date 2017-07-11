@@ -111,6 +111,7 @@
             this.btn_JP.TabIndex = 4;
             this.btn_JP.Text = "胶片直投";
             this.btn_JP.UseVisualStyleBackColor = false;
+            this.btn_JP.Click += new System.EventHandler(this.btn_JP_Click);
             // 
             // btn_KH
             // 
@@ -129,6 +130,7 @@
             this.btn_KH.TabIndex = 3;
             this.btn_KH.Text = "科会模式";
             this.btn_KH.UseVisualStyleBackColor = false;
+            this.btn_KH.Click += new System.EventHandler(this.btn_KH_Click);
             // 
             // btn_ModeYH
             // 
@@ -147,6 +149,7 @@
             this.btn_ModeYH.TabIndex = 2;
             this.btn_ModeYH.Text = "议会模式";
             this.btn_ModeYH.UseVisualStyleBackColor = false;
+            this.btn_ModeYH.Click += new System.EventHandler(this.btn_ModeYH_Click);
             // 
             // btn_ModeHZ
             // 
@@ -165,6 +168,7 @@
             this.btn_ModeHZ.TabIndex = 1;
             this.btn_ModeHZ.Text = "会诊模式";
             this.btn_ModeHZ.UseVisualStyleBackColor = false;
+            this.btn_ModeHZ.Click += new System.EventHandler(this.btn_ModeHZ_Click);
             // 
             // gBx_LightsControl
             // 

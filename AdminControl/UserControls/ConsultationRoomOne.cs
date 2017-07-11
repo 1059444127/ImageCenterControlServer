@@ -76,6 +76,46 @@ namespace AdminControl
         {
 
         }
+
+        /// <summary>
+        /// 切换会诊模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ModeHZ_Click(object sender, EventArgs e)
+        {
+            ModeChange(1);
+        }
+
+        /// <summary>
+        /// 切换议会模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ModeYH_Click(object sender, EventArgs e)
+        {
+            ModeChange(2);
+        }
+
+        /// <summary>
+        /// 切换科会模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_KH_Click(object sender, EventArgs e)
+        {
+            ModeChange(3);
+        }
+
+        /// <summary>
+        /// 切换胶片直投
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_JP_Click(object sender, EventArgs e)
+        {
+            ModeChange(4);
+        }
         #endregion
 
         #region 初始化
@@ -267,6 +307,33 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("设备状态发送失败");
                 MessageBox.Show(ex.Message, "客户端已离线");
                 is_ClientConnect = false;
+            }
+        }
+        #endregion
+
+        #region 模式切换
+        /// <summary>
+        /// 模式切换
+        /// </summary>
+        /// <param name="Mode"></param>
+        private void ModeChange(int Mode)
+        {
+            switch (Mode)
+            {
+                case 1:
+                    SendControlCommand("会诊模式");
+                    break;
+                case 2:
+                    SendControlCommand("议会模式");
+                    break;
+                case 3:
+                    SendControlCommand("科会模式");
+                    break;
+                case 4:
+                    SendControlCommand("胶片直投模式");
+                    break;
+                default:
+                    break;
             }
         }
         #endregion
