@@ -337,5 +337,15 @@ namespace AdminControl
             }
         }
         #endregion
+
+        private void ShowOnLineStatus()
+        {
+
+        }
+
+        private void ShowOffLineStatus()
+        {
+
+        }
     }
 }
