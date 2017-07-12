@@ -174,7 +174,7 @@ namespace AdminControl
             {
                 try
                 {
-                    Status = Data.RecvData(Socket);
+                    Status = Data.RecvData(Socket, 3000);
                 }
                 catch (Exception)
                 {
@@ -280,7 +280,7 @@ namespace AdminControl
         {
             try
             {
-                Data.SendData(ControlSocket, CMD);
+                Data.SendData(ControlSocket, 3000, CMD);
             }
             catch (Exception ex)
             {
@@ -300,7 +300,7 @@ namespace AdminControl
         {
             try
             {
-                Data.SendData(ClientSocket, Status);
+                Data.SendData(ClientSocket, 3000, Status);
             }
             catch (Exception ex)
             {
