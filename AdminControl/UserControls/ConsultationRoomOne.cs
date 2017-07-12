@@ -153,7 +153,7 @@ namespace AdminControl
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
-            RecvDeviceStatusThread.Start(Connection);
+            RecvDeviceStatusThread.Start(ControlSocket);
 
             ControlRefresh.RefreshButtons(gBx_ModeChange, true);
             ControlRefresh.RefreshButtons(gBx_LightsControl, true);
