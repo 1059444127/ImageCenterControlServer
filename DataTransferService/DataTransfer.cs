@@ -25,6 +25,8 @@ namespace DataTransferService
             //定义2M缓冲区
             byte[] MsgRecv = new byte[1024 * 1024 * 2];
 
+            Connection.ReceiveTimeout = 5000;
+
             //阻塞接收数据
             Length = Connection.Receive(MsgRecv, MsgRecv.Length, 0);
 
@@ -47,6 +49,8 @@ namespace DataTransferService
         public void SendData(Socket Connection, string RawData)
         {
             byte[] Data = Encoding.UTF8.GetBytes(RawData);
+
+            Connection.SendTimeout = 3000;
 
             try
             {
