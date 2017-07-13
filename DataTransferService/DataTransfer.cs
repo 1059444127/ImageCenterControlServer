@@ -55,6 +55,7 @@ namespace DataTransferService
             //定义2M缓冲区
             byte[] MsgRecv = new byte[1024 * 1024 * 2];
 
+            //接收超时
             Connection.ReceiveTimeout = TimeOut;
 
             //阻塞接收数据
@@ -78,10 +79,12 @@ namespace DataTransferService
         /// <returns>发送的字节数</returns>
         public void SendData(Socket Connection, string RawData)
         {
+            //缓冲区
             byte[] Data = Encoding.UTF8.GetBytes(RawData);
 
             try
             {
+                //发送数据
                 Connection.Send(Data, Data.Length, 0);
             }
             catch (Exception)
@@ -98,12 +101,15 @@ namespace DataTransferService
         /// <param name="Data">发送的数据</param>
         public void SendData(Socket Connection, int TimeOut, string RawData)
         {
+            //缓冲区
             byte[] Data = Encoding.UTF8.GetBytes(RawData);
 
+            //发送超时
             Connection.SendTimeout = TimeOut;
 
             try
             {
+                //发送数据
                 Connection.Send(Data, Data.Length, 0);
             }
             catch (Exception)
