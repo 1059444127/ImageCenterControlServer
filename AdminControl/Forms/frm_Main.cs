@@ -637,16 +637,16 @@ namespace AdminControl
                 //阅片室控制端连接
                 Log.WriteLog(string.Format("阅片室控制端{0}连接成功", ClientIP));
 
-                //启动传感器数据和灯光状态接收线程
-                YPOne.RecvDeviceDataThreadStart(UserConnection);
+                //启动数据接收线程
+
             }
             else if (ClientIP.Equals(ClientTypeConfig[1]))
             {
                 //阅片室客户端连接
                 Log.WriteLog(string.Format("阅片室客户端{0}连接成功", ClientIP));
 
-                //启动客户端指令接收线程
-                YPOne.RecvClientCommandThreadStart(UserConnection);
+                //启动指令接收线程
+
             }
             else if (ClientIP.Equals(ClientTypeConfig[2]))
             {
