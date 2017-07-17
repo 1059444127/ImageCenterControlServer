@@ -244,7 +244,7 @@
             this.btn_TopLight_Off.Name = "btn_TopLight_Off";
             this.btn_TopLight_Off.Size = new System.Drawing.Size(55, 50);
             this.btn_TopLight_Off.TabIndex = 30;
-            this.btn_TopLight_Off.Text = "开";
+            this.btn_TopLight_Off.Text = "关";
             this.btn_TopLight_Off.UseVisualStyleBackColor = false;
             // 
             // btn_WallLight_Off
@@ -263,7 +263,7 @@
             this.btn_WallLight_Off.Name = "btn_WallLight_Off";
             this.btn_WallLight_Off.Size = new System.Drawing.Size(55, 50);
             this.btn_WallLight_Off.TabIndex = 29;
-            this.btn_WallLight_Off.Text = "开";
+            this.btn_WallLight_Off.Text = "关";
             this.btn_WallLight_Off.UseVisualStyleBackColor = false;
             // 
             // btn_RoundLight_Off
@@ -282,7 +282,7 @@
             this.btn_RoundLight_Off.Name = "btn_RoundLight_Off";
             this.btn_RoundLight_Off.Size = new System.Drawing.Size(55, 50);
             this.btn_RoundLight_Off.TabIndex = 28;
-            this.btn_RoundLight_Off.Text = "开";
+            this.btn_RoundLight_Off.Text = "关";
             this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
             // 
             // btn_RoundLight_On
