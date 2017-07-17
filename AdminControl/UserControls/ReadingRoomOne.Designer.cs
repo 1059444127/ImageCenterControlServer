@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_ControlStatus = new System.Windows.Forms.Label();
             this.label_Control = new System.Windows.Forms.Label();
             this.label_ClientStatus = new System.Windows.Forms.Label();
@@ -43,27 +41,9 @@
             this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(335, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 56);
+            this.label4.Size = new System.Drawing.Size(200, 56);
             this.label4.TabIndex = 2;
             this.label4.Text = "阅片室1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(544, 122);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(258, 294);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "灯光系统";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(63, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 294);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "环境数据";
             // 
             // label_ControlStatus
             // 
@@ -116,8 +96,6 @@
             this.Controls.Add(this.label_Client);
             this.Controls.Add(this.label_ControlStatus);
             this.Controls.Add(this.label_Control);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Name = "ReadingRoomOne";
             this.Size = new System.Drawing.Size(864, 520);
@@ -130,8 +108,6 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label_ControlStatus;
         private System.Windows.Forms.Label label_Control;
         private System.Windows.Forms.Label label_ClientStatus;
