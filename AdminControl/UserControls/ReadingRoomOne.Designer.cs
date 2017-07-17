@@ -67,10 +67,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_Hum = new System.Windows.Forms.Label();
+            this.label_Temp = new System.Windows.Forms.Label();
+            this.label_Light = new System.Windows.Forms.Label();
+            this.label_Noise = new System.Windows.Forms.Label();
             this.gBx_ModeChange.SuspendLayout();
             this.gBx_DeviceControl.SuspendLayout();
             this.gBx_LightsControl.SuspendLayout();
@@ -612,10 +612,10 @@
             // 
             // gBx_Enviroument
             // 
-            this.gBx_Enviroument.Controls.Add(this.label15);
-            this.gBx_Enviroument.Controls.Add(this.label14);
-            this.gBx_Enviroument.Controls.Add(this.label13);
-            this.gBx_Enviroument.Controls.Add(this.label12);
+            this.gBx_Enviroument.Controls.Add(this.label_Noise);
+            this.gBx_Enviroument.Controls.Add(this.label_Light);
+            this.gBx_Enviroument.Controls.Add(this.label_Temp);
+            this.gBx_Enviroument.Controls.Add(this.label_Hum);
             this.gBx_Enviroument.Controls.Add(this.label11);
             this.gBx_Enviroument.Controls.Add(this.label10);
             this.gBx_Enviroument.Controls.Add(this.label9);
@@ -667,45 +667,45 @@
             this.label11.TabIndex = 49;
             this.label11.Text = "噪音:";
             // 
-            // label12
+            // label_Hum
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(84, 93);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 25);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "初始化...";
+            this.label_Hum.AutoSize = true;
+            this.label_Hum.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Hum.Location = new System.Drawing.Point(84, 93);
+            this.label_Hum.Name = "label_Hum";
+            this.label_Hum.Size = new System.Drawing.Size(93, 25);
+            this.label_Hum.TabIndex = 50;
+            this.label_Hum.Text = "初始化...";
             // 
-            // label13
+            // label_Temp
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(84, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 25);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "初始化...";
+            this.label_Temp.AutoSize = true;
+            this.label_Temp.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Temp.Location = new System.Drawing.Point(84, 42);
+            this.label_Temp.Name = "label_Temp";
+            this.label_Temp.Size = new System.Drawing.Size(93, 25);
+            this.label_Temp.TabIndex = 51;
+            this.label_Temp.Text = "初始化...";
             // 
-            // label14
+            // label_Light
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(84, 144);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 25);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "初始化...";
+            this.label_Light.AutoSize = true;
+            this.label_Light.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Light.Location = new System.Drawing.Point(84, 144);
+            this.label_Light.Name = "label_Light";
+            this.label_Light.Size = new System.Drawing.Size(93, 25);
+            this.label_Light.TabIndex = 52;
+            this.label_Light.Text = "初始化...";
             // 
-            // label15
+            // label_Noise
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(84, 195);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(93, 25);
-            this.label15.TabIndex = 53;
-            this.label15.Text = "初始化...";
+            this.label_Noise.AutoSize = true;
+            this.label_Noise.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Noise.Location = new System.Drawing.Point(84, 195);
+            this.label_Noise.Name = "label_Noise";
+            this.label_Noise.Size = new System.Drawing.Size(93, 25);
+            this.label_Noise.TabIndex = 53;
+            this.label_Noise.Text = "初始化...";
             // 
             // ReadingRoomOne
             // 
@@ -777,9 +777,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_Noise;
+        private System.Windows.Forms.Label label_Light;
+        private System.Windows.Forms.Label label_Temp;
+        private System.Windows.Forms.Label label_Hum;
     }
 }
