@@ -309,7 +309,7 @@ namespace AdminControl
             catch (Exception ex)
             {
                 frm_Main.Log.WriteLog("会诊室1设备状态发送失败");
-                MessageBox.Show(ex.Message, "客户端已离线");
+                MessageBox.Show(ex.Message, "会诊室1客户端已离线");
 
                 string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1客户端");
                 frm_Main.DataBase.UpdateTable(SQLString);
