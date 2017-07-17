@@ -70,7 +70,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="Group"></param>
         /// <param name="Status"></param>
-        public void RefreshButtons(GroupBox Group,bool Status)
+        public void RefreshButtons(GroupBox Group, bool Status)
         {
             foreach (Control item in Group.Controls)
             {
