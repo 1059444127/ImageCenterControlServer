@@ -69,43 +69,5 @@ namespace AdminControl
             this.frm_Main = frm_Main;
         }
         #endregion
-
-        #region 刷新控件
-        /// <summary>
-        /// 控制器连接状态修改
-        /// </summary>
-        /// <param name="Status"></param>
-        public void ControlStatusChange(string Status, Color ForeColor)
-        {
-            if (label_ControlStatus.InvokeRequired)
-            {
-                ControlStatusChangeDelegate Change = new ControlStatusChangeDelegate(ControlStatusChange);
-                label_ControlStatus.Invoke(Change, Status, ForeColor);
-            }
-            else
-            {
-                label_ControlStatus.Text = Status;
-                label_ControlStatus.ForeColor = ForeColor;
-            }
-        }
-
-        /// <summary>
-        /// 客户端连接状态修改
-        /// </summary>
-        /// <param name="Status"></param>
-        public void ClientStatusChange(string Status, Color ForeColor)
-        {
-            if (label_ClientStatus.InvokeRequired)
-            {
-                ClientStatusChangeDelegate Change = new ClientStatusChangeDelegate(ClientStatusChange);
-                label_ClientStatus.Invoke(Change, Status, ForeColor);
-            }
-            else
-            {
-                label_ClientStatus.Text = Status;
-                label_ClientStatus.ForeColor = ForeColor;
-            }
-        }
-        #endregion
     }
 }
