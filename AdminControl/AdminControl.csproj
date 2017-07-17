@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ControlRefreshHelper.cs" />
+    <Compile Include="Data\DeviceInformation.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
