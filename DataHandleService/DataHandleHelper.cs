@@ -12,14 +12,6 @@ namespace DataHandleService
     public class DataHandleHelper
     {
         /// <summary>
-        /// 构造器
-        /// </summary>
-        public DataHandleHelper()
-        {
-             
-        }
-
-        /// <summary>
         /// 获取房间温度
         /// </summary>
         /// <param name="Data"></param>
@@ -59,6 +51,20 @@ namespace DataHandleService
             //数据处理
 
             return Light;
+        }
+
+        /// <summary>
+        /// 获取房间噪音
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <returns></returns>
+        public string GetHouseNoise(string Data)
+        {
+            string Noise = string.Empty;
+
+            //数据处理
+
+            return Noise;
         }
     }
 }
