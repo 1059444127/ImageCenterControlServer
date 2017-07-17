@@ -35,14 +35,14 @@
             this.btn_ModeYH = new System.Windows.Forms.Button();
             this.btn_ModeHZ = new System.Windows.Forms.Button();
             this.gBx_LightsControl = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_AllLights_Off = new System.Windows.Forms.Button();
+            this.btn_AllLights_On = new System.Windows.Forms.Button();
+            this.btn_TopLight_Off = new System.Windows.Forms.Button();
+            this.btn_WallLight_Off = new System.Windows.Forms.Button();
+            this.btn_RoundLight_Off = new System.Windows.Forms.Button();
+            this.btn_RoundLight_On = new System.Windows.Forms.Button();
+            this.btn_WallLight_On = new System.Windows.Forms.Button();
+            this.btn_TopLight_On = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,17 +55,17 @@
             this.label_ProjectorTwo = new System.Windows.Forms.Label();
             this.label_ProjectorOne = new System.Windows.Forms.Label();
             this.gBx_DeviceControl = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btn_Film_Up = new System.Windows.Forms.Button();
+            this.btn_Windows_Off = new System.Windows.Forms.Button();
+            this.btn_Camera_Off = new System.Windows.Forms.Button();
+            this.btn_ProjectorTwo_Off = new System.Windows.Forms.Button();
+            this.btn_Film_Down = new System.Windows.Forms.Button();
+            this.btn_Windows_On = new System.Windows.Forms.Button();
+            this.btn_Camera_On = new System.Windows.Forms.Button();
+            this.btn_ProjectorTwo_On = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_ProjectorOne_Off = new System.Windows.Forms.Button();
+            this.btn_ProjectorOne_On = new System.Windows.Forms.Button();
             this.gBx_ModeChange.SuspendLayout();
             this.gBx_LightsControl.SuspendLayout();
             this.gBx_DeviceControl.SuspendLayout();
@@ -172,14 +172,14 @@
             // 
             // gBx_LightsControl
             // 
-            this.gBx_LightsControl.Controls.Add(this.button8);
-            this.gBx_LightsControl.Controls.Add(this.button2);
-            this.gBx_LightsControl.Controls.Add(this.button7);
-            this.gBx_LightsControl.Controls.Add(this.button6);
-            this.gBx_LightsControl.Controls.Add(this.button5);
-            this.gBx_LightsControl.Controls.Add(this.button4);
-            this.gBx_LightsControl.Controls.Add(this.button3);
-            this.gBx_LightsControl.Controls.Add(this.button1);
+            this.gBx_LightsControl.Controls.Add(this.btn_AllLights_Off);
+            this.gBx_LightsControl.Controls.Add(this.btn_AllLights_On);
+            this.gBx_LightsControl.Controls.Add(this.btn_TopLight_Off);
+            this.gBx_LightsControl.Controls.Add(this.btn_WallLight_Off);
+            this.gBx_LightsControl.Controls.Add(this.btn_RoundLight_Off);
+            this.gBx_LightsControl.Controls.Add(this.btn_RoundLight_On);
+            this.gBx_LightsControl.Controls.Add(this.btn_WallLight_On);
+            this.gBx_LightsControl.Controls.Add(this.btn_TopLight_On);
             this.gBx_LightsControl.Controls.Add(this.label1);
             this.gBx_LightsControl.Controls.Add(this.label2);
             this.gBx_LightsControl.Controls.Add(this.label3);
@@ -190,157 +190,157 @@
             this.gBx_LightsControl.TabStop = false;
             this.gBx_LightsControl.Text = "灯光控制";
             // 
-            // button8
+            // btn_AllLights_Off
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(131, 230);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(88, 50);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "全关";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn_AllLights_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_AllLights_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_AllLights_Off.FlatAppearance.BorderSize = 0;
+            this.btn_AllLights_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AllLights_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_AllLights_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_AllLights_Off.Location = new System.Drawing.Point(131, 230);
+            this.btn_AllLights_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_AllLights_Off.Name = "btn_AllLights_Off";
+            this.btn_AllLights_Off.Size = new System.Drawing.Size(88, 50);
+            this.btn_AllLights_Off.TabIndex = 31;
+            this.btn_AllLights_Off.Text = "全关";
+            this.btn_AllLights_Off.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_AllLights_On
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(23, 230);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 50);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "全开";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_AllLights_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_AllLights_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_AllLights_On.FlatAppearance.BorderSize = 0;
+            this.btn_AllLights_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_AllLights_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AllLights_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_AllLights_On.ForeColor = System.Drawing.Color.White;
+            this.btn_AllLights_On.Location = new System.Drawing.Point(23, 230);
+            this.btn_AllLights_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_AllLights_On.Name = "btn_AllLights_On";
+            this.btn_AllLights_On.Size = new System.Drawing.Size(88, 50);
+            this.btn_AllLights_On.TabIndex = 5;
+            this.btn_AllLights_On.Text = "全开";
+            this.btn_AllLights_On.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btn_TopLight_Off
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(164, 35);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(55, 50);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "开";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_TopLight_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_TopLight_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_TopLight_Off.FlatAppearance.BorderSize = 0;
+            this.btn_TopLight_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TopLight_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_TopLight_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_TopLight_Off.Location = new System.Drawing.Point(164, 35);
+            this.btn_TopLight_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_TopLight_Off.Name = "btn_TopLight_Off";
+            this.btn_TopLight_Off.Size = new System.Drawing.Size(55, 50);
+            this.btn_TopLight_Off.TabIndex = 30;
+            this.btn_TopLight_Off.Text = "开";
+            this.btn_TopLight_Off.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn_WallLight_Off
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(164, 88);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(55, 50);
-            this.button6.TabIndex = 29;
-            this.button6.Text = "开";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_WallLight_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_WallLight_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WallLight_Off.FlatAppearance.BorderSize = 0;
+            this.btn_WallLight_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WallLight_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_WallLight_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_WallLight_Off.Location = new System.Drawing.Point(164, 88);
+            this.btn_WallLight_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_WallLight_Off.Name = "btn_WallLight_Off";
+            this.btn_WallLight_Off.Size = new System.Drawing.Size(55, 50);
+            this.btn_WallLight_Off.TabIndex = 29;
+            this.btn_WallLight_Off.Text = "开";
+            this.btn_WallLight_Off.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btn_RoundLight_Off
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(164, 141);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(55, 50);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "开";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_RoundLight_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_RoundLight_Off.FlatAppearance.BorderSize = 0;
+            this.btn_RoundLight_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RoundLight_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_RoundLight_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_RoundLight_Off.Location = new System.Drawing.Point(164, 141);
+            this.btn_RoundLight_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_RoundLight_Off.Name = "btn_RoundLight_Off";
+            this.btn_RoundLight_Off.Size = new System.Drawing.Size(55, 50);
+            this.btn_RoundLight_Off.TabIndex = 28;
+            this.btn_RoundLight_Off.Text = "开";
+            this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_RoundLight_On
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(99, 141);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 50);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "开";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_RoundLight_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_RoundLight_On.FlatAppearance.BorderSize = 0;
+            this.btn_RoundLight_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_RoundLight_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RoundLight_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_RoundLight_On.ForeColor = System.Drawing.Color.White;
+            this.btn_RoundLight_On.Location = new System.Drawing.Point(99, 141);
+            this.btn_RoundLight_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_RoundLight_On.Name = "btn_RoundLight_On";
+            this.btn_RoundLight_On.Size = new System.Drawing.Size(55, 50);
+            this.btn_RoundLight_On.TabIndex = 27;
+            this.btn_RoundLight_On.Text = "开";
+            this.btn_RoundLight_On.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_WallLight_On
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(99, 88);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 50);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "开";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_WallLight_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_WallLight_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_WallLight_On.FlatAppearance.BorderSize = 0;
+            this.btn_WallLight_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_WallLight_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_WallLight_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_WallLight_On.ForeColor = System.Drawing.Color.White;
+            this.btn_WallLight_On.Location = new System.Drawing.Point(99, 88);
+            this.btn_WallLight_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_WallLight_On.Name = "btn_WallLight_On";
+            this.btn_WallLight_On.Size = new System.Drawing.Size(55, 50);
+            this.btn_WallLight_On.TabIndex = 26;
+            this.btn_WallLight_On.Text = "开";
+            this.btn_WallLight_On.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_TopLight_On
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(99, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 50);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "开";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_TopLight_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_TopLight_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_TopLight_On.FlatAppearance.BorderSize = 0;
+            this.btn_TopLight_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_TopLight_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TopLight_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_TopLight_On.ForeColor = System.Drawing.Color.White;
+            this.btn_TopLight_On.Location = new System.Drawing.Point(99, 34);
+            this.btn_TopLight_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_TopLight_On.Name = "btn_TopLight_On";
+            this.btn_TopLight_On.Size = new System.Drawing.Size(55, 50);
+            this.btn_TopLight_On.TabIndex = 14;
+            this.btn_TopLight_On.Text = "开";
+            this.btn_TopLight_On.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -456,17 +456,17 @@
             // 
             // gBx_DeviceControl
             // 
-            this.gBx_DeviceControl.Controls.Add(this.button17);
-            this.gBx_DeviceControl.Controls.Add(this.button15);
-            this.gBx_DeviceControl.Controls.Add(this.button13);
-            this.gBx_DeviceControl.Controls.Add(this.button11);
-            this.gBx_DeviceControl.Controls.Add(this.button18);
-            this.gBx_DeviceControl.Controls.Add(this.button16);
-            this.gBx_DeviceControl.Controls.Add(this.button14);
-            this.gBx_DeviceControl.Controls.Add(this.button12);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Film_Up);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Windows_Off);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Camera_Off);
+            this.gBx_DeviceControl.Controls.Add(this.btn_ProjectorTwo_Off);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Film_Down);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Windows_On);
+            this.gBx_DeviceControl.Controls.Add(this.btn_Camera_On);
+            this.gBx_DeviceControl.Controls.Add(this.btn_ProjectorTwo_On);
             this.gBx_DeviceControl.Controls.Add(this.label5);
-            this.gBx_DeviceControl.Controls.Add(this.button10);
-            this.gBx_DeviceControl.Controls.Add(this.button9);
+            this.gBx_DeviceControl.Controls.Add(this.btn_ProjectorOne_Off);
+            this.gBx_DeviceControl.Controls.Add(this.btn_ProjectorOne_On);
             this.gBx_DeviceControl.Controls.Add(this.label_Windows);
             this.gBx_DeviceControl.Controls.Add(this.label_ProjectorTwo);
             this.gBx_DeviceControl.Controls.Add(this.label_Camera);
@@ -478,157 +478,157 @@
             this.gBx_DeviceControl.TabStop = false;
             this.gBx_DeviceControl.Text = "设备控制";
             // 
-            // button17
+            // btn_Film_Up
             // 
-            this.button17.BackColor = System.Drawing.Color.Transparent;
-            this.button17.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button17.ForeColor = System.Drawing.Color.White;
-            this.button17.Location = new System.Drawing.Point(206, 230);
-            this.button17.Margin = new System.Windows.Forms.Padding(0);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(70, 50);
-            this.button17.TabIndex = 39;
-            this.button17.Text = "关";
-            this.button17.UseVisualStyleBackColor = false;
+            this.btn_Film_Up.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Up.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Film_Up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Film_Up.FlatAppearance.BorderSize = 0;
+            this.btn_Film_Up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Up.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Film_Up.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Film_Up.ForeColor = System.Drawing.Color.White;
+            this.btn_Film_Up.Location = new System.Drawing.Point(206, 230);
+            this.btn_Film_Up.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Film_Up.Name = "btn_Film_Up";
+            this.btn_Film_Up.Size = new System.Drawing.Size(70, 50);
+            this.btn_Film_Up.TabIndex = 39;
+            this.btn_Film_Up.Text = "升";
+            this.btn_Film_Up.UseVisualStyleBackColor = false;
             // 
-            // button15
+            // btn_Windows_Off
             // 
-            this.button15.BackColor = System.Drawing.Color.Transparent;
-            this.button15.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(206, 178);
-            this.button15.Margin = new System.Windows.Forms.Padding(0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(70, 50);
-            this.button15.TabIndex = 38;
-            this.button15.Text = "关";
-            this.button15.UseVisualStyleBackColor = false;
+            this.btn_Windows_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Windows_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Windows_Off.FlatAppearance.BorderSize = 0;
+            this.btn_Windows_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Windows_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Windows_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_Windows_Off.Location = new System.Drawing.Point(206, 178);
+            this.btn_Windows_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Windows_Off.Name = "btn_Windows_Off";
+            this.btn_Windows_Off.Size = new System.Drawing.Size(70, 50);
+            this.btn_Windows_Off.TabIndex = 38;
+            this.btn_Windows_Off.Text = "关";
+            this.btn_Windows_Off.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btn_Camera_Off
             // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(206, 126);
-            this.button13.Margin = new System.Windows.Forms.Padding(0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(70, 50);
-            this.button13.TabIndex = 37;
-            this.button13.Text = "关";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btn_Camera_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Camera_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Camera_Off.FlatAppearance.BorderSize = 0;
+            this.btn_Camera_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Camera_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Camera_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_Camera_Off.Location = new System.Drawing.Point(206, 126);
+            this.btn_Camera_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Camera_Off.Name = "btn_Camera_Off";
+            this.btn_Camera_Off.Size = new System.Drawing.Size(70, 50);
+            this.btn_Camera_Off.TabIndex = 37;
+            this.btn_Camera_Off.Text = "关";
+            this.btn_Camera_Off.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btn_ProjectorTwo_Off
             // 
-            this.button11.BackColor = System.Drawing.Color.Transparent;
-            this.button11.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(206, 74);
-            this.button11.Margin = new System.Windows.Forms.Padding(0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(70, 50);
-            this.button11.TabIndex = 36;
-            this.button11.Text = "关";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btn_ProjectorTwo_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ProjectorTwo_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProjectorTwo_Off.FlatAppearance.BorderSize = 0;
+            this.btn_ProjectorTwo_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ProjectorTwo_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ProjectorTwo_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_ProjectorTwo_Off.Location = new System.Drawing.Point(206, 74);
+            this.btn_ProjectorTwo_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ProjectorTwo_Off.Name = "btn_ProjectorTwo_Off";
+            this.btn_ProjectorTwo_Off.Size = new System.Drawing.Size(70, 50);
+            this.btn_ProjectorTwo_Off.TabIndex = 36;
+            this.btn_ProjectorTwo_Off.Text = "关";
+            this.btn_ProjectorTwo_Off.UseVisualStyleBackColor = false;
             // 
-            // button18
+            // btn_Film_Down
             // 
-            this.button18.BackColor = System.Drawing.Color.Transparent;
-            this.button18.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button18.ForeColor = System.Drawing.Color.White;
-            this.button18.Location = new System.Drawing.Point(136, 230);
-            this.button18.Margin = new System.Windows.Forms.Padding(0);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(70, 50);
-            this.button18.TabIndex = 35;
-            this.button18.Text = "开";
-            this.button18.UseVisualStyleBackColor = false;
+            this.btn_Film_Down.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Down.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Film_Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Film_Down.FlatAppearance.BorderSize = 0;
+            this.btn_Film_Down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Down.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Film_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Film_Down.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Film_Down.ForeColor = System.Drawing.Color.White;
+            this.btn_Film_Down.Location = new System.Drawing.Point(136, 230);
+            this.btn_Film_Down.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Film_Down.Name = "btn_Film_Down";
+            this.btn_Film_Down.Size = new System.Drawing.Size(70, 50);
+            this.btn_Film_Down.TabIndex = 35;
+            this.btn_Film_Down.Text = "降";
+            this.btn_Film_Down.UseVisualStyleBackColor = false;
             // 
-            // button16
+            // btn_Windows_On
             // 
-            this.button16.BackColor = System.Drawing.Color.Transparent;
-            this.button16.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(136, 178);
-            this.button16.Margin = new System.Windows.Forms.Padding(0);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(70, 50);
-            this.button16.TabIndex = 34;
-            this.button16.Text = "开";
-            this.button16.UseVisualStyleBackColor = false;
+            this.btn_Windows_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Windows_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Windows_On.FlatAppearance.BorderSize = 0;
+            this.btn_Windows_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Windows_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Windows_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Windows_On.ForeColor = System.Drawing.Color.White;
+            this.btn_Windows_On.Location = new System.Drawing.Point(136, 178);
+            this.btn_Windows_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Windows_On.Name = "btn_Windows_On";
+            this.btn_Windows_On.Size = new System.Drawing.Size(70, 50);
+            this.btn_Windows_On.TabIndex = 34;
+            this.btn_Windows_On.Text = "开";
+            this.btn_Windows_On.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btn_Camera_On
             // 
-            this.button14.BackColor = System.Drawing.Color.Transparent;
-            this.button14.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(136, 126);
-            this.button14.Margin = new System.Windows.Forms.Padding(0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(70, 50);
-            this.button14.TabIndex = 33;
-            this.button14.Text = "开";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btn_Camera_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_Camera_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Camera_On.FlatAppearance.BorderSize = 0;
+            this.btn_Camera_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Camera_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Camera_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Camera_On.ForeColor = System.Drawing.Color.White;
+            this.btn_Camera_On.Location = new System.Drawing.Point(136, 126);
+            this.btn_Camera_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Camera_On.Name = "btn_Camera_On";
+            this.btn_Camera_On.Size = new System.Drawing.Size(70, 50);
+            this.btn_Camera_On.TabIndex = 33;
+            this.btn_Camera_On.Text = "开";
+            this.btn_Camera_On.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // btn_ProjectorTwo_On
             // 
-            this.button12.BackColor = System.Drawing.Color.Transparent;
-            this.button12.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(136, 74);
-            this.button12.Margin = new System.Windows.Forms.Padding(0);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(70, 50);
-            this.button12.TabIndex = 32;
-            this.button12.Text = "开";
-            this.button12.UseVisualStyleBackColor = false;
+            this.btn_ProjectorTwo_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ProjectorTwo_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProjectorTwo_On.FlatAppearance.BorderSize = 0;
+            this.btn_ProjectorTwo_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorTwo_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ProjectorTwo_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ProjectorTwo_On.ForeColor = System.Drawing.Color.White;
+            this.btn_ProjectorTwo_On.Location = new System.Drawing.Point(136, 74);
+            this.btn_ProjectorTwo_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ProjectorTwo_On.Name = "btn_ProjectorTwo_On";
+            this.btn_ProjectorTwo_On.Size = new System.Drawing.Size(70, 50);
+            this.btn_ProjectorTwo_On.TabIndex = 32;
+            this.btn_ProjectorTwo_On.Text = "开";
+            this.btn_ProjectorTwo_On.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -640,43 +640,43 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "幕布:";
             // 
-            // button10
+            // btn_ProjectorOne_Off
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(206, 22);
-            this.button10.Margin = new System.Windows.Forms.Padding(0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(70, 50);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "关";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btn_ProjectorOne_Off.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_Off.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ProjectorOne_Off.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProjectorOne_Off.FlatAppearance.BorderSize = 0;
+            this.btn_ProjectorOne_Off.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_Off.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ProjectorOne_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ProjectorOne_Off.ForeColor = System.Drawing.Color.White;
+            this.btn_ProjectorOne_Off.Location = new System.Drawing.Point(206, 22);
+            this.btn_ProjectorOne_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ProjectorOne_Off.Name = "btn_ProjectorOne_Off";
+            this.btn_ProjectorOne_Off.Size = new System.Drawing.Size(70, 50);
+            this.btn_ProjectorOne_Off.TabIndex = 22;
+            this.btn_ProjectorOne_Off.Text = "关";
+            this.btn_ProjectorOne_Off.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btn_ProjectorOne_On
             // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(136, 22);
-            this.button9.Margin = new System.Windows.Forms.Padding(0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 50);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "开";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btn_ProjectorOne_On.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_On.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ProjectorOne_On.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ProjectorOne_On.FlatAppearance.BorderSize = 0;
+            this.btn_ProjectorOne_On.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_On.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ProjectorOne_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ProjectorOne_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ProjectorOne_On.ForeColor = System.Drawing.Color.White;
+            this.btn_ProjectorOne_On.Location = new System.Drawing.Point(136, 22);
+            this.btn_ProjectorOne_On.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ProjectorOne_On.Name = "btn_ProjectorOne_On";
+            this.btn_ProjectorOne_On.Size = new System.Drawing.Size(70, 50);
+            this.btn_ProjectorOne_On.TabIndex = 21;
+            this.btn_ProjectorOne_On.Text = "开";
+            this.btn_ProjectorOne_On.UseVisualStyleBackColor = false;
             // 
             // ConsultationRoomOne
             // 
@@ -721,28 +721,28 @@
         private System.Windows.Forms.Label label_Windows;
         private System.Windows.Forms.Label label_ProjectorTwo;
         private System.Windows.Forms.Label label_ProjectorOne;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_TopLight_On;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_TopLight_Off;
+        private System.Windows.Forms.Button btn_WallLight_Off;
+        private System.Windows.Forms.Button btn_RoundLight_Off;
+        private System.Windows.Forms.Button btn_RoundLight_On;
+        private System.Windows.Forms.Button btn_WallLight_On;
         private System.Windows.Forms.GroupBox gBx_DeviceControl;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_AllLights_Off;
+        private System.Windows.Forms.Button btn_AllLights_On;
+        private System.Windows.Forms.Button btn_ProjectorOne_Off;
+        private System.Windows.Forms.Button btn_ProjectorOne_On;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btn_Film_Down;
+        private System.Windows.Forms.Button btn_Windows_On;
+        private System.Windows.Forms.Button btn_Camera_On;
+        private System.Windows.Forms.Button btn_ProjectorTwo_On;
+        private System.Windows.Forms.Button btn_Film_Up;
+        private System.Windows.Forms.Button btn_Windows_Off;
+        private System.Windows.Forms.Button btn_Camera_Off;
+        private System.Windows.Forms.Button btn_ProjectorTwo_Off;
     }
 }

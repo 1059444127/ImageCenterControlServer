@@ -32,15 +32,15 @@
             this.btn_BUGReport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_BUGReport = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.richtxt_EmailContent = new System.Windows.Forms.RichTextBox();
-            this.txt_EmailTitle = new System.Windows.Forms.TextBox();
-            this.txt_EmailFilePath = new System.Windows.Forms.TextBox();
-            this.btn_BUGReportBack = new System.Windows.Forms.Button();
             this.btn_BUGReportSend = new System.Windows.Forms.Button();
+            this.btn_BUGReportBack = new System.Windows.Forms.Button();
+            this.txt_EmailFilePath = new System.Windows.Forms.TextBox();
+            this.txt_EmailTitle = new System.Windows.Forms.TextBox();
+            this.richtxt_EmailContent = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_BUGReport.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,64 +100,24 @@
             this.panel_BUGReport.Size = new System.Drawing.Size(800, 500);
             this.panel_BUGReport.TabIndex = 4;
             // 
-            // label2
+            // btn_BUGReportSend
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(336, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "BUG反馈";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "邮件主题：";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "日志附件：";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "邮件正文：";
-            // 
-            // richtxt_EmailContent
-            // 
-            this.richtxt_EmailContent.Location = new System.Drawing.Point(143, 142);
-            this.richtxt_EmailContent.Name = "richtxt_EmailContent";
-            this.richtxt_EmailContent.Size = new System.Drawing.Size(572, 236);
-            this.richtxt_EmailContent.TabIndex = 4;
-            this.richtxt_EmailContent.Text = "";
-            // 
-            // txt_EmailTitle
-            // 
-            this.txt_EmailTitle.Location = new System.Drawing.Point(143, 78);
-            this.txt_EmailTitle.Name = "txt_EmailTitle";
-            this.txt_EmailTitle.Size = new System.Drawing.Size(164, 21);
-            this.txt_EmailTitle.TabIndex = 5;
-            // 
-            // txt_EmailFilePath
-            // 
-            this.txt_EmailFilePath.Location = new System.Drawing.Point(143, 110);
-            this.txt_EmailFilePath.Name = "txt_EmailFilePath";
-            this.txt_EmailFilePath.Size = new System.Drawing.Size(164, 21);
-            this.txt_EmailFilePath.TabIndex = 6;
+            this.btn_BUGReportSend.BackColor = System.Drawing.Color.Transparent;
+            this.btn_BUGReportSend.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_BUGReportSend.FlatAppearance.BorderSize = 0;
+            this.btn_BUGReportSend.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_BUGReportSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_BUGReportSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BUGReportSend.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_BUGReportSend.ForeColor = System.Drawing.Color.White;
+            this.btn_BUGReportSend.Location = new System.Drawing.Point(605, 410);
+            this.btn_BUGReportSend.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_BUGReportSend.Name = "btn_BUGReportSend";
+            this.btn_BUGReportSend.Size = new System.Drawing.Size(110, 50);
+            this.btn_BUGReportSend.TabIndex = 8;
+            this.btn_BUGReportSend.Text = "发送";
+            this.btn_BUGReportSend.UseVisualStyleBackColor = false;
+            this.btn_BUGReportSend.Click += new System.EventHandler(this.btn_BUGReportSend_Click);
             // 
             // btn_BUGReportBack
             // 
@@ -178,24 +138,64 @@
             this.btn_BUGReportBack.UseVisualStyleBackColor = false;
             this.btn_BUGReportBack.Click += new System.EventHandler(this.btn_BUGReportBack_Click);
             // 
-            // btn_BUGReportSend
+            // txt_EmailFilePath
             // 
-            this.btn_BUGReportSend.BackColor = System.Drawing.Color.Transparent;
-            this.btn_BUGReportSend.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_BUGReportSend.FlatAppearance.BorderSize = 0;
-            this.btn_BUGReportSend.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_BUGReportSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_BUGReportSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BUGReportSend.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_BUGReportSend.ForeColor = System.Drawing.Color.White;
-            this.btn_BUGReportSend.Location = new System.Drawing.Point(605, 410);
-            this.btn_BUGReportSend.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_BUGReportSend.Name = "btn_BUGReportSend";
-            this.btn_BUGReportSend.Size = new System.Drawing.Size(110, 50);
-            this.btn_BUGReportSend.TabIndex = 8;
-            this.btn_BUGReportSend.Text = "发送";
-            this.btn_BUGReportSend.UseVisualStyleBackColor = false;
-            this.btn_BUGReportSend.Click += new System.EventHandler(this.btn_BUGReportSend_Click);
+            this.txt_EmailFilePath.Location = new System.Drawing.Point(143, 110);
+            this.txt_EmailFilePath.Name = "txt_EmailFilePath";
+            this.txt_EmailFilePath.Size = new System.Drawing.Size(164, 21);
+            this.txt_EmailFilePath.TabIndex = 6;
+            // 
+            // txt_EmailTitle
+            // 
+            this.txt_EmailTitle.Location = new System.Drawing.Point(143, 78);
+            this.txt_EmailTitle.Name = "txt_EmailTitle";
+            this.txt_EmailTitle.Size = new System.Drawing.Size(164, 21);
+            this.txt_EmailTitle.TabIndex = 5;
+            // 
+            // richtxt_EmailContent
+            // 
+            this.richtxt_EmailContent.Location = new System.Drawing.Point(143, 142);
+            this.richtxt_EmailContent.Name = "richtxt_EmailContent";
+            this.richtxt_EmailContent.Size = new System.Drawing.Size(572, 236);
+            this.richtxt_EmailContent.TabIndex = 4;
+            this.richtxt_EmailContent.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(72, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "邮件正文：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "日志附件：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "邮件主题：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(336, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "BUG反馈";
             // 
             // HospitalInformation
             // 
