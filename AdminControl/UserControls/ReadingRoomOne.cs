@@ -112,7 +112,7 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Online", "阅片室1控制器");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室1控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvEnviroumentData);
@@ -124,6 +124,10 @@ namespace AdminControl
             ControlRefresh.RefreshButtons(gBx_DeviceControl, true);
         }
 
+        /// <summary>
+        /// 接收环境数据
+        /// </summary>
+        /// <param name="Connection"></param>
         private void RecvEnviroumentData(object Connection)
         {
             Socket Socket = Connection as Socket;
@@ -140,7 +144,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("阅片室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Offline", "阅片室1控制器");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ControlConnect = false;
@@ -157,7 +161,9 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData);
 
                 /*
-                状态解析
+                数据解析
+                刷新控件
+                数据打包
                 */
 
                 if (is_ClientConnect)
@@ -180,7 +186,7 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ClientStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Online", "阅片室1客户端");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室1客户端");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
@@ -208,7 +214,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("阅片室1客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_status = \"{0}\" where client_name = \"{1}\";", "Offline", "阅片室1客户端");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1客户端");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ClientConnect = false;
@@ -221,31 +227,13 @@ namespace AdminControl
 
                 /*
                 指令解析
+                指令打包
                 */
 
                 if (is_ControlConnect)
                 {
                     SendControlCommand(Command);
                 }
-            }
-        }
-
-        #region 发送控制指令
-        /// <summary>
-        /// 发送控制指令
-        /// </summary>
-        /// <param name="CMD"></param>
-        private void SendControlCommand(string CMD)
-        {
-            try
-            {
-                Data.SendData(ControlSocket, 3000, CMD);
-            }
-            catch (Exception ex)
-            {
-                frm_Main.Log.WriteLog("阅片室1控制指令发送失败，控制端不在线");
-                MessageBox.Show(ex.Message, "控制端已离线");
-                is_ControlConnect = false;
             }
         }
         #endregion
@@ -263,13 +251,39 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("环境数据发送失败");
-                MessageBox.Show(ex.Message, "客户端已离线");
+                frm_Main.Log.WriteLog("阅片室1环境数据发送失败");
+                MessageBox.Show(ex.Message, "阅片室1客户端已离线");
+
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1客户端");
+                frm_Main.DataBase.UpdateTable(SQLString);
+
                 is_ClientConnect = false;
             }
         }
         #endregion
 
+        #region 发送控制指令
+        /// <summary>
+        /// 发送控制指令
+        /// </summary>
+        /// <param name="CMD"></param>
+        private void SendControlCommand(string CMD)
+        {
+            try
+            {
+                Data.SendData(ControlSocket, 3000, CMD);
+            }
+            catch (Exception ex)
+            {
+                frm_Main.Log.WriteLog("阅片室1控制指令发送失败，控制端不在线");
+                MessageBox.Show(ex.Message, "阅片室1控制端已离线");
+
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
+                frm_Main.DataBase.UpdateTable(SQLString);
+
+                is_ControlConnect = false;
+            }
+        }
         #endregion
     }
 }
