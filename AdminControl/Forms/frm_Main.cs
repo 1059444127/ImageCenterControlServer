@@ -13,7 +13,6 @@ using System.Net.Sockets;
 using System.IO;
 
 using LogService;
-using DataHandleService;
 using CommandHandleService;
 using DataEncryptService;
 using DataBaseService;
@@ -60,11 +59,6 @@ namespace AdminControl
         /// 日志记录实例
         /// </summary>
         public LogHelper Log;
-
-        /// <summary>
-        /// 数据解析实例
-        /// </summary>
-        public DataHandleHelper DataHandle;
 
         /// <summary>
         /// 数据库实例
@@ -242,9 +236,6 @@ namespace AdminControl
             //日志服务
             StartLog();
 
-            //数据解析服务
-            StartDataHandle();
-
             //指令解析服务
             StartCommandHandle();
 
@@ -287,16 +278,6 @@ namespace AdminControl
                 MessageBox.Show(ex.Message, "日志服务初始化失败");
                 System.Environment.Exit(0);
             }
-        }
-        #endregion
-
-        #region 启动数据解析服务
-        /// <summary>
-        /// 数据解析服务
-        /// </summary>
-        private void StartDataHandle()
-        {
-            DataHandle = new DataHandleHelper();
         }
         #endregion
 
