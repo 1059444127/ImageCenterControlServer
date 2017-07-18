@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("AdminControl")]
-[assembly: AssemblyDescription("影像中心总控服务器")]
+[assembly: AssemblyTitle("影像中心总控服务器")]
+[assembly: AssemblyDescription("AdminControl")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("上海实和智能电子科技有限公司")]
-[assembly: AssemblyProduct("影像中心控制系统")]
-[assembly: AssemblyCopyright("Copyright ©  2017 实和智能")]
+[assembly: AssemblyProduct("ImageCenter")]
+[assembly: AssemblyCopyright("Copyright © 实和智能 2017")]
 [assembly: AssemblyTrademark("实和智能")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.1")]
-[assembly: AssemblyFileVersion("1.0.21.1")]
+[assembly: AssemblyVersion("1.17.07.18")]
+[assembly: AssemblyFileVersion("1.17.07.18")]

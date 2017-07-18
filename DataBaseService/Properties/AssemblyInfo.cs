@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("DataBaseService")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("影像中心服务器数据库操作服务")]
+[assembly: AssemblyDescription("DataBaseService")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataBaseService")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("上海实和智能电子科技有限公司")]
+[assembly: AssemblyProduct("ImageCenter")]
+[assembly: AssemblyCopyright("Copyright © 实和智能 2017")]
+[assembly: AssemblyTrademark("实和智能")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.17.07.18")]
+[assembly: AssemblyFileVersion("1.17.07.18")]
