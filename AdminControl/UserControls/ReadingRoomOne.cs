@@ -93,7 +93,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ModeYP_Click(object sender, EventArgs e)
         {
-
+            ModeChange(1);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ModeXX_Click(object sender, EventArgs e)
         {
-
+            ModeChange(2);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ModeLK_Click(object sender, EventArgs e)
         {
-
+            ModeChange(3);
         }
         #endregion
 

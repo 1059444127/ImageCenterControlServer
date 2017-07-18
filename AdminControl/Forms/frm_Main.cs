@@ -38,7 +38,7 @@ namespace AdminControl
         /// <summary>
         /// 客户端类型配置
         /// </summary>
-        private string[] ClientTypeConfig = new string[4];
+        private string[] ClientTypeConfig = new string[8];
 
         /// <summary>
         /// 数据库配置信息
@@ -463,7 +463,7 @@ namespace AdminControl
             try
             {
                 StreamReader Reader = new StreamReader(Application.StartupPath + "\\Config\\ClientTypeConfig.bin");
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     ClientTypeConfig[i] = Reader.ReadLine().Split(':')[1];
                 }
@@ -615,35 +615,67 @@ namespace AdminControl
         {
             if (ClientIP.Equals(ClientTypeConfig[0]))
             {
-                //阅片室控制端连接
-                Log.WriteLog(string.Format("阅片室控制端{0}连接成功", ClientIP));
+                //阅片室1控制端连接
+                Log.WriteLog(string.Format("阅片室1控制端{0}连接成功", ClientIP));
 
                 //启动数据接收线程
                 YPOne.RecvEnviroumentDataThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[1]))
             {
-                //阅片室客户端连接
-                Log.WriteLog(string.Format("阅片室客户端{0}连接成功", ClientIP));
+                //阅片室1客户端连接
+                Log.WriteLog(string.Format("阅片室1客户端{0}连接成功", ClientIP));
 
                 //启动指令接收线程
-
+                YPOne.RecvClientCommandThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[2]))
             {
-                //会诊室控制端连接
-                Log.WriteLog(string.Format("会诊室控制端{0}连接成功", ClientIP));
+                //会诊室1控制端连接
+                Log.WriteLog(string.Format("会诊室1控制端{0}连接成功", ClientIP));
 
                 //启动设备状态接收线程
                 HZOne.RecvDeviceStatusThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[3]))
             {
-                //会诊室客户端连接
-                Log.WriteLog(string.Format("会诊室客户端{0}连接成功", ClientIP));
+                //会诊室1客户端连接
+                Log.WriteLog(string.Format("会诊室1客户端{0}连接成功", ClientIP));
 
                 //启动客户端指令接收线程
                 HZOne.RecvClientCommandThreadStart(UserConnection);
+            }
+            else if (ClientIP.Equals(ClientTypeConfig[4]))
+            {
+                //阅片室2控制端连接
+                Log.WriteLog(string.Format("阅片室2控制端{0}连接成功", ClientIP));
+
+                //启动数据接收线程
+                YPTwo.RecvEnviroumentDataThreadStart(UserConnection);
+            }
+            else if (ClientIP.Equals(ClientTypeConfig[5]))
+            {
+                //阅片室2客户端连接
+                Log.WriteLog(string.Format("阅片室2客户端{0}连接成功", ClientIP));
+
+                //启动指令接收线程
+                YPTwo.RecvClientCommandThreadStart(UserConnection);
+            }
+            else if (ClientIP.Equals(ClientTypeConfig[6]))
+            {
+                //会诊室2控制端连接
+                Log.WriteLog(string.Format("会诊室2控制端{0}连接成功", ClientIP));
+
+                //启动设备状态接收线程
+                HZTwo.RecvDeviceStatusThreadStart(UserConnection);
+            }
+            else if (ClientIP.Equals(ClientTypeConfig[7]))
+            {
+                //会诊室2客户端连接
+                Log.WriteLog(string.Format("会诊室2客户端{0}连接成功", ClientIP));
+
+                //启动客户端指令接收线程
+                HZTwo.RecvClientCommandThreadStart(UserConnection);
             }
             else
             {
