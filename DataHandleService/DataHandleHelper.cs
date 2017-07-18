@@ -20,9 +20,18 @@ namespace DataHandleService
         {
             string Temp = string.Empty;
 
-            //数据处理
+            string[] DataStr = Data.Split(' ');
 
-            return Temp;
+            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+            {
+                Temp = "ERROR";
+                return Temp;
+            }
+
+            //数据处理
+            Temp = Data.Split(' ')[3].Split('=')[1];
+
+            return Temp + " ℃";
         }
 
         /// <summary>
@@ -34,9 +43,18 @@ namespace DataHandleService
         {
             string Hum = string.Empty;
 
-            //数据处理
+            string[] DataStr = Data.Split(' ');
 
-            return Hum;
+            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+            {
+                Hum = "ERROR";
+                return Hum;
+            }
+
+            //数据处理
+            Hum = Data.Split(' ')[4].Split('=')[1];
+
+            return Hum + " %";
         }
 
         /// <summary>
@@ -48,9 +66,18 @@ namespace DataHandleService
         {
             string Light = string.Empty;
 
-            //数据处理
+            string[] DataStr = Data.Split(' ');
 
-            return Light;
+            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+            {
+                Light = "ERROR";
+                return Light;
+            }
+
+            //数据处理
+            Light = Data.Split(' ')[5].Split('=')[1];
+
+            return Light + " LUX";
         }
 
         /// <summary>
@@ -62,9 +89,18 @@ namespace DataHandleService
         {
             string Noise = string.Empty;
 
-            //数据处理
+            string[] DataStr = Data.Split(' ');
 
-            return Noise;
+            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+            {
+                Noise = "ERROR";
+                return Noise;
+            }
+
+            //数据处理
+            Noise = Data.Split(' ')[6].Split('=')[1];
+
+            return Noise + " DB";
         }
     }
 }

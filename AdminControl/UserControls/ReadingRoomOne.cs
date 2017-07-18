@@ -181,6 +181,12 @@ namespace AdminControl
                 Light = DataHandle.GetHouseLight(EnviroumentData);
                 Noise = DataHandle.GetHouseNoise(EnviroumentData);
 
+                if (Temp.Contains("ERROR") || Hum.Contains("ERROR") || Light.Contains("ERROR") || Noise.Contains("ERROR"))
+                {
+                    frm_Main.Log.WriteLog("接受到错误环境数据");
+                    continue;
+                }
+
                 /*
                 刷新控件
                 */
