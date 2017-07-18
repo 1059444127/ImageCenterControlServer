@@ -168,10 +168,15 @@ namespace AdminControl
                     ControlRefresh.RefreshButtons(gBx_LightsControl, false);
                     ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
+                    ControlRefresh.RefreshLabelStatus(label_Temp, "初始化...", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Hum, "初始化...", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Light, "初始化...", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Noise, "初始化...", Color.Black);
+
                     break;
                 }
 
-                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData);
+                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n","\0"));
 
                 /*
                 数据解析

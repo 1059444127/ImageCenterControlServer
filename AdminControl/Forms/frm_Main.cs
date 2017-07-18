@@ -619,7 +619,7 @@ namespace AdminControl
                 Log.WriteLog(string.Format("阅片室控制端{0}连接成功", ClientIP));
 
                 //启动数据接收线程
-
+                YPOne.RecvEnviroumentDataThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[1]))
             {
