@@ -208,7 +208,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n", "\0"));
+                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n", ""));
 
                 /*
                 数据解析
