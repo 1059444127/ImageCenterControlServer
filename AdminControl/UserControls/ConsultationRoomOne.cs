@@ -116,6 +116,56 @@ namespace AdminControl
         {
             ModeChange(4);
         }
+
+        private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Camera_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Camera_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Windows_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Windows_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Film_Down_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Film_Up_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region 初始化
@@ -319,6 +369,8 @@ namespace AdminControl
         }
         #endregion
 
+        #region 设备控制
+
         #region 模式切换
         /// <summary>
         /// 模式切换
@@ -344,6 +396,32 @@ namespace AdminControl
                     break;
             }
         }
+        #endregion
+
+        #region 灯光控制
+
+        #endregion
+
+        #region 矩阵切换
+
+        #endregion
+
+        #region 投影机控制
+
+        #endregion
+
+        #region 镜头控制
+
+        #endregion
+
+        #region 窗帘控制
+
+        #endregion
+
+        #region 幕布控制
+
+        #endregion
+
         #endregion
     }
 }
