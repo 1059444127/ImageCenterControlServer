@@ -177,6 +177,8 @@ namespace AdminControl
             string Light = string.Empty;
             string Noise = string.Empty;
 
+            string SQLString = string.Empty;
+
             while (true)
             {
                 try
@@ -187,7 +189,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("阅片室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
+                    SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ControlConnect = false;
@@ -206,7 +208,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n","\0"));
+                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n", "\0"));
 
                 /*
                 数据解析
@@ -216,11 +218,16 @@ namespace AdminControl
                 Light = DataHandle.GetHouseLight(EnviroumentData);
                 Noise = DataHandle.GetHouseNoise(EnviroumentData);
 
+                //检查数据
                 if (Temp.Contains("ERROR") || Hum.Contains("ERROR") || Light.Contains("ERROR") || Noise.Contains("ERROR"))
                 {
-                    frm_Main.Log.WriteLog("接受到错误环境数据");
+                    frm_Main.Log.WriteLog("接受到错误环境数据，已舍弃");
                     continue;
                 }
+
+                //修改数据库
+                SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}\", room_hum = \"{1}\", room_light = \"{2}\",room_noise = \"{3}\" where room_name = \"{4}\";", Temp, Hum, Light, Noise, "阅片室1");
+                frm_Main.DataBase.UpdateTable(SQLString);
 
                 /*
                 刷新控件

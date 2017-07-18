@@ -12,15 +12,6 @@ namespace AdminControl
     class DeviceInformation
     {
         /// <summary>
-        /// 构造器
-        /// </summary>
-        /// <param name="ConfigPath"></param>
-        public DeviceInformation(string ConfigPath)
-        {
-
-        }
-
-        /// <summary>
         /// 矩阵信息结构体
         /// </summary>
         public struct Mutrix
