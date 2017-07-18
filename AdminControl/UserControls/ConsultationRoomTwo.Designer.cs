@@ -89,6 +89,7 @@
             this.btn_Windows_Off.TabIndex = 38;
             this.btn_Windows_Off.Text = "关";
             this.btn_Windows_Off.UseVisualStyleBackColor = false;
+            this.btn_Windows_Off.Click += new System.EventHandler(this.btn_Windows_Off_Click);
             // 
             // btn_Camera_Off
             // 
@@ -108,6 +109,7 @@
             this.btn_Camera_Off.TabIndex = 37;
             this.btn_Camera_Off.Text = "关";
             this.btn_Camera_Off.UseVisualStyleBackColor = false;
+            this.btn_Camera_Off.Click += new System.EventHandler(this.btn_Camera_Off_Click);
             // 
             // btn_ProjectorTwo_Off
             // 
@@ -127,6 +129,7 @@
             this.btn_ProjectorTwo_Off.TabIndex = 36;
             this.btn_ProjectorTwo_Off.Text = "关";
             this.btn_ProjectorTwo_Off.UseVisualStyleBackColor = false;
+            this.btn_ProjectorTwo_Off.Click += new System.EventHandler(this.btn_ProjectorTwo_Off_Click);
             // 
             // btn_Film_Down
             // 
@@ -146,6 +149,7 @@
             this.btn_Film_Down.TabIndex = 35;
             this.btn_Film_Down.Text = "降";
             this.btn_Film_Down.UseVisualStyleBackColor = false;
+            this.btn_Film_Down.Click += new System.EventHandler(this.btn_Film_Down_Click);
             // 
             // btn_Windows_On
             // 
@@ -165,6 +169,7 @@
             this.btn_Windows_On.TabIndex = 34;
             this.btn_Windows_On.Text = "开";
             this.btn_Windows_On.UseVisualStyleBackColor = false;
+            this.btn_Windows_On.Click += new System.EventHandler(this.btn_Windows_On_Click);
             // 
             // btn_Camera_On
             // 
@@ -184,6 +189,7 @@
             this.btn_Camera_On.TabIndex = 33;
             this.btn_Camera_On.Text = "开";
             this.btn_Camera_On.UseVisualStyleBackColor = false;
+            this.btn_Camera_On.Click += new System.EventHandler(this.btn_Camera_On_Click);
             // 
             // btn_ProjectorTwo_On
             // 
@@ -203,6 +209,7 @@
             this.btn_ProjectorTwo_On.TabIndex = 32;
             this.btn_ProjectorTwo_On.Text = "开";
             this.btn_ProjectorTwo_On.UseVisualStyleBackColor = false;
+            this.btn_ProjectorTwo_On.Click += new System.EventHandler(this.btn_ProjectorTwo_On_Click);
             // 
             // label5
             // 
@@ -242,6 +249,7 @@
             this.btn_Film_Up.TabIndex = 39;
             this.btn_Film_Up.Text = "升";
             this.btn_Film_Up.UseVisualStyleBackColor = false;
+            this.btn_Film_Up.Click += new System.EventHandler(this.btn_Film_Up_Click);
             // 
             // btn_ProjectorOne_Off
             // 
@@ -261,6 +269,7 @@
             this.btn_ProjectorOne_Off.TabIndex = 22;
             this.btn_ProjectorOne_Off.Text = "关";
             this.btn_ProjectorOne_Off.UseVisualStyleBackColor = false;
+            this.btn_ProjectorOne_Off.Click += new System.EventHandler(this.btn_ProjectorOne_Off_Click);
             // 
             // label_Windows
             // 
@@ -344,6 +353,7 @@
             this.btn_ProjectorOne_On.TabIndex = 21;
             this.btn_ProjectorOne_On.Text = "开";
             this.btn_ProjectorOne_On.UseVisualStyleBackColor = false;
+            this.btn_ProjectorOne_On.Click += new System.EventHandler(this.btn_ProjectorOne_On_Click);
             // 
             // label_ClientStatus
             // 
@@ -504,6 +514,7 @@
             this.btn_AllLights_Off.TabIndex = 31;
             this.btn_AllLights_Off.Text = "全关";
             this.btn_AllLights_Off.UseVisualStyleBackColor = false;
+            this.btn_AllLights_Off.Click += new System.EventHandler(this.btn_AllLights_Off_Click);
             // 
             // btn_AllLights_On
             // 
@@ -523,6 +534,7 @@
             this.btn_AllLights_On.TabIndex = 5;
             this.btn_AllLights_On.Text = "全开";
             this.btn_AllLights_On.UseVisualStyleBackColor = false;
+            this.btn_AllLights_On.Click += new System.EventHandler(this.btn_AllLights_On_Click);
             // 
             // btn_TopLight_Off
             // 
@@ -542,6 +554,7 @@
             this.btn_TopLight_Off.TabIndex = 30;
             this.btn_TopLight_Off.Text = "关";
             this.btn_TopLight_Off.UseVisualStyleBackColor = false;
+            this.btn_TopLight_Off.Click += new System.EventHandler(this.btn_TopLight_Off_Click);
             // 
             // btn_WallLight_Off
             // 
@@ -561,6 +574,7 @@
             this.btn_WallLight_Off.TabIndex = 29;
             this.btn_WallLight_Off.Text = "关";
             this.btn_WallLight_Off.UseVisualStyleBackColor = false;
+            this.btn_WallLight_Off.Click += new System.EventHandler(this.btn_WallLight_Off_Click);
             // 
             // btn_RoundLight_Off
             // 
@@ -580,6 +594,7 @@
             this.btn_RoundLight_Off.TabIndex = 28;
             this.btn_RoundLight_Off.Text = "关";
             this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_Off.Click += new System.EventHandler(this.btn_RoundLight_Off_Click);
             // 
             // btn_RoundLight_On
             // 
@@ -599,6 +614,7 @@
             this.btn_RoundLight_On.TabIndex = 27;
             this.btn_RoundLight_On.Text = "开";
             this.btn_RoundLight_On.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_On.Click += new System.EventHandler(this.btn_RoundLight_On_Click);
             // 
             // btn_WallLight_On
             // 
@@ -618,6 +634,7 @@
             this.btn_WallLight_On.TabIndex = 26;
             this.btn_WallLight_On.Text = "开";
             this.btn_WallLight_On.UseVisualStyleBackColor = false;
+            this.btn_WallLight_On.Click += new System.EventHandler(this.btn_WallLight_On_Click);
             // 
             // btn_TopLight_On
             // 
@@ -637,6 +654,7 @@
             this.btn_TopLight_On.TabIndex = 14;
             this.btn_TopLight_On.Text = "开";
             this.btn_TopLight_On.UseVisualStyleBackColor = false;
+            this.btn_TopLight_On.Click += new System.EventHandler(this.btn_TopLight_On_Click);
             // 
             // label1
             // 

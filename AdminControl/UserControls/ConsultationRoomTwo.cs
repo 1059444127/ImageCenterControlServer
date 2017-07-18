@@ -117,6 +117,96 @@ namespace AdminControl
         {
 
         }
+
+        private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Windows_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Windows_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Film_Down_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Film_Up_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Camera_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Camera_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TopLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TopLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_WallLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_WallLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_RoundLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_RoundLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AllLights_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AllLights_Off_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region 初始化
@@ -149,7 +239,7 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "会诊室2控制器");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "会诊室1控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
@@ -179,9 +269,9 @@ namespace AdminControl
                 }
                 catch (Exception)
                 {
-                    frm_Main.Log.WriteLog(string.Format("会诊室2控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                    frm_Main.Log.WriteLog(string.Format("会诊室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室2控制器");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ControlConnect = false;
@@ -195,7 +285,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("会诊室2设备状态：" + Status);
+                frm_Main.Log.WriteLog("会诊室1设备状态：" + Status);
 
                 /*
                 状态解析
@@ -221,7 +311,7 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ClientStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "会诊室2客户端");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "会诊室1客户端");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
@@ -247,9 +337,9 @@ namespace AdminControl
                 }
                 catch (Exception)
                 {
-                    frm_Main.Log.WriteLog(string.Format("会诊室2客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                    frm_Main.Log.WriteLog(string.Format("会诊室1客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室2客户端");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1客户端");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ClientConnect = false;
@@ -258,7 +348,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("接收到会诊室2客户端指令：" + Command);
+                frm_Main.Log.WriteLog("接收到会诊室1客户端指令：" + Command);
 
                 /*
                 指令解析
@@ -285,10 +375,10 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("会诊室2控制指令发送失败，控制端不在线");
+                frm_Main.Log.WriteLog("会诊室1控制指令发送失败，控制端不在线");
                 MessageBox.Show(ex.Message, "控制端已离线");
 
-                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室2控制器");
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
                 frm_Main.DataBase.UpdateTable(SQLString);
 
                 is_ControlConnect = false;
@@ -309,16 +399,18 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("会诊室2设备状态发送失败");
-                MessageBox.Show(ex.Message, "会诊室2客户端已离线");
+                frm_Main.Log.WriteLog("会诊室1设备状态发送失败");
+                MessageBox.Show(ex.Message, "会诊室1客户端已离线");
 
-                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室2客户端");
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1客户端");
                 frm_Main.DataBase.UpdateTable(SQLString);
 
                 is_ClientConnect = false;
             }
         }
         #endregion
+
+        #region 设备控制
 
         #region 模式切换
         /// <summary>
@@ -345,6 +437,32 @@ namespace AdminControl
                     break;
             }
         }
+        #endregion
+
+        #region 灯光控制
+
+        #endregion
+
+        #region 矩阵切换
+
+        #endregion
+
+        #region 投影机控制
+
+        #endregion
+
+        #region 镜头控制
+
+        #endregion
+
+        #region 窗帘控制
+
+        #endregion
+
+        #region 幕布控制
+
+        #endregion
+
         #endregion
     }
 }
