@@ -11,6 +11,7 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using DataTransferService;
+using DataHandleService;
 
 namespace AdminControl
 {
@@ -34,6 +35,11 @@ namespace AdminControl
         /// 数据传输服务实例
         /// </summary>
         private DataTransfer Data;
+
+        /// <summary>
+        /// 数据解析服务实例
+        /// </summary>
+        private DataHandleHelper DataHandle;
 
         /// <summary>
         /// 控件刷新服务实例
@@ -92,6 +98,8 @@ namespace AdminControl
 
             Data = new DataTransfer();
 
+            DataHandle = new DataHandleHelper();
+
             ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
@@ -134,6 +142,11 @@ namespace AdminControl
 
             string EnviroumentData = null;
 
+            string Temp = string.Empty;
+            string Hum = string.Empty;
+            string Light = string.Empty;
+            string Noise = string.Empty;
+
             while (true)
             {
                 try
@@ -162,10 +175,27 @@ namespace AdminControl
 
                 /*
                 数据解析
+                */
+                Temp = DataHandle.GetHouseTemp(EnviroumentData);
+                Hum = DataHandle.GetHouseHum(EnviroumentData);
+                Light = DataHandle.GetHouseLight(EnviroumentData);
+                Noise = DataHandle.GetHouseNoise(EnviroumentData);
+
+                /*
                 刷新控件
+                */
+                ControlRefresh.RefreshLabelStatus(label_Temp, Temp, Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_Hum, Hum, Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_Light, Light, Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_Noise, Noise, Color.Black);
+
+                /*
                 数据打包
                 */
 
+                /*
+                数据发送 
+                */
                 if (is_ClientConnect)
                 {
                     SendEnviroumentData(EnviroumentData);
