@@ -316,6 +316,10 @@ namespace AdminControl
         }
         #endregion
 
+        #region 读取配置文件
+
+        #endregion
+
         #region 接收设备状态
         /// <summary>
         /// 接收设备状态线程启动
