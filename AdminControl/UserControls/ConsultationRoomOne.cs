@@ -117,52 +117,182 @@ namespace AdminControl
             ModeChange(4);
         }
 
+        /// <summary>
+        /// 投影机1开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 投影机1关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 投影机2开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 投影机2关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 镜头开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Camera_On_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 镜头关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Camera_Off_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 窗帘打开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Windows_On_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 窗帘关闭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Windows_Off_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 幕布下降
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Film_Down_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 幕布上升
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Film_Up_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 顶灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_TopLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 顶灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_TopLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 壁灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WallLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 壁灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WallLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯带开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_RoundLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯带关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_RoundLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯光开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AllLights_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯光关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AllLights_Off_Click(object sender, EventArgs e)
         {
 
         }

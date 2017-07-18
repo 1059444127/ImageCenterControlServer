@@ -208,6 +208,7 @@
             this.btn_AllLights_Off.TabIndex = 31;
             this.btn_AllLights_Off.Text = "全关";
             this.btn_AllLights_Off.UseVisualStyleBackColor = false;
+            this.btn_AllLights_Off.Click += new System.EventHandler(this.btn_AllLights_Off_Click);
             // 
             // btn_AllLights_On
             // 
@@ -227,6 +228,7 @@
             this.btn_AllLights_On.TabIndex = 5;
             this.btn_AllLights_On.Text = "全开";
             this.btn_AllLights_On.UseVisualStyleBackColor = false;
+            this.btn_AllLights_On.Click += new System.EventHandler(this.btn_AllLights_On_Click);
             // 
             // btn_TopLight_Off
             // 
@@ -246,6 +248,7 @@
             this.btn_TopLight_Off.TabIndex = 30;
             this.btn_TopLight_Off.Text = "关";
             this.btn_TopLight_Off.UseVisualStyleBackColor = false;
+            this.btn_TopLight_Off.Click += new System.EventHandler(this.btn_TopLight_Off_Click);
             // 
             // btn_WallLight_Off
             // 
@@ -265,6 +268,7 @@
             this.btn_WallLight_Off.TabIndex = 29;
             this.btn_WallLight_Off.Text = "关";
             this.btn_WallLight_Off.UseVisualStyleBackColor = false;
+            this.btn_WallLight_Off.Click += new System.EventHandler(this.btn_WallLight_Off_Click);
             // 
             // btn_RoundLight_Off
             // 
@@ -284,6 +288,7 @@
             this.btn_RoundLight_Off.TabIndex = 28;
             this.btn_RoundLight_Off.Text = "关";
             this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_Off.Click += new System.EventHandler(this.btn_RoundLight_Off_Click);
             // 
             // btn_RoundLight_On
             // 
@@ -303,6 +308,7 @@
             this.btn_RoundLight_On.TabIndex = 27;
             this.btn_RoundLight_On.Text = "开";
             this.btn_RoundLight_On.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_On.Click += new System.EventHandler(this.btn_RoundLight_On_Click);
             // 
             // btn_WallLight_On
             // 
@@ -322,6 +328,7 @@
             this.btn_WallLight_On.TabIndex = 26;
             this.btn_WallLight_On.Text = "开";
             this.btn_WallLight_On.UseVisualStyleBackColor = false;
+            this.btn_WallLight_On.Click += new System.EventHandler(this.btn_WallLight_On_Click);
             // 
             // btn_TopLight_On
             // 
@@ -341,6 +348,7 @@
             this.btn_TopLight_On.TabIndex = 14;
             this.btn_TopLight_On.Text = "开";
             this.btn_TopLight_On.UseVisualStyleBackColor = false;
+            this.btn_TopLight_On.Click += new System.EventHandler(this.btn_TopLight_On_Click);
             // 
             // label1
             // 
