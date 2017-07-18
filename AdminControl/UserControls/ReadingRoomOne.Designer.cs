@@ -63,14 +63,14 @@
             this.btn_AllLights_Off = new System.Windows.Forms.Button();
             this.gBx_LightsControl = new System.Windows.Forms.GroupBox();
             this.gBx_Enviroument = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label_Hum = new System.Windows.Forms.Label();
-            this.label_Temp = new System.Windows.Forms.Label();
-            this.label_Light = new System.Windows.Forms.Label();
             this.label_Noise = new System.Windows.Forms.Label();
+            this.label_Light = new System.Windows.Forms.Label();
+            this.label_Temp = new System.Windows.Forms.Label();
+            this.label_Hum = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.gBx_ModeChange.SuspendLayout();
             this.gBx_DeviceControl.SuspendLayout();
             this.gBx_LightsControl.SuspendLayout();
@@ -158,6 +158,7 @@
             this.btn_ModeLK.TabIndex = 3;
             this.btn_ModeLK.Text = "离开模式";
             this.btn_ModeLK.UseVisualStyleBackColor = false;
+            this.btn_ModeLK.Click += new System.EventHandler(this.btn_ModeLK_Click);
             // 
             // btn_ModeXX
             // 
@@ -176,6 +177,7 @@
             this.btn_ModeXX.TabIndex = 2;
             this.btn_ModeXX.Text = "休息模式";
             this.btn_ModeXX.UseVisualStyleBackColor = false;
+            this.btn_ModeXX.Click += new System.EventHandler(this.btn_ModeXX_Click);
             // 
             // btn_ModeYP
             // 
@@ -194,6 +196,7 @@
             this.btn_ModeYP.TabIndex = 1;
             this.btn_ModeYP.Text = "阅片模式";
             this.btn_ModeYP.UseVisualStyleBackColor = false;
+            this.btn_ModeYP.Click += new System.EventHandler(this.btn_ModeYP_Click);
             // 
             // gBx_DeviceControl
             // 
@@ -627,65 +630,15 @@
             this.gBx_Enviroument.TabStop = false;
             this.gBx_Enviroument.Text = "环境数据";
             // 
-            // label8
+            // label_Noise
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 25);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "温度:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 25);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "湿度:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 144);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 25);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "光照:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 25);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "噪音:";
-            // 
-            // label_Hum
-            // 
-            this.label_Hum.AutoSize = true;
-            this.label_Hum.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Hum.Location = new System.Drawing.Point(84, 93);
-            this.label_Hum.Name = "label_Hum";
-            this.label_Hum.Size = new System.Drawing.Size(93, 25);
-            this.label_Hum.TabIndex = 50;
-            this.label_Hum.Text = "初始化...";
-            // 
-            // label_Temp
-            // 
-            this.label_Temp.AutoSize = true;
-            this.label_Temp.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Temp.Location = new System.Drawing.Point(84, 42);
-            this.label_Temp.Name = "label_Temp";
-            this.label_Temp.Size = new System.Drawing.Size(93, 25);
-            this.label_Temp.TabIndex = 51;
-            this.label_Temp.Text = "初始化...";
+            this.label_Noise.AutoSize = true;
+            this.label_Noise.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Noise.Location = new System.Drawing.Point(84, 195);
+            this.label_Noise.Name = "label_Noise";
+            this.label_Noise.Size = new System.Drawing.Size(93, 25);
+            this.label_Noise.TabIndex = 53;
+            this.label_Noise.Text = "初始化...";
             // 
             // label_Light
             // 
@@ -697,15 +650,65 @@
             this.label_Light.TabIndex = 52;
             this.label_Light.Text = "初始化...";
             // 
-            // label_Noise
+            // label_Temp
             // 
-            this.label_Noise.AutoSize = true;
-            this.label_Noise.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Noise.Location = new System.Drawing.Point(84, 195);
-            this.label_Noise.Name = "label_Noise";
-            this.label_Noise.Size = new System.Drawing.Size(93, 25);
-            this.label_Noise.TabIndex = 53;
-            this.label_Noise.Text = "初始化...";
+            this.label_Temp.AutoSize = true;
+            this.label_Temp.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Temp.Location = new System.Drawing.Point(84, 42);
+            this.label_Temp.Name = "label_Temp";
+            this.label_Temp.Size = new System.Drawing.Size(93, 25);
+            this.label_Temp.TabIndex = 51;
+            this.label_Temp.Text = "初始化...";
+            // 
+            // label_Hum
+            // 
+            this.label_Hum.AutoSize = true;
+            this.label_Hum.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Hum.Location = new System.Drawing.Point(84, 93);
+            this.label_Hum.Name = "label_Hum";
+            this.label_Hum.Size = new System.Drawing.Size(93, 25);
+            this.label_Hum.TabIndex = 50;
+            this.label_Hum.Text = "初始化...";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(11, 195);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 25);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "噪音:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(11, 144);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 25);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "光照:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 25);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "湿度:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 25);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "温度:";
             // 
             // ReadingRoomOne
             // 

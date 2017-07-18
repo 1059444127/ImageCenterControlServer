@@ -85,6 +85,36 @@ namespace AdminControl
 
 
         }
+
+        /// <summary>
+        /// 阅片模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ModeYP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 休息模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ModeXX_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 离开模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ModeLK_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region 初始化
@@ -326,6 +356,27 @@ namespace AdminControl
                 frm_Main.DataBase.UpdateTable(SQLString);
 
                 is_ControlConnect = false;
+            }
+        }
+        #endregion
+
+        #region 模式切换
+        /// <summary>
+        /// 模式切换
+        /// </summary>
+        /// <param name="Mode"></param>
+        private void ModeChange(int Mode)
+        {
+            switch (Mode)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
             }
         }
         #endregion
