@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
 using DataTransferService;
+using CommandHandleService;
 
 namespace AdminControl
 {
@@ -38,6 +39,11 @@ namespace AdminControl
         /// 控件刷新服务实例
         /// </summary>
         private ControlRefreshHelper ControlRefresh;
+
+        /// <summary>
+        /// 指令解析实例
+        /// </summary>
+        private CommandHandleHelper CommandHandle;
 
         /// <summary>
         /// 主窗体
@@ -310,6 +316,8 @@ namespace AdminControl
 
             ControlRefresh = new ControlRefreshHelper();
 
+            CommandHandle = new CommandHandleHelper();
+
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
@@ -532,10 +540,6 @@ namespace AdminControl
         }
         #endregion
 
-        #region 灯光控制
-
-        #endregion
-
         #region 矩阵切换
 
         #endregion
@@ -545,14 +549,6 @@ namespace AdminControl
         #endregion
 
         #region 镜头控制
-
-        #endregion
-
-        #region 窗帘控制
-
-        #endregion
-
-        #region 幕布控制
 
         #endregion
 
