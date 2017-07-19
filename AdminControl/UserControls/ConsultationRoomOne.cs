@@ -342,7 +342,14 @@ namespace AdminControl
             ModeList = new List<ModeConfig>();
 
             XmlDocument Doc = new XmlDocument();
-            Doc.Load(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
+
+            XmlReaderSettings Setting = new XmlReaderSettings();
+
+            Setting.IgnoreComments = true;
+
+            XmlReader Reader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
+
+            Doc.Load(Reader);
 
             XmlNode RootNode = Doc.SelectSingleNode("Modes");
 
@@ -364,6 +371,8 @@ namespace AdminControl
 
                 ModeList.Add(Mode);
             }
+
+            Reader.Close();
         }
         #endregion
 
