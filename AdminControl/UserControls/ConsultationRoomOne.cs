@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
-using System.IO;
+using System.Xml;
+
 using DataTransferService;
 using CommandHandleService;
 
@@ -30,6 +31,11 @@ namespace AdminControl
         /// 控制器连接标志位
         /// </summary>
         private volatile bool is_ControlConnect = false;
+
+        /// <summary>
+        /// 模式列表
+        /// </summary>
+        private List<ModeConfig> ModeList;
 
         /// <summary>
         /// 数据传输服务实例
@@ -322,6 +328,42 @@ namespace AdminControl
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+
+            ReadUserConfig();
+        }
+        #endregion
+
+        #region 读取用户配置
+        /// <summary>
+        /// 读取用户配置
+        /// </summary>
+        private void ReadUserConfig()
+        {
+            ModeList = new List<ModeConfig>();
+
+            XmlDocument Doc = new XmlDocument();
+            Doc.Load(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
+
+            XmlNode RootNode = Doc.SelectSingleNode("Modes");
+
+            XmlNodeList RootChilds = RootNode.ChildNodes;
+
+            foreach (XmlNode Node in RootChilds)
+            {
+                ModeConfig Mode = new ModeConfig();
+
+                XmlElement Element = (XmlElement)Node;
+
+                XmlNodeList Childs = Element.ChildNodes;
+
+                Mode.ModeName = Childs.Item(0).InnerText;
+                Mode.Relays = Childs.Item(1).InnerText;
+                Mode.Projector = Childs.Item(2).InnerText;
+                Mode.Matrix = Childs.Item(3).InnerText;
+                Mode.Camera = Childs.Item(4).InnerText;
+
+                ModeList.Add(Mode);
+            }
         }
         #endregion
 
@@ -517,19 +559,25 @@ namespace AdminControl
         /// <param name="Mode"></param>
         private void ModeChange(int Mode)
         {
+            string Command = string.Empty;
+
             switch (Mode)
             {
                 case 1:
-                    SendControlCommand("会诊模式");
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 2:
-                    SendControlCommand("议会模式");
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 3:
-                    SendControlCommand("科会模式");
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 4:
-                    SendControlCommand("胶片直投模式");
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 default:
                     break;

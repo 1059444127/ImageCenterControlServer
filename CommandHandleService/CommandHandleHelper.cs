@@ -18,7 +18,7 @@ namespace CommandHandleService
         /// <param name="PortsOpen">要开启的口，如"1,2,3"</param>
         /// <param name="PortsClose">要关闭的口，如"4,5,6"</param>
         /// <returns></returns>
-        public string GetModeIOPortCommand(string PortsOpen, string PortsClose)
+        public string GetRelayCommand(string PortsOpen, string PortsClose)
         {
             string Command = string.Empty;
 
