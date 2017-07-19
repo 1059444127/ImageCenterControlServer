@@ -371,10 +371,10 @@ namespace AdminControl
             LightList = new List<LightConfig>();
             XmlDocument LightDoc = new XmlDocument();
             XmlReaderSettings LightSetting = new XmlReaderSettings();
-            ModeSetting.IgnoreComments = true;
+            LightSetting.IgnoreComments = true;
             XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml");
-            ModeDoc.Load(ModeReader);
-            XmlNode LightRootNode = ModeDoc.SelectSingleNode("Lights");
+            LightDoc.Load(LightReader);
+            XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
             foreach (XmlNode Node in LightRootChilds)
             {
