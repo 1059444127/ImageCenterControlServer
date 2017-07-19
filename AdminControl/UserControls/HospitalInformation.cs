@@ -193,6 +193,9 @@ namespace AdminControl
         #endregion
 
         #region 清理反馈记录
+        /// <summary>
+        /// 清理记录
+        /// </summary>
         private void CleanBUGReportLog()
         {
             DeleteLogFile();
