@@ -38,6 +38,11 @@ namespace AdminControl
         private List<ModeConfig> ModeList;
 
         /// <summary>
+        /// 灯光列表
+        /// </summary>
+        private List<LightConfig> LightList;
+
+        /// <summary>
         /// 数据传输服务实例
         /// </summary>
         private DataTransfer Data;
@@ -339,41 +344,50 @@ namespace AdminControl
         /// </summary>
         private void ReadUserConfig()
         {
+            //读取模式配置
             ModeList = new List<ModeConfig>();
-
-            XmlDocument Doc = new XmlDocument();
-
-            XmlReaderSettings Setting = new XmlReaderSettings();
-
-            Setting.IgnoreComments = true;
-
-            XmlReader Reader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
-
-            Doc.Load(Reader);
-
-            XmlNode RootNode = Doc.SelectSingleNode("Modes");
-
-            XmlNodeList RootChilds = RootNode.ChildNodes;
-
-            foreach (XmlNode Node in RootChilds)
+            XmlDocument ModeDoc = new XmlDocument();
+            XmlReaderSettings ModeSetting = new XmlReaderSettings();
+            ModeSetting.IgnoreComments = true;
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
+            ModeDoc.Load(ModeReader);
+            XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
+            XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
+            foreach (XmlNode Node in ModeRootChilds)
             {
                 ModeConfig Mode = new ModeConfig();
-
                 XmlElement Element = (XmlElement)Node;
-
                 XmlNodeList Childs = Element.ChildNodes;
-
                 Mode.ModeName = Childs.Item(0).InnerText;
                 Mode.Relays = Childs.Item(1).InnerText;
                 Mode.Projector = Childs.Item(2).InnerText;
                 Mode.Matrix = Childs.Item(3).InnerText;
                 Mode.Camera = Childs.Item(4).InnerText;
-
                 ModeList.Add(Mode);
             }
+            ModeReader.Close();
 
-            Reader.Close();
+            //读取灯光配置
+            LightList = new List<LightConfig>();
+            XmlDocument LightDoc = new XmlDocument();
+            XmlReaderSettings LightSetting = new XmlReaderSettings();
+            ModeSetting.IgnoreComments = true;
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml");
+            ModeDoc.Load(ModeReader);
+            XmlNode LightRootNode = ModeDoc.SelectSingleNode("Lights");
+            XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
+            foreach (XmlNode Node in LightRootChilds)
+            {
+                LightConfig Light = new LightConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Light.LightName = Childs.Item(0).InnerText;
+                Light.RelayNumber = Childs.Item(1).InnerText;
+                LightList.Add(Light);
+            }
+            LightReader.Close();
         }
+
         #endregion
 
         #region 接收设备状态
@@ -575,17 +589,20 @@ namespace AdminControl
                 case 1:
                     Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+
+                    Command = CommandHandle.GetRelayCommand(LightList[0].RelayNumber, LightList[2].RelayNumber);
+                    SendControlCommand(Command);
                     break;
                 case 2:
-                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 case 3:
-                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 case 4:
-                    Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 default:

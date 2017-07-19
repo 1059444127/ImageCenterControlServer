@@ -75,6 +75,7 @@
     <Compile Include="Data\ControlRefreshHelper.cs" />
     <Compile Include="Data\ModeConfig.cs" />
     <Compile Include="Data\LightConfig.cs" />
+    <Compile Include="Data\FilmConfig.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +114,7 @@
     <Compile Include="UserControls\ReadingRoomTwo.Designer.cs">
       <DependentUpon>ReadingRoomTwo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\WindowsConfig.cs" />
     <EmbeddedResource Include="UserControls\ConsultationRoomOne.resx">
       <DependentUpon>ConsultationRoomOne.cs</DependentUpon>
     </EmbeddedResource>

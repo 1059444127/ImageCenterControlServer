@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace AdminControl
 {
     /// <summary>
-    /// 灯光配置
+    /// 窗帘配置
     /// </summary>
-    class LightConfig
+    class WindowsConfig
     {
-        public string LightName { get; set; }
+        public string WindowsName { get; set; }
 
         public string RelayNumber { get; set; }
     }
