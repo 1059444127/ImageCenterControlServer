@@ -68,10 +68,10 @@
             this.btn_ProjectorOne_On = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_ProjectorStatus = new System.Windows.Forms.Label();
+            this.label_CameraStatus = new System.Windows.Forms.Label();
+            this.label_MatrixOut = new System.Windows.Forms.Label();
+            this.label_MatrixIn = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.gBx_ModeChange.SuspendLayout();
@@ -724,45 +724,45 @@
             this.label7.TabIndex = 41;
             this.label7.Text = "镜头状态:";
             // 
-            // label8
+            // label_ProjectorStatus
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(158, 431);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 25);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "初始化...";
+            this.label_ProjectorStatus.AutoSize = true;
+            this.label_ProjectorStatus.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorStatus.Location = new System.Drawing.Point(158, 431);
+            this.label_ProjectorStatus.Name = "label_ProjectorStatus";
+            this.label_ProjectorStatus.Size = new System.Drawing.Size(93, 25);
+            this.label_ProjectorStatus.TabIndex = 42;
+            this.label_ProjectorStatus.Text = "初始化...";
             // 
-            // label9
+            // label_CameraStatus
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(158, 471);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 25);
-            this.label9.TabIndex = 43;
-            this.label9.Text = "初始化...";
+            this.label_CameraStatus.AutoSize = true;
+            this.label_CameraStatus.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CameraStatus.Location = new System.Drawing.Point(158, 471);
+            this.label_CameraStatus.Name = "label_CameraStatus";
+            this.label_CameraStatus.Size = new System.Drawing.Size(93, 25);
+            this.label_CameraStatus.TabIndex = 43;
+            this.label_CameraStatus.Text = "初始化...";
             // 
-            // label10
+            // label_MatrixOut
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(740, 471);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 25);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "初始化...";
+            this.label_MatrixOut.AutoSize = true;
+            this.label_MatrixOut.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MatrixOut.Location = new System.Drawing.Point(740, 471);
+            this.label_MatrixOut.Name = "label_MatrixOut";
+            this.label_MatrixOut.Size = new System.Drawing.Size(93, 25);
+            this.label_MatrixOut.TabIndex = 47;
+            this.label_MatrixOut.Text = "初始化...";
             // 
-            // label11
+            // label_MatrixIn
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(740, 431);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 25);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "初始化...";
+            this.label_MatrixIn.AutoSize = true;
+            this.label_MatrixIn.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MatrixIn.Location = new System.Drawing.Point(740, 431);
+            this.label_MatrixIn.Name = "label_MatrixIn";
+            this.label_MatrixIn.Size = new System.Drawing.Size(93, 25);
+            this.label_MatrixIn.TabIndex = 46;
+            this.label_MatrixIn.Text = "初始化...";
             // 
             // label12
             // 
@@ -789,12 +789,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label_MatrixOut);
+            this.Controls.Add(this.label_MatrixIn);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label_CameraStatus);
+            this.Controls.Add(this.label_ProjectorStatus);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gBx_DeviceControl);
@@ -860,10 +860,10 @@
         private System.Windows.Forms.Button btn_ProjectorTwo_Off;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_ProjectorStatus;
+        private System.Windows.Forms.Label label_CameraStatus;
+        private System.Windows.Forms.Label label_MatrixOut;
+        private System.Windows.Forms.Label label_MatrixIn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
     }
