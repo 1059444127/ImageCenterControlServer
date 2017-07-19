@@ -577,15 +577,15 @@ namespace AdminControl
                     SendControlCommand(Command);
                     break;
                 case 2:
-                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 case 3:
-                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 case 4:
-                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
                 default:
