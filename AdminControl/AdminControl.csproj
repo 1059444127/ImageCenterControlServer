@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Data\ControlRefreshHelper.cs" />
     <Compile Include="Data\ModeConfig.cs" />
+    <Compile Include="Data\LightConfig.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
