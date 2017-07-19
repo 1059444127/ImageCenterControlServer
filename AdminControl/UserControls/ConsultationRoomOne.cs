@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
+using System.IO;
 using DataTransferService;
 using CommandHandleService;
 
@@ -322,10 +323,6 @@ namespace AdminControl
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
         }
-        #endregion
-
-        #region 读取配置文件
-
         #endregion
 
         #region 接收设备状态
