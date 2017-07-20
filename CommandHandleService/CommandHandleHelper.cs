@@ -35,11 +35,11 @@ namespace CommandHandleService
         /// <param name="ProjectorCount">投影机数量</param>
         /// <param name="PowerStatus">投影机电源状态</param>
         /// <returns></returns>
-        public string GetProjectorCommand(int ProjectorCount, string PowerStatus)
+        public string GetProjectorCommand(string PowerStatus)
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=ProjectorCtl Count={0} Power={1} CRC=1582\r\n", ProjectorCount.ToString(), PowerStatus);
+            Command = string.Format("cmd=ProjectorCtl Power={0} CRC=1582\r\n", PowerStatus);
 
             return Command;
         }

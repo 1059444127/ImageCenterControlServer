@@ -331,7 +331,7 @@ namespace AdminControl
             CommandHandle = new CommandHandleHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
-            ControlRefresh.RefreshButtons(gBx_ModeChange, false);
+            //ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
             ReadUserConfig();
@@ -349,7 +349,7 @@ namespace AdminControl
             XmlDocument ModeDoc = new XmlDocument();
             XmlReaderSettings ModeSetting = new XmlReaderSettings();
             ModeSetting.IgnoreComments = true;
-            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml");
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
             XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
@@ -372,7 +372,7 @@ namespace AdminControl
             XmlDocument LightDoc = new XmlDocument();
             XmlReaderSettings LightSetting = new XmlReaderSettings();
             LightSetting.IgnoreComments = true;
-            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml");
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
@@ -434,7 +434,7 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";",  ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ControlConnect = false;
@@ -592,8 +592,12 @@ namespace AdminControl
                     SendControlCommand(Command);
 
                     //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
 
                     //打开投影机
+                    Command = CommandHandle.GetProjectorCommand(ModeList[0].Projector);
+                    SendControlCommand(Command);
                     break;
                 case 2:
                     //继电器状态修改
@@ -601,12 +605,16 @@ namespace AdminControl
                     SendControlCommand(Command);
 
                     //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 3:
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
 
                     //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 4:
                     //继电器状态修改
@@ -614,6 +622,8 @@ namespace AdminControl
                     SendControlCommand(Command);
 
                     //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 default:
                     break;
