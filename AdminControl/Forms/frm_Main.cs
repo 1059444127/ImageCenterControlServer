@@ -204,6 +204,63 @@ namespace AdminControl
         }
 
         /// <summary>
+        /// 最小化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void label_Minnor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        /// <summary>
+        /// 关闭主界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CloseMainForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// 显示主界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowMainForm_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        /// <summary>
+        /// 关闭窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void label_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// 显示窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Notice_Icon_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs Event = (MouseEventArgs)e;
+
+            if (Event.Button == MouseButtons.Right)
+            {
+                return;
+            }
+
+            this.Show();
+        }
+
+        /// <summary>
         /// 窗体关闭前
         /// </summary>
         /// <param name="sender"></param>
@@ -765,6 +822,7 @@ namespace AdminControl
             panel_UserControl.Controls.Clear();
             panel_UserControl.Controls.Add(Control);
         }
+
         #endregion
 
         #endregion

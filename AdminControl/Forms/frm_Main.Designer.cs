@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.panel_Information = new System.Windows.Forms.Panel();
+            this.label_Close = new System.Windows.Forms.Label();
+            this.label_Minnor = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_Date = new System.Windows.Forms.Label();
             this.label_Week = new System.Windows.Forms.Label();
@@ -50,6 +53,10 @@
             this.panel_UserControl = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Notice_Icon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ShowMainForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Information.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index5)).BeginInit();
@@ -58,11 +65,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index1)).BeginInit();
             this.panel_UserControl.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Information
             // 
             this.panel_Information.BackColor = System.Drawing.Color.Gray;
+            this.panel_Information.Controls.Add(this.label_Close);
+            this.panel_Information.Controls.Add(this.label_Minnor);
             this.panel_Information.Controls.Add(this.label3);
             this.panel_Information.Controls.Add(this.label_Date);
             this.panel_Information.Controls.Add(this.label_Week);
@@ -75,14 +85,38 @@
             this.panel_Information.Size = new System.Drawing.Size(1024, 80);
             this.panel_Information.TabIndex = 0;
             // 
+            // label_Close
+            // 
+            this.label_Close.AutoSize = true;
+            this.label_Close.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Close.ForeColor = System.Drawing.Color.White;
+            this.label_Close.Location = new System.Drawing.Point(997, 9);
+            this.label_Close.Name = "label_Close";
+            this.label_Close.Size = new System.Drawing.Size(24, 16);
+            this.label_Close.TabIndex = 8;
+            this.label_Close.Text = "×";
+            this.label_Close.Click += new System.EventHandler(this.label_Close_Click);
+            // 
+            // label_Minnor
+            // 
+            this.label_Minnor.AutoSize = true;
+            this.label_Minnor.Font = new System.Drawing.Font("楷体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Minnor.ForeColor = System.Drawing.Color.White;
+            this.label_Minnor.Location = new System.Drawing.Point(969, 6);
+            this.label_Minnor.Name = "label_Minnor";
+            this.label_Minnor.Size = new System.Drawing.Size(22, 24);
+            this.label_Minnor.TabIndex = 7;
+            this.label_Minnor.Text = "-";
+            this.label_Minnor.Click += new System.EventHandler(this.label_Minnor_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("楷体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("楷体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(718, 26);
+            this.label3.Location = new System.Drawing.Point(768, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(303, 35);
+            this.label3.Size = new System.Drawing.Size(253, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "影像中心控制系统";
             // 
@@ -343,6 +377,36 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "欢迎使用影像中心总控系统";
             // 
+            // Notice_Icon
+            // 
+            this.Notice_Icon.ContextMenuStrip = this.MenuStrip;
+            this.Notice_Icon.Icon = ((System.Drawing.Icon)(resources.GetObject("Notice_Icon.Icon")));
+            this.Notice_Icon.Text = "影像中心服务器";
+            this.Notice_Icon.Visible = true;
+            this.Notice_Icon.Click += new System.EventHandler(this.Notice_Icon_Click);
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ShowMainForm,
+            this.CloseMainForm});
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(101, 48);
+            // 
+            // ShowMainForm
+            // 
+            this.ShowMainForm.Name = "ShowMainForm";
+            this.ShowMainForm.Size = new System.Drawing.Size(100, 22);
+            this.ShowMainForm.Text = "显示";
+            this.ShowMainForm.Click += new System.EventHandler(this.ShowMainForm_Click);
+            // 
+            // CloseMainForm
+            // 
+            this.CloseMainForm.Name = "CloseMainForm";
+            this.CloseMainForm.Size = new System.Drawing.Size(100, 22);
+            this.CloseMainForm.Text = "退出";
+            this.CloseMainForm.Click += new System.EventHandler(this.CloseMainForm_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -355,8 +419,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Main";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "影像中心总控端";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Main_FormClosed);
             this.Load += new System.EventHandler(this.frm_Main_Load);
@@ -370,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index1)).EndInit();
             this.panel_UserControl.ResumeLayout(false);
             this.panel_UserControl.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,6 +464,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pBx_Index5;
         private System.Windows.Forms.Button btn_About;
+        private System.Windows.Forms.Label label_Close;
+        private System.Windows.Forms.Label label_Minnor;
+        private System.Windows.Forms.NotifyIcon Notice_Icon;
+        private System.Windows.Forms.ContextMenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem ShowMainForm;
+        private System.Windows.Forms.ToolStripMenuItem CloseMainForm;
     }
 }
 
