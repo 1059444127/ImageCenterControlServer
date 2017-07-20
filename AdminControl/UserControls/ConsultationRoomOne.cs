@@ -43,6 +43,16 @@ namespace AdminControl
         private List<LightConfig> LightList;
 
         /// <summary>
+        /// 窗帘列表
+        /// </summary>
+        private List<WindowsConfig> WindowsList;
+
+        /// <summary>
+        /// 幕布列表
+        /// </summary>
+        private List<FilmConfig> FilmList;
+
+        /// <summary>
         /// 数据传输服务实例
         /// </summary>
         private DataTransfer Data;
@@ -387,8 +397,47 @@ namespace AdminControl
                 LightList.Add(Light);
             }
             LightReader.Close();
-        }
 
+            //读取窗帘配置
+            WindowsList = new List<WindowsConfig>();
+            XmlDocument WindowsDoc = new XmlDocument();
+            XmlReaderSettings WindowsSetting = new XmlReaderSettings();
+            WindowsSetting.IgnoreComments = true;
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\WindowsConfig.xml", WindowsSetting);
+            WindowsDoc.Load(WindowsReader);
+            XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
+            XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
+            foreach (XmlNode Node in WindowsRootChilds)
+            {
+                WindowsConfig Windows = new WindowsConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Windows.WindowsName = Childs.Item(0).InnerText;
+                Windows.RelayNumber = Childs.Item(1).InnerText;
+                WindowsList.Add(Windows);
+            }
+            WindowsReader.Close();
+
+            //读取幕布配置
+            FilmList = new List<FilmConfig>();
+            XmlDocument FilmDoc = new XmlDocument();
+            XmlReaderSettings FilmSetting = new XmlReaderSettings();
+            FilmSetting.IgnoreComments = true;
+            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\FilmConfig.xml", FilmSetting);
+            FilmDoc.Load(FilmReader);
+            XmlNode FilmRootNode = FilmDoc.SelectSingleNode("Films");
+            XmlNodeList FilmRootChilds = FilmRootNode.ChildNodes;
+            foreach (XmlNode Node in FilmRootChilds)
+            {
+                FilmConfig Film = new FilmConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Film.FilmName = Childs.Item(0).InnerText;
+                Film.RelayNumber = Childs.Item(1).InnerText;
+                FilmList.Add(Film);
+            }
+            FilmReader.Close();
+        }
         #endregion
 
         #region 接收设备状态
@@ -636,6 +685,20 @@ namespace AdminControl
         }
         #endregion
 
+        #region 独立矩阵切换
+        /// <summary>
+        /// 矩阵切换
+        /// </summary>
+        /// <param name="MatrixIn">输入序列</param>
+        /// <param name="MatrixOut">输出序列</param>
+        private void MatrixControl(string MatrixIn, string MatrixOut)
+        {
+            string Command = string.Empty;
+            Command = CommandHandle.GetMatrixCommand(MatrixIn, MatrixOut);
+            SendControlCommand(Command);
+        }
+        #endregion
+
         #region 独立灯光控制
         /// <summary>
         /// 灯光控制
@@ -655,20 +718,6 @@ namespace AdminControl
                 Command = CommandHandle.GetRelayCommand("0", RelayNumber);
             }
 
-            SendControlCommand(Command);
-        }
-        #endregion
-
-        #region 独立矩阵切换
-        /// <summary>
-        /// 矩阵切换
-        /// </summary>
-        /// <param name="MatrixIn">输入序列</param>
-        /// <param name="MatrixOut">输出序列</param>
-        private void MatrixControl(string MatrixIn, string MatrixOut)
-        {
-            string Command = string.Empty;
-            Command = CommandHandle.GetMatrixCommand(MatrixIn, MatrixOut);
             SendControlCommand(Command);
         }
         #endregion
@@ -696,6 +745,14 @@ namespace AdminControl
         {
 
         }
+        #endregion
+
+        #region 独立窗帘控制
+
+        #endregion
+
+        #region 独立幕布控制
+
         #endregion
 
         #endregion
