@@ -242,7 +242,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_TopLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, true);
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_TopLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, false);
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WallLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, true);
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WallLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, false);
         }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_RoundLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, true);
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_RoundLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, false);
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_AllLights_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_AllLights_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
         }
         #endregion
 
@@ -587,27 +587,60 @@ namespace AdminControl
             switch (Mode)
             {
                 case 1:
+                    //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
 
-                    Command = CommandHandle.GetRelayCommand(LightList[0].RelayNumber, LightList[2].RelayNumber);
-                    SendControlCommand(Command);
+                    //矩阵切换
+
+                    //打开投影机
                     break;
                 case 2:
+                    //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+
+                    //矩阵切换
                     break;
                 case 3:
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+
+                    //矩阵切换
                     break;
                 case 4:
+                    //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+
+                    //矩阵切换
                     break;
                 default:
                     break;
             }
+        }
+        #endregion
+
+        #region 独立灯光控制
+        /// <summary>
+        /// 灯光控制
+        /// </summary>
+        /// <param name="RelayNumber">继电器号码</param>
+        /// <param name="Status">继电器状态：true:开；false:关</param>
+        private void LightControl(string RelayNumber, bool Status)
+        {
+            string Command = string.Empty;
+
+            if (Status)
+            {
+                Command = CommandHandle.GetRelayCommand(RelayNumber, "0");
+            }
+            else
+            {
+                Command = CommandHandle.GetRelayCommand("0", RelayNumber);
+            }
+
+            SendControlCommand(Command);
         }
         #endregion
 
