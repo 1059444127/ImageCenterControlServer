@@ -55,6 +55,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Description = 请使用VS2015或以上版本打开
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7DB58E2D-3746-4D9D-B97E-BFDF00DDD3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
