@@ -152,7 +152,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
         {
-            ProjectorControl("1","1");
+            ProjectorControl("1", "1");
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
         {
-            ProjectorControl("1","0");
+            ProjectorControl("1", "0");
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
         {
-            ProjectorControl("2","1");
+            ProjectorControl("2", "1");
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
         {
-            ProjectorControl("2","0");
+            ProjectorControl("2", "0");
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Windows_On_Click(object sender, EventArgs e)
         {
-
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[0], WindowsList[0].RelayNumber.Split(',')[1]);
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Windows_Off_Click(object sender, EventArgs e)
         {
-
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[1], WindowsList[0].RelayNumber.Split(',')[0]);
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Film_Down_Click(object sender, EventArgs e)
         {
-
+            FilmControl(FilmList[0].RelayNumber.Split(',')[0], FilmList[0].RelayNumber.Split(',')[1]);
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Film_Up_Click(object sender, EventArgs e)
         {
-
+            FilmControl(FilmList[0].RelayNumber.Split(',')[1], FilmList[0].RelayNumber.Split(',')[0]);
         }
 
         /// <summary>
@@ -748,11 +748,35 @@ namespace AdminControl
         #endregion
 
         #region 独立窗帘控制
+        /// <summary>
+        /// 独立窗帘控制
+        /// </summary>
+        /// <param name="PortOpen">开启继电器序号</param>
+        /// <param name="PortClose">关闭继电器序号</param>
+        private void WindowsControl(string PortOpen, string PortClose)
+        {
+            string Command = string.Empty;
 
+            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+
+            SendControlCommand(Command);
+        }
         #endregion
 
         #region 独立幕布控制
+        /// <summary>
+        /// 独立幕布控制
+        /// </summary>
+        /// <param name="PortOpen">开启继电器序号</param>
+        /// <param name="PortClose">关闭继电器序号</param>
+        private void FilmControl(string PortOpen, string PortClose)
+        {
+            string Command = string.Empty;
 
+            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+
+            SendControlCommand(Command);
+        }
         #endregion
 
         #endregion
