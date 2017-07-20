@@ -84,6 +84,8 @@
             this.panel_Information.Name = "panel_Information";
             this.panel_Information.Size = new System.Drawing.Size(1024, 80);
             this.panel_Information.TabIndex = 0;
+            this.panel_Information.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Information_MouseDown);
+            this.panel_Information.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_Information_MouseMove);
             // 
             // label_Close
             // 

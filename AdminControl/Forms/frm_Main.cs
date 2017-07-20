@@ -46,6 +46,11 @@ namespace AdminControl
         private string DataBaseConfig;
 
         /// <summary>
+        /// 鼠标指针实例
+        /// </summary>
+        private Point mousePoint;
+
+        /// <summary>
         /// 监听套接字
         /// </summary>
         private Socket WatchSocket;
@@ -146,6 +151,33 @@ namespace AdminControl
         private void frm_Main_Load(object sender, EventArgs e)
         {
             AnimateWindow(this.Handle, 500, AW_BLEND);
+        }
+
+        /// <summary>
+        /// 按下
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panel_Information_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            this.mousePoint.X = e.X;
+            this.mousePoint.Y = e.Y;
+        }
+
+        /// <summary>
+        /// 移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panel_Information_MouseMove(object sender, MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Top = Control.MousePosition.Y - mousePoint.Y;
+                this.Left = Control.MousePosition.X - mousePoint.X;
+            }
         }
 
         /// <summary>
