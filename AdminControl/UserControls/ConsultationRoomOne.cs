@@ -640,14 +640,17 @@ namespace AdminControl
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //打开投影机1
                     Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorOne.Split(',')[0], ModeList[0].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //打开投影机2
                     Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
@@ -657,6 +660,7 @@ namespace AdminControl
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
@@ -665,6 +669,7 @@ namespace AdminControl
                 case 3:
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
@@ -674,6 +679,7 @@ namespace AdminControl
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
