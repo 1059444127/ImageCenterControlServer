@@ -22,9 +22,14 @@ namespace AdminControl
         public string Relays { get; set; }
 
         /// <summary>
-        /// 获取或设置投影机
+        /// 获取或设置投影机1
         /// </summary>
-        public string Projector { get; set; }
+        public string ProjectorOne { get; set; }
+
+        /// <summary>
+        /// 获取或设置投影机2
+        /// </summary>
+        public string ProjectorTwo { get; set; }
 
         /// <summary>
         /// 获取或设置矩阵

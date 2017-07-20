@@ -142,7 +142,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("1","1");
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("1","0");
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("2","1");
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("2","0");
         }
 
         /// <summary>
@@ -360,9 +360,10 @@ namespace AdminControl
                 XmlNodeList Childs = Element.ChildNodes;
                 Mode.ModeName = Childs.Item(0).InnerText;
                 Mode.Relays = Childs.Item(1).InnerText;
-                Mode.Projector = Childs.Item(2).InnerText;
-                Mode.Matrix = Childs.Item(3).InnerText;
-                Mode.Camera = Childs.Item(4).InnerText;
+                Mode.ProjectorOne = Childs.Item(2).InnerText;
+                Mode.ProjectorTwo = Childs.Item(3).InnerText;
+                Mode.Matrix = Childs.Item(4).InnerText;
+                Mode.Camera = Childs.Item(5).InnerText;
                 ModeList.Add(Mode);
             }
             ModeReader.Close();
@@ -595,8 +596,12 @@ namespace AdminControl
                     Command = CommandHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
 
-                    //打开投影机
-                    Command = CommandHandle.GetProjectorCommand(ModeList[0].Projector);
+                    //打开投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorOne.Split(',')[0], ModeList[0].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+
+                    //打开投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 case 2:
@@ -654,16 +659,43 @@ namespace AdminControl
         }
         #endregion
 
-        #region 矩阵切换
-
+        #region 独立矩阵切换
+        /// <summary>
+        /// 矩阵切换
+        /// </summary>
+        /// <param name="MatrixIn">输入序列</param>
+        /// <param name="MatrixOut">输出序列</param>
+        private void MatrixControl(string MatrixIn, string MatrixOut)
+        {
+            string Command = string.Empty;
+            Command = CommandHandle.GetMatrixCommand(MatrixIn, MatrixOut);
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 投影机控制
-
+        #region 独立投影机控制
+        /// <summary>
+        /// 投影机控制
+        /// </summary>
+        /// <param name="PowerStatus">电源状态序列</param>
+        private void ProjectorControl(string ProjectorID, string PowerStatus)
+        {
+            string Command = string.Empty;
+            Command = CommandHandle.GetProjectorCommand(ProjectorID, PowerStatus);
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 镜头控制
+        #region 独立镜头控制
+        /// <summary>
+        /// 镜头控制
+        /// </summary>
+        /// <param name="PowerStatus">电源状态</param>
+        /// <param name="EnlargeLevel">放大等级</param>
+        private void CameraControl(string PowerStatus, string EnlargeLevel)
+        {
 
+        }
         #endregion
 
         #endregion
