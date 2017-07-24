@@ -36,7 +36,7 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=RelayCtl ON={0} OFF={1} ", PortsOpen, PortsClose);
+            Command = string.Format("cmd=RelayCtl\tON={0}\tOFF={1}\t", PortsOpen, PortsClose);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
@@ -57,7 +57,7 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=ProjectorCtl ID={0} Power={1} ", ProjectorID, PowerStatus);
+            Command = string.Format("cmd=ProjectorCtl\tID={0}\tPower={1}\t", ProjectorID, PowerStatus);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
@@ -78,7 +78,7 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=VideoCtl VideoIn={0} VideoOut={1} ", MatrixIn, MatrixOut);
+            Command = string.Format("cmd=VideoCtl\tVideoIn={0}\tVideoOut={1}\t", MatrixIn, MatrixOut);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
@@ -99,7 +99,7 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=CameraCtl Power={0} EnlargeLevel={1} ", PowerStatus, EnlargeLevel);
+            Command = string.Format("cmd=CameraCtl\tPower={0}\tEnlargeLevel={1}\t", PowerStatus, EnlargeLevel);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
