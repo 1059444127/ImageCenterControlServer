@@ -41,9 +41,6 @@
     <Reference Include="DataBaseService">
       <HintPath>..\DataBaseService\bin\Debug\DataBaseService.dll</HintPath>
     </Reference>
-    <Reference Include="DataEncryptService">
-      <HintPath>..\DataEncryptService\bin\Debug\DataEncryptService.dll</HintPath>
-    </Reference>
     <Reference Include="DataHandleService">
       <HintPath>..\DataHandleService\bin\Debug\DataHandleService.dll</HintPath>
     </Reference>

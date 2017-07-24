@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("影像中心服务器数据加密服务")]
-[assembly: AssemblyDescription("DataEncryptService")]
+[assembly: AssemblyTitle("DataCheckService")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("上海实和智能电子科技有限公司")]
-[assembly: AssemblyProduct("ImageCenter")]
-[assembly: AssemblyCopyright("Copyright © 实和智能 2017")]
-[assembly: AssemblyTrademark("实和智能")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("DataCheckService")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("6dc17015-7f2f-42ab-907c-9b7eae88eb80")]
+[assembly: Guid("8bc4fc69-8cb1-4909-b366-b04d01cc0ab1")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.17.07.18")]
-[assembly: AssemblyFileVersion("1.17.07.18")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -14,7 +14,6 @@ using System.IO;
 
 using LogService;
 using CommandHandleService;
-using DataEncryptService;
 using DataBaseService;
 
 namespace AdminControl
@@ -74,11 +73,6 @@ namespace AdminControl
         /// 指令解析实例
         /// </summary>
         public CommandHandleHelper CommandHandle;
-
-        /// <summary>
-        /// 数据加密实例
-        /// </summary>
-        public DataEncryptHelper DataEncrypt;
 
         /// <summary>
         /// 会诊室1控件
@@ -328,9 +322,6 @@ namespace AdminControl
             //指令解析服务
             StartCommandHandle();
 
-            //数据加密服务
-            StartDataEncrypt();
-
             //时间刷新服务
             StartTime();
 
@@ -377,16 +368,6 @@ namespace AdminControl
         private void StartCommandHandle()
         {
             CommandHandle = new CommandHandleHelper();
-        }
-        #endregion
-
-        #region 启动数据加密服务
-        /// <summary>
-        /// 数据加密服务
-        /// </summary>
-        private void StartDataEncrypt()
-        {
-            DataEncrypt = new DataEncryptHelper();
         }
         #endregion
 

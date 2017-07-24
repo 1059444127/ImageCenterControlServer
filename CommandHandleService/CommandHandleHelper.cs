@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataCheckService;
 
 namespace CommandHandleService
 {
@@ -11,6 +12,19 @@ namespace CommandHandleService
     /// </summary>
     public class CommandHandleHelper
     {
+        /// <summary>
+        /// 数据解析实例
+        /// </summary>
+        private DataCheckHelper DataCheck;
+
+        /// <summary>
+        /// 构造器
+        /// </summary>
+        public CommandHandleHelper()
+        {
+            DataCheck = new DataCheckHelper();
+        }
+
         #region 获取继电器口控制指令
         /// <summary>
         /// 获取继电器口模式控制指令
@@ -22,7 +36,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=RelayCtl ON={0} OFF={1} CRC=7d8f\r\n", PortsOpen, PortsClose);
+            Command = string.Format("cmd=RelayCtl ON={0} OFF={1} ", PortsOpen, PortsClose);
+
+            ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
+
+            Command += string.Format("CRC={0:x}\r\n", CRCCode); 
 
             return Command;
         }
@@ -39,7 +57,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=ProjectorCtl ID={0} Power={1} CRC=1582\r\n", ProjectorID, PowerStatus);
+            Command = string.Format("cmd=ProjectorCtl ID={0} Power={1} ", ProjectorID, PowerStatus);
+
+            ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
+
+            Command += string.Format("CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }
@@ -56,7 +78,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=VideoCtl VideoIn={0} VideoOut={1} CRC=1256\r\n", MatrixIn, MatrixOut);
+            Command = string.Format("cmd=VideoCtl VideoIn={0} VideoOut={1} ", MatrixIn, MatrixOut);
+
+            ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
+
+            Command += string.Format("CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }
@@ -73,7 +99,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=CameraCtl Power={0} EnlargeLevel={1} CRC=1582\r\n", PowerStatus, EnlargeLevel);
+            Command = string.Format("cmd=CameraCtl Power={0} EnlargeLevel={1} ", PowerStatus, EnlargeLevel);
+
+            ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
+
+            Command += string.Format("CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }

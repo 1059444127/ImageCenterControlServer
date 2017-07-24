@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataCheckService;
 
 namespace DataHandleService
 {
@@ -11,6 +12,19 @@ namespace DataHandleService
     /// </summary>
     public class DataHandleHelper
     {
+        /// <summary>
+        /// 数据校验服务
+        /// </summary>
+        private DataCheckHelper DataCheck;
+
+        /// <summary>
+        /// 构造器
+        /// </summary>
+        public DataHandleHelper()
+        {
+            DataCheck = new DataCheckHelper();
+        }
+
         /// <summary>
         /// 获取房间温度
         /// </summary>
