@@ -22,15 +22,15 @@ namespace DataCheckService
 
             ushort CRCCode = 0xFFFF;
 
-            int len = Data.Length;
-            if (len <= 0)
+            int Len = Data.Length;
+            if (Len <= 0)
             {
                 CRCCode = 0;
             }
             else
             {
-                len--;
-                for (IX = 0; IX <= len; IX++)
+                Len--;
+                for (IX = 0; IX <= Len; IX++)
                 {
                     CRCCode = (ushort)(CRCCode ^ (Data[IX]));
 
@@ -56,6 +56,28 @@ namespace DataCheckService
             CRCCode += buf2;
 
             return CRCCode;
+        }
+
+        /// <summary>
+        /// 检查数据是否完整
+        /// </summary>
+        /// <param name="Data">待检查的数据</param>
+        /// <param name="CRCCode">CRC校验码</param>
+        /// <returns></returns>
+        public bool CheckData(string Data, string CRCCode)
+        {
+            byte[] RawData = Encoding.UTF8.GetBytes(Data);
+
+            string Code = string.Format("{0:x}", GetCRCCode(RawData));
+
+            if (string.Equals(Code,CRCCode))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
