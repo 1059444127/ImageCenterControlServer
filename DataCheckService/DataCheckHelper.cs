@@ -59,18 +59,23 @@ namespace DataCheckService
         }
 
         /// <summary>
-        /// 检查数据是否完整
+        /// CRC数据校验
         /// </summary>
-        /// <param name="Data">待检查的数据</param>
-        /// <param name="CRCCode">CRC校验码</param>
+        /// <param name="Data">待校验的数据</param>
         /// <returns></returns>
-        public bool CheckData(string Data, string CRCCode)
+        public bool CheckData(string Data)
         {
-            byte[] RawData = Encoding.UTF8.GetBytes(Data);
+            //收到的CRC校验码
+            string RawCode = ((Data.Split('\t')[Data.Split('\t').Length - 1]).Replace("\r\n","")).Split('=')[1];
 
-            string Code = string.Format("{0:x}", GetCRCCode(RawData));
+            //待计算部分转化为字节数组
+            byte[] RawData = Encoding.UTF8.GetBytes(Data.Replace("CRC","\0"));
+            
+            //计算出的校验码
+            string CRCCode = string.Format("{0:x}", GetCRCCode(RawData));
 
-            if (string.Equals(Code,CRCCode))
+            //判断
+            if (string.Equals(RawCode,CRCCode))
             {
                 return true;
             }
