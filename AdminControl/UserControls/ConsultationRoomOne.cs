@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
 using System.Xml;
-
 using DataTransferService;
 using CommandHandleService;
 
