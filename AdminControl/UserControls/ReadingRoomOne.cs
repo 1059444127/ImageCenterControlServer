@@ -115,6 +115,166 @@ namespace AdminControl
         {
             ModeChange(3);
         }
+
+        /// <summary>
+        /// 顶灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_TopLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 顶灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_TopLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 壁灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WallLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 壁灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WallLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯带开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_RoundLight_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 灯带关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_RoundLight_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 总开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AllLights_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 总关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AllLights_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 窗帘1开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WindowsOne_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 窗帘1关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WindowsOne_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 窗帘2开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WindowsTwo_On_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 窗帘2关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_WindowsTwo_Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 幕布1降
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_FilmOne_Down_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 幕布1升
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_FilmOne_Up_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 幕布2降
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_FilmTwo_Down_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 幕布2升
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_FilmTwo_Up_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region 初始化
