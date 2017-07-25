@@ -105,7 +105,6 @@ namespace AdminControl
         private void ReadingRoomOne_Load(object sender, EventArgs e)
         {
 
-
         }
 
         /// <summary>
@@ -145,7 +144,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_TopLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, true);
         }
 
         /// <summary>
@@ -155,7 +154,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_TopLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, false);
         }
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WallLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, true);
         }
 
         /// <summary>
@@ -175,7 +174,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WallLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, false);
         }
 
         /// <summary>
@@ -185,7 +184,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_RoundLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, true);
         }
 
         /// <summary>
@@ -195,7 +194,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_RoundLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, false);
         }
 
         /// <summary>
@@ -205,7 +204,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_AllLights_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
         }
 
         /// <summary>
@@ -215,7 +214,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_AllLights_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
         }
 
         /// <summary>
@@ -225,7 +224,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WindowsOne_On_Click(object sender, EventArgs e)
         {
-
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[0], WindowsList[0].RelayNumber.Split(',')[1]);
         }
 
         /// <summary>
@@ -235,7 +234,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WindowsOne_Off_Click(object sender, EventArgs e)
         {
-
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[1], WindowsList[0].RelayNumber.Split(',')[0]);
         }
 
         /// <summary>
@@ -245,7 +244,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WindowsTwo_On_Click(object sender, EventArgs e)
         {
-
+            WindowsControl(WindowsList[1].RelayNumber.Split(',')[0], WindowsList[1].RelayNumber.Split(',')[1]);
         }
 
         /// <summary>
@@ -255,47 +254,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_WindowsTwo_Off_Click(object sender, EventArgs e)
         {
-
-        }
-
-        /// <summary>
-        /// 幕布1降
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_FilmOne_Down_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 幕布1升
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_FilmOne_Up_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 幕布2降
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_FilmTwo_Down_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 幕布2升
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_FilmTwo_Up_Click(object sender, EventArgs e)
-        {
-
+            WindowsControl(WindowsList[1].RelayNumber.Split(',')[1], WindowsList[1].RelayNumber.Split(',')[0]);
         }
         #endregion
 
