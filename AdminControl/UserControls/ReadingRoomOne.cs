@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Net;
+using System.Xml;
 using System.Net.Sockets;
 using DataTransferService;
 using DataHandleService;
+using CommandHandleService;
 
 namespace AdminControl
 {
@@ -32,6 +34,21 @@ namespace AdminControl
         private volatile bool is_ControlConnect = false;
 
         /// <summary>
+        /// 模式列表
+        /// </summary>
+        private List<ModeConfig> ModeList;
+
+        /// <summary>
+        /// 灯光列表
+        /// </summary>
+        private List<LightConfig> LightList;
+
+        /// <summary>
+        /// 窗帘列表
+        /// </summary>
+        private List<WindowsConfig> WindowsList;
+
+        /// <summary>
         /// 数据传输服务实例
         /// </summary>
         private DataTransfer Data;
@@ -40,6 +57,11 @@ namespace AdminControl
         /// 数据解析服务实例
         /// </summary>
         private DataHandleHelper DataHandle;
+
+        /// <summary>
+        /// 指令解析实例
+        /// </summary>
+        private CommandHandleHelper CommandHandle;
 
         /// <summary>
         /// 控件刷新服务实例
@@ -290,11 +312,83 @@ namespace AdminControl
 
             DataHandle = new DataHandleHelper();
 
+            CommandHandle = new CommandHandleHelper();
+
             ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+
+            ReadUserConfig();
+        }
+        #endregion
+
+        #region 读取用户配置
+        /// <summary>
+        /// 读取用户配置
+        /// </summary>
+        private void ReadUserConfig()
+        {
+            //读取模式配置
+            ModeList = new List<ModeConfig>();
+            XmlDocument ModeDoc = new XmlDocument();
+            XmlReaderSettings ModeSetting = new XmlReaderSettings();
+            ModeSetting.IgnoreComments = true;
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\ModeConfig.xml", ModeSetting);
+            ModeDoc.Load(ModeReader);
+            XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
+            XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
+            foreach (XmlNode Node in ModeRootChilds)
+            {
+                ModeConfig Mode = new ModeConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Mode.ModeName = Childs.Item(0).InnerText;
+                Mode.Relays = Childs.Item(1).InnerText;
+                ModeList.Add(Mode);
+            }
+            ModeReader.Close();
+
+            //读取灯光配置
+            LightList = new List<LightConfig>();
+            XmlDocument LightDoc = new XmlDocument();
+            XmlReaderSettings LightSetting = new XmlReaderSettings();
+            LightSetting.IgnoreComments = true;
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\LightConfig.xml", LightSetting);
+            LightDoc.Load(LightReader);
+            XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
+            XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
+            foreach (XmlNode Node in LightRootChilds)
+            {
+                LightConfig Light = new LightConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Light.LightName = Childs.Item(0).InnerText;
+                Light.RelayNumber = Childs.Item(1).InnerText;
+                LightList.Add(Light);
+            }
+            LightReader.Close();
+
+            //读取窗帘配置
+            WindowsList = new List<WindowsConfig>();
+            XmlDocument WindowsDoc = new XmlDocument();
+            XmlReaderSettings WindowsSetting = new XmlReaderSettings();
+            WindowsSetting.IgnoreComments = true;
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\WindowsConfig.xml", WindowsSetting);
+            WindowsDoc.Load(WindowsReader);
+            XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
+            XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
+            foreach (XmlNode Node in WindowsRootChilds)
+            {
+                WindowsConfig Windows = new WindowsConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Windows.WindowsName = Childs.Item(0).InnerText;
+                Windows.RelayNumber = Childs.Item(1).InnerText;
+                WindowsList.Add(Windows);
+            }
+            WindowsReader.Close();
         }
         #endregion
 
@@ -527,6 +621,8 @@ namespace AdminControl
         }
         #endregion
 
+        #region 设备控制
+
         #region 模式切换
         /// <summary>
         /// 模式切换
@@ -534,9 +630,14 @@ namespace AdminControl
         /// <param name="Mode"></param>
         private void ModeChange(int Mode)
         {
+            string Command = string.Empty;
+
             switch (Mode)
             {
                 case 1:
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 2:
                     break;
@@ -546,6 +647,47 @@ namespace AdminControl
                     break;
             }
         }
+        #endregion
+
+        #region 独立灯光控制
+        /// <summary>
+        /// 灯光控制
+        /// </summary>
+        /// <param name="RelayNumber">继电器号码</param>
+        /// <param name="Status">继电器状态：true:开；false:关</param>
+        private void LightControl(string RelayNumber, bool Status)
+        {
+            string Command = string.Empty;
+
+            if (Status)
+            {
+                Command = CommandHandle.GetRelayCommand(RelayNumber, "0");
+            }
+            else
+            {
+                Command = CommandHandle.GetRelayCommand("0", RelayNumber);
+            }
+
+            SendControlCommand(Command);
+        }
+        #endregion
+
+        #region 独立窗帘控制
+        /// <summary>
+        /// 独立窗帘控制
+        /// </summary>
+        /// <param name="PortOpen">开启继电器序号</param>
+        /// <param name="PortClose">关闭继电器序号</param>
+        private void WindowsControl(string PortOpen, string PortClose)
+        {
+            string Command = string.Empty;
+
+            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+
+            SendControlCommand(Command);
+        }
+        #endregion
+
         #endregion
     }
 }

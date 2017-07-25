@@ -36,11 +36,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=RelayCtl\tON={0}\tOFF={1}\t", PortsOpen, PortsClose);
+            Command = string.Format("cmd=RelayCtl\tON={0}\tOFF={1}", PortsOpen, PortsClose);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
-            Command += string.Format("CRC={0:x}\r\n", CRCCode); 
+            Command += string.Format(":CRC={0:x}\r\n", CRCCode); 
 
             return Command;
         }
@@ -57,11 +57,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=ProjectorCtl\tID={0}\tPower={1}\t", ProjectorID, PowerStatus);
+            Command = string.Format("cmd=ProjectorCtl\tID={0}\tPower={1}", ProjectorID, PowerStatus);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
-            Command += string.Format("CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }
@@ -78,11 +78,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=VideoCtl\tVideoIn={0}\tVideoOut={1}\t", MatrixIn, MatrixOut);
+            Command = string.Format("cmd=VideoCtl\tVideoIn={0}\tVideoOut={1}", MatrixIn, MatrixOut);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
-            Command += string.Format("CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }
@@ -99,11 +99,11 @@ namespace CommandHandleService
         {
             string Command = string.Empty;
 
-            Command = string.Format("cmd=CameraCtl\tPower={0}\tEnlargeLevel={1}\t", PowerStatus, EnlargeLevel);
+            Command = string.Format("cmd=CameraCtl\tPower={0}\tEnlargeLevel={1}", PowerStatus, EnlargeLevel);
 
             ushort CRCCode = DataCheck.GetCRCCode(Encoding.UTF8.GetBytes(Command));
 
-            Command += string.Format("CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
 
             return Command;
         }
