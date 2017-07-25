@@ -34,18 +34,18 @@ namespace DataHandleService
         {
             string Temp = string.Empty;
 
-            string[] DataStr = Data.Split(' ');
+            if (DataCheck.CheckData(Data))
+            {
+                //数据处理
+                Temp = Data.Split(' ')[3].Split('=')[1];
 
-            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+                return Temp + " ℃";
+            }
+            else
             {
                 Temp = "ERROR";
                 return Temp;
             }
-
-            //数据处理
-            Temp = Data.Split(' ')[3].Split('=')[1];
-
-            return Temp + " ℃";
         }
 
         /// <summary>
@@ -57,18 +57,18 @@ namespace DataHandleService
         {
             string Hum = string.Empty;
 
-            string[] DataStr = Data.Split(' ');
+            if (DataCheck.CheckData(Data))
+            {
+                //数据处理
+                Hum = Data.Split(' ')[4].Split('=')[1];
 
-            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+                return Hum + " %";
+            }
+            else
             {
                 Hum = "ERROR";
                 return Hum;
             }
-
-            //数据处理
-            Hum = Data.Split(' ')[4].Split('=')[1];
-
-            return Hum + " %";
         }
 
         /// <summary>
@@ -80,18 +80,18 @@ namespace DataHandleService
         {
             string Light = string.Empty;
 
-            string[] DataStr = Data.Split(' ');
+            if (DataCheck.CheckData(Data))
+            {
+                //数据处理
+                Light = Data.Split(' ')[5].Split('=')[1];
 
-            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+                return Light + " LUX";
+            }
+            else
             {
                 Light = "ERROR";
                 return Light;
             }
-
-            //数据处理
-            Light = Data.Split(' ')[5].Split('=')[1];
-
-            return Light + " LUX";
         }
 
         /// <summary>
@@ -102,19 +102,19 @@ namespace DataHandleService
         public string GetHouseNoise(string Data)
         {
             string Noise = string.Empty;
+               
+            if (DataCheck.CheckData(Data))
+            {
+                //数据处理
+                Noise = Data.Split(' ')[6].Split('=')[1];
 
-            string[] DataStr = Data.Split(' ');
-
-            if ((DataStr.Length != 17) || (DataStr[DataStr.Length - 1] != "CRC=f754\r\n"))
+                return Noise + " DB";
+            }
+            else
             {
                 Noise = "ERROR";
                 return Noise;
             }
-
-            //数据处理
-            Noise = Data.Split(' ')[6].Split('=')[1];
-
-            return Noise + " DB";
         }
     }
 }
