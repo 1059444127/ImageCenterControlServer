@@ -33,10 +33,7 @@
             this.btn_WallLight_Off = new System.Windows.Forms.Button();
             this.btn_RoundLight_Off = new System.Windows.Forms.Button();
             this.btn_RoundLight_On = new System.Windows.Forms.Button();
-            this.btn_FilmTwo_Up = new System.Windows.Forms.Button();
-            this.btn_FilmTwo_Down = new System.Windows.Forms.Button();
             this.btn_AllLights_Off = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label_Hum = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -44,11 +41,8 @@
             this.btn_WindowsTwo_Off = new System.Windows.Forms.Button();
             this.btn_WindowsTwo_On = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_FilmOne_Up = new System.Windows.Forms.Button();
             this.btn_WindowsOne_Off = new System.Windows.Forms.Button();
-            this.btn_FilmOne_Down = new System.Windows.Forms.Button();
             this.btn_WindowsOne_On = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label_Noise = new System.Windows.Forms.Label();
             this.label_Light = new System.Windows.Forms.Label();
             this.label_Temp = new System.Windows.Forms.Label();
@@ -95,6 +89,7 @@
             this.btn_AllLights_On.TabIndex = 5;
             this.btn_AllLights_On.Text = "全开";
             this.btn_AllLights_On.UseVisualStyleBackColor = false;
+            this.btn_AllLights_On.Click += new System.EventHandler(this.btn_AllLights_On_Click);
             // 
             // btn_TopLight_Off
             // 
@@ -114,6 +109,7 @@
             this.btn_TopLight_Off.TabIndex = 30;
             this.btn_TopLight_Off.Text = "关";
             this.btn_TopLight_Off.UseVisualStyleBackColor = false;
+            this.btn_TopLight_Off.Click += new System.EventHandler(this.btn_TopLight_Off_Click);
             // 
             // btn_WallLight_Off
             // 
@@ -133,6 +129,7 @@
             this.btn_WallLight_Off.TabIndex = 29;
             this.btn_WallLight_Off.Text = "关";
             this.btn_WallLight_Off.UseVisualStyleBackColor = false;
+            this.btn_WallLight_Off.Click += new System.EventHandler(this.btn_WallLight_Off_Click);
             // 
             // btn_RoundLight_Off
             // 
@@ -152,6 +149,7 @@
             this.btn_RoundLight_Off.TabIndex = 28;
             this.btn_RoundLight_Off.Text = "关";
             this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_Off.Click += new System.EventHandler(this.btn_RoundLight_Off_Click);
             // 
             // btn_RoundLight_On
             // 
@@ -171,44 +169,7 @@
             this.btn_RoundLight_On.TabIndex = 27;
             this.btn_RoundLight_On.Text = "开";
             this.btn_RoundLight_On.UseVisualStyleBackColor = false;
-            // 
-            // btn_FilmTwo_Up
-            // 
-            this.btn_FilmTwo_Up.BackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Up.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_FilmTwo_Up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_FilmTwo_Up.FlatAppearance.BorderSize = 0;
-            this.btn_FilmTwo_Up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Up.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FilmTwo_Up.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_FilmTwo_Up.ForeColor = System.Drawing.Color.White;
-            this.btn_FilmTwo_Up.Location = new System.Drawing.Point(166, 188);
-            this.btn_FilmTwo_Up.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_FilmTwo_Up.Name = "btn_FilmTwo_Up";
-            this.btn_FilmTwo_Up.Size = new System.Drawing.Size(70, 50);
-            this.btn_FilmTwo_Up.TabIndex = 45;
-            this.btn_FilmTwo_Up.Text = "升";
-            this.btn_FilmTwo_Up.UseVisualStyleBackColor = false;
-            // 
-            // btn_FilmTwo_Down
-            // 
-            this.btn_FilmTwo_Down.BackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Down.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_FilmTwo_Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_FilmTwo_Down.FlatAppearance.BorderSize = 0;
-            this.btn_FilmTwo_Down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Down.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmTwo_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FilmTwo_Down.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_FilmTwo_Down.ForeColor = System.Drawing.Color.White;
-            this.btn_FilmTwo_Down.Location = new System.Drawing.Point(96, 188);
-            this.btn_FilmTwo_Down.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_FilmTwo_Down.Name = "btn_FilmTwo_Down";
-            this.btn_FilmTwo_Down.Size = new System.Drawing.Size(70, 50);
-            this.btn_FilmTwo_Down.TabIndex = 44;
-            this.btn_FilmTwo_Down.Text = "降";
-            this.btn_FilmTwo_Down.UseVisualStyleBackColor = false;
+            this.btn_RoundLight_On.Click += new System.EventHandler(this.btn_RoundLight_On_Click);
             // 
             // btn_AllLights_Off
             // 
@@ -228,16 +189,7 @@
             this.btn_AllLights_Off.TabIndex = 31;
             this.btn_AllLights_Off.Text = "全关";
             this.btn_AllLights_Off.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 25);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "幕布2:";
+            this.btn_AllLights_Off.Click += new System.EventHandler(this.btn_AllLights_Off_Click);
             // 
             // label_Hum
             // 
@@ -290,13 +242,14 @@
             this.btn_WindowsTwo_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WindowsTwo_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_WindowsTwo_Off.ForeColor = System.Drawing.Color.White;
-            this.btn_WindowsTwo_Off.Location = new System.Drawing.Point(166, 86);
+            this.btn_WindowsTwo_Off.Location = new System.Drawing.Point(166, 164);
             this.btn_WindowsTwo_Off.Margin = new System.Windows.Forms.Padding(0);
             this.btn_WindowsTwo_Off.Name = "btn_WindowsTwo_Off";
             this.btn_WindowsTwo_Off.Size = new System.Drawing.Size(70, 50);
             this.btn_WindowsTwo_Off.TabIndex = 42;
             this.btn_WindowsTwo_Off.Text = "关";
             this.btn_WindowsTwo_Off.UseVisualStyleBackColor = false;
+            this.btn_WindowsTwo_Off.Click += new System.EventHandler(this.btn_WindowsTwo_Off_Click);
             // 
             // btn_WindowsTwo_On
             // 
@@ -309,42 +262,24 @@
             this.btn_WindowsTwo_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WindowsTwo_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_WindowsTwo_On.ForeColor = System.Drawing.Color.White;
-            this.btn_WindowsTwo_On.Location = new System.Drawing.Point(96, 86);
+            this.btn_WindowsTwo_On.Location = new System.Drawing.Point(96, 164);
             this.btn_WindowsTwo_On.Margin = new System.Windows.Forms.Padding(0);
             this.btn_WindowsTwo_On.Name = "btn_WindowsTwo_On";
             this.btn_WindowsTwo_On.Size = new System.Drawing.Size(70, 50);
             this.btn_WindowsTwo_On.TabIndex = 41;
             this.btn_WindowsTwo_On.Text = "开";
             this.btn_WindowsTwo_On.UseVisualStyleBackColor = false;
+            this.btn_WindowsTwo_On.Click += new System.EventHandler(this.btn_WindowsTwo_On_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 98);
+            this.label6.Location = new System.Drawing.Point(21, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 25);
             this.label6.TabIndex = 40;
             this.label6.Text = "窗帘2:";
-            // 
-            // btn_FilmOne_Up
-            // 
-            this.btn_FilmOne_Up.BackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Up.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_FilmOne_Up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_FilmOne_Up.FlatAppearance.BorderSize = 0;
-            this.btn_FilmOne_Up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Up.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FilmOne_Up.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_FilmOne_Up.ForeColor = System.Drawing.Color.White;
-            this.btn_FilmOne_Up.Location = new System.Drawing.Point(166, 137);
-            this.btn_FilmOne_Up.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_FilmOne_Up.Name = "btn_FilmOne_Up";
-            this.btn_FilmOne_Up.Size = new System.Drawing.Size(70, 50);
-            this.btn_FilmOne_Up.TabIndex = 39;
-            this.btn_FilmOne_Up.Text = "升";
-            this.btn_FilmOne_Up.UseVisualStyleBackColor = false;
             // 
             // btn_WindowsOne_Off
             // 
@@ -357,32 +292,14 @@
             this.btn_WindowsOne_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WindowsOne_Off.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_WindowsOne_Off.ForeColor = System.Drawing.Color.White;
-            this.btn_WindowsOne_Off.Location = new System.Drawing.Point(166, 35);
+            this.btn_WindowsOne_Off.Location = new System.Drawing.Point(166, 67);
             this.btn_WindowsOne_Off.Margin = new System.Windows.Forms.Padding(0);
             this.btn_WindowsOne_Off.Name = "btn_WindowsOne_Off";
             this.btn_WindowsOne_Off.Size = new System.Drawing.Size(70, 50);
             this.btn_WindowsOne_Off.TabIndex = 38;
             this.btn_WindowsOne_Off.Text = "关";
             this.btn_WindowsOne_Off.UseVisualStyleBackColor = false;
-            // 
-            // btn_FilmOne_Down
-            // 
-            this.btn_FilmOne_Down.BackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Down.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_FilmOne_Down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_FilmOne_Down.FlatAppearance.BorderSize = 0;
-            this.btn_FilmOne_Down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Down.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_FilmOne_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FilmOne_Down.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_FilmOne_Down.ForeColor = System.Drawing.Color.White;
-            this.btn_FilmOne_Down.Location = new System.Drawing.Point(96, 137);
-            this.btn_FilmOne_Down.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_FilmOne_Down.Name = "btn_FilmOne_Down";
-            this.btn_FilmOne_Down.Size = new System.Drawing.Size(70, 50);
-            this.btn_FilmOne_Down.TabIndex = 35;
-            this.btn_FilmOne_Down.Text = "降";
-            this.btn_FilmOne_Down.UseVisualStyleBackColor = false;
+            this.btn_WindowsOne_Off.Click += new System.EventHandler(this.btn_WindowsOne_Off_Click);
             // 
             // btn_WindowsOne_On
             // 
@@ -395,23 +312,14 @@
             this.btn_WindowsOne_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WindowsOne_On.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_WindowsOne_On.ForeColor = System.Drawing.Color.White;
-            this.btn_WindowsOne_On.Location = new System.Drawing.Point(96, 35);
+            this.btn_WindowsOne_On.Location = new System.Drawing.Point(96, 67);
             this.btn_WindowsOne_On.Margin = new System.Windows.Forms.Padding(0);
             this.btn_WindowsOne_On.Name = "btn_WindowsOne_On";
             this.btn_WindowsOne_On.Size = new System.Drawing.Size(70, 50);
             this.btn_WindowsOne_On.TabIndex = 34;
             this.btn_WindowsOne_On.Text = "开";
             this.btn_WindowsOne_On.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "幕布1:";
+            this.btn_WindowsOne_On.Click += new System.EventHandler(this.btn_WindowsOne_On_Click);
             // 
             // label_Noise
             // 
@@ -508,6 +416,7 @@
             this.btn_WallLight_On.TabIndex = 26;
             this.btn_WallLight_On.Text = "开";
             this.btn_WallLight_On.UseVisualStyleBackColor = false;
+            this.btn_WallLight_On.Click += new System.EventHandler(this.btn_WallLight_On_Click);
             // 
             // btn_TopLight_On
             // 
@@ -527,6 +436,7 @@
             this.btn_TopLight_On.TabIndex = 14;
             this.btn_TopLight_On.Text = "开";
             this.btn_TopLight_On.UseVisualStyleBackColor = false;
+            this.btn_TopLight_On.Click += new System.EventHandler(this.btn_TopLight_On_Click);
             // 
             // label1
             // 
@@ -562,7 +472,7 @@
             // 
             this.label_Windows.AutoSize = true;
             this.label_Windows.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Windows.Location = new System.Drawing.Point(21, 47);
+            this.label_Windows.Location = new System.Drawing.Point(21, 79);
             this.label_Windows.Name = "label_Windows";
             this.label_Windows.Size = new System.Drawing.Size(72, 25);
             this.label_Windows.TabIndex = 16;
@@ -570,17 +480,11 @@
             // 
             // gBx_DeviceControl
             // 
-            this.gBx_DeviceControl.Controls.Add(this.btn_FilmTwo_Up);
-            this.gBx_DeviceControl.Controls.Add(this.btn_FilmTwo_Down);
-            this.gBx_DeviceControl.Controls.Add(this.label7);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsTwo_Off);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsTwo_On);
             this.gBx_DeviceControl.Controls.Add(this.label6);
-            this.gBx_DeviceControl.Controls.Add(this.btn_FilmOne_Up);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsOne_Off);
-            this.gBx_DeviceControl.Controls.Add(this.btn_FilmOne_Down);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsOne_On);
-            this.gBx_DeviceControl.Controls.Add(this.label5);
             this.gBx_DeviceControl.Controls.Add(this.label_Windows);
             this.gBx_DeviceControl.Location = new System.Drawing.Point(378, 149);
             this.gBx_DeviceControl.Name = "gBx_DeviceControl";
@@ -606,6 +510,7 @@
             this.btn_ModeLK.TabIndex = 3;
             this.btn_ModeLK.Text = "离开模式";
             this.btn_ModeLK.UseVisualStyleBackColor = false;
+            this.btn_ModeLK.Click += new System.EventHandler(this.btn_ModeLK_Click);
             // 
             // btn_ModeXX
             // 
@@ -624,6 +529,7 @@
             this.btn_ModeXX.TabIndex = 2;
             this.btn_ModeXX.Text = "休息模式";
             this.btn_ModeXX.UseVisualStyleBackColor = false;
+            this.btn_ModeXX.Click += new System.EventHandler(this.btn_ModeXX_Click);
             // 
             // btn_ModeYP
             // 
@@ -642,6 +548,7 @@
             this.btn_ModeYP.TabIndex = 1;
             this.btn_ModeYP.Text = "阅片模式";
             this.btn_ModeYP.UseVisualStyleBackColor = false;
+            this.btn_ModeYP.Click += new System.EventHandler(this.btn_ModeYP_Click);
             // 
             // gBx_ModeChange
             // 
@@ -743,10 +650,7 @@
         private System.Windows.Forms.Button btn_WallLight_Off;
         private System.Windows.Forms.Button btn_RoundLight_Off;
         private System.Windows.Forms.Button btn_RoundLight_On;
-        private System.Windows.Forms.Button btn_FilmTwo_Up;
-        private System.Windows.Forms.Button btn_FilmTwo_Down;
         private System.Windows.Forms.Button btn_AllLights_Off;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_Hum;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -754,11 +658,8 @@
         private System.Windows.Forms.Button btn_WindowsTwo_Off;
         private System.Windows.Forms.Button btn_WindowsTwo_On;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_FilmOne_Up;
         private System.Windows.Forms.Button btn_WindowsOne_Off;
-        private System.Windows.Forms.Button btn_FilmOne_Down;
         private System.Windows.Forms.Button btn_WindowsOne_On;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_Noise;
         private System.Windows.Forms.Label label_Light;
         private System.Windows.Forms.Label label_Temp;
