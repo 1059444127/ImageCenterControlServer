@@ -269,11 +269,9 @@ namespace AdminControl
 
             ControlRefresh = new ControlRefreshHelper();
 
-            /*
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
-            */
 
             ReadUserConfig();
         }
