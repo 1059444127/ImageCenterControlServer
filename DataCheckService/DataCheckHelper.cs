@@ -61,15 +61,17 @@ namespace DataCheckService
         /// <summary>
         /// CRC数据校验
         /// </summary>
-        /// <param name="Data">待校验的数据</param>
+        /// <param name="Data">待校验的完整数据</param>
         /// <returns></returns>
         public bool CheckData(string Data)
         {
-            //收到的CRC校验码
-            string RawCode = ((Data.Split('\t')[Data.Split('\t').Length - 1]).Replace("\r\n","")).Split('=')[1];
+            string[] StrData = Data.Split(':');
+
+            //原始校验码
+            string RawCode = StrData[1].Split('=')[1].Replace("\r\n", "");
 
             //待计算部分转化为字节数组
-            byte[] RawData = Encoding.UTF8.GetBytes(Data.Replace("CRC","\0"));
+            byte[] RawData = Encoding.UTF8.GetBytes(StrData[0]);
             
             //计算出的校验码
             string CRCCode = string.Format("{0:x}", GetCRCCode(RawData));
