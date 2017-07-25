@@ -269,9 +269,11 @@ namespace AdminControl
 
             ControlRefresh = new ControlRefreshHelper();
 
+            /*
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+            */
 
             ReadUserConfig();
         }
@@ -590,21 +592,19 @@ namespace AdminControl
                 case 1:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
-                    SendControlCommand(Command);
                     break;
                 case 2:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
-                    SendControlCommand(Command);
                     break;
                 case 3:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
-                    SendControlCommand(Command);
                     break;
                 default:
                     break;
             }
+            SendControlCommand(Command);
         }
         #endregion
 
@@ -626,7 +626,6 @@ namespace AdminControl
             {
                 Command = CommandHandle.GetRelayCommand("0", RelayNumber);
             }
-
             SendControlCommand(Command);
         }
         #endregion
