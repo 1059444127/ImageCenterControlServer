@@ -12,11 +12,14 @@ namespace CommandHandleService
     /// </summary>
     public class CommandHandleHelper
     {
+        #region 全局变量
         /// <summary>
-        /// 数据解析实例
+        /// 数据校验实例
         /// </summary>
         private DataCheckHelper DataCheck;
+        #endregion
 
+        #region 构造器
         /// <summary>
         /// 构造器
         /// </summary>
@@ -24,6 +27,7 @@ namespace CommandHandleService
         {
             DataCheck = new DataCheckHelper();
         }
+        #endregion
 
         #region 获取继电器口控制指令
         /// <summary>
