@@ -640,8 +640,14 @@ namespace AdminControl
                     SendControlCommand(Command);
                     break;
                 case 2:
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 3:
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 default:
                     break;
