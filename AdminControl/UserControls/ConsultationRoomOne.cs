@@ -506,6 +506,11 @@ namespace AdminControl
                     ControlRefresh.RefreshButtons(gBx_LightsControl, false);
                     ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
+                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, "初始化", Color.Black);
+
                     break;
                 }
 
@@ -523,7 +528,7 @@ namespace AdminControl
                 }
                 catch (Exception ex)
                 {
-                    frm_Main.Log.WriteLog("会诊室1设备状态：" + ex.Message);
+                    frm_Main.Log.WriteLog("会诊室1设备状态错误：" + ex.Message);
                     continue;
                 }
 
