@@ -523,6 +523,9 @@ namespace AdminControl
                     continue;
                 }
 
+                /*
+                发送给客户端
+                */
                 if (is_ClientConnect)
                 {
                     SendDeviceStatus(Status);
