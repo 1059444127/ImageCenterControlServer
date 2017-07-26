@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using System.Xml;
 using DataTransferService;
 using CommandHandleService;
+using DataHandleService;
 
 namespace AdminControl
 {
@@ -57,14 +58,19 @@ namespace AdminControl
         private DataTransfer Data;
 
         /// <summary>
-        /// 控件刷新服务实例
+        /// 数据解析实例
         /// </summary>
-        private ControlRefreshHelper ControlRefresh;
+        private DataHandleHelper DataHandle;
 
         /// <summary>
         /// 指令解析实例
         /// </summary>
         private CommandHandleHelper CommandHandle;
+
+        /// <summary>
+        /// 控件刷新服务实例
+        /// </summary>
+        private ControlRefreshHelper ControlRefresh;
 
         /// <summary>
         /// 主窗体
@@ -335,9 +341,11 @@ namespace AdminControl
 
             Data = new DataTransfer();
 
-            ControlRefresh = new ControlRefreshHelper();
+            DataHandle = new DataHandleHelper();
 
             CommandHandle = new CommandHandleHelper();
+
+            ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
@@ -500,8 +508,20 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("会诊室1设备状态：" + Status);
 
                 /*
-                状态解析
+                状态刷新
                 */
+                try
+                {
+                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, DataHandle.GetProjectorStatus(Status), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, DataHandle.GetCameraStatus(Status), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, DataHandle.GetMatrixStatus(Status,1), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, DataHandle.GetMatrixStatus(Status,0), Color.Black);
+                }
+                catch (Exception ex)
+                {
+                    frm_Main.Log.WriteLog("会诊室1设备状态：" + ex.Message);
+                    continue;
+                }
 
                 if (is_ClientConnect)
                 {
