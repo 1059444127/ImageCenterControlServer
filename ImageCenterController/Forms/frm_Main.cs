@@ -81,6 +81,7 @@ namespace ImageCenterController
             {
                 ControlSocket.Connect(Point);
                 btn_Connect.Text = "断开";
+                is_Connected = true;
                 Thread SendThread = new Thread(SendMessage);
                 SendThread.IsBackground = true;
                 SendThread.Start();
@@ -102,7 +103,7 @@ namespace ImageCenterController
                 {
                     try
                     {
-                        Data.SendData(ControlSocket, txt_Send.Text.Replace(" ","\t"));
+                        Data.SendData(ControlSocket, txt_Send.Text.Replace(" ","\t") + ":CRC=4d83\r\n");
                         Thread.Sleep(1000);
                     }
                     catch (Exception ex)

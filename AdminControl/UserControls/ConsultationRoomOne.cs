@@ -459,8 +459,10 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
+            /*
             string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "会诊室1控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
+            */
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
             RecvDeviceStatusThread.IsBackground = true;
@@ -491,8 +493,10 @@ namespace AdminControl
                 {
                     frm_Main.Log.WriteLog(string.Format("会诊室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
+                    /*
                     string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
+                    */
 
                     is_ControlConnect = false;
 

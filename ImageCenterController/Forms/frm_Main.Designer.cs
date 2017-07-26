@@ -63,6 +63,7 @@
             this.txt_ServerIP.Name = "txt_ServerIP";
             this.txt_ServerIP.Size = new System.Drawing.Size(154, 21);
             this.txt_ServerIP.TabIndex = 2;
+            this.txt_ServerIP.Text = "192.168.31.250";
             // 
             // txt_ServerPort
             // 
@@ -70,6 +71,7 @@
             this.txt_ServerPort.Name = "txt_ServerPort";
             this.txt_ServerPort.Size = new System.Drawing.Size(154, 21);
             this.txt_ServerPort.TabIndex = 3;
+            this.txt_ServerPort.Text = "60000";
             // 
             // btn_Connect
             // 
@@ -130,6 +132,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "控制器";
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.ResumeLayout(false);
