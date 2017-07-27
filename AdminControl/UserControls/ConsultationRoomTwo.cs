@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
-using DataTransferService;
-using CommandHandleService;
 using System.Xml;
+using DataTransferService;
+using DataHandleService;
+using CommandHandleService;
 
 namespace AdminControl
 {
@@ -40,6 +41,11 @@ namespace AdminControl
         /// 指令解析服务实例
         /// </summary>
         private CommandHandleHelper CommandHandle;
+
+        /// <summary>
+        /// 数据解析实例
+        /// </summary>
+        private DataHandleHelper DataHandle;
 
         /// <summary>
         /// 模式列表
@@ -338,6 +344,8 @@ namespace AdminControl
 
             CommandHandle = new CommandHandleHelper();
 
+            DataHandle = new DataHandleHelper();
+
             ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
@@ -501,8 +509,20 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("会诊室1设备状态：" + Status);
 
                 /*
-                状态解析
+                状态刷新
                 */
+                try
+                {
+                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, DataHandle.GetProjectorStatus(Status), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, DataHandle.GetCameraStatus(Status), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, DataHandle.GetMatrixStatus(Status, 1), Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, DataHandle.GetMatrixStatus(Status, 0), Color.Black);
+                }
+                catch (Exception ex)
+                {
+                    frm_Main.Log.WriteLog("会诊室1设备状态错误：" + ex.Message);
+                    continue;
+                }
 
                 if (is_ClientConnect)
                 {

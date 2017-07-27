@@ -66,6 +66,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_Control = new System.Windows.Forms.Label();
+            this.label_MatrixOut = new System.Windows.Forms.Label();
+            this.label_MatrixIn = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label_CameraStatus = new System.Windows.Forms.Label();
+            this.label_ProjectorStatus = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.gBx_DeviceControl.SuspendLayout();
             this.gBx_ModeChange.SuspendLayout();
             this.gBx_LightsControl.SuspendLayout();
@@ -696,11 +704,99 @@
             this.label_Control.TabIndex = 26;
             this.label_Control.Text = "控制端:";
             // 
+            // label_MatrixOut
+            // 
+            this.label_MatrixOut.AutoSize = true;
+            this.label_MatrixOut.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MatrixOut.Location = new System.Drawing.Point(740, 471);
+            this.label_MatrixOut.Name = "label_MatrixOut";
+            this.label_MatrixOut.Size = new System.Drawing.Size(93, 25);
+            this.label_MatrixOut.TabIndex = 55;
+            this.label_MatrixOut.Text = "初始化...";
+            // 
+            // label_MatrixIn
+            // 
+            this.label_MatrixIn.AutoSize = true;
+            this.label_MatrixIn.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MatrixIn.Location = new System.Drawing.Point(740, 431);
+            this.label_MatrixIn.Name = "label_MatrixIn";
+            this.label_MatrixIn.Size = new System.Drawing.Size(93, 25);
+            this.label_MatrixIn.TabIndex = 54;
+            this.label_MatrixIn.Text = "初始化...";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(618, 471);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 25);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "矩阵输出:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(618, 431);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 25);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "矩阵输入:";
+            // 
+            // label_CameraStatus
+            // 
+            this.label_CameraStatus.AutoSize = true;
+            this.label_CameraStatus.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CameraStatus.Location = new System.Drawing.Point(158, 471);
+            this.label_CameraStatus.Name = "label_CameraStatus";
+            this.label_CameraStatus.Size = new System.Drawing.Size(93, 25);
+            this.label_CameraStatus.TabIndex = 51;
+            this.label_CameraStatus.Text = "初始化...";
+            // 
+            // label_ProjectorStatus
+            // 
+            this.label_ProjectorStatus.AutoSize = true;
+            this.label_ProjectorStatus.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ProjectorStatus.Location = new System.Drawing.Point(158, 431);
+            this.label_ProjectorStatus.Name = "label_ProjectorStatus";
+            this.label_ProjectorStatus.Size = new System.Drawing.Size(93, 25);
+            this.label_ProjectorStatus.TabIndex = 50;
+            this.label_ProjectorStatus.Text = "初始化...";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(36, 471);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 25);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "镜头状态:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 431);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 25);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "投影机状态:";
+            // 
             // ConsultationRoomTwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.label_MatrixOut);
+            this.Controls.Add(this.label_MatrixIn);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label_CameraStatus);
+            this.Controls.Add(this.label_ProjectorStatus);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label_Client);
             this.Controls.Add(this.gBx_DeviceControl);
             this.Controls.Add(this.label_ClientStatus);
@@ -762,5 +858,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_Control;
+        private System.Windows.Forms.Label label_MatrixOut;
+        private System.Windows.Forms.Label label_MatrixIn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label_CameraStatus;
+        private System.Windows.Forms.Label label_ProjectorStatus;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
