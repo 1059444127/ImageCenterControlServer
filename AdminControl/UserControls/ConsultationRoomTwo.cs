@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataTransferService;
 using System.Net.Sockets;
 using System.Threading;
+using DataTransferService;
+using CommandHandleService;
+using System.Xml;
 
 namespace AdminControl
 {
@@ -33,6 +35,31 @@ namespace AdminControl
         /// 数据传输服务实例
         /// </summary>
         private DataTransfer Data;
+
+        /// <summary>
+        /// 指令解析服务实例
+        /// </summary>
+        private CommandHandleHelper CommandHandle;
+
+        /// <summary>
+        /// 模式列表
+        /// </summary>
+        private List<ModeConfig> ModeList;
+
+        /// <summary>
+        /// 灯光列表
+        /// </summary>
+        private List<LightConfig> LightList;
+
+        /// <summary>
+        /// 窗帘列表
+        /// </summary>
+        private List<WindowsConfig> WindowsList;
+
+        /// <summary>
+        /// 幕布列表
+        /// </summary>
+        private List<FilmConfig> FilmList;
 
         /// <summary>
         /// 控件刷新服务实例
@@ -79,133 +106,223 @@ namespace AdminControl
         }
 
         /// <summary>
-        /// 会诊模式
+        /// 切换会诊模式
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_ModeHZ_Click(object sender, EventArgs e)
         {
-
+            ModeChange(1);
         }
 
         /// <summary>
-        /// 议会模式
+        /// 切换议会模式
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_ModeYH_Click(object sender, EventArgs e)
         {
-
+            ModeChange(2);
         }
 
         /// <summary>
-        /// 科会模式
+        /// 切换科会模式
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_KH_Click(object sender, EventArgs e)
         {
-
+            ModeChange(3);
         }
 
         /// <summary>
-        /// 胶片直投
+        /// 切换胶片直投
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_JP_Click(object sender, EventArgs e)
         {
-
+            ModeChange(4);
         }
 
+        /// <summary>
+        /// 投影机1开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorOne_On_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("1", "1");
         }
 
+        /// <summary>
+        /// 投影机1关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorOne_Off_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("1", "0");
         }
 
+        /// <summary>
+        /// 投影机2开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorTwo_On_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("2", "1");
         }
 
+        /// <summary>
+        /// 投影机2关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ProjectorTwo_Off_Click(object sender, EventArgs e)
         {
-
+            ProjectorControl("2", "0");
         }
 
-        private void btn_Windows_On_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Windows_Off_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Film_Down_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Film_Up_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// 镜头开机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Camera_On_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 镜头关机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Camera_Off_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 窗帘打开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Windows_On_Click(object sender, EventArgs e)
+        {
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[0], WindowsList[0].RelayNumber.Split(',')[1]);
+        }
+
+        /// <summary>
+        /// 窗帘关闭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Windows_Off_Click(object sender, EventArgs e)
+        {
+            WindowsControl(WindowsList[0].RelayNumber.Split(',')[1], WindowsList[0].RelayNumber.Split(',')[0]);
+        }
+
+        /// <summary>
+        /// 幕布下降
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Film_Down_Click(object sender, EventArgs e)
+        {
+            FilmControl(FilmList[0].RelayNumber.Split(',')[0], FilmList[0].RelayNumber.Split(',')[1]);
+        }
+
+        /// <summary>
+        /// 幕布上升
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Film_Up_Click(object sender, EventArgs e)
+        {
+            FilmControl(FilmList[0].RelayNumber.Split(',')[1], FilmList[0].RelayNumber.Split(',')[0]);
+        }
+
+        /// <summary>
+        /// 顶灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_TopLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, true);
         }
 
+        /// <summary>
+        /// 顶灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_TopLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[0].RelayNumber, false);
         }
 
+        /// <summary>
+        /// 壁灯开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_WallLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, true);
         }
 
+        /// <summary>
+        /// 壁灯关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_WallLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[1].RelayNumber, false);
         }
 
+        /// <summary>
+        /// 灯带开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_RoundLight_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, true);
         }
 
+        /// <summary>
+        /// 灯带关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_RoundLight_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(LightList[2].RelayNumber, false);
         }
 
+        /// <summary>
+        /// 灯光开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AllLights_On_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
         }
 
+        /// <summary>
+        /// 灯光关
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AllLights_Off_Click(object sender, EventArgs e)
         {
-
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
         }
         #endregion
 
@@ -219,11 +336,107 @@ namespace AdminControl
 
             Data = new DataTransfer();
 
+            CommandHandle = new CommandHandleHelper();
+
             ControlRefresh = new ControlRefreshHelper();
 
             ControlRefresh.RefreshButtons(gBx_LightsControl, false);
             ControlRefresh.RefreshButtons(gBx_ModeChange, false);
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+
+            ReadUserConfig();
+        }
+        #endregion
+
+        #region 读取用户配置
+        /// <summary>
+        /// 读取用户配置
+        /// </summary>
+        private void ReadUserConfig()
+        {
+            //读取模式配置
+            ModeList = new List<ModeConfig>();
+            XmlDocument ModeDoc = new XmlDocument();
+            XmlReaderSettings ModeSetting = new XmlReaderSettings();
+            ModeSetting.IgnoreComments = true;
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomTwo\\ModeConfig.xml", ModeSetting);
+            ModeDoc.Load(ModeReader);
+            XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
+            XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
+            foreach (XmlNode Node in ModeRootChilds)
+            {
+                ModeConfig Mode = new ModeConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Mode.ModeName = Childs.Item(0).InnerText;
+                Mode.Relays = Childs.Item(1).InnerText;
+                Mode.ProjectorOne = Childs.Item(2).InnerText;
+                Mode.ProjectorTwo = Childs.Item(3).InnerText;
+                Mode.Matrix = Childs.Item(4).InnerText;
+                Mode.Camera = Childs.Item(5).InnerText;
+                ModeList.Add(Mode);
+            }
+            ModeReader.Close();
+
+            //读取灯光配置
+            LightList = new List<LightConfig>();
+            XmlDocument LightDoc = new XmlDocument();
+            XmlReaderSettings LightSetting = new XmlReaderSettings();
+            LightSetting.IgnoreComments = true;
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomTwo\\LightConfig.xml", LightSetting);
+            LightDoc.Load(LightReader);
+            XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
+            XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
+            foreach (XmlNode Node in LightRootChilds)
+            {
+                LightConfig Light = new LightConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Light.LightName = Childs.Item(0).InnerText;
+                Light.RelayNumber = Childs.Item(1).InnerText;
+                LightList.Add(Light);
+            }
+            LightReader.Close();
+
+            //读取窗帘配置
+            WindowsList = new List<WindowsConfig>();
+            XmlDocument WindowsDoc = new XmlDocument();
+            XmlReaderSettings WindowsSetting = new XmlReaderSettings();
+            WindowsSetting.IgnoreComments = true;
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomTwo\\WindowsConfig.xml", WindowsSetting);
+            WindowsDoc.Load(WindowsReader);
+            XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
+            XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
+            foreach (XmlNode Node in WindowsRootChilds)
+            {
+                WindowsConfig Windows = new WindowsConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Windows.WindowsName = Childs.Item(0).InnerText;
+                Windows.RelayNumber = Childs.Item(1).InnerText;
+                WindowsList.Add(Windows);
+            }
+            WindowsReader.Close();
+
+            //读取幕布配置
+            FilmList = new List<FilmConfig>();
+            XmlDocument FilmDoc = new XmlDocument();
+            XmlReaderSettings FilmSetting = new XmlReaderSettings();
+            FilmSetting.IgnoreComments = true;
+            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomTwo\\FilmConfig.xml", FilmSetting);
+            FilmDoc.Load(FilmReader);
+            XmlNode FilmRootNode = FilmDoc.SelectSingleNode("Films");
+            XmlNodeList FilmRootChilds = FilmRootNode.ChildNodes;
+            foreach (XmlNode Node in FilmRootChilds)
+            {
+                FilmConfig Film = new FilmConfig();
+                XmlElement Element = (XmlElement)Node;
+                XmlNodeList Childs = Element.ChildNodes;
+                Film.FilmName = Childs.Item(0).InnerText;
+                Film.RelayNumber = Childs.Item(1).InnerText;
+                FilmList.Add(Film);
+            }
+            FilmReader.Close();
         }
         #endregion
 
@@ -419,19 +632,58 @@ namespace AdminControl
         /// <param name="Mode"></param>
         private void ModeChange(int Mode)
         {
+            string Command = string.Empty;
+
             switch (Mode)
             {
                 case 1:
-                    SendControlCommand("会诊模式");
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorOne.Split(',')[0], ModeList[0].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 2:
-                    SendControlCommand("议会模式");
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 3:
-                    SendControlCommand("科会模式");
+                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 case 4:
-                    SendControlCommand("胶片直投模式");
+                    //继电器状态修改
+                    Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
                     break;
                 default:
                     break;
@@ -439,28 +691,98 @@ namespace AdminControl
         }
         #endregion
 
-        #region 灯光控制
-
+        #region 独立矩阵切换
+        /// <summary>
+        /// 矩阵切换
+        /// </summary>
+        /// <param name="MatrixIn">输入序列</param>
+        /// <param name="MatrixOut">输出序列</param>
+        private void MatrixControl(string MatrixIn, string MatrixOut)
+        {
+            string Command = string.Empty;
+            Command = CommandHandle.GetMatrixCommand(MatrixIn, MatrixOut);
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 矩阵切换
+        #region 独立灯光控制
+        /// <summary>
+        /// 灯光控制
+        /// </summary>
+        /// <param name="RelayNumber">继电器号码</param>
+        /// <param name="Status">继电器状态：true:开；false:关</param>
+        private void LightControl(string RelayNumber, bool Status)
+        {
+            string Command = string.Empty;
 
+            if (Status)
+            {
+                Command = CommandHandle.GetRelayCommand(RelayNumber, "0");
+            }
+            else
+            {
+                Command = CommandHandle.GetRelayCommand("0", RelayNumber);
+            }
+
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 投影机控制
-
+        #region 独立投影机控制
+        /// <summary>
+        /// 投影机控制
+        /// </summary>
+        /// <param name="PowerStatus">电源状态序列</param>
+        private void ProjectorControl(string ProjectorID, string PowerStatus)
+        {
+            string Command = string.Empty;
+            Command = CommandHandle.GetProjectorCommand(ProjectorID, PowerStatus);
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 镜头控制
+        #region 独立镜头控制
+        /// <summary>
+        /// 镜头控制
+        /// </summary>
+        /// <param name="PowerStatus">电源状态</param>
+        /// <param name="EnlargeLevel">放大等级</param>
+        private void CameraControl(string PowerStatus, string EnlargeLevel)
+        {
 
+        }
         #endregion
 
-        #region 窗帘控制
+        #region 独立窗帘控制
+        /// <summary>
+        /// 独立窗帘控制
+        /// </summary>
+        /// <param name="PortOpen">开启继电器序号</param>
+        /// <param name="PortClose">关闭继电器序号</param>
+        private void WindowsControl(string PortOpen, string PortClose)
+        {
+            string Command = string.Empty;
 
+            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+
+            SendControlCommand(Command);
+        }
         #endregion
 
-        #region 幕布控制
+        #region 独立幕布控制
+        /// <summary>
+        /// 独立幕布控制
+        /// </summary>
+        /// <param name="PortOpen">开启继电器序号</param>
+        /// <param name="PortClose">关闭继电器序号</param>
+        private void FilmControl(string PortOpen, string PortClose)
+        {
+            string Command = string.Empty;
 
+            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+
+            SendControlCommand(Command);
+        }
         #endregion
 
         #endregion
