@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
 using System.Xml;
+
 using DataTransferService;
 using DataHandleService;
 using CommandHandleService;
@@ -33,21 +34,6 @@ namespace AdminControl
         private volatile bool is_ControlConnect = false;
 
         /// <summary>
-        /// 数据传输服务实例
-        /// </summary>
-        private DataTransfer Data;
-
-        /// <summary>
-        /// 指令解析服务实例
-        /// </summary>
-        private CommandHandleHelper CommandHandle;
-
-        /// <summary>
-        /// 数据解析实例
-        /// </summary>
-        private DataHandleHelper DataHandle;
-
-        /// <summary>
         /// 模式列表
         /// </summary>
         private List<ModeConfig> ModeList;
@@ -66,6 +52,21 @@ namespace AdminControl
         /// 幕布列表
         /// </summary>
         private List<FilmConfig> FilmList;
+
+        /// <summary>
+        /// 数据传输服务实例
+        /// </summary>
+        private DataTransfer Data;
+
+        /// <summary>
+        /// 数据解析实例
+        /// </summary>
+        private DataHandleHelper DataHandle;
+
+        /// <summary>
+        /// 指令解析实例
+        /// </summary>
+        private CommandHandleHelper CommandHandle;
 
         /// <summary>
         /// 控件刷新服务实例
