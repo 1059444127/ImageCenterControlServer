@@ -21,7 +21,7 @@ namespace FileZipService
                 sourceFilePath += System.IO.Path.DirectorySeparatorChar;
 
             ZipOutputStream zipStream = new ZipOutputStream(File.Create(destinationZipFilePath));
-            zipStream.SetLevel(6);  // 压缩级别 0-9
+            zipStream.SetLevel(6);  //压缩级别 0-9
 
             CreateZipFiles(sourceFilePath, zipStream, sourceFilePath);
 
