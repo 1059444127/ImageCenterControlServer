@@ -82,16 +82,16 @@ namespace DataHandleService
                             Heart.Runtime = item.Split('=')[1];
                             break;
                         case "Temp":
-                            Heart.Temp = item.Split('=')[1];
+                            Heart.Temp = item.Split('=')[1] + "℃";
                             break;
                         case "Hum":
-                            Heart.Hum = item.Split('=')[1];
+                            Heart.Hum = item.Split('=')[1] + "%";
                             break;
                         case "Light":
-                            Heart.Light = item.Split('=')[1];
+                            Heart.Light = item.Split('=')[1] + "LUX";
                             break;
                         case "Noise":
-                            Heart.Noise = item.Split('=')[1];
+                            Heart.Noise = item.Split('=')[1] + "DB";
                             break;
                         case "Relays":
                             Heart.Relays = item.Split('=')[1];
