@@ -9,6 +9,7 @@ namespace DataTransferService
     /// </summary>
     public class DataTransfer
     {
+        #region 接收数据
         /// <summary>
         /// 接收数据（不带接收超时）
         /// </summary>
@@ -70,7 +71,9 @@ namespace DataTransferService
 
             return Data;
         }
+        #endregion
 
+        #region 发送数据
         /// <summary>
         /// 发送数据（不带发送超时）
         /// </summary>
@@ -117,5 +120,6 @@ namespace DataTransferService
                 throw new Exception("连接已断开");
             }
         }
+        #endregion
     }
 }

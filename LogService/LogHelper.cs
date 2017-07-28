@@ -8,6 +8,7 @@ namespace LogService
     /// </summary>
     public class LogHelper
     {
+        #region 全局变离
         /// <summary>
         /// 文件操作流
         /// </summary>
@@ -22,7 +23,9 @@ namespace LogService
         /// 日志路径
         /// </summary>
         private string LogPath;
+        #endregion
 
+        #region 构造器
         /// <summary>
         /// 构造器
         /// </summary>
@@ -32,7 +35,9 @@ namespace LogService
             this.LogPath = LogPath;
             InitFileStream();
         }
+        #endregion
 
+        #region 初始化
         /// <summary>
         /// 初始化文件操作流
         /// </summary>
@@ -55,7 +60,9 @@ namespace LogService
                 throw;
             }
         }
+        #endregion
 
+        #region 日志记录
         /// <summary>
         /// 记录日志
         /// </summary>
@@ -68,5 +75,6 @@ namespace LogService
             LogSW.Flush();
             LogFS.Flush();
         }
+        #endregion
     }
 }

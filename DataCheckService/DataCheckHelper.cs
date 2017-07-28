@@ -11,6 +11,7 @@ namespace DataCheckService
     /// </summary>
     public class DataCheckHelper
     {
+        #region 获得校验码
         /// <summary>
         /// 获得CRC校验码
         /// </summary>
@@ -57,7 +58,9 @@ namespace DataCheckService
 
             return CRCCode;
         }
+        #endregion
 
+        #region 校验数据
         /// <summary>
         /// CRC数据校验
         /// </summary>
@@ -86,5 +89,6 @@ namespace DataCheckService
                 return false;
             }
         }
+        #endregion
     }
 }
