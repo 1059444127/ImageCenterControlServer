@@ -264,7 +264,7 @@ namespace DataHandleService
             {
                 string HeartData = Data.Split(':')[0];
 
-                foreach (var item in HeartData.Split('\t'))
+                foreach (string item in HeartData.Split('\t'))
                 {
                     switch (item.Split('=')[0])
                     {
