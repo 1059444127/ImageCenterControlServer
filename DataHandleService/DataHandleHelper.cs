@@ -12,6 +12,7 @@ namespace DataHandleService
     /// </summary>
     public class DataHandleHelper
     {
+        #region 全局变量
         /// <summary>
         /// 心跳包结构体
         /// </summary>
@@ -44,7 +45,9 @@ namespace DataHandleService
         /// 数据校验服务
         /// </summary>
         private DataCheckHelper DataCheck;
+        #endregion
 
+        #region 构造器
         /// <summary>
         /// 构造器
         /// </summary>
@@ -52,102 +55,9 @@ namespace DataHandleService
         {
             DataCheck = new DataCheckHelper();
         }
-
-        #region 环境数据获取
-        /// <summary>
-        /// 获取房间温度
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns></returns>
-        public string GetHouseTemp(string Data)
-        {
-            string Temp = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                //数据处理
-                Temp = Data.Split(' ')[3].Split('=')[1];
-
-                return Temp + " ℃";
-            }
-            else
-            {
-                Temp = "ERROR";
-                return Temp;
-            }
-        }
-
-        /// <summary>
-        /// 获取房间湿度
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns></returns>
-        public string GetHouseHum(string Data)
-        {
-            string Hum = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                //数据处理
-                Hum = Data.Split(' ')[4].Split('=')[1];
-
-                return Hum + " %";
-            }
-            else
-            {
-                Hum = "ERROR";
-                return Hum;
-            }
-        }
-
-        /// <summary>
-        /// 获取房间光照
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns></returns>
-        public string GetHouseLight(string Data)
-        {
-            string Light = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                //数据处理
-                Light = Data.Split(' ')[5].Split('=')[1];
-
-                return Light + " LUX";
-            }
-            else
-            {
-                Light = "ERROR";
-                return Light;
-            }
-        }
-
-        /// <summary>
-        /// 获取房间噪音
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns></returns>
-        public string GetHouseNoise(string Data)
-        {
-            string Noise = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                //数据处理
-                Noise = Data.Split(' ')[6].Split('=')[1];
-
-                return Noise + " DB";
-            }
-            else
-            {
-                Noise = "ERROR";
-                return Noise;
-            }
-        }
         #endregion
 
-        #region 设备状态获取
+        #region 心跳包获取
         /// <summary>
         /// 获取心跳包内容
         /// </summary>
@@ -207,7 +117,6 @@ namespace DataHandleService
             {
                 throw new Exception("获取到错误数据");
             }
-
             return Heart;
         }
         #endregion
