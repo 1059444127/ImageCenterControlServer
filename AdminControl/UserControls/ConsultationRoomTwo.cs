@@ -483,6 +483,8 @@ namespace AdminControl
 
             string Status = null;
 
+            DataHandleHelper.HeartStruct Heart;
+
             while (true)
             {
                 try
@@ -514,16 +516,22 @@ namespace AdminControl
                 */
                 try
                 {
-                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, DataHandle.GetProjectorStatus(Status), Color.Black);
-                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, DataHandle.GetCameraStatus(Status), Color.Black);
-                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, DataHandle.GetMatrixStatus(Status, 1), Color.Black);
-                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, DataHandle.GetMatrixStatus(Status, 0), Color.Black);
+                    Heart = DataHandle.GetHeartbeat(Status);
+
+                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, Heart.Projector, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, Heart.CameraPower, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, Heart.VideoIn, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, Heart.VideoOut, Color.Black);
                 }
                 catch (Exception ex)
                 {
                     frm_Main.Log.WriteLog("会诊室2设备状态错误：" + ex.Message);
                     continue;
                 }
+
+                /*
+                数据打包发给客户端
+                */
 
                 if (is_ClientConnect)
                 {

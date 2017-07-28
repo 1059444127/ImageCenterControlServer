@@ -149,109 +149,6 @@ namespace DataHandleService
 
         #region 设备状态获取
         /// <summary>
-        /// 获得投影机状态
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns>投影机电源状态1:开机 0:关机</returns>
-        public string GetProjectorStatus(string Data)
-        {
-            string Status = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                Status = Data.Split('\t')[10].Split('=')[1];
-            }
-            else
-            {
-                throw new Exception("收到错误设备状态数据");
-            }
-            return Status;
-        }
-
-        /// <summary>
-        /// 获得指定投影机状态
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <param name="ProjectorID"></param>
-        /// <returns>投影机电源状态1:开机 0:关机</returns>
-        public string GetProjectorStatus(string Data, int ProjectorID)
-        {
-            string Status = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                switch (ProjectorID)
-                {
-                    case 1:
-                        Status = Data.Split('\t')[10].Split('=')[1].Split(',')[0];
-                        break;
-                    case 2:
-                        Status = Data.Split('\t')[10].Split('=')[1].Split(',')[1];
-                        break;
-                    default:
-                        throw new Exception("收到错误投影机编号");
-                }
-            }
-            else
-            {
-                throw new Exception("收到错误设备状态数据");
-            }
-            return Status;
-        }
-
-        /// <summary>
-        /// 获得矩阵输入输出状态
-        /// </summary>
-        /// <param name="Data">原始数据</param>
-        /// <param name="IOStatus">输入输出状态 1:输入 0:输出</param>
-        /// <returns></returns>
-        public string GetMatrixStatus(string Data, int IOStatus)
-        {
-            string Status = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                switch (IOStatus)
-                {
-                    case 0:
-                        Status = Data.Split('\t')[9].Split('=')[1];
-                        break;
-                    case 1:
-                        Status = Data.Split('\t')[8].Split('=')[1];
-                        break;
-                    default:
-                        throw new Exception("收到错误矩阵状态获取指令");
-                }
-            }
-            else
-            {
-                throw new Exception("收到错误设备状态数据");
-            }
-            return Status;
-        }
-
-        /// <summary>
-        /// 获取镜头状态
-        /// </summary>
-        /// <param name="Data"></param>
-        /// <returns>镜头电源状态1:开机 0:关机</returns>
-        public string GetCameraStatus(string Data)
-        {
-            string Status = string.Empty;
-
-            if (DataCheck.CheckData(Data))
-            {
-                Status = Data.Split('\t')[11].Split(':')[0].Split('=')[1];
-            }
-            else
-            {
-                throw new Exception("收到错误设备状态数据");
-            }
-            return Status;
-        }
-        #endregion
-
-        /// <summary>
         /// 获取心跳包内容
         /// </summary>
         /// <param name="Data"></param>
@@ -313,5 +210,6 @@ namespace DataHandleService
 
             return Heart;
         }
+        #endregion
     }
 }

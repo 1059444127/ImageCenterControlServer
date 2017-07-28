@@ -379,10 +379,7 @@ namespace AdminControl
 
             string EnviroumentData = null;
 
-            string Temp = string.Empty;
-            string Hum = string.Empty;
-            string Light = string.Empty;
-            string Noise = string.Empty;
+            DataHandleHelper.HeartStruct Heart;
 
             string SQLString = string.Empty;
 
@@ -417,36 +414,23 @@ namespace AdminControl
 
                 frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n", ""));
 
-                /*
-                数据解析
-                */
-                Temp = DataHandle.GetHouseTemp(EnviroumentData);
-                Hum = DataHandle.GetHouseHum(EnviroumentData);
-                Light = DataHandle.GetHouseLight(EnviroumentData);
-                Noise = DataHandle.GetHouseNoise(EnviroumentData);
-
-                //检查数据
-                if (Temp.Contains("ERROR") || Hum.Contains("ERROR") || Light.Contains("ERROR") || Noise.Contains("ERROR"))
+                try
                 {
-                    frm_Main.Log.WriteLog("接受到错误环境数据，已舍弃");
+                    Heart = DataHandle.GetHeartbeat(EnviroumentData);
+
+                    ControlRefresh.RefreshLabelStatus(label_Temp, Heart.Temp, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Hum, Heart.Hum, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Light, Heart.Light, Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_Noise, Heart.Noise, Color.Black);
+
+                    SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}\", room_hum = \"{1}\", room_light = \"{2}\",room_noise = \"{3}\" where room_name = \"{4}\";", Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise, "阅片室1");
+                    frm_Main.DataBase.UpdateTable(SQLString);
+                }
+                catch (Exception ex)
+                {
+                    frm_Main.Log.WriteLog("阅片室1环境数据错误：" + ex.Message);
                     continue;
                 }
-
-                //修改数据库
-                SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}\", room_hum = \"{1}\", room_light = \"{2}\",room_noise = \"{3}\" where room_name = \"{4}\";", Temp, Hum, Light, Noise, "阅片室1");
-                frm_Main.DataBase.UpdateTable(SQLString);
-
-                /*
-                刷新控件
-                */
-                ControlRefresh.RefreshLabelStatus(label_Temp, Temp, Color.Black);
-                ControlRefresh.RefreshLabelStatus(label_Hum, Hum, Color.Black);
-                ControlRefresh.RefreshLabelStatus(label_Light, Light, Color.Black);
-                ControlRefresh.RefreshLabelStatus(label_Noise, Noise, Color.Black);
-
-                /*
-                数据打包
-                */
 
                 /*
                 数据发送 
