@@ -57,7 +57,7 @@ namespace DataHandleService
         }
         #endregion
 
-        #region 心跳包获取
+        #region 心跳包解析
         /// <summary>
         /// 获取心跳包内容
         /// </summary>
