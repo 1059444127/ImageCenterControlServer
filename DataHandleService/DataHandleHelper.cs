@@ -131,7 +131,7 @@ namespace DataHandleService
 
             if (DataCheck.CheckData(Data))
             {
-                Status = Data.Split('\t')[11].Split('=')[1];
+                Status = Data.Split('\t')[10].Split('=')[1];
             }
             else
             {
@@ -155,10 +155,10 @@ namespace DataHandleService
                 switch (ProjectorID)
                 {
                     case 1:
-                        Status = Data.Split('\t')[11].Split('=')[1].Split(',')[0];
+                        Status = Data.Split('\t')[10].Split('=')[1].Split(',')[0];
                         break;
                     case 2:
-                        Status = Data.Split('\t')[11].Split('=')[1].Split(',')[1];
+                        Status = Data.Split('\t')[10].Split('=')[1].Split(',')[1];
                         break;
                     default:
                         throw new Exception("收到错误投影机编号");
@@ -186,10 +186,10 @@ namespace DataHandleService
                 switch (IOStatus)
                 {
                     case 0:
-                        Status = Data.Split('\t')[10].Split('=')[1];
+                        Status = Data.Split('\t')[9].Split('=')[1];
                         break;
                     case 1:
-                        Status = Data.Split('\t')[9].Split('=')[1];
+                        Status = Data.Split('\t')[8].Split('=')[1];
                         break;
                     default:
                         throw new Exception("收到错误矩阵状态获取指令");
@@ -213,7 +213,7 @@ namespace DataHandleService
 
             if (DataCheck.CheckData(Data))
             {
-                Status = Data.Split('\t')[12].Split(':')[0].Split('=')[1];
+                Status = Data.Split('\t')[11].Split(':')[0].Split('=')[1];
             }
             else
             {
