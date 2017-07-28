@@ -10,6 +10,7 @@ namespace FileZipService
     /// </summary>
     public class FileZipHelper
     {
+        #region 压缩文件
         /// <summary>
         /// 压缩文件
         /// </summary>
@@ -28,7 +29,9 @@ namespace FileZipService
             zipStream.Finish();
             zipStream.Close();
         }
+        #endregion
 
+        #region 递归压缩
         /// <summary>
         /// 递归压缩文件
         /// </summary>
@@ -74,5 +77,6 @@ namespace FileZipService
                 }
             }
         }
+        #endregion
     }
 }
