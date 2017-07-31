@@ -40,13 +40,13 @@
             this.gBx_DeviceControl = new System.Windows.Forms.GroupBox();
             this.btn_WindowsTwo_Off = new System.Windows.Forms.Button();
             this.btn_WindowsTwo_On = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_WindowsTwo = new System.Windows.Forms.Label();
             this.btn_WindowsOne_Off = new System.Windows.Forms.Button();
             this.btn_WindowsOne_On = new System.Windows.Forms.Button();
-            this.label_Windows = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_WindowsOne = new System.Windows.Forms.Label();
+            this.label_LightThree = new System.Windows.Forms.Label();
+            this.label_LightTwo = new System.Windows.Forms.Label();
+            this.label_LightOne = new System.Windows.Forms.Label();
             this.btn_TopLight_On = new System.Windows.Forms.Button();
             this.btn_WallLight_On = new System.Windows.Forms.Button();
             this.btn_RoundLight_On = new System.Windows.Forms.Button();
@@ -196,10 +196,10 @@
             // 
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsTwo_Off);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsTwo_On);
-            this.gBx_DeviceControl.Controls.Add(this.label6);
+            this.gBx_DeviceControl.Controls.Add(this.label_WindowsTwo);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsOne_Off);
             this.gBx_DeviceControl.Controls.Add(this.btn_WindowsOne_On);
-            this.gBx_DeviceControl.Controls.Add(this.label_Windows);
+            this.gBx_DeviceControl.Controls.Add(this.label_WindowsOne);
             this.gBx_DeviceControl.Location = new System.Drawing.Point(378, 149);
             this.gBx_DeviceControl.Name = "gBx_DeviceControl";
             this.gBx_DeviceControl.Size = new System.Drawing.Size(256, 280);
@@ -247,15 +247,15 @@
             this.btn_WindowsTwo_On.UseVisualStyleBackColor = false;
             this.btn_WindowsTwo_On.Click += new System.EventHandler(this.btn_WindowsTwo_On_Click);
             // 
-            // label6
+            // label_WindowsTwo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 25);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "窗帘2:";
+            this.label_WindowsTwo.AutoSize = true;
+            this.label_WindowsTwo.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_WindowsTwo.Location = new System.Drawing.Point(6, 174);
+            this.label_WindowsTwo.Name = "label_WindowsTwo";
+            this.label_WindowsTwo.Size = new System.Drawing.Size(72, 25);
+            this.label_WindowsTwo.TabIndex = 40;
+            this.label_WindowsTwo.Text = "窗帘2:";
             // 
             // btn_WindowsOne_Off
             // 
@@ -297,45 +297,45 @@
             this.btn_WindowsOne_On.UseVisualStyleBackColor = false;
             this.btn_WindowsOne_On.Click += new System.EventHandler(this.btn_WindowsOne_On_Click);
             // 
-            // label_Windows
+            // label_WindowsOne
             // 
-            this.label_Windows.AutoSize = true;
-            this.label_Windows.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Windows.Location = new System.Drawing.Point(21, 79);
-            this.label_Windows.Name = "label_Windows";
-            this.label_Windows.Size = new System.Drawing.Size(72, 25);
-            this.label_Windows.TabIndex = 16;
-            this.label_Windows.Text = "窗帘1:";
+            this.label_WindowsOne.AutoSize = true;
+            this.label_WindowsOne.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_WindowsOne.Location = new System.Drawing.Point(6, 78);
+            this.label_WindowsOne.Name = "label_WindowsOne";
+            this.label_WindowsOne.Size = new System.Drawing.Size(72, 25);
+            this.label_WindowsOne.TabIndex = 16;
+            this.label_WindowsOne.Text = "窗帘1:";
             // 
-            // label3
+            // label_LightThree
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "灯带：";
+            this.label_LightThree.AutoSize = true;
+            this.label_LightThree.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LightThree.Location = new System.Drawing.Point(6, 152);
+            this.label_LightThree.Name = "label_LightThree";
+            this.label_LightThree.Size = new System.Drawing.Size(78, 25);
+            this.label_LightThree.TabIndex = 24;
+            this.label_LightThree.Text = "灯带：";
             // 
-            // label2
+            // label_LightTwo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "壁灯：";
+            this.label_LightTwo.AutoSize = true;
+            this.label_LightTwo.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LightTwo.Location = new System.Drawing.Point(6, 99);
+            this.label_LightTwo.Name = "label_LightTwo";
+            this.label_LightTwo.Size = new System.Drawing.Size(78, 25);
+            this.label_LightTwo.TabIndex = 23;
+            this.label_LightTwo.Text = "壁灯：";
             // 
-            // label1
+            // label_LightOne
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 25);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "顶灯：";
+            this.label_LightOne.AutoSize = true;
+            this.label_LightOne.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LightOne.Location = new System.Drawing.Point(6, 46);
+            this.label_LightOne.Name = "label_LightOne";
+            this.label_LightOne.Size = new System.Drawing.Size(78, 25);
+            this.label_LightOne.TabIndex = 22;
+            this.label_LightOne.Text = "顶灯：";
             // 
             // btn_TopLight_On
             // 
@@ -507,9 +507,9 @@
             this.gBx_LightsControl.Controls.Add(this.btn_RoundLight_On);
             this.gBx_LightsControl.Controls.Add(this.btn_WallLight_On);
             this.gBx_LightsControl.Controls.Add(this.btn_TopLight_On);
-            this.gBx_LightsControl.Controls.Add(this.label1);
-            this.gBx_LightsControl.Controls.Add(this.label2);
-            this.gBx_LightsControl.Controls.Add(this.label3);
+            this.gBx_LightsControl.Controls.Add(this.label_LightOne);
+            this.gBx_LightsControl.Controls.Add(this.label_LightTwo);
+            this.gBx_LightsControl.Controls.Add(this.label_LightThree);
             this.gBx_LightsControl.Location = new System.Drawing.Point(176, 150);
             this.gBx_LightsControl.Name = "gBx_LightsControl";
             this.gBx_LightsControl.Size = new System.Drawing.Size(196, 280);
@@ -657,13 +657,13 @@
         private System.Windows.Forms.GroupBox gBx_DeviceControl;
         private System.Windows.Forms.Button btn_WindowsOne_Off;
         private System.Windows.Forms.Button btn_WindowsOne_On;
-        private System.Windows.Forms.Label label_Windows;
+        private System.Windows.Forms.Label label_WindowsOne;
         private System.Windows.Forms.Button btn_WindowsTwo_Off;
         private System.Windows.Forms.Button btn_WindowsTwo_On;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_WindowsTwo;
+        private System.Windows.Forms.Label label_LightThree;
+        private System.Windows.Forms.Label label_LightTwo;
+        private System.Windows.Forms.Label label_LightOne;
         private System.Windows.Forms.Button btn_TopLight_On;
         private System.Windows.Forms.Button btn_WallLight_On;
         private System.Windows.Forms.Button btn_RoundLight_On;

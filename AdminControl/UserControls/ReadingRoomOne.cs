@@ -86,7 +86,7 @@ namespace AdminControl
         public ReadingRoomOne(frm_Main frm_Main)
         {
             InitializeComponent();
-            InitItems(frm_Main);
+            InitServices(frm_Main);
         }
         #endregion
 
@@ -98,7 +98,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void ReadingRoomOne_Load(object sender, EventArgs e)
         {
-
+            InitControls();
         }
 
         /// <summary>
@@ -254,10 +254,10 @@ namespace AdminControl
 
         #region 初始化
         /// <summary>
-        /// 初始化
+        /// 初始化各类服务
         /// </summary>
         /// <param name="frm_Main"></param>
-        private void InitItems(frm_Main frm_Main)
+        private void InitServices(frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 
@@ -274,6 +274,23 @@ namespace AdminControl
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
             ReadUserConfig();
+        }
+
+        /// <summary>
+        /// 初始化各类控件
+        /// </summary>
+        private void InitControls()
+        {
+            btn_ModeYP.Text = ModeList[0].ModeName + ":";
+            btn_ModeXX.Text = ModeList[1].ModeName + ":";
+            btn_ModeLK.Text = ModeList[2].ModeName + ":";
+
+            label_LightOne.Text = LightList[0].LightName + ":";
+            label_LightTwo.Text = LightList[1].LightName + ":";
+            label_LightThree.Text = LightList[2].LightName + ":";
+
+            label_WindowsOne.Text = WindowsList[0].WindowsName + ":";
+            label_WindowsTwo.Text = WindowsList[1].WindowsName + ":";
         }
         #endregion
 
