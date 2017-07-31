@@ -3,7 +3,6 @@ using Android.Widget;
 using Android.OS;
 using Android.Content;
 using Android.Views;
-using Android.Widget;
 using Android.Util;
 using static Android.Views.View;
 using static Android.Net.Sip.SipAudioCall;
