@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="@10" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Data.dll" Group="Collapsed" Label="System.Data.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@12" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" DelayedChildNodesState="NotFetched" FilePath="$(VsSolution)\FileZipService\bin\Debug\ICSharpCode.SharpZipLib.dll" Group="Collapsed" Label="ICSharpCode.SharpZipLib.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@14" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\mscorlib.dll" Group="Collapsed" Label="mscorlib.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@16" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\mscorlib.dll" Group="Collapsed" Label="mscorlib.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@18" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll" Group="Collapsed" Label="Mono.Android.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-950.307441119332,326.679180567134,163.47,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(7db58e2d-3746-4d9d-b97e-bfdf00ddd3e7.OutputPath)" Group="Collapsed" Label="AdminControl.exe">
+      <Category Ref="FileSystem.Category.FileOfType.exe" />
+    </Node>
+    <Node Id="@20" Category="CodeSchema_Assembly" Bounds="138.546793865905,304.004631596159,185.456666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="DataHandleService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(5fc20d5c-133f-4672-bb82-8f8cc8f9107a.OutputPath)" Group="Collapsed" Label="DataHandleService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@22" Category="CodeSchema_Assembly" Bounds="-149.938206134095,304.004631596159,218.426666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="CommandHandleService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(42f2e9ff-1b85-44d6-b535-23f46b5f01b8.OutputPath)" Group="Collapsed" Label="CommandHandleService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@24" Category="CodeSchema_Assembly" Bounds="293.975127199238,534.005231596159,170.996666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="DataBaseService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(338bf887-3bd2-4ee9-8393-48689c47ce3e.OutputPath)" Group="Collapsed" Label="DataBaseService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@26" Category="CodeSchema_Assembly" Bounds="394.003460532572,304.004631596159,139.056666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="LogService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(d7ffdda8-1191-44f6-87eb-1e3fdd4e283b.OutputPath)" Group="Collapsed" Label="LogService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@28" Category="CodeSchema_Assembly" Bounds="141.651793865905,419.004931596159,179.246666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="DataCheckService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(8bc4fc69-8cb1-4909-b366-b04d01cc0ab1.OutputPath)" Group="Collapsed" Label="DataCheckService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@30" Category="CodeSchema_Assembly" Bounds="-149.938206134094,534.004631596159,148.453333333333,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="EmailService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(aa707f35-2b37-4927-9847-f4771bb233e5.OutputPath)" Group="Collapsed" Label="EmailService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@32" Category="CodeSchema_Assembly" Bounds="68.5151271992387,534.005231596159,155.46,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="FileZipService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(06b10e6e-f3c6-4f2c-9209-17579ba27347.OutputPath)" Group="Collapsed" Label="FileZipService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@34" Category="CodeSchema_Assembly" Bounds="-149.938206134095,649.005531596159,191.066666666667,25" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="DataTransferService, Version=1.17.7.18, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(d551bb88-3d24-4f04-9c56-8c7df49dcce7.OutputPath)" Group="Collapsed" Label="DataTransferService.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@36" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Core.dll" Group="Collapsed" Label="System.Core.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@38" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Core.dll" Group="Collapsed" Label="System.Core.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@4" Category="CodeSchema_Assembly" Bounds="-978.660367099772,563.768012062243,214.09,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(ca8f7f5c-bbcb-4bea-8eb3-01c439b44465.OutputPath)" Group="Collapsed" Label="ImageCenterController.exe">
+      <Category Ref="FileSystem.Category.FileOfType.exe" />
+    </Node>
+    <Node Id="@40" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Drawing.dll" Group="Collapsed" Label="System.Drawing.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@42" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.dll" Group="Collapsed" Label="System.Xml.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@44" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Xml.dll" Group="Collapsed" Label="System.Xml.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@46" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.dll" Group="Collapsed" Label="System.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@48" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.dll" Group="Collapsed" Label="System.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@50" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="Microsoft.CSharp, Version=2.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\Microsoft.CSharp.dll" Group="Collapsed" Label="Microsoft.CSharp.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@52" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\Microsoft.CSharp.dll" Group="Collapsed" Label="Microsoft.CSharp.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@54" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Net.Http.dll" Group="Collapsed" Label="System.Net.Http.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@56" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" DelayedChildNodesState="NotFetched" FilePath="$(app)\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.Linq.dll" Group="Collapsed" Label="System.Xml.Linq.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@58" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Xml.Linq.dll" Group="Collapsed" Label="System.Xml.Linq.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@6" Category="CodeSchema_Assembly" Bounds="-835.42696386115,445.1539069854,189.663333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(879a3e22-80cf-4e0c-b058-7d5611889ee7.OutputPath)" Group="Collapsed" Label="ImageCenterClient.exe">
+      <Category Ref="FileSystem.Category.FileOfType.exe" />
+    </Node>
+    <Node Id="@60" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Windows.Forms.dll" Group="Collapsed" Label="System.Windows.Forms.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@62" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Data.DataSetExtensions.dll" Group="Collapsed" Label="System.Data.DataSetExtensions.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@64" Category="CodeSchema_Assembly" Bounds="-1097.02029719448,444.717294065038,191.593333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="NotFetched" FilePath="$(222fd31a-6a11-483b-8b2c-ff22811285cc.OutputPath)" Group="Collapsed" Label="ReadingRoomClient.dll">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@66" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="System.Deployment, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DelayedChildNodesState="NotFetched" FilePath="$(FxReferenceAssemblies)\.NETFramework\v4.5.2\System.Deployment.dll" Group="Collapsed" Label="System.Deployment.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="@8" Category="CodeSchema_Assembly" CodeSchemaProperty_IsExternal="True" CodeSchemaProperty_StrongName="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" DelayedChildNodesState="NotFetched" FilePath="$(ProgramFiles)\MySQL\MySQL Installer for Windows\MySql.Data.dll" Group="Collapsed" Label="MySql.Data.dll" UseManualLocation="True">
+      <Category Ref="FileSystem.Category.FileOfType.dll" />
+    </Node>
+    <Node Id="_standardGraphExternalsGroup" Category="Externals" Bounds="219.566666666667,925.546487801579,64,25" Group="Collapsed" Label="外部" LayoutSettings="List" />
+    <Node Id="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" Category="CodeMap_SolutionFolder" Bounds="-1137.02029719448,246.678980567134,531.256666666666,382.08923149511" Group="Expanded" Label="主程序" UseManualLocation="True" />
+    <Node Id="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Category="CodeMap_SolutionFolder" Bounds="-189.938206134095,224.004431596159,762.998333333334,490.0013" Group="Expanded" Label="动态链接库" UseManualLocation="True" />
+    <Node Id="客户端（安卓）{7F5D4FC9-8E97-408E-8C29-4524CB5F3894}" Category="CodeMap_SolutionFolder" Bounds="-1117.02029719448,404.717194065038,231.593333333333,85.0002" Group="Expanded" Label="客户端（安卓）" UseManualLocation="True" />
+    <Node Id="客户端（模拟）{E2A56CC3-1EA0-4926-AFB1-71E1C68D343B}" Category="CodeMap_SolutionFolder" Bounds="-855.42696386115,405.1538069854,229.663333333332,85.0001999999997" Group="Expanded" Label="客户端（模拟）" UseManualLocation="True" />
+    <Node Id="指令解析服务{5B64D3D7-C469-4A3F-8D5F-5ADB93528021}" Category="CodeMap_SolutionFolder" Bounds="-169.938206134095,264.004531596159,258.426666666667,85.0001999999998" Group="Expanded" Label="指令解析服务" />
+    <Node Id="控制端（模拟）{3ED04DD9-755E-4037-A8F4-4071ADE33076}" Category="CodeMap_SolutionFolder" Bounds="-998.660367099772,523.767912062244,254.09,85.0001999999997" Group="Expanded" Label="控制端（模拟）" UseManualLocation="True" />
+    <Node Id="数据传输服务{68947C56-C760-4DD0-9720-281BAF2A0670}" Category="CodeMap_SolutionFolder" Bounds="-169.938206134095,609.005431596159,231.066666666667,85.0002000000002" Group="Expanded" Label="数据传输服务" />
+    <Node Id="数据库操作服务{EDEB95E8-D3A6-42ED-9DE8-6FB1DFB94960}" Category="CodeMap_SolutionFolder" Bounds="273.975127199238,494.005131596159,210.996666666667,85.0002000000001" Group="Expanded" Label="数据库操作服务" />
+    <Node Id="数据校验服务{99345564-130F-4D29-8837-B6B51C62AED3}" Category="CodeMap_SolutionFolder" Bounds="121.651793865905,379.004831596159,219.246666666667,85.0002000000001" Group="Expanded" Label="数据校验服务" />
+    <Node Id="数据解析服务{C3480362-62CD-4A2E-9142-8A5D25A2EE8D}" Category="CodeMap_SolutionFolder" Bounds="118.546793865905,264.004531596159,225.456666666667,85.0001999999998" Group="Expanded" Label="数据解析服务" />
+    <Node Id="文件压缩服务{1E4AFE3A-43CE-4B81-B738-946D084594CD}" Category="CodeMap_SolutionFolder" Bounds="48.5151271992387,494.005131596159,195.46,85.0002000000001" Group="Expanded" Label="文件压缩服务" />
+    <Node Id="日志记录服务{6BF39DF6-4C7A-4893-8931-3CD45ECCF65A}" Category="CodeMap_SolutionFolder" Bounds="374.003460532572,264.004531596159,179.056666666667,85.0001999999998" Group="Expanded" Label="日志记录服务" />
+    <Node Id="服务器{F54A71E7-3DCA-4135-841F-123656AECD3D}" Category="CodeMap_SolutionFolder" Bounds="-970.307441119332,286.679080567134,203.47,85.0001999999998" Group="Expanded" Label="服务器" UseManualLocation="True" />
+    <Node Id="邮件发送服务{BDF0A7A8-0B69-471E-837E-E64E99B781BF}" Category="CodeMap_SolutionFolder" Bounds="-169.938206134094,494.004531596159,188.453333333333,85.0002000000001" Group="Expanded" Label="邮件发送服务" />
+  </Nodes>
+  <Links>
+    <Link Source="@2" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@20" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@22" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@24" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@26" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@30" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@32" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@34" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@60" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@2" Target="@66" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@28" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@20" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@28" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@22" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@24" Target="@8" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@26" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@28" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@30" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@12" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@32" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@34" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@34" Category="CodeMap_ExternalReference" Bounds="153.548728483552,334.999490000312,253.39432728387,487.017423783769" />
+    <Link Source="@4" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@60" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@4" Target="@66" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@10" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@16" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@38" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@40" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@44" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@48" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@52" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@54" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@58" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@60" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@62" Category="CodeMap_ExternalReference" />
+    <Link Source="@6" Target="@66" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@14" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@18" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@36" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@42" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@46" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@50" Category="CodeMap_ExternalReference" />
+    <Link Source="@64" Target="@56" Category="CodeMap_ExternalReference" />
+    <Link Source="_standardGraphExternalsGroup" Target="@10" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@12" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@14" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@16" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@18" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@36" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@38" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@40" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@42" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@44" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@46" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@48" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@50" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@52" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@54" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@56" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@58" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@60" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@62" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@66" Category="Contains" />
+    <Link Source="_standardGraphExternalsGroup" Target="@8" Category="Contains" />
+    <Link Source="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" Target="客户端（安卓）{7F5D4FC9-8E97-408E-8C29-4524CB5F3894}" Category="Contains" FetchingParent="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" />
+    <Link Source="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" Target="客户端（模拟）{E2A56CC3-1EA0-4926-AFB1-71E1C68D343B}" Category="Contains" FetchingParent="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" />
+    <Link Source="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" Target="控制端（模拟）{3ED04DD9-755E-4037-A8F4-4071ADE33076}" Category="Contains" FetchingParent="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" />
+    <Link Source="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" Target="服务器{F54A71E7-3DCA-4135-841F-123656AECD3D}" Category="Contains" FetchingParent="主程序{39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="指令解析服务{5B64D3D7-C469-4A3F-8D5F-5ADB93528021}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="数据传输服务{68947C56-C760-4DD0-9720-281BAF2A0670}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="数据库操作服务{EDEB95E8-D3A6-42ED-9DE8-6FB1DFB94960}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="数据校验服务{99345564-130F-4D29-8837-B6B51C62AED3}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="数据解析服务{C3480362-62CD-4A2E-9142-8A5D25A2EE8D}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="文件压缩服务{1E4AFE3A-43CE-4B81-B738-946D084594CD}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="日志记录服务{6BF39DF6-4C7A-4893-8931-3CD45ECCF65A}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" Target="邮件发送服务{BDF0A7A8-0B69-471E-837E-E64E99B781BF}" Category="Contains" FetchingParent="动态链接库{7227E3B6-DB3C-4258-9420-6FC66D99C96A}" />
+    <Link Source="客户端（安卓）{7F5D4FC9-8E97-408E-8C29-4524CB5F3894}" Target="@64" Category="Contains" FetchingParent="客户端（安卓）{7F5D4FC9-8E97-408E-8C29-4524CB5F3894}" />
+    <Link Source="客户端（模拟）{E2A56CC3-1EA0-4926-AFB1-71E1C68D343B}" Target="@6" Category="Contains" FetchingParent="客户端（模拟）{E2A56CC3-1EA0-4926-AFB1-71E1C68D343B}" />
+    <Link Source="指令解析服务{5B64D3D7-C469-4A3F-8D5F-5ADB93528021}" Target="@22" Category="Contains" FetchingParent="指令解析服务{5B64D3D7-C469-4A3F-8D5F-5ADB93528021}" />
+    <Link Source="控制端（模拟）{3ED04DD9-755E-4037-A8F4-4071ADE33076}" Target="@4" Category="Contains" FetchingParent="控制端（模拟）{3ED04DD9-755E-4037-A8F4-4071ADE33076}" />
+    <Link Source="数据传输服务{68947C56-C760-4DD0-9720-281BAF2A0670}" Target="@34" Category="Contains" FetchingParent="数据传输服务{68947C56-C760-4DD0-9720-281BAF2A0670}" />
+    <Link Source="数据库操作服务{EDEB95E8-D3A6-42ED-9DE8-6FB1DFB94960}" Target="@24" Category="Contains" FetchingParent="数据库操作服务{EDEB95E8-D3A6-42ED-9DE8-6FB1DFB94960}" />
+    <Link Source="数据校验服务{99345564-130F-4D29-8837-B6B51C62AED3}" Target="@28" Category="Contains" FetchingParent="数据校验服务{99345564-130F-4D29-8837-B6B51C62AED3}" />
+    <Link Source="数据解析服务{C3480362-62CD-4A2E-9142-8A5D25A2EE8D}" Target="@20" Category="Contains" FetchingParent="数据解析服务{C3480362-62CD-4A2E-9142-8A5D25A2EE8D}" />
+    <Link Source="文件压缩服务{1E4AFE3A-43CE-4B81-B738-946D084594CD}" Target="@32" Category="Contains" FetchingParent="文件压缩服务{1E4AFE3A-43CE-4B81-B738-946D084594CD}" />
+    <Link Source="日志记录服务{6BF39DF6-4C7A-4893-8931-3CD45ECCF65A}" Target="@26" Category="Contains" FetchingParent="日志记录服务{6BF39DF6-4C7A-4893-8931-3CD45ECCF65A}" />
+    <Link Source="服务器{F54A71E7-3DCA-4135-841F-123656AECD3D}" Target="@2" Category="Contains" FetchingParent="服务器{F54A71E7-3DCA-4135-841F-123656AECD3D}" />
+    <Link Source="邮件发送服务{BDF0A7A8-0B69-471E-837E-E64E99B781BF}" Target="@30" Category="Contains" FetchingParent="邮件发送服务{BDF0A7A8-0B69-471E-837E-E64E99B781BF}" />
+  </Links>
+  <Categories>
+    <Category Id="CodeMap_ExternalReference" Label="外部引用" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="引用者" OutgoingActionLabel="引用" />
+    <Category Id="CodeMap_SolutionFolder" Label="解决方案文件夹" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="解决方案文件夹" />
+    <Category Id="CodeSchema_Assembly" Label="程序集" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="程序集" />
+    <Category Id="Contains" Label="包含" Description="链接的源是否包含目标对象" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="包含者" IsContainment="True" OutgoingActionLabel="包含" />
+    <Category Id="Externals" Label="外部" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="外部" />
+    <Category Id="File" Label="文件" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="文件" />
+    <Category Id="FileSystem.Category.FileOfType.dll" BasedOn="CodeSchema_Assembly" CanBeDataDriven="True" IsProviderRoot="False" />
+    <Category Id="FileSystem.Category.FileOfType.exe" BasedOn="CodeSchema_Assembly" CanBeDataDriven="True" IsProviderRoot="False" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsExternal" Label="是外部的" Description="一个标志，用于指示此节点是否被认为是外部的" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_StrongName" Label="StrongName" Description="StrongName" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="已虚拟化数据" Description="如果为 true，则图中可以包含表示虚拟化节点/链接(即，不在图中实际创建)的数据的节点和链接。" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="延迟的子节点状态" Description="如果未指定延迟的子节点状态，则为 Unspecified。如果尚未将组包含的子节点提取到关系图中，则为 NotFetched。如果已提取组内的所有延迟的子节点，则为 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="延迟的跨组链接状态" Description="如果未指定延迟的跨组链接状态，则为 Unspecified。如果尚未将此节点上延迟的跨组链接提取到关系图中，则为 NotFetched。如果已提取所有延迟的跨组链接，则为 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
+    <Property Id="FilePath" Label="文件路径" Description="文件路径" DataType="System.String" />
+    <Property Id="Group" Label="组" Description="将节点显示为组" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="图标" Description="图标" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="程序集" ValueType="Uri" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(7db58e2d-3746-4d9d-b97e-bfdf00ddd3e7.OutputPathUri)" />
+    <Alias n="2" Id="(@1)" />
+    <Alias n="3" Uri="Assembly=$(ca8f7f5c-bbcb-4bea-8eb3-01c439b44465.OutputPathUri)" />
+    <Alias n="4" Id="(@3)" />
+    <Alias n="5" Uri="Assembly=$(879a3e22-80cf-4e0c-b058-7d5611889ee7.OutputPathUri)" />
+    <Alias n="6" Id="(@5)" />
+    <Alias n="7" Uri="Assembly=$(ProgramFilesUri)/MySQL/MySQL Installer for Windows/MySql.Data.dll" />
+    <Alias n="8" Id="(@7)" />
+    <Alias n="9" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Data.dll" />
+    <Alias n="10" Id="(@9)" />
+    <Alias n="11" Uri="Assembly=$(VsSolutionUri)/FileZipService/bin/Debug/ICSharpCode.SharpZipLib.dll" />
+    <Alias n="12" Id="(@11)" />
+    <Alias n="13" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/mscorlib.dll" />
+    <Alias n="14" Id="(@13)" />
+    <Alias n="15" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll" />
+    <Alias n="16" Id="(@15)" />
+    <Alias n="17" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v7.1/Mono.Android.dll" />
+    <Alias n="18" Id="(@17)" />
+    <Alias n="19" Uri="Assembly=$(5fc20d5c-133f-4672-bb82-8f8cc8f9107a.OutputPathUri)" />
+    <Alias n="20" Id="(@19)" />
+    <Alias n="21" Uri="Assembly=$(42f2e9ff-1b85-44d6-b535-23f46b5f01b8.OutputPathUri)" />
+    <Alias n="22" Id="(@21)" />
+    <Alias n="23" Uri="Assembly=$(338bf887-3bd2-4ee9-8393-48689c47ce3e.OutputPathUri)" />
+    <Alias n="24" Id="(@23)" />
+    <Alias n="25" Uri="Assembly=$(d7ffdda8-1191-44f6-87eb-1e3fdd4e283b.OutputPathUri)" />
+    <Alias n="26" Id="(@25)" />
+    <Alias n="27" Uri="Assembly=$(8bc4fc69-8cb1-4909-b366-b04d01cc0ab1.OutputPathUri)" />
+    <Alias n="28" Id="(@27)" />
+    <Alias n="29" Uri="Assembly=$(aa707f35-2b37-4927-9847-f4771bb233e5.OutputPathUri)" />
+    <Alias n="30" Id="(@29)" />
+    <Alias n="31" Uri="Assembly=$(06b10e6e-f3c6-4f2c-9209-17579ba27347.OutputPathUri)" />
+    <Alias n="32" Id="(@31)" />
+    <Alias n="33" Uri="Assembly=$(d551bb88-3d24-4f04-9c56-8c7df49dcce7.OutputPathUri)" />
+    <Alias n="34" Id="(@33)" />
+    <Alias n="35" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/System.Core.dll" />
+    <Alias n="36" Id="(@35)" />
+    <Alias n="37" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Core.dll" />
+    <Alias n="38" Id="(@37)" />
+    <Alias n="39" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Drawing.dll" />
+    <Alias n="40" Id="(@39)" />
+    <Alias n="41" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/System.Xml.dll" />
+    <Alias n="42" Id="(@41)" />
+    <Alias n="43" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Xml.dll" />
+    <Alias n="44" Id="(@43)" />
+    <Alias n="45" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/System.dll" />
+    <Alias n="46" Id="(@45)" />
+    <Alias n="47" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.dll" />
+    <Alias n="48" Id="(@47)" />
+    <Alias n="49" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/Microsoft.CSharp.dll" />
+    <Alias n="50" Id="(@49)" />
+    <Alias n="51" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/Microsoft.CSharp.dll" />
+    <Alias n="52" Id="(@51)" />
+    <Alias n="53" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Net.Http.dll" />
+    <Alias n="54" Id="(@53)" />
+    <Alias n="55" Uri="Assembly=$(appUri)/IDE/ReferenceAssemblies/Microsoft/Framework/MonoAndroid/v1.0/System.Xml.Linq.dll" />
+    <Alias n="56" Id="(@55)" />
+    <Alias n="57" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Xml.Linq.dll" />
+    <Alias n="58" Id="(@57)" />
+    <Alias n="59" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Windows.Forms.dll" />
+    <Alias n="60" Id="(@59)" />
+    <Alias n="61" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Data.DataSetExtensions.dll" />
+    <Alias n="62" Id="(@61)" />
+    <Alias n="63" Uri="Assembly=$(222fd31a-6a11-483b-8b2c-ff22811285cc.OutputPathUri)" />
+    <Alias n="64" Id="(@63)" />
+    <Alias n="65" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/System.Deployment.dll" />
+    <Alias n="66" Id="(@65)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="结果" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="测试项目" ValueLabel="测试项目">
+      <Condition Expression="HasCategory('CodeMap_TestProject')" />
+      <Setter Property="Icon" Value="CodeMap_TestProject" />
+      <Setter Property="Background" Value="#FF307A69" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Web 项目" ValueLabel="Web 项目">
+      <Condition Expression="HasCategory('CodeMap_WebProject')" />
+      <Setter Property="Icon" Value="CodeMap_WebProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Windows 应用商店项目" ValueLabel="Windows 应用商店项目">
+      <Condition Expression="HasCategory('CodeMap_WindowsStoreProject')" />
+      <Setter Property="Icon" Value="CodeMap_WindowsStoreProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="电话项目" ValueLabel="电话项目">
+      <Condition Expression="HasCategory('CodeMap_PhoneProject')" />
+      <Setter Property="Icon" Value="CodeMap_PhoneProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="可移植库" ValueLabel="可移植库">
+      <Condition Expression="HasCategory('CodeMap_PortableLibraryProject')" />
+      <Setter Property="Icon" Value="CodeMap_PortableLibraryProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="WPF 项目" ValueLabel="WPF 项目">
+      <Condition Expression="HasCategory('CodeMap_WpfProject')" />
+      <Setter Property="Icon" Value="CodeMap_WpfProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VSIX 项目" ValueLabel="VSIX 项目">
+      <Condition Expression="HasCategory('CodeMap_VsixProject')" />
+      <Setter Property="Icon" Value="CodeMap_VsixProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="建模项目" ValueLabel="建模项目">
+      <Condition Expression="HasCategory('CodeMap_ModelingProject')" />
+      <Setter Property="Icon" Value="CodeMap_ModelingProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="程序集" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="命名空间" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="接口" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="结构" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="枚举" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="委托" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="属性" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="方法" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="事件" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="字段" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out 参数" ValueLabel="具有类别">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="参数" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="局部变量" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="外部" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="继承自" ValueLabel="True">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="实现" ValueLabel="True">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="调用" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="函数指针" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段读取" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="字段写入" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldWrite')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+      <Setter Property="IsHidden" Value="false" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="返回" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="引用" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('References')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="使用特性" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="解决方案文件夹" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeMap_SolutionFolder')" />
+      <Setter Property="Background" Value="#FFDEBA83" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="项目引用" ValueLabel="项目引用">
+      <Condition Expression="HasCategory('CodeMap_ProjectReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="外部引用" ValueLabel="外部引用">
+      <Condition Expression="HasCategory('CodeMap_ExternalReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="06b10e6e-f3c6-4f2c-9209-17579ba27347.OutputPath" Value="D:\workspace\影像中心控制系统服务器\FileZipService\bin\Release\FileZipService.dll" />
+    <Path Id="06b10e6e-f3c6-4f2c-9209-17579ba27347.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/FileZipService/bin/Release/FileZipService.dll" />
+    <Path Id="222fd31a-6a11-483b-8b2c-ff22811285cc.OutputPath" Value="D:\workspace\影像中心控制系统服务器\ReadingRoomClient\bin\Release\ReadingRoomClient.dll" />
+    <Path Id="222fd31a-6a11-483b-8b2c-ff22811285cc.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/ReadingRoomClient/bin/Release/ReadingRoomClient.dll" />
+    <Path Id="338bf887-3bd2-4ee9-8393-48689c47ce3e.OutputPath" Value="D:\workspace\影像中心控制系统服务器\DataBaseService\bin\Release\DataBaseService.dll" />
+    <Path Id="338bf887-3bd2-4ee9-8393-48689c47ce3e.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/DataBaseService/bin/Release/DataBaseService.dll" />
+    <Path Id="42f2e9ff-1b85-44d6-b535-23f46b5f01b8.OutputPath" Value="D:\workspace\影像中心控制系统服务器\CommandHandleService\bin\Release\CommandHandleService.dll" />
+    <Path Id="42f2e9ff-1b85-44d6-b535-23f46b5f01b8.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/CommandHandleService/bin/Release/CommandHandleService.dll" />
+    <Path Id="5fc20d5c-133f-4672-bb82-8f8cc8f9107a.OutputPath" Value="D:\workspace\影像中心控制系统服务器\DataHandleService\bin\Release\DataHandleService.dll" />
+    <Path Id="5fc20d5c-133f-4672-bb82-8f8cc8f9107a.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/DataHandleService/bin/Release/DataHandleService.dll" />
+    <Path Id="7db58e2d-3746-4d9d-b97e-bfdf00ddd3e7.OutputPath" Value="D:\workspace\影像中心控制系统服务器\AdminControl\bin\Release\AdminControl.exe" />
+    <Path Id="7db58e2d-3746-4d9d-b97e-bfdf00ddd3e7.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/AdminControl/bin/Release/AdminControl.exe" />
+    <Path Id="879a3e22-80cf-4e0c-b058-7d5611889ee7.OutputPath" Value="D:\workspace\影像中心控制系统服务器\ImageCenterClient\bin\Release\ImageCenterClient.exe" />
+    <Path Id="879a3e22-80cf-4e0c-b058-7d5611889ee7.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/ImageCenterClient/bin/Release/ImageCenterClient.exe" />
+    <Path Id="8bc4fc69-8cb1-4909-b366-b04d01cc0ab1.OutputPath" Value="D:\workspace\影像中心控制系统服务器\DataCheckService\bin\Release\DataCheckService.dll" />
+    <Path Id="8bc4fc69-8cb1-4909-b366-b04d01cc0ab1.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/DataCheckService/bin/Release/DataCheckService.dll" />
+    <Path Id="aa707f35-2b37-4927-9847-f4771bb233e5.OutputPath" Value="D:\workspace\影像中心控制系统服务器\EmailService\bin\Release\EmailService.dll" />
+    <Path Id="aa707f35-2b37-4927-9847-f4771bb233e5.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/EmailService/bin/Release/EmailService.dll" />
+    <Path Id="app" Value="D:\APP\VS\Common7" />
+    <Path Id="appUri" Value="file:///D:/APP/VS/Common7" />
+    <Path Id="ca8f7f5c-bbcb-4bea-8eb3-01c439b44465.OutputPath" Value="D:\workspace\影像中心控制系统服务器\ImageCenterController\bin\Release\ImageCenterController.exe" />
+    <Path Id="ca8f7f5c-bbcb-4bea-8eb3-01c439b44465.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/ImageCenterController/bin/Release/ImageCenterController.exe" />
+    <Path Id="d551bb88-3d24-4f04-9c56-8c7df49dcce7.OutputPath" Value="D:\workspace\影像中心控制系统服务器\DataTransferService\bin\Release\DataTransferService.dll" />
+    <Path Id="d551bb88-3d24-4f04-9c56-8c7df49dcce7.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/DataTransferService/bin/Release/DataTransferService.dll" />
+    <Path Id="d7ffdda8-1191-44f6-87eb-1e3fdd4e283b.OutputPath" Value="D:\workspace\影像中心控制系统服务器\LogService\bin\Release\LogService.dll" />
+    <Path Id="d7ffdda8-1191-44f6-87eb-1e3fdd4e283b.OutputPathUri" Value="file:///D:/workspace/影像中心控制系统服务器/LogService/bin/Release/LogService.dll" />
+    <Path Id="FxReferenceAssemblies" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework" />
+    <Path Id="FxReferenceAssembliesUri" Value="file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework" />
+    <Path Id="ProgramFiles" Value="C:\Program Files (x86)" />
+    <Path Id="ProgramFilesUri" Value="file:///C:/Program Files (x86)" />
+    <Path Id="VsSolution" Value="D:\workspace\影像中心控制系统服务器" />
+    <Path Id="VsSolutionUri" Value="file:///D:/workspace/影像中心控制系统服务器" />
+  </Paths>
+</DirectedGraph>

@@ -10,4 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_ConnectServer" />
+    <TextView
+        android:text="温度：初始化..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_Temp"
+        android:gravity="center" />
+    <TextView
+        android:text="湿度：初始化..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_Hum"
+        android:gravity="center" />
+    <TextView
+        android:text="光照：初始化..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_Light"
+        android:gravity="center" />
+    <TextView
+        android:text="噪音：初始化..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_Noise"
+        android:gravity="center" />
 </LinearLayout>
