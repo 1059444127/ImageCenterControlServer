@@ -11,25 +11,57 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using DataTransferService;
+using LogService;
 
 namespace ImageCenterController
 {
+    /// <summary>
+    /// 控制器模拟
+    /// </summary>
     public partial class frm_Main : Form
     {
+        #region 全局变量
+        /// <summary>
+        /// 连接套接字
+        /// </summary>
         private Socket ControlSocket;
 
+        /// <summary>
+        /// 数据传输实例
+        /// </summary>
         private DataTransfer Data;
 
-        private volatile bool is_Connected = false;
+        /// <summary>
+        /// 日志服务实例
+        /// </summary>
+        private LogHelper Log;
 
+        /// <summary>
+        /// 连接标志位
+        /// </summary>
+        private volatile bool is_Connected = false;
+        #endregion
+
+        #region 构造器
+        /// <summary>
+        /// 构造器
+        /// </summary>
         public frm_Main()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region 用户事件
+        /// <summary>
+        /// 窗体加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frm_Main_Load(object sender, EventArgs e)
         {
             Data = new DataTransfer();
+            Log = new LogHelper(Application.StartupPath + "\\Log");
         }
 
         /// <summary>
@@ -41,7 +73,9 @@ namespace ImageCenterController
         {
             ConnectServer();
         }
+        #endregion
 
+        #region 功能函数
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -54,11 +88,13 @@ namespace ImageCenterController
                     ControlSocket.Close();
                     btn_Connect.Text = "连接";
                     is_Connected = false;
+                    Log.WriteLog("关闭连接成功");
                     return;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "错误");
+                    Log.WriteLog("关闭连接失败");
                     return;
                 }
             }
@@ -69,6 +105,7 @@ namespace ImageCenterController
             if (string.IsNullOrEmpty(ServerIP.Trim(' ')) || string.IsNullOrEmpty(ServerPort.Trim(' ')))
             {
                 MessageBox.Show("IP和端口号不能为空！", "错误");
+                Log.WriteLog("连接服务器失败.IP和端口号不能为空");
                 return;
             }
 
@@ -81,42 +118,15 @@ namespace ImageCenterController
             {
                 ControlSocket.Connect(Point);
                 btn_Connect.Text = "断开";
+                Log.WriteLog("连接服务器成功");
                 is_Connected = true;
-                Thread SendThread = new Thread(SendMessage);
-                SendThread.IsBackground = true;
-                SendThread.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "错误");
+                Log.WriteLog("连接服务器失败" + ex.Message);
             }
         }
-
-        /// <summary>
-        /// 发送数据
-        /// </summary>
-        private void SendMessage()
-        {
-            while (true)
-            {
-                if (is_Connected)
-                {
-                    try
-                    {
-                        Data.SendData(ControlSocket, txt_Send.Text.Replace(" ","\t") + ":CRC=4d83\r\n");
-                        Thread.Sleep(1000);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "错误");
-                        break;
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
+        #endregion
     }
 }

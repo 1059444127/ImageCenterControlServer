@@ -33,10 +33,6 @@
             this.txt_ServerIP = new System.Windows.Forms.TextBox();
             this.txt_ServerPort = new System.Windows.Forms.TextBox();
             this.btn_Connect = new System.Windows.Forms.Button();
-            this.txt_Send = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_Recv = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -83,49 +79,11 @@
             this.btn_Connect.UseVisualStyleBackColor = true;
             this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
             // 
-            // txt_Send
-            // 
-            this.txt_Send.Location = new System.Drawing.Point(53, 153);
-            this.txt_Send.Name = "txt_Send";
-            this.txt_Send.Size = new System.Drawing.Size(287, 21);
-            this.txt_Send.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 12);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Send:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 12);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Recv:";
-            // 
-            // txt_Recv
-            // 
-            this.txt_Recv.Location = new System.Drawing.Point(14, 219);
-            this.txt_Recv.Multiline = true;
-            this.txt_Recv.Name = "txt_Recv";
-            this.txt_Recv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Recv.Size = new System.Drawing.Size(326, 153);
-            this.txt_Recv.TabIndex = 8;
-            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 384);
-            this.Controls.Add(this.txt_Recv);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_Send);
+            this.ClientSize = new System.Drawing.Size(347, 385);
             this.Controls.Add(this.btn_Connect);
             this.Controls.Add(this.txt_ServerPort);
             this.Controls.Add(this.txt_ServerIP);
@@ -147,10 +105,6 @@
         private System.Windows.Forms.TextBox txt_ServerIP;
         private System.Windows.Forms.TextBox txt_ServerPort;
         private System.Windows.Forms.Button btn_Connect;
-        private System.Windows.Forms.TextBox txt_Send;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_Recv;
     }
 }
 

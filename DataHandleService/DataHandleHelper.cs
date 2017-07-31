@@ -18,26 +18,59 @@ namespace DataHandleService
         /// </summary>
         public struct HeartStruct
         {
+            /// <summary>
+            /// 控制器电源状态
+            /// </summary>
             public string Status { get; set; }
 
+            /// <summary>
+            /// 控制器运行时间
+            /// </summary>
             public string Runtime { get; set; }
 
+            /// <summary>
+            /// 房间内温度
+            /// </summary>
             public string Temp { get; set; }
 
+            /// <summary>
+            /// 房间内湿度
+            /// </summary>
             public string Hum { get; set; }
 
+            /// <summary>
+            /// 房间内光照
+            /// </summary>
             public string Light { get; set; }
 
+            /// <summary>
+            /// 房间内噪音
+            /// </summary>
             public string Noise { get; set; }
 
+            /// <summary>
+            /// 打开的继电器口状态
+            /// </summary>
             public string Relays { get; set; }
 
+            /// <summary>
+            /// 矩阵输入信号
+            /// </summary>
             public string VideoIn { get; set; }
 
+            /// <summary>
+            /// 矩阵输出信号
+            /// </summary>
             public string VideoOut { get; set; }
 
+            /// <summary>
+            /// 投影机电源状态
+            /// </summary>
             public string Projector { get; set; }
 
+            /// <summary>
+            /// 镜头电源状态
+            /// </summary>
             public string CameraPower { get; set; }
         }
 
