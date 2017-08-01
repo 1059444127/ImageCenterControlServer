@@ -823,7 +823,5 @@ namespace AdminControl
         #endregion
 
         #endregion
-
-
     }
 }
