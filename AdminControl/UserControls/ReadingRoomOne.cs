@@ -450,10 +450,12 @@ namespace AdminControl
                 }
 
                 /*
-                数据发送 
+                数据封装及发送 
                 */
                 if (is_ClientConnect)
                 {
+                    EnviroumentData = DataHandle.GetClientDataPacket(Heart);
+
                     SendEnviroumentData(EnviroumentData);
                 }
             }

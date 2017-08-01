@@ -153,5 +153,26 @@ namespace DataHandleService
             return Heart;
         }
         #endregion
+
+        #region 数据包封装
+        /// <summary>
+        /// 封装客户端数据包
+        /// </summary>
+        /// <param name="Heart">解析后的控制器心跳包</param>
+        /// <returns></returns>
+        public string GetClientDataPacket(HeartStruct Heart)
+        {
+            string DataPacket = string.Empty;
+            string CRCCode = string.Empty;
+
+            DataPacket = string.Format("cmd=Enviroument\tTemp={0}\tHum={1}\tLight={2}\tNoise={3}");
+
+            CRCCode = DataCheck.GetCRCCode(DataPacket);
+
+            DataPacket += string.Format(":CRC={0}\r\n", CRCCode);
+
+            return DataPacket;
+        }
+        #endregion
     }
 }

@@ -58,6 +58,59 @@ namespace DataCheckService
 
             return CRCCode;
         }
+
+        /// <summary>
+        /// 获得CRC校验码
+        /// </summary>
+        /// <param name="RawData">待校验的数据</param>
+        /// <returns></returns>
+        public string GetCRCCode(string RawData)
+        {
+            byte[] Data = Encoding.UTF8.GetBytes(RawData);
+
+            uint IX, IY;
+
+            ushort CRCCode = 0xFFFF;
+
+            string Code = string.Empty;
+
+            int Len = Data.Length;
+            if (Len <= 0)
+            {
+                CRCCode = 0;
+            }
+            else
+            {
+                Len--;
+                for (IX = 0; IX <= Len; IX++)
+                {
+                    CRCCode = (ushort)(CRCCode ^ (Data[IX]));
+
+                    for (IY = 0; IY <= 7; IY++)
+                    {
+                        if ((CRCCode & 1) != 0)
+                        {
+                            CRCCode = (ushort)((CRCCode >> 1) ^ 0xA001);
+                        }
+                        else
+                        {
+                            CRCCode = (ushort)(CRCCode >> 1);
+                        }
+                    }
+                }
+            }
+
+            byte buf1 = (byte)((CRCCode & 0xff00) >> 8);//高位置
+            byte buf2 = (byte)(CRCCode & 0x00ff); //低位置
+
+            CRCCode = (ushort)(buf1 << 8);
+
+            CRCCode += buf2;
+
+            Code = string.Format("{0:x}", CRCCode);
+
+            return Code;
+        }
         #endregion
 
         #region 校验数据

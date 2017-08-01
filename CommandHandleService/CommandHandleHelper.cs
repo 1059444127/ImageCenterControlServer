@@ -112,5 +112,19 @@ namespace CommandHandleService
             return Command;
         }
         #endregion
+
+        #region 解析客户端指令包
+        /// <summary>
+        /// 解析客户端指令包
+        /// </summary>
+        /// <param name="ClientData"></param>
+        /// <returns></returns>
+        public string GetClientCommand(string ClientData)
+        {
+            string Command = string.Empty;
+
+            return Command;
+        }
+        #endregion
     }
 }
