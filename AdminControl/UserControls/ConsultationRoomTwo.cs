@@ -97,7 +97,7 @@ namespace AdminControl
         public ConsultationRoomTwo(frm_Main frm_Main)
         {
             InitializeComponent();
-            InitItems(frm_Main);
+            InitServices(frm_Main);
         }
         #endregion
 
@@ -137,7 +137,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_KH_Click(object sender, EventArgs e)
+        private void btn_ModeKH_Click(object sender, EventArgs e)
         {
             ModeChange(3);
         }
@@ -147,7 +147,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_JP_Click(object sender, EventArgs e)
+        private void btn_ModeJP_Click(object sender, EventArgs e)
         {
             ModeChange(4);
         }
@@ -337,7 +337,7 @@ namespace AdminControl
         /// <summary>
         /// 初始化
         /// </summary>
-        private void InitItems(frm_Main frm_Main)
+        private void InitServices(frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 
@@ -354,6 +354,14 @@ namespace AdminControl
             ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
             ReadUserConfig();
+        }
+
+        /// <summary>
+        /// 初始化各类控件
+        /// </summary>
+        private void InitControls()
+        {
+
         }
         #endregion
 
@@ -815,5 +823,7 @@ namespace AdminControl
         #endregion
 
         #endregion
+
+
     }
 }

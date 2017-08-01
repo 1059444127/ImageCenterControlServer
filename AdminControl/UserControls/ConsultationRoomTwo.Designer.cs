@@ -48,8 +48,8 @@
             this.label_ClientStatus = new System.Windows.Forms.Label();
             this.label_ControlStatus = new System.Windows.Forms.Label();
             this.gBx_ModeChange = new System.Windows.Forms.GroupBox();
-            this.btn_JP = new System.Windows.Forms.Button();
-            this.btn_KH = new System.Windows.Forms.Button();
+            this.btn_ModeJP = new System.Windows.Forms.Button();
+            this.btn_ModeKH = new System.Windows.Forms.Button();
             this.btn_ModeYH = new System.Windows.Forms.Button();
             this.btn_ModeHZ = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -387,8 +387,8 @@
             // 
             // gBx_ModeChange
             // 
-            this.gBx_ModeChange.Controls.Add(this.btn_JP);
-            this.gBx_ModeChange.Controls.Add(this.btn_KH);
+            this.gBx_ModeChange.Controls.Add(this.btn_ModeJP);
+            this.gBx_ModeChange.Controls.Add(this.btn_ModeKH);
             this.gBx_ModeChange.Controls.Add(this.btn_ModeYH);
             this.gBx_ModeChange.Controls.Add(this.btn_ModeHZ);
             this.gBx_ModeChange.Location = new System.Drawing.Point(13, 122);
@@ -398,43 +398,43 @@
             this.gBx_ModeChange.TabStop = false;
             this.gBx_ModeChange.Text = "模式切换";
             // 
-            // btn_JP
+            // btn_ModeJP
             // 
-            this.btn_JP.BackColor = System.Drawing.Color.Transparent;
-            this.btn_JP.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_JP.FlatAppearance.BorderSize = 0;
-            this.btn_JP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_JP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_JP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_JP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_JP.ForeColor = System.Drawing.Color.White;
-            this.btn_JP.Location = new System.Drawing.Point(18, 203);
-            this.btn_JP.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_JP.Name = "btn_JP";
-            this.btn_JP.Size = new System.Drawing.Size(110, 50);
-            this.btn_JP.TabIndex = 4;
-            this.btn_JP.Text = "胶片直投";
-            this.btn_JP.UseVisualStyleBackColor = false;
-            this.btn_JP.Click += new System.EventHandler(this.btn_JP_Click);
+            this.btn_ModeJP.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeJP.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ModeJP.FlatAppearance.BorderSize = 0;
+            this.btn_ModeJP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeJP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeJP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModeJP.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ModeJP.ForeColor = System.Drawing.Color.White;
+            this.btn_ModeJP.Location = new System.Drawing.Point(18, 203);
+            this.btn_ModeJP.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ModeJP.Name = "btn_ModeJP";
+            this.btn_ModeJP.Size = new System.Drawing.Size(110, 50);
+            this.btn_ModeJP.TabIndex = 4;
+            this.btn_ModeJP.Text = "胶片直投";
+            this.btn_ModeJP.UseVisualStyleBackColor = false;
+            this.btn_ModeJP.Click += new System.EventHandler(this.btn_ModeJP_Click);
             // 
-            // btn_KH
+            // btn_ModeKH
             // 
-            this.btn_KH.BackColor = System.Drawing.Color.Transparent;
-            this.btn_KH.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_KH.FlatAppearance.BorderSize = 0;
-            this.btn_KH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_KH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_KH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_KH.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_KH.ForeColor = System.Drawing.Color.White;
-            this.btn_KH.Location = new System.Drawing.Point(18, 150);
-            this.btn_KH.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_KH.Name = "btn_KH";
-            this.btn_KH.Size = new System.Drawing.Size(110, 50);
-            this.btn_KH.TabIndex = 3;
-            this.btn_KH.Text = "科会模式";
-            this.btn_KH.UseVisualStyleBackColor = false;
-            this.btn_KH.Click += new System.EventHandler(this.btn_KH_Click);
+            this.btn_ModeKH.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeKH.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ModeKH.FlatAppearance.BorderSize = 0;
+            this.btn_ModeKH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeKH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ModeKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModeKH.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ModeKH.ForeColor = System.Drawing.Color.White;
+            this.btn_ModeKH.Location = new System.Drawing.Point(18, 150);
+            this.btn_ModeKH.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ModeKH.Name = "btn_ModeKH";
+            this.btn_ModeKH.Size = new System.Drawing.Size(110, 50);
+            this.btn_ModeKH.TabIndex = 3;
+            this.btn_ModeKH.Text = "科会模式";
+            this.btn_ModeKH.UseVisualStyleBackColor = false;
+            this.btn_ModeKH.Click += new System.EventHandler(this.btn_ModeKH_Click);
             // 
             // btn_ModeYH
             // 
@@ -840,8 +840,8 @@
         private System.Windows.Forms.Label label_ClientStatus;
         private System.Windows.Forms.Label label_ControlStatus;
         private System.Windows.Forms.GroupBox gBx_ModeChange;
-        private System.Windows.Forms.Button btn_JP;
-        private System.Windows.Forms.Button btn_KH;
+        private System.Windows.Forms.Button btn_ModeJP;
+        private System.Windows.Forms.Button btn_ModeKH;
         private System.Windows.Forms.Button btn_ModeYH;
         private System.Windows.Forms.Button btn_ModeHZ;
         private System.Windows.Forms.Label label4;
