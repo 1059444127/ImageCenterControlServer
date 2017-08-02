@@ -156,16 +156,35 @@ namespace DataHandleService
 
         #region 数据包封装
         /// <summary>
-        /// 封装客户端数据包
+        /// 封装环境数据包
         /// </summary>
         /// <param name="Heart">解析后的控制器心跳包</param>
-        /// <returns></returns>
-        public string GetClientDataPacket(HeartStruct Heart)
+        /// <returns>封装后的环境数据包</returns>
+        public string PacketEnviroumentData(HeartStruct Heart)
         {
             string DataPacket = string.Empty;
             string CRCCode = string.Empty;
 
             DataPacket = string.Format("cmd=Enviroument\tTemp={0}\tHum={1}\tLight={2}\tNoise={3}");
+
+            CRCCode = DataCheck.GetCRCCode(DataPacket);
+
+            DataPacket += string.Format(":CRC={0}\r\n", CRCCode);
+
+            return DataPacket;
+        }
+
+        /// <summary>
+        /// 封装设备状态数据包
+        /// </summary>
+        /// <param name="Heart">解析后的控制器心跳包</param>
+        /// <returns>封装后的设备状态数据包</returns>
+        public string PacketDeviceStatusData(HeartStruct Heart)
+        {
+            string DataPacket = string.Empty;
+            string CRCCode = string.Empty;
+
+            DataPacket = string.Format("cmd=DeviceStatus\tProjector={0}\tVideoIn={1}\tVideoOut={2}\tCameraPower={3}", Heart.Projector, Heart.VideoIn, Heart.VideoOut, Heart.CameraPower);
 
             CRCCode = DataCheck.GetCRCCode(DataPacket);
 
