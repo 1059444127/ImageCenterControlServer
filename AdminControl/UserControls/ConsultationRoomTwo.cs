@@ -543,6 +543,8 @@ namespace AdminControl
 
                 if (is_ClientConnect)
                 {
+                    Status = DataHandle.PacketDeviceStatusData(Heart);
+
                     SendDeviceStatus(Status);
                 }
             }

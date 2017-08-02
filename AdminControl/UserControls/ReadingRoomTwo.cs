@@ -454,6 +454,8 @@ namespace AdminControl
                 */
                 if (is_ClientConnect)
                 {
+                    EnviroumentData = DataHandle.PacketEnviroumentData(Heart);
+
                     SendEnviroumentData(EnviroumentData);
                 }
             }
