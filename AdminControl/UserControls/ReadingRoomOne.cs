@@ -378,6 +378,7 @@ namespace AdminControl
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvEnviroumentData);
+            RecvDeviceStatusThread.Name = "阅片室1环境数据接收线程";
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(ControlSocket);
 
@@ -490,6 +491,7 @@ namespace AdminControl
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
+            RecvClientCommandThread.Name = "阅片室1用户指令接收线程";
             RecvClientCommandThread.IsBackground = true;
             RecvClientCommandThread.Start(Connection);
         }

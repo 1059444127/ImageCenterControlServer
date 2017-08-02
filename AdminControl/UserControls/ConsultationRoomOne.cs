@@ -476,6 +476,7 @@ namespace AdminControl
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvDeviceStatus);
+            RecvDeviceStatusThread.Name = "会诊室1设备状态接收线程";
             RecvDeviceStatusThread.IsBackground = true;
             RecvDeviceStatusThread.Start(ControlSocket);
 
@@ -586,6 +587,7 @@ namespace AdminControl
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand);
+            RecvClientCommandThread.Name = "会诊室1用户指令接收线程";
             RecvClientCommandThread.IsBackground = true;
             RecvClientCommandThread.Start(Connection);
         }

@@ -378,6 +378,7 @@ namespace AdminControl
         private void StartTime()
         {
             Thread TimeThread = new Thread(TimeRefreshThread);
+            TimeThread.Name = "时间动态刷新线程";
             TimeThread.IsBackground = true;
             TimeThread.Start();
             Log.WriteLog("时间动态刷新服务启动成功");
@@ -620,6 +621,7 @@ namespace AdminControl
         private void StartServer()
         {
             Thread ListenThread = new Thread(ListenConnect);
+            ListenThread.Name = "服务器监听线程";
             ListenThread.IsBackground = true;
             ListenThread.Start();
         }
