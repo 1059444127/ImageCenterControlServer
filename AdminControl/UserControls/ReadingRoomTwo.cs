@@ -426,6 +426,18 @@ namespace AdminControl
                     ControlRefresh.RefreshLabelStatus(label_Light, "初始化...", Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_Noise, "初始化...", Color.Black);
 
+                    /*
+                    提示客户端控制器离线 
+                    */
+                    if (is_ClientConnect)
+                    {
+                        Heart.Status = "0";
+
+                        EnviroumentData = DataHandle.PacketEnviroumentData(Heart);
+
+                        SendEnviroumentData(EnviroumentData);
+                    }
+
                     break;
                 }
 
@@ -450,7 +462,7 @@ namespace AdminControl
                 }
 
                 /*
-                数据发送 
+                环境数据发送
                 */
                 if (is_ClientConnect)
                 {

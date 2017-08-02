@@ -426,6 +426,18 @@ namespace AdminControl
                     ControlRefresh.RefreshLabelStatus(label_Light, "初始化...", Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_Noise, "初始化...", Color.Black);
 
+                    /*
+                    提示客户端控制器离线 
+                    */
+                    if (is_ClientConnect)
+                    {
+                        Heart.Status = "0";
+
+                        EnviroumentData = DataHandle.PacketEnviroumentData(Heart);
+
+                        SendEnviroumentData(EnviroumentData);
+                    }
+
                     break;
                 }
 
@@ -450,7 +462,7 @@ namespace AdminControl
                 }
 
                 /*
-                数据封装及发送 
+                环境数据发送 
                 */
                 if (is_ClientConnect)
                 {
@@ -514,16 +526,21 @@ namespace AdminControl
                 frm_Main.Log.WriteLog("接收到阅片室1客户端指令：" + Command);
 
                 /*
-                指令解析
+                指令解析与发送
                 */
-
-                /*
-                指令打包
-                */
-
                 if (is_ControlConnect)
                 {
-                    SendControlCommand(Command);
+                    try
+                    {
+                        Command = CommandHandle.GetClientCommand(Command);
+
+                        SendControlCommand(Command);
+                    }
+                    catch (Exception ex)
+                    {
+                        frm_Main.Log.WriteLog("指令解析失败：" + ex.Message);
+                        continue;
+                    }
                 }
             }
         }

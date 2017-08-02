@@ -165,7 +165,7 @@ namespace DataHandleService
             string DataPacket = string.Empty;
             string CRCCode = string.Empty;
 
-            DataPacket = string.Format("cmd=Enviroument\tTemp={0}\tHum={1}\tLight={2}\tNoise={3}");
+            DataPacket = string.Format("cmd=Enviroument\tControlStatus={0}\tTemp={1}\tHum={2}\tLight={3}\tNoise={4}", Heart.Status, Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise);
 
             CRCCode = DataCheck.GetCRCCode(DataPacket);
 
@@ -184,7 +184,7 @@ namespace DataHandleService
             string DataPacket = string.Empty;
             string CRCCode = string.Empty;
 
-            DataPacket = string.Format("cmd=DeviceStatus\tProjector={0}\tVideoIn={1}\tVideoOut={2}\tCameraPower={3}", Heart.Projector, Heart.VideoIn, Heart.VideoOut, Heart.CameraPower);
+            DataPacket = string.Format("cmd=DeviceStatus\tControlStatus={0}\tProjector={1}\tVideoIn={2}\tVideoOut={3}\tCameraPower={4}", Heart.Status, Heart.Projector, Heart.VideoIn, Heart.VideoOut, Heart.CameraPower);
 
             CRCCode = DataCheck.GetCRCCode(DataPacket);
 
