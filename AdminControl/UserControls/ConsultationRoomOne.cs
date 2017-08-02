@@ -633,7 +633,7 @@ namespace AdminControl
                     }
                     catch (Exception ex)
                     {
-                        frm_Main.Log.WriteLog("指令解析失败：" + ex.Message);
+                        frm_Main.Log.WriteLog("会诊室1客户端指令解析失败：" + ex.Message);
                         continue;
                     }
                 }
