@@ -117,13 +117,21 @@ namespace CommandHandleService
         /// <summary>
         /// 解析客户端指令包
         /// </summary>
-        /// <param name="ClientData"></param>
+        /// <param name="ClientCommand"></param>
         /// <returns></returns>
-        public string GetClientCommand(string ClientData)
+        public string GetClientCommand(string ClientCommand)
         {
             string Command = string.Empty;
 
-            return Command;
+            if (DataCheck.CheckData(ClientCommand))
+            {
+                Command = ClientCommand;
+                return Command;
+            }
+            else
+            {
+                throw new Exception("接收到错误数据");
+            }
         }
         #endregion
     }
