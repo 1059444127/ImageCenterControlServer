@@ -522,6 +522,18 @@ namespace AdminControl
                     ControlRefresh.RefreshLabelStatus(label_MatrixIn, "初始化", Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_MatrixOut, "初始化", Color.Black);
 
+                    /*
+                    提示客户端控制器离线 
+                    */
+                    if (is_ClientConnect)
+                    {
+                        Heart.Status = "0";
+
+                        Status = DataHandle.PacketDeviceStatusData(Heart);
+
+                        SendDeviceStatus(Status);
+                    }
+
                     break;
                 }
 
@@ -546,7 +558,7 @@ namespace AdminControl
                 }
 
                 /*
-                发送给客户端
+                发送设备状态到客户端
                 */
                 if (is_ClientConnect)
                 {

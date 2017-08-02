@@ -514,6 +514,18 @@ namespace AdminControl
                     ControlRefresh.RefreshButtons(gBx_LightsControl, false);
                     ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
 
+                    /*
+                    提示客户端控制器离线 
+                    */
+                    if (is_ClientConnect)
+                    {
+                        Heart.Status = "0";
+
+                        Status = DataHandle.PacketDeviceStatusData(Heart);
+
+                        SendDeviceStatus(Status);
+                    }
+
                     break;
                 }
 
@@ -538,9 +550,8 @@ namespace AdminControl
                 }
 
                 /*
-                数据打包发给客户端
+                发送设备状态到客户端
                 */
-
                 if (is_ClientConnect)
                 {
                     Status = DataHandle.PacketDeviceStatusData(Heart);
