@@ -31,7 +31,7 @@ namespace AdminControl
         /// <summary>
         /// 控制器连接标志位
         /// </summary>
-        private volatile bool is_ControlConnect = false;
+        public volatile bool is_ControlConnect = false;
 
         /// <summary>
         /// 模式列表

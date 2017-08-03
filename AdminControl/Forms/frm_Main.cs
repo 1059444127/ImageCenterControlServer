@@ -266,7 +266,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void label_Close_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         /// <summary>
@@ -294,7 +294,6 @@ namespace AdminControl
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             AnimateWindow(this.Handle, 500, AW_BLEND + AW_HIDE);
-            ServerStop();
         }
 
         /// <summary>
@@ -838,6 +837,28 @@ namespace AdminControl
             panel_UserControl.Controls.Add(Control);
         }
 
+        #endregion
+
+        #region 程序关闭
+        /// <summary>
+        /// 关闭程序
+        /// </summary>
+        private void ServerClose()
+        {
+            if (HZOne.is_ControlConnect)
+            {
+                HZOne.ResetMode();
+            }
+
+            if (HZTwo.is_ControlConnect)
+            {
+                HZTwo.ResetMode();
+            }
+
+            ServerStop();
+
+            this.Close();
+        }
         #endregion
 
         #endregion
