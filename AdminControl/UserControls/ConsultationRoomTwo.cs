@@ -689,13 +689,14 @@ namespace AdminControl
         /// <summary>
         /// 模式切换
         /// </summary>
-        /// <param name="Mode"></param>
+        /// <param name="Mode">模式编号</param>
         private void ModeChange(int Mode)
         {
             string Command = string.Empty;
 
             switch (Mode)
             {
+                //会诊模式
                 case 1:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
@@ -716,6 +717,7 @@ namespace AdminControl
                     Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
+                //议会模式
                 case 2:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
@@ -726,6 +728,7 @@ namespace AdminControl
                     Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
+                //科会模式
                 case 3:
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
@@ -735,6 +738,7 @@ namespace AdminControl
                     Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     break;
+                //胶片直投
                 case 4:
                     //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
@@ -743,6 +747,36 @@ namespace AdminControl
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
+
+                    //打开镜头
+                    Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
+                    SendControlCommand(Command);
+                    break;
+                //初始模式
+                case 5:
+                    //继电器状态初始化
+                    Command = CommandHandle.GetRelayCommand(ModeList[4].Relays.Split(' ')[0], ModeList[4].Relays.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //矩阵切换
+                    Command = CommandHandle.GetMatrixCommand(ModeList[4].Matrix.Split(' ')[0], ModeList[4].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //关闭投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[4].ProjectorOne.Split(',')[0], ModeList[4].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //关闭投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[4].ProjectorTwo.Split(',')[0], ModeList[4].ProjectorTwo.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //关闭镜头
+                    Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
                     SendControlCommand(Command);
                     break;
                 default:
@@ -845,6 +879,16 @@ namespace AdminControl
         }
         #endregion
 
+        #region 设备状态重置
+        /// <summary>
+        /// 重置设备状态
+        /// </summary>
+        public void ResetMode()
+        {
+            ModeChange(5);
+        }
+        #endregion
+        
         #endregion
     }
 }
