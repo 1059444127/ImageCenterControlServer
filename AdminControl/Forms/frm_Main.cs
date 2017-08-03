@@ -266,7 +266,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void label_Close_Click(object sender, EventArgs e)
         {
-
+            ServerClose();
         }
 
         /// <summary>

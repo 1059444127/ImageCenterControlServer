@@ -784,7 +784,7 @@ namespace AdminControl
                     Thread.Sleep(200);
 
                     //关闭镜头
-                    Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
+                    Command = CommandHandle.GetCameraCommand(ModeList[4].Camera, "0");
                     SendControlCommand(Command);
                     break;
                 default:
