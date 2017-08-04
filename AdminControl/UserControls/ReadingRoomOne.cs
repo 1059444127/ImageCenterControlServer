@@ -525,7 +525,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("接收到阅片室1客户端指令：" + Command);
+                frm_Main.Log.WriteLog("接收到阅片室1客户端指令：" + Command.Replace("\r\n", ""));
 
                 /*
                 指令解析与发送

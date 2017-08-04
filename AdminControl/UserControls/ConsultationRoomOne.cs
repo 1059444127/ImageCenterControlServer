@@ -538,7 +538,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("会诊室1设备状态：" + Status);
+                frm_Main.Log.WriteLog("会诊室1设备状态：" + Status.Replace("\r\n",""));
 
                 /*
                 状态刷新
@@ -621,7 +621,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("接收到会诊室1客户端指令：" + Command);
+                frm_Main.Log.WriteLog("接收到会诊室1客户端指令：" + Command.Replace("\r\n",""));
 
                 /*
                 指令解析与发送

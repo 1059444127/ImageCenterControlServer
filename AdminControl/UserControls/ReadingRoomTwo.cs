@@ -525,19 +525,24 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("接收到阅片室2客户端指令：" + Command);
-
+                frm_Main.Log.WriteLog("接收到阅片室2客户端指令：" + Command.Replace("\r\n", ""));
+                
                 /*
-                指令解析
+                指令解析与发送
                 */
-
-                /*
-                指令打包
-                */
-
                 if (is_ControlConnect)
                 {
-                    SendControlCommand(Command);
+                    try
+                    {
+                        Command = CommandHandle.GetClientCommand(Command);
+
+                        SendControlCommand(Command);
+                    }
+                    catch (Exception ex)
+                    {
+                        frm_Main.Log.WriteLog("指令解析失败：" + ex.Message);
+                        continue;
+                    }
                 }
             }
         }
