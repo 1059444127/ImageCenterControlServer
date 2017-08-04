@@ -198,7 +198,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Camera_On_Click(object sender, EventArgs e)
         {
-
+            CameraControl("1", "0");
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_Camera_Off_Click(object sender, EventArgs e)
         {
-
+            CameraControl("0", "0");
         }
 
         /// <summary>
@@ -852,7 +852,11 @@ namespace AdminControl
         /// <param name="EnlargeLevel">放大等级</param>
         private void CameraControl(string PowerStatus, string EnlargeLevel)
         {
+            string Command = string.Empty;
 
+            Command = CommandHandle.GetCameraCommand(PowerStatus, EnlargeLevel);
+
+            SendControlCommand(Command);
         }
         #endregion
 
@@ -888,8 +892,6 @@ namespace AdminControl
         }
         #endregion
 
-        #endregion
-
         #region 设备状态重置
         /// <summary>
         /// 重置设备状态
@@ -898,6 +900,8 @@ namespace AdminControl
         {
             ModeChange(5);
         }
+        #endregion
+
         #endregion
     }
 }
