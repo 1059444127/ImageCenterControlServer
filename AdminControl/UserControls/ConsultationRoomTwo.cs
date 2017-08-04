@@ -727,15 +727,36 @@ namespace AdminControl
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[1].ProjectorOne.Split(',')[0], ModeList[1].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[1].ProjectorTwo.Split(',')[0], ModeList[1].ProjectorTwo.Split(',')[1]);
+                    SendControlCommand(Command);
                     break;
                 //科会模式
                 case 3:
+                    //继电器状态修改
                     Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[2].ProjectorOne.Split(',')[0], ModeList[2].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[2].ProjectorTwo.Split(',')[0], ModeList[2].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //胶片直投
@@ -748,9 +769,20 @@ namespace AdminControl
                     //矩阵切换
                     Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
+                    Thread.Sleep(200);
 
                     //打开镜头
                     Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机1
+                    Command = CommandHandle.GetProjectorCommand(ModeList[3].ProjectorOne.Split(',')[0], ModeList[3].ProjectorOne.Split(',')[1]);
+                    SendControlCommand(Command);
+                    Thread.Sleep(200);
+
+                    //打开投影机2
+                    Command = CommandHandle.GetProjectorCommand(ModeList[3].ProjectorTwo.Split(',')[0], ModeList[3].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //初始模式
@@ -776,7 +808,7 @@ namespace AdminControl
                     Thread.Sleep(200);
 
                     //关闭镜头
-                    Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
+                    Command = CommandHandle.GetCameraCommand(ModeList[4].Camera, "0");
                     SendControlCommand(Command);
                     break;
                 default:
