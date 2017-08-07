@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Text;
 using System.Net.Sockets;
+using NetworkInterface;
 
 namespace DataTransferService
 {
     /// <summary>
-    /// 数据传输服务
+    /// 数据传输服务（继承网络通讯接口）
     /// </summary>
-    public class DataTransfer
+    public class DataTransfer : INetworkInterface
     {
         #region 接收数据
         /// <summary>

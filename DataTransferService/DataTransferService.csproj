@@ -44,9 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NetworkInterface\NetworkInterface.csproj">
       <Project>{bd79fb9d-fd33-4893-aa9c-4149c4ee8590}</Project>
       <Name>NetworkInterface</Name>
