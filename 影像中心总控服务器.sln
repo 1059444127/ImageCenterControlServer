@@ -58,10 +58,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCheckService", "DataChe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "服务器", "服务器", "{F54A71E7-3DCA-4135-841F-123656AECD3D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "接口", "接口", "{087605B4-D833-474C-A8B7-FF29FB2C95D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInterface", "NetworkInterface\NetworkInterface.csproj", "{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}"
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -105,6 +106,10 @@ Global
 		{8BC4FC69-8CB1-4909-B366-B04D01CC0AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BC4FC69-8CB1-4909-B366-B04D01CC0AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BC4FC69-8CB1-4909-B366-B04D01CC0AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,5 +133,9 @@ Global
 		{06B10E6E-F3C6-4F2C-9209-17579BA27347} = {1E4AFE3A-43CE-4B81-B738-946D084594CD}
 		{8BC4FC69-8CB1-4909-B366-B04D01CC0AB1} = {99345564-130F-4D29-8837-B6B51C62AED3}
 		{F54A71E7-3DCA-4135-841F-123656AECD3D} = {39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}
+		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
