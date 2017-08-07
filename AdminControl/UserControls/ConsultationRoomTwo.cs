@@ -361,7 +361,10 @@ namespace AdminControl
         /// </summary>
         private void InitControls()
         {
-
+            btn_ModeHZ.Text = ModeList[0].ModeName;
+            btn_ModeYH.Text = ModeList[1].ModeName;
+            btn_ModeKH.Text = ModeList[2].ModeName;
+            btn_ModeJP.Text = ModeList[3].ModeName;
         }
         #endregion
 
@@ -514,6 +517,11 @@ namespace AdminControl
                     ControlRefresh.RefreshButtons(gBx_ModeChange, false);
                     ControlRefresh.RefreshButtons(gBx_LightsControl, false);
                     ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+
+                    ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_CameraStatus, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixIn, "初始化", Color.Black);
+                    ControlRefresh.RefreshLabelStatus(label_MatrixOut, "初始化", Color.Black);
 
                     /*
                     提示客户端控制器离线 
