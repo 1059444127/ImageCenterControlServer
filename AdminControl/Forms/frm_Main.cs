@@ -750,7 +750,7 @@ namespace AdminControl
             }
             else
             {
-                Log.WriteLog(string.Format("检测到非法连接：{0} 已强制下线", ClientIP));
+                Log.WriteLog(string.Format("检测到非法连接：{0} 已强制下线", UserConnection.RemoteEndPoint.ToString()));
                 UserConnection.Close();
             }
         }
