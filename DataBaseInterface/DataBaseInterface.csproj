@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{338BF887-3BD2-4EE9-8393-48689C47CE3E}</ProjectGuid>
+    <ProjectGuid>{F53444FB-6F63-489F-AC98-449BB86591E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataBaseService</RootNamespace>
-    <AssemblyName>DataBaseService</AssemblyName>
+    <RootNamespace>DataBaseInterface</RootNamespace>
+    <AssemblyName>DataBaseInterface</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataBaseInterface">
-      <HintPath>..\DataBaseInterface\bin\Debug\DataBaseInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseHelper.cs" />
+    <Compile Include="IDatabaseInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

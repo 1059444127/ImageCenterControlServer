@@ -45,6 +45,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据库操作服务", "数据库操作服务", "{EDEB95E8-D3A6-42ED-9DE8-6FB1DFB94960}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseService", "DataBaseService\DataBaseService.csproj", "{338BF887-3BD2-4EE9-8393-48689C47CE3E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F53444FB-6F63-489F-AC98-449BB86591E4} = {F53444FB-6F63-489F-AC98-449BB86591E4}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "邮件发送服务", "邮件发送服务", "{BDF0A7A8-0B69-471E-837E-E64E99B781BF}"
 EndProject
@@ -63,6 +66,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInterface", "NetworkInterface\NetworkInterface.csproj", "{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "网络通讯接口", "网络通讯接口", "{6BD962B2-D6DD-4DB5-8D0E-1A716376787D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据库接口", "数据库接口", "{DC5E033A-02EF-4F5A-AF8F-A5C98ED33BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseInterface", "DataBaseInterface\DataBaseInterface.csproj", "{F53444FB-6F63-489F-AC98-449BB86591E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +119,10 @@ Global
 		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53444FB-6F63-489F-AC98-449BB86591E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53444FB-6F63-489F-AC98-449BB86591E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53444FB-6F63-489F-AC98-449BB86591E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53444FB-6F63-489F-AC98-449BB86591E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +148,8 @@ Global
 		{F54A71E7-3DCA-4135-841F-123656AECD3D} = {39CD9AB6-C375-4D50-8EBF-34F44E6FDE96}
 		{BD79FB9D-FD33-4893-AA9C-4149C4EE8590} = {6BD962B2-D6DD-4DB5-8D0E-1A716376787D}
 		{6BD962B2-D6DD-4DB5-8D0E-1A716376787D} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
+		{DC5E033A-02EF-4F5A-AF8F-A5C98ED33BE9} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
+		{F53444FB-6F63-489F-AC98-449BB86591E4} = {DC5E033A-02EF-4F5A-AF8F-A5C98ED33BE9}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

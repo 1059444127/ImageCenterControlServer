@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using DataBaseInterface;
 
 namespace DataBaseService
 {
     /// <summary>
     /// 数据库操作服务
     /// </summary>
-    public class DataBaseHelper
+    public class DataBaseHelper : IDatabaseInterface
     {
         #region 全局变量
         /// <summary>
@@ -32,7 +33,7 @@ namespace DataBaseService
         /// 初始化数据库连接
         /// </summary>
         /// <param name="SQLConnection"></param>
-        private void InitDataBaseService(string SQLConnection)
+        public void InitDataBaseService(string SQLConnection)
         {
             try
             {
