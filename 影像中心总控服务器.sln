@@ -71,6 +71,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据库接口", "数据�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseInterface", "DataBaseInterface\DataBaseInterface.csproj", "{F53444FB-6F63-489F-AC98-449BB86591E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "说明", "说明", "{EF872A77-DF34-4BE1-B7A2-07FA87C5F455}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
