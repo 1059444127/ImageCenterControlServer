@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Net.Sockets;
+
 using NetworkInterface;
 
 namespace DataTransferService
@@ -121,6 +122,10 @@ namespace DataTransferService
                 throw new Exception("连接已断开");
             }
         }
+        #endregion
+
+        #region 发送邮件
+
         #endregion
     }
 }
