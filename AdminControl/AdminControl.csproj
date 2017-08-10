@@ -35,9 +35,6 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommandHandleService">
-      <HintPath>..\CommandHandleService\bin\Debug\CommandHandleService.dll</HintPath>
-    </Reference>
     <Reference Include="DataBaseService">
       <HintPath>..\DataBaseService\bin\Debug\DataBaseService.dll</HintPath>
     </Reference>

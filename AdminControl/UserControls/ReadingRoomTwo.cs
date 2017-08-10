@@ -7,7 +7,6 @@ using DataTransferService;
 using System.Threading;
 using System.Xml;
 using DataHandleService;
-using CommandHandleService;
 
 namespace AdminControl
 {
@@ -51,11 +50,6 @@ namespace AdminControl
         /// 数据解析服务实例
         /// </summary>
         private DataHandleHelper DataHandle;
-
-        /// <summary>
-        /// 指令解析实例
-        /// </summary>
-        private CommandHandleHelper CommandHandle;
 
         /// <summary>
         /// 控件刷新服务实例
@@ -264,8 +258,6 @@ namespace AdminControl
             Data = new DataTransfer();
 
             DataHandle = new DataHandleHelper();
-
-            CommandHandle = new CommandHandleHelper();
 
             ControlRefresh = new ControlRefreshHelper();
 
@@ -534,9 +526,10 @@ namespace AdminControl
                 {
                     try
                     {
-                        Command = CommandHandle.GetClientCommand(Command);
-
-                        SendControlCommand(Command);
+                        if (DataHandle.CheckData(Command))
+                        {
+                            SendControlCommand(Command);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -611,15 +604,15 @@ namespace AdminControl
             {
                 case 1:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     break;
                 case 2:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     break;
                 case 3:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     break;
                 default:
                     break;
@@ -640,11 +633,11 @@ namespace AdminControl
 
             if (Status)
             {
-                Command = CommandHandle.GetRelayCommand(RelayNumber, "0");
+                Command = DataHandle.GetRelayCommand(RelayNumber, "0");
             }
             else
             {
-                Command = CommandHandle.GetRelayCommand("0", RelayNumber);
+                Command = DataHandle.GetRelayCommand("0", RelayNumber);
             }
             SendControlCommand(Command);
         }
@@ -660,7 +653,7 @@ namespace AdminControl
         {
             string Command = string.Empty;
 
-            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+            Command = DataHandle.GetRelayCommand(PortOpen, PortClose);
 
             SendControlCommand(Command);
         }

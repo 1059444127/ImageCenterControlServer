@@ -12,7 +12,6 @@ using System.Net.Sockets;
 using System.Xml;
 
 using DataTransferService;
-using CommandHandleService;
 using DataHandleService;
 
 namespace AdminControl
@@ -62,11 +61,6 @@ namespace AdminControl
         /// 数据解析实例
         /// </summary>
         private DataHandleHelper DataHandle;
-
-        /// <summary>
-        /// 指令解析实例
-        /// </summary>
-        private CommandHandleHelper CommandHandle;
 
         /// <summary>
         /// 控件刷新服务实例
@@ -344,8 +338,6 @@ namespace AdminControl
             Data = new DataTransfer();
 
             DataHandle = new DataHandleHelper();
-
-            CommandHandle = new CommandHandleHelper();
 
             ControlRefresh = new ControlRefreshHelper();
 
@@ -630,8 +622,10 @@ namespace AdminControl
                 {
                     try
                     {
-                        Command = CommandHandle.GetClientCommand(Command);
-                        SendControlCommand(Command);
+                        if (DataHandle.CheckData(Command))
+                        {
+                            SendControlCommand(Command);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -707,116 +701,116 @@ namespace AdminControl
                 //会诊模式
                 case 1:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
-                    Command = CommandHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
+                    Command = DataHandle.GetMatrixCommand(ModeList[0].Matrix.Split(' ')[0], ModeList[0].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机1
-                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorOne.Split(',')[0], ModeList[0].ProjectorOne.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[0].ProjectorOne.Split(',')[0], ModeList[0].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机2
-                    Command = CommandHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[0].ProjectorTwo.Split(',')[0], ModeList[0].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //议会模式
                 case 2:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
-                    Command = CommandHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
+                    Command = DataHandle.GetMatrixCommand(ModeList[1].Matrix.Split(' ')[0], ModeList[1].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机1
-                    Command = CommandHandle.GetProjectorCommand(ModeList[1].ProjectorOne.Split(',')[0], ModeList[1].ProjectorOne.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[1].ProjectorOne.Split(',')[0], ModeList[1].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机2
-                    Command = CommandHandle.GetProjectorCommand(ModeList[1].ProjectorTwo.Split(',')[0], ModeList[1].ProjectorTwo.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[1].ProjectorTwo.Split(',')[0], ModeList[1].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //科会模式
                 case 3:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
-                    Command = CommandHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
+                    Command = DataHandle.GetMatrixCommand(ModeList[2].Matrix.Split(' ')[0], ModeList[2].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机1
-                    Command = CommandHandle.GetProjectorCommand(ModeList[2].ProjectorOne.Split(',')[0], ModeList[2].ProjectorOne.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[2].ProjectorOne.Split(',')[0], ModeList[2].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机2
-                    Command = CommandHandle.GetProjectorCommand(ModeList[2].ProjectorTwo.Split(',')[0], ModeList[2].ProjectorTwo.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[2].ProjectorTwo.Split(',')[0], ModeList[2].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //胶片直投
                 case 4:
                     //继电器状态修改
-                    Command = CommandHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
-                    Command = CommandHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
+                    Command = DataHandle.GetMatrixCommand(ModeList[3].Matrix.Split(' ')[0], ModeList[3].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开镜头
-                    Command = CommandHandle.GetCameraCommand(ModeList[3].Camera, "0");
+                    Command = DataHandle.GetCameraCommand(ModeList[3].Camera, "0");
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机1
-                    Command = CommandHandle.GetProjectorCommand(ModeList[3].ProjectorOne.Split(',')[0], ModeList[3].ProjectorOne.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[3].ProjectorOne.Split(',')[0], ModeList[3].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //打开投影机2
-                    Command = CommandHandle.GetProjectorCommand(ModeList[3].ProjectorTwo.Split(',')[0], ModeList[3].ProjectorTwo.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[3].ProjectorTwo.Split(',')[0], ModeList[3].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     break;
                 //初始模式
                 case 5:
                     //继电器状态初始化
-                    Command = CommandHandle.GetRelayCommand(ModeList[4].Relays.Split(' ')[0], ModeList[4].Relays.Split(' ')[1]);
+                    Command = DataHandle.GetRelayCommand(ModeList[4].Relays.Split(' ')[0], ModeList[4].Relays.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //矩阵切换
-                    Command = CommandHandle.GetMatrixCommand(ModeList[4].Matrix.Split(' ')[0], ModeList[4].Matrix.Split(' ')[1]);
+                    Command = DataHandle.GetMatrixCommand(ModeList[4].Matrix.Split(' ')[0], ModeList[4].Matrix.Split(' ')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //关闭投影机1
-                    Command = CommandHandle.GetProjectorCommand(ModeList[4].ProjectorOne.Split(',')[0], ModeList[4].ProjectorOne.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[4].ProjectorOne.Split(',')[0], ModeList[4].ProjectorOne.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //关闭投影机2
-                    Command = CommandHandle.GetProjectorCommand(ModeList[4].ProjectorTwo.Split(',')[0], ModeList[4].ProjectorTwo.Split(',')[1]);
+                    Command = DataHandle.GetProjectorCommand(ModeList[4].ProjectorTwo.Split(',')[0], ModeList[4].ProjectorTwo.Split(',')[1]);
                     SendControlCommand(Command);
                     Thread.Sleep(200);
 
                     //关闭镜头
-                    Command = CommandHandle.GetCameraCommand(ModeList[4].Camera, "0");
+                    Command = DataHandle.GetCameraCommand(ModeList[4].Camera, "0");
                     SendControlCommand(Command);
                     break;
                 default:
@@ -834,7 +828,7 @@ namespace AdminControl
         private void MatrixControl(string MatrixIn, string MatrixOut)
         {
             string Command = string.Empty;
-            Command = CommandHandle.GetMatrixCommand(MatrixIn, MatrixOut);
+            Command = DataHandle.GetMatrixCommand(MatrixIn, MatrixOut);
             SendControlCommand(Command);
         }
         #endregion
@@ -851,11 +845,11 @@ namespace AdminControl
 
             if (Status)
             {
-                Command = CommandHandle.GetRelayCommand(RelayNumber, "0");
+                Command = DataHandle.GetRelayCommand(RelayNumber, "0");
             }
             else
             {
-                Command = CommandHandle.GetRelayCommand("0", RelayNumber);
+                Command = DataHandle.GetRelayCommand("0", RelayNumber);
             }
 
             SendControlCommand(Command);
@@ -871,7 +865,7 @@ namespace AdminControl
         private void ProjectorControl(string ProjectorID, string PowerStatus)
         {
             string Command = string.Empty;
-            Command = CommandHandle.GetProjectorCommand(ProjectorID, PowerStatus);
+            Command = DataHandle.GetProjectorCommand(ProjectorID, PowerStatus);
             SendControlCommand(Command);
         }
         #endregion
@@ -886,7 +880,7 @@ namespace AdminControl
         {
             string Command = string.Empty;
 
-            Command = CommandHandle.GetCameraCommand(PowerStatus, EnlargeLevel);
+            Command = DataHandle.GetCameraCommand(PowerStatus, EnlargeLevel);
 
             SendControlCommand(Command);
         }
@@ -902,7 +896,7 @@ namespace AdminControl
         {
             string Command = string.Empty;
 
-            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+            Command = DataHandle.GetRelayCommand(PortOpen, PortClose);
 
             SendControlCommand(Command);
         }
@@ -918,7 +912,7 @@ namespace AdminControl
         {
             string Command = string.Empty;
 
-            Command = CommandHandle.GetRelayCommand(PortOpen, PortClose);
+            Command = DataHandle.GetRelayCommand(PortOpen, PortClose);
 
             SendControlCommand(Command);
         }

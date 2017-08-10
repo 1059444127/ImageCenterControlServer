@@ -72,6 +72,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文件处理接口", "文�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandleInterface", "FileHandleInterface\FileHandleInterface.csproj", "{756A534E-2DFF-471F-8657-17228FF096AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandleInterface", "DataHandleInterface\DataHandleInterface.csproj", "{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,10 @@ Global
 		{756A534E-2DFF-471F-8657-17228FF096AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{756A534E-2DFF-471F-8657-17228FF096AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{756A534E-2DFF-471F-8657-17228FF096AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{5C667C7B-78E7-4F1D-A100-B55B7E8E9683} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
 		{C69BCFFF-1D5F-4241-908E-EA5BB73F8B61} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
 		{756A534E-2DFF-471F-8657-17228FF096AB} = {C69BCFFF-1D5F-4241-908E-EA5BB73F8B61}
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC} = {5C667C7B-78E7-4F1D-A100-B55B7E8E9683}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
