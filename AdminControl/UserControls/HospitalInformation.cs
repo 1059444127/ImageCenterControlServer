@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using EmailService;
-using FileZipService;
 
 namespace AdminControl
 {
@@ -20,29 +18,19 @@ namespace AdminControl
     {
         #region 全局变量
         /// <summary>
-        /// 日志压缩包路径
+        /// 主窗体实例
         /// </summary>
-        private string ZipLogFilePath;
-
-        /// <summary>
-        /// 邮件发送实例
-        /// </summary>
-        private EmailHelper Email;
-
-        /// <summary>
-        /// 文件压缩实例
-        /// </summary>
-        private FileZipHelper Zip;
+        private frm_Main frm_Main;
         #endregion
 
         #region 构造器
         /// <summary>
         /// 构造器
         /// </summary>
-        public HospitalInformation()
+        public HospitalInformation(frm_Main frm_Main)
         {
             InitializeComponent();
-            InitItems();
+            InitItems(frm_Main);
         }
         #endregion
 
@@ -64,9 +52,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void btn_BUGReport_Click(object sender, EventArgs e)
         {
-            panel_BUGReport.Visible = true;
-            ZipLogFilePath = ZipLogFiles();
-            txt_EmailFilePath.Text = ZipLogFilePath;
+            GetLogFile();
         }
 
         /// <summary>
@@ -94,11 +80,12 @@ namespace AdminControl
         /// <summary>
         /// 初始化
         /// </summary>
-        private void InitItems()
+        private void InitItems(frm_Main frm_Main)
         {
             panel_BUGReport.Visible = false;
-            Email = new EmailHelper();
-            Zip = new FileZipHelper();
+
+            this.frm_Main = frm_Main;
+
             ReadConfig();
         }
         #endregion
@@ -123,22 +110,23 @@ namespace AdminControl
 
         #region 打包日志
         /// <summary>
-        /// 创建日志压缩包
+        /// 打包压缩日志
         /// </summary>
-        /// <returns></returns>
-        private string ZipLogFiles()
+        private void GetLogFile()
         {
             string LogFile = string.Format("{0}\\Log_{1}.zip", Application.StartupPath, DateTime.Now.ToString("yyMMdd"));
 
+            panel_BUGReport.Visible = true;
+
             try
             {
-                Zip.CreateZip(Application.StartupPath + "\\Log", LogFile);
-                return LogFile;
+                frm_Main.Log.PacketLog(Application.StartupPath + "\\Log", LogFile);
+                txt_EmailFilePath.Text = LogFile;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return null;
+                MessageBox.Show(ex.Message, "打包日志失败");
+                txt_EmailFilePath.Text = string.Empty;
             }
         }
         #endregion
@@ -149,17 +137,7 @@ namespace AdminControl
         /// </summary>
         private void DeleteLogFile()
         {
-            if (File.Exists(ZipLogFilePath))
-            {
-                try
-                {
-                    File.Delete(ZipLogFilePath);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("删除文件失败：" + ex.Message, "错误");
-                }
-            }
+
         }
         #endregion
 
@@ -169,6 +147,7 @@ namespace AdminControl
         /// </summary>
         private void SendEmail()
         {
+            /*
             Email.mailFrom = "jie.jie.1102@qq.com";
             Email.host = "smtp.qq.com";
             Email.mailPwd = "yhtuutdwaqyubeea";
@@ -178,17 +157,7 @@ namespace AdminControl
             Email.isbodyHtml = true;
 
             Email.attachmentsPath = new string[] { ZipLogFilePath };
-
-            try
-            {
-                Email.Send();
-                MessageBox.Show("反馈成功！感谢您的参与！", "提示");
-                CleanBUGReportLog();
-            }
-            catch (Exception)
-            {
-                throw new Exception("邮件发送失败！");
-            }
+            */
         }
         #endregion
 

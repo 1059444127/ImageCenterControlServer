@@ -40,6 +40,20 @@ namespace NetworkInterface
         /// <param name="Connection"></param>
         /// <param name="TimeOut"></param>
         /// <returns></returns>
-        string RecvData(Socket Connection, int TimeOut); 
+        string RecvData(Socket Connection, int TimeOut);
+
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="SendAddress">发件人地址</param>
+        /// <param name="Password">发件人密码</param>
+        /// <param name="Host">SMTP服务器</param>
+        /// <param name="RecvAddress">收件人地址</param>
+        /// <param name="CopyRecvAddress">抄送地址</param>
+        /// <param name="Subject">主题</param>
+        /// <param name="Content">内容</param>
+        /// <param name="FilePath">附件</param>
+        /// <returns></returns>
+        bool SendEmail(string SendAddress, string Password, string Host, string[] RecvAddress, string[] CopyRecvAddress, string Subject, string Content, string[] FilePath);
     }
 }

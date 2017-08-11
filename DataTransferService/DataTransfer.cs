@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using System.Net;
+using System.Net.Mail;
 using System.Net.Sockets;
 
 using NetworkInterface;
@@ -125,7 +127,90 @@ namespace DataTransferService
         #endregion
 
         #region 发送邮件
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="SendAddress">发件人地址</param>
+        /// <param name="Password">发件人密码</param>
+        /// <param name="Host">SMTP服务器</param>
+        /// <param name="RecvAddress">收件人地址</param>
+        /// <param name="CopyRecvAddress">抄送地址</param>
+        /// <param name="Subject">主题</param>
+        /// <param name="Content">内容</param>
+        /// <param name="FilePath">附件</param>
+        /// <returns></returns>
+        public bool SendEmail(string SendAddress, string Password, string Host, string[] RecvAddress, string[] CopyRecvAddress, string Subject, string Content, string[] FilePath)
+        {
+            MailAddress Address = new MailAddress(SendAddress);
 
+            MailMessage Email = new MailMessage();
+
+            if (RecvAddress != null)
+            {
+                foreach (var item in RecvAddress)
+                {
+                    Email.To.Add(item);
+                }
+            }
+
+            if (CopyRecvAddress != null)
+            {
+                foreach (var item in CopyRecvAddress)
+                {
+                    Email.CC.Add(item);
+                }
+            }
+
+            Email.From = Address;
+
+            Email.Subject = Subject;
+            Email.SubjectEncoding = Encoding.UTF8;
+
+            Email.Body = Content;
+            Email.BodyEncoding = Encoding.UTF8;
+
+            Email.IsBodyHtml = true;
+
+            Email.Priority = MailPriority.Normal;
+
+            try
+            {
+                if (FilePath != null && FilePath.Length > 0)
+                {
+                    Attachment File = null;
+                    foreach (var item in FilePath)
+                    {
+                        File = new Attachment(item);
+                        Email.Attachments.Add(File);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("在添加附件时有错误:" + ex.Message);
+            }
+
+            SmtpClient Client = new SmtpClient();
+
+            Client.EnableSsl = true;
+
+            Client.UseDefaultCredentials = false;
+
+            Client.Credentials = new System.Net.NetworkCredential(SendAddress, Password);
+
+            Client.Host = Host;
+
+            try
+            {
+                Client.Send(Email);
+                Email.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("邮件发送失败:" + ex.Message);
+            }
+        }
         #endregion
     }
 }
