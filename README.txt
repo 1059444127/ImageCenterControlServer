@@ -2,6 +2,7 @@
 
 作者：Jie
 邮箱：jiejie941102@163.com
+时间：2017年8月10日
 
 项目层次架构：
 1.主程序
@@ -20,18 +21,6 @@ DataHandleService
 DataBaseService
 数据库服务
 
-DataCheckService
-数据校验服务
-
-FileZipService
-文件压缩服务
-
-EmailService
-邮件发送服务
-
-CommandHandleService
-指令解析服务
-
 3.接口
 DataBaseInterface
 数据库接口
@@ -39,7 +28,22 @@ DataBaseInterface
 NetworkInterface
 网络通讯接口
 
-项目依赖项
+FileHandleInterface
+文件处理接口
+
+DataHandleInterface
+数据处理接口
+
+4.项目依赖项
+AdminControl
+->LogService
+	->FileHandleInterface
+->DataTransferService
+	->NetWorkInterface
+->DataHandleService
+	->DataHandleInterface
+->DataBaseService
+	->DataBaseInterface
 
 
 
