@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+using DataTransferService;
+
 namespace AdminControl
 {
     /// <summary>
@@ -18,9 +20,19 @@ namespace AdminControl
     {
         #region 全局变量
         /// <summary>
+        /// 日志压缩包路径
+        /// </summary>
+        string LogFilePath;
+
+        /// <summary>
         /// 主窗体实例
         /// </summary>
         private frm_Main frm_Main;
+
+        /// <summary>
+        /// 数据传输实例
+        /// </summary>
+        private DataTransfer Data;
         #endregion
 
         #region 构造器
@@ -84,6 +96,8 @@ namespace AdminControl
         {
             panel_BUGReport.Visible = false;
 
+            Data = new DataTransfer();
+
             this.frm_Main = frm_Main;
 
             ReadConfig();
@@ -114,14 +128,14 @@ namespace AdminControl
         /// </summary>
         private void GetLogFile()
         {
-            string LogFile = string.Format("{0}\\Log_{1}.zip", Application.StartupPath, DateTime.Now.ToString("yyMMdd"));
+            LogFilePath = string.Format("{0}\\Log_{1}.zip", Application.StartupPath, DateTime.Now.ToString("yyMMdd"));
 
             panel_BUGReport.Visible = true;
 
             try
             {
-                frm_Main.Log.PacketLog(Application.StartupPath + "\\Log", LogFile);
-                txt_EmailFilePath.Text = LogFile;
+                frm_Main.Log.PacketLog(Application.StartupPath + "\\Log", LogFilePath);
+                txt_EmailFilePath.Text = LogFilePath;
             }
             catch (Exception ex)
             {
@@ -131,13 +145,24 @@ namespace AdminControl
         }
         #endregion
 
-        #region 删除日志
+        #region 清理日志
         /// <summary>
-        /// 删除日志文件
+        /// 清理记录
         /// </summary>
-        private void DeleteLogFile()
+        private void CleanBUGReportLog()
         {
+            try
+            {
+                frm_Main.Log.DeleteLog(LogFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "清理日志失败");
+            }
 
+            panel_BUGReport.Visible = false;
+            txt_EmailTitle.Text = string.Empty;
+            richtxt_EmailContent.Text = string.Empty;
         }
         #endregion
 
@@ -147,30 +172,22 @@ namespace AdminControl
         /// </summary>
         private void SendEmail()
         {
-            /*
-            Email.mailFrom = "jie.jie.1102@qq.com";
-            Email.host = "smtp.qq.com";
-            Email.mailPwd = "yhtuutdwaqyubeea";
-            Email.mailBody = richtxt_EmailContent.Text;
-            Email.mailSubject = txt_EmailTitle.Text;
-            Email.mailToArray = new string[] { "jiejie941102@163.com" };
-            Email.isbodyHtml = true;
+            string SendAddress = "jie.jie.1102@qq.com";
+            string Host = "smtp.qq.com";
+            string Passwd = "yhtuutdwaqyubeea";
+            string Content = richtxt_EmailContent.Text;
+            string Subject = txt_EmailTitle.Text;
+            string[] RecvAddress = new string[] { "jiejie941102@163.com" };
+            string[] FilePath = new string[] { LogFilePath };
 
-            Email.attachmentsPath = new string[] { ZipLogFilePath };
-            */
-        }
-        #endregion
-
-        #region 清理反馈记录
-        /// <summary>
-        /// 清理记录
-        /// </summary>
-        private void CleanBUGReportLog()
-        {
-            DeleteLogFile();
-            panel_BUGReport.Visible = false;
-            txt_EmailTitle.Text = string.Empty;
-            richtxt_EmailContent.Text = string.Empty;
+            try
+            {
+                Data.SendEmail(SendAddress, Passwd, Host, RecvAddress, null, Subject, Content, FilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误");
+            }
         }
         #endregion
     }
