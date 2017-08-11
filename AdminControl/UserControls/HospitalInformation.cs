@@ -183,6 +183,7 @@ namespace AdminControl
             try
             {
                 Data.SendEmail(SendAddress, Passwd, Host, RecvAddress, null, Subject, Content, FilePath);
+                MessageBox.Show("反馈成功！感谢您的参与！", "提示");
             }
             catch (Exception ex)
             {
