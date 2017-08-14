@@ -128,7 +128,7 @@ namespace AdminControl
         /// </summary>
         private void GetLogFile()
         {
-            LogFilePath = string.Format("D:\\Log_{1}.zip", DateTime.Now.ToString("yyMMdd"));
+            LogFilePath = string.Format("D:\\Log_{0}.zip", DateTime.Now.ToString("yyMMdd"));
 
             panel_BUGReport.Visible = true;
 
