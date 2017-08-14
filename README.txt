@@ -36,14 +36,14 @@ DataHandleInterface
 
 4.ÏîÄ¿ÒÀÀµÏî
 AdminControl
-->LogService
-	->FileHandleInterface
-->DataTransferService
-	->NetWorkInterface
-->DataHandleService
-	->DataHandleInterface
-->DataBaseService
-	->DataBaseInterface
+	->LogService
+		->FileHandleInterface
+	->DataTransferService
+		->NetWorkInterface
+	->DataHandleService
+		->DataHandleInterface
+	->DataBaseService
+		->DataBaseInterface
 
 
 
