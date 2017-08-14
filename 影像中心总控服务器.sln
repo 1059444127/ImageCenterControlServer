@@ -52,6 +52,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "说明", "说明", "{EF872A77-DF34-4BE1-B7A2-07FA87C5F455}"
 	ProjectSection(SolutionItems) = preProject
 		README.txt = README.txt
+		代码度量值.xlsx = 代码度量值.xlsx
 		代码视图.dgml = 代码视图.dgml
 	EndProjectSection
 EndProject
