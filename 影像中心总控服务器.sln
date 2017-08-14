@@ -52,6 +52,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "说明", "说明", "{EF872A77-DF34-4BE1-B7A2-07FA87C5F455}"
 	ProjectSection(SolutionItems) = preProject
 		README.txt = README.txt
+		代码视图.dgml = 代码视图.dgml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据处理接口", "数据处理接口", "{5C667C7B-78E7-4F1D-A100-B55B7E8E9683}"
