@@ -128,13 +128,13 @@ namespace AdminControl
         /// </summary>
         private void GetLogFile()
         {
-            LogFilePath = string.Format("{0}\\Log_{1}.zip", Application.StartupPath, DateTime.Now.ToString("yyMMdd"));
+            LogFilePath = string.Format("D:\\Log_{1}.zip", DateTime.Now.ToString("yyMMdd"));
 
             panel_BUGReport.Visible = true;
 
             try
             {
-                frm_Main.Log.PacketLog(Application.StartupPath + "\\Log", LogFilePath);
+                frm_Main.Log.PacketLog("D:\\Log", LogFilePath);
                 txt_EmailFilePath.Text = LogFilePath;
             }
             catch (Exception ex)

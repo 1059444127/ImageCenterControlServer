@@ -336,7 +336,7 @@ namespace AdminControl
         /// </summary>
         private void StartLog()
         {
-            string LogPath = Application.StartupPath + "\\Log";
+            string LogPath = "D:\\Log";
 
             try
             {
