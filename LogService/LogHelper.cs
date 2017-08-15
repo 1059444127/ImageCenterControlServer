@@ -153,7 +153,7 @@ namespace LogService
         /// <summary>
         /// 删除日志
         /// </summary>
-        /// <param name="Path"></param>
+        /// <param name="Path">压缩包路径</param>
         public void DeleteLog(string Path)
         {
             if (File.Exists(Path))
