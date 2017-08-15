@@ -656,6 +656,17 @@ namespace AdminControl
                 string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1控制器");
                 frm_Main.DataBase.UpdateTable(SQLString);
 
+                ControlRefresh.RefreshLabelStatus(label_ControlStatus, "未连接", Color.Red);
+
+                ControlRefresh.RefreshButtons(gBx_ModeChange, false);
+                ControlRefresh.RefreshButtons(gBx_LightsControl, false);
+                ControlRefresh.RefreshButtons(gBx_DeviceControl, false);
+
+                ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, "初始化", Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_CameraStatus, "初始化", Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_MatrixIn, "初始化", Color.Black);
+                ControlRefresh.RefreshLabelStatus(label_MatrixOut, "初始化", Color.Black);
+
                 is_ControlConnect = false;
             }
         }
@@ -679,6 +690,8 @@ namespace AdminControl
 
                 string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\"  where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "会诊室1客户端");
                 frm_Main.DataBase.UpdateTable(SQLString);
+
+                ControlRefresh.RefreshLabelStatus(label_ClientStatus, "未连接", Color.Red);
 
                 is_ClientConnect = false;
             }
