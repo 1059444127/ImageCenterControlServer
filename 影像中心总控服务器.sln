@@ -64,7 +64,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandleInterface", "File
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandleInterface", "DataHandleInterface\DataHandleInterface.csproj", "{AB6CC12A-DE60-44FB-944C-F8B7F43527BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "性能分析", "性能分析", "{FF0919B8-B415-48D5-9FA6-DDE1C381F2CC}"
+	ProjectSection(SolutionItems) = preProject
+		AdminControl.psess = AdminControl.psess
+		AdminControl170815.vsp = AdminControl170815.vsp
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -131,6 +140,9 @@ Global
 		{C69BCFFF-1D5F-4241-908E-EA5BB73F8B61} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
 		{756A534E-2DFF-471F-8657-17228FF096AB} = {C69BCFFF-1D5F-4241-908E-EA5BB73F8B61}
 		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC} = {5C667C7B-78E7-4F1D-A100-B55B7E8E9683}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
