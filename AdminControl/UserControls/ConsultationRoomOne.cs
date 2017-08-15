@@ -865,8 +865,13 @@ namespace AdminControl
         private void ProjectorControl(string ProjectorID, string PowerStatus)
         {
             string Command = string.Empty;
+            string SQLString = string.Empty;
+
             Command = DataHandle.GetProjectorCommand(ProjectorID, PowerStatus);
             SendControlCommand(Command);
+
+            SQLString = string.Format("update tb_devicestatus set device_power = {0}, where device_name = \"投影机{1}\";", int.Parse(PowerStatus), ProjectorID);
+            frm_Main.DataBase.UpdateTable(SQLString);
         }
         #endregion
 
@@ -879,10 +884,13 @@ namespace AdminControl
         private void CameraControl(string PowerStatus, string EnlargeLevel)
         {
             string Command = string.Empty;
+            string SQLString = string.Empty;
 
             Command = DataHandle.GetCameraCommand(PowerStatus, EnlargeLevel);
-
             SendControlCommand(Command);
+
+            SQLString = string.Format("update tb_devicestatus set device_power = {0}, where device_name = \"胶片镜头\";", int.Parse(PowerStatus));
+            frm_Main.DataBase.UpdateTable(SQLString);
         }
         #endregion
 
