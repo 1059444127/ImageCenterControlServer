@@ -616,7 +616,7 @@ namespace AdminControl
             //创建监听套接字
             WatchSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            ///设置服务器IP地址
+            //设置服务器IP地址
             IPAddress ServerAddress = IPAddress.Parse(ServerIP);
 
             //获得网络终结点
@@ -649,8 +649,9 @@ namespace AdminControl
                     //判断客户端类型
                     SwitchClientType(UserConnection.RemoteEndPoint.ToString().Split(':')[0], UserConnection);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Log.WriteLog("服务器监听异常：" + ex.Message);
                     break;
                 }
             }
