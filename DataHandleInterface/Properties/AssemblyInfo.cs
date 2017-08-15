@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("DataHandleInterface")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("影像中心服务器数据处理接口")]
+[assembly: AssemblyDescription("DataHandleInterface")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataHandleInterface")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("上海实和智能电子科技有限公司")]
+[assembly: AssemblyProduct("ImageCenter")]
+[assembly: AssemblyCopyright("Copyright © 实和智能 2017")]
+[assembly: AssemblyTrademark("实和智能")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型
