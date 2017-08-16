@@ -183,9 +183,9 @@ namespace DataHandleService
 
             Command = string.Format("cmd=ProjectorCtl\tID={0}\tPower={1}", ProjectorID, PowerStatus);
 
-            ushort CRCCode = GetCRCCode(Encoding.UTF8.GetBytes(Command));
+            string CRCCode = GetCRCCode(Command);
 
-            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0}\r\n", CRCCode);
 
             return Command;
         }
@@ -204,9 +204,9 @@ namespace DataHandleService
 
             Command = string.Format("cmd=VideoCtl\tVideoIn={0}\tVideoOut={1}", MatrixIn, MatrixOut);
 
-            ushort CRCCode = GetCRCCode(Encoding.UTF8.GetBytes(Command));
+            string CRCCode = GetCRCCode(Command);
 
-            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0}\r\n", CRCCode);
 
             return Command;
         }
@@ -225,9 +225,9 @@ namespace DataHandleService
 
             Command = string.Format("cmd=CameraCtl\tPower={0}\tEnlargeLevel={1}", PowerStatus, EnlargeLevel);
 
-            ushort CRCCode = GetCRCCode(Encoding.UTF8.GetBytes(Command));
+            string CRCCode = GetCRCCode(Command);
 
-            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0}\r\n", CRCCode);
 
             return Command;
         }
@@ -392,7 +392,7 @@ namespace DataHandleService
             byte[] RawData = Encoding.UTF8.GetBytes(StrData[0]);
 
             //计算出的校验码
-            string CRCCode = string.Format("{0:x}", GetCRCCode(RawData));
+            string CRCCode = string.Format("{0}", GetCRCCode(RawData));
 
             //判断
             if (string.Equals(RawCode, CRCCode))
