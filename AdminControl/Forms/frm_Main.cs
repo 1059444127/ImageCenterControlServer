@@ -649,9 +649,8 @@ namespace AdminControl
                     //判断客户端类型
                     SwitchClientType(UserConnection.RemoteEndPoint.ToString().Split(':')[0], UserConnection);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Log.WriteLog("服务器监听异常：" + ex.Message);
                     break;
                 }
             }
