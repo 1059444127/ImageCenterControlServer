@@ -25,6 +25,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据解析服务", "数据解析服务", "{C3480362-62CD-4A2E-9142-8A5D25A2EE8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandleService", "DataHandleService\DataHandleService.csproj", "{5FC20D5C-133F-4672-BB82-8F8CC8F9107A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F53444FB-6F63-489F-AC98-449BB86591E4} = {F53444FB-6F63-489F-AC98-449BB86591E4}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据传输服务", "数据传输服务", "{68947C56-C760-4DD0-9720-281BAF2A0670}"
 EndProject
@@ -71,9 +74,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "性能分析", "性能分�
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -140,6 +140,9 @@ Global
 		{C69BCFFF-1D5F-4241-908E-EA5BB73F8B61} = {087605B4-D833-474C-A8B7-FF29FB2C95D8}
 		{756A534E-2DFF-471F-8657-17228FF096AB} = {C69BCFFF-1D5F-4241-908E-EA5BB73F8B61}
 		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC} = {5C667C7B-78E7-4F1D-A100-B55B7E8E9683}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

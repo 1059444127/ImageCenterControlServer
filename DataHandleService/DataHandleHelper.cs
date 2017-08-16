@@ -162,9 +162,9 @@ namespace DataHandleService
 
             Command = string.Format("cmd=RelayCtl\tON={0}\tOFF={1}", PortsOpen, PortsClose);
 
-            ushort CRCCode = GetCRCCode(Encoding.UTF8.GetBytes(Command));
+            string CRCCode = GetCRCCode(Command);
 
-            Command += string.Format(":CRC={0:x}\r\n", CRCCode);
+            Command += string.Format(":CRC={0}\r\n", CRCCode);
 
             return Command;
         }
