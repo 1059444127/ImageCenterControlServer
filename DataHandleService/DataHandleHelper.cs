@@ -389,7 +389,7 @@ namespace DataHandleService
             string RawCode = StrData[1].Split('=')[1].Replace("\r\n", "");
 
             //待计算部分转化为字节数组
-            byte[] RawData = Encoding.UTF8.GetBytes(StrData[0]);
+            string RawData = StrData[0];
 
             //计算出的校验码
             string CRCCode = string.Format("{0}", GetCRCCode(RawData));
