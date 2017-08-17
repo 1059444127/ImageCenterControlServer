@@ -34,6 +34,9 @@ FileHandleInterface
 DataHandleInterface
 数据处理接口
 
+4.Windows服务
+AutoLogCleanService
+
 4.项目依赖项
 AdminControl
 	->LogService
@@ -44,6 +47,10 @@ AdminControl
 		->DataHandleInterface
 	->DataBaseService
 		->DataBaseInterface
+
+AutoLogCleanService
+	->LogService
+		->FileHandleInterface
 
 
 
