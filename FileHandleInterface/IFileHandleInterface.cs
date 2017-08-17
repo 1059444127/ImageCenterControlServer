@@ -25,9 +25,15 @@ namespace FileHandleInterface
         void PacketLog(string InputPath, string OutPutPath);
 
         /// <summary>
-        /// 清理日志
+        /// 清理日志压缩包
         /// </summary>
         /// <param name="Path"></param>
-        void DeleteLog(string Path);
+        void DeleteLogPackage(string Path);
+
+        /// <summary>
+        /// 清理日志文件
+        /// </summary>
+        /// <param name="LogPath"></param>
+        void DeleteLogFiles(string LogPath);
     }
 }

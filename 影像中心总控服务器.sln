@@ -78,6 +78,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "日志清理服务", "日志清理服务", "{18D8945F-1696-40B3-B616-09A86C7990E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLogCleanService", "AutoLogCleanService\AutoLogCleanService.csproj", "{E2E1F084-DA20-499B-872F-044583193E40}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D7FFDDA8-1191-44F6-87EB-1E3FDD4E283B} = {D7FFDDA8-1191-44F6-87EB-1E3FDD4E283B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

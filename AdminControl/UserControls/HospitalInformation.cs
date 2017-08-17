@@ -153,7 +153,7 @@ namespace AdminControl
         {
             try
             {
-                frm_Main.Log.DeleteLog(LogFilePath);
+                frm_Main.Log.DeleteLogPackage(LogFilePath);
             }
             catch (Exception ex)
             {

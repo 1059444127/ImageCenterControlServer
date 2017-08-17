@@ -31,6 +31,14 @@ namespace LogService
 
         #region 构造器
         /// <summary>
+        /// 默认构造器
+        /// </summary>
+        public LogHelper()
+        {
+
+        }
+
+        /// <summary>
         /// 构造器
         /// </summary>
         /// <param name="LogPath"></param>
@@ -151,10 +159,10 @@ namespace LogService
 
         #region 删除日志
         /// <summary>
-        /// 删除日志
+        /// 删除日志压缩包
         /// </summary>
         /// <param name="Path">压缩包路径</param>
-        public void DeleteLog(string Path)
+        public void DeleteLogPackage(string Path)
         {
             if (File.Exists(Path))
             {
@@ -165,6 +173,30 @@ namespace LogService
                 catch (Exception)
                 {
                     throw;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 删除日志
+        /// </summary>
+        /// <param name="LogPath"></param>
+        public void DeleteLogFiles(string LogPath)
+        {
+            if (Directory.Exists(LogPath))
+            {
+                string[] FileNames = Directory.GetFiles(LogPath);
+
+                foreach (var item in FileNames)
+                {
+                    try
+                    {
+                        File.Delete(item);
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
                 }
             }
         }
