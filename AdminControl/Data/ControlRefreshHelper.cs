@@ -16,15 +16,16 @@ namespace AdminControl
         /// <summary>
         /// 标签状态刷新委托
         /// </summary>
-        /// <param name="Status"></param>
-        /// <param name="ForeColor"></param>
+        /// <param name="Label_Item">标签名</param>
+        /// <param name="Status">状态</param>
+        /// <param name="ForeColor">颜色</param>
         private delegate void RefreshLabelStatusDelegate(Label Label_Item, string Status, Color ForeColor);
 
         /// <summary>
         /// 按钮状态刷新委托
         /// </summary>
-        /// <param name="Control"></param>
-        /// <param name="Status"></param>
+        /// <param name="Button_Item">按钮名</param>
+        /// <param name="Status">可用状态</param>
         private delegate void RefreshButtonStatusDelegate(Button Button_Item, bool Status);
 
         /// <summary>
