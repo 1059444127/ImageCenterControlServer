@@ -102,7 +102,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void ConsultationRoomOne_Load(object sender, EventArgs e)
         {
-
+            InitControls();
         }
 
         /// <summary>
