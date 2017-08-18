@@ -96,46 +96,53 @@ namespace DataHandleService
         {
             HeartStruct Heart = new HeartStruct();
 
+            string Key = string.Empty;
+
+            string Value = string.Empty;
+
             if (CheckData(Data))
             {
                 string HeartData = Data.Split(':')[0];
 
                 foreach (string item in HeartData.Split('\t'))
                 {
-                    switch (item.Split('=')[0])
+                    Key = item.Split('=')[0];
+                    Value = item.Split('=')[1];
+
+                    switch (Key)
                     {
                         case "Status":
-                            Heart.Status = item.Split('=')[1];
+                            Heart.Status = Value;
                             break;
                         case "Runtime":
-                            Heart.Runtime = item.Split('=')[1];
+                            Heart.Runtime = Value;
                             break;
                         case "Temp":
-                            Heart.Temp = item.Split('=')[1] + "℃";
+                            Heart.Temp = Value.Insert(Value.Length-1,".");
                             break;
                         case "Hum":
-                            Heart.Hum = item.Split('=')[1] + "%";
+                            Heart.Hum = Value.Insert(Value.Length - 1, ".");
                             break;
                         case "Light":
-                            Heart.Light = item.Split('=')[1] + "LUX";
+                            Heart.Light = Value;
                             break;
                         case "Noise":
-                            Heart.Noise = item.Split('=')[1] + "DB";
+                            Heart.Noise = Value;
                             break;
                         case "Relays":
-                            Heart.Relays = item.Split('=')[1];
+                            Heart.Relays = Value;
                             break;
                         case "VideoIn":
-                            Heart.VideoIn = item.Split('=')[1];
+                            Heart.VideoIn = Value;
                             break;
                         case "VideoOut":
-                            Heart.VideoOut = item.Split('=')[1];
+                            Heart.VideoOut = Value;
                             break;
                         case "Projector":
-                            Heart.Projector = item.Split('=')[1];
+                            Heart.Projector = Value;
                             break;
                         case "CameraPower":
-                            Heart.CameraPower = item.Split('=')[1];
+                            Heart.CameraPower = Value;
                             break;
                         default:
                             break;
