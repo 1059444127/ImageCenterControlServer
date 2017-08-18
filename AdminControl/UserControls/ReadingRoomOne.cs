@@ -24,7 +24,7 @@ namespace AdminControl
         /// <summary>
         /// 控制器连接标志位
         /// </summary>
-        private volatile bool is_ControlConnect = false;
+        public volatile bool is_ControlConnect = false;
 
         /// <summary>
         /// 模式列表
@@ -627,6 +627,10 @@ namespace AdminControl
                     //继电器状态修改
                     Command = DataHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     break;
+                case 4:
+                    //继电器状态修改
+                    Command = DataHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
+                    break;
                 default:
                     break;
             }
@@ -669,6 +673,16 @@ namespace AdminControl
             Command = DataHandle.GetRelayCommand(PortOpen, PortClose);
 
             SendControlCommand(Command);
+        }
+        #endregion
+
+        #region 设备状态重置
+        /// <summary>
+        /// 重置设备状态
+        /// </summary>
+        public void ResetMode()
+        {
+            ModeChange(4);
         }
         #endregion
 

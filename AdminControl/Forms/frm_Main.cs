@@ -836,6 +836,16 @@ namespace AdminControl
                 HZTwo.ResetMode();
             }
 
+            if (YPOne.is_ControlConnect)
+            {
+                YPOne.ResetMode();
+            }
+
+            if (YPTwo.is_ControlConnect)
+            {
+                YPTwo.ResetMode();
+            }
+
             ServerStop();
 
             this.Close();
