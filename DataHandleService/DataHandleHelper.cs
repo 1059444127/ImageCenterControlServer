@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataHandleInterface;
 
 namespace DataHandleService
 {
     /// <summary>
     /// 数据解析服务
     /// </summary>
-    public class DataHandleHelper
+    public class DataHandleHelper : IDataHandleInterface
     {
         #region 全局变量
         /// <summary>

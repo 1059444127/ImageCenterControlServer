@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据解析服务", "数�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandleService", "DataHandleService\DataHandleService.csproj", "{5FC20D5C-133F-4672-BB82-8F8CC8F9107A}"
 	ProjectSection(ProjectDependencies) = postProject
-		{F53444FB-6F63-489F-AC98-449BB86591E4} = {F53444FB-6F63-489F-AC98-449BB86591E4}
+		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC} = {AB6CC12A-DE60-44FB-944C-F8B7F43527BC}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据传输服务", "数据传输服务", "{68947C56-C760-4DD0-9720-281BAF2A0670}"
