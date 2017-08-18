@@ -16,6 +16,7 @@ namespace AutoLogCleanService
     /// </summary>
     public partial class AutoLogCleanService : ServiceBase
     {
+        #region 全局变量
         /// <summary>
         /// 日志服务实例
         /// </summary>
@@ -30,7 +31,9 @@ namespace AutoLogCleanService
         /// 系统定时器
         /// </summary>
         private System.Timers.Timer Timer;
+        #endregion
 
+        #region 构造器
         /// <summary>
         /// 默认构造器
         /// </summary>
@@ -39,7 +42,9 @@ namespace AutoLogCleanService
             InitializeComponent();
             InitItem();
         }
+        #endregion
 
+        #region 服务状态
         /// <summary>
         /// 启动
         /// </summary>
@@ -56,7 +61,9 @@ namespace AutoLogCleanService
         {
             ServiceStop();
         }
+        #endregion
 
+        #region 功能函数
         /// <summary>
         /// 初始化
         /// </summary>
@@ -80,6 +87,7 @@ namespace AutoLogCleanService
 
         /// <summary>
         /// 定时器到达执行
+        /// 每天零点清理日志
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,5 +106,6 @@ namespace AutoLogCleanService
         {
             Timer.Enabled = false;
         }
+        #endregion
     }
 }
