@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
@@ -106,7 +107,7 @@ namespace AdminControl
 
         #region 加载动画
         //窗体弹出或消失效果
-        [System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint = "AnimateWindow")]
+        [DllImport("user32.dll", EntryPoint = "AnimateWindow")]
         private static extern bool AnimateWindow(IntPtr handle, int ms, int flags);
         public const Int32 AW_HOR_POSITIVE = 0x00000001;
         public const Int32 AW_HOR_NEGATIVE = 0x00000002;
