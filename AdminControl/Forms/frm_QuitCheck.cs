@@ -86,7 +86,7 @@ namespace AdminControl
         }
         #endregion
 
-        #region 密码校验
+        #region 退出校验
         /// <summary>
         /// 确认退出
         /// </summary>
@@ -100,15 +100,23 @@ namespace AdminControl
                 return;
             }
 
-            if (CheckPasswd(Passwd))
+            try
             {
-                this.Hide();
-                frm_Main.CloseForm();
-                this.Close();
+                if (CheckPasswd(Passwd))
+                {
+                    this.Hide();
+                    frm_Main.CloseForm();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("密码错误", "错误");
+                    txt_AdminPasswd.Text = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("密码错误", "错误");
+                MessageBox.Show(ex.Message, "错误");
             }
         }
 
@@ -121,14 +129,21 @@ namespace AdminControl
         {
             string SQLString = string.Format("select user_passwd from tb_userinformation where user_name = \"Admin\";");
 
-            DataTable Table = frm_Main.DataBase.SelectTable(SQLString);
-
-            if (Data.GetMD5String(Passwd).Equals(Table.Rows[0][0].ToString()))
+            try
             {
-                return true;
-            }
+                DataTable Table = frm_Main.DataBase.SelectTable(SQLString);
 
-            return false;
+                if (Data.GetMD5String(Passwd).Equals(Table.Rows[0][0].ToString()))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         #endregion
     }
