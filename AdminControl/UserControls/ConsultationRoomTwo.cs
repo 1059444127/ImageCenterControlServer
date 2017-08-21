@@ -563,7 +563,7 @@ namespace AdminControl
         }
         #endregion
 
-        #region 接受客户端指令
+        #region 接收客户端指令
         /// <summary>
         /// 接收客户端指令线程启动
         /// </summary>
