@@ -90,7 +90,7 @@
             this.btn_QuitReturn.Name = "btn_QuitReturn";
             this.btn_QuitReturn.Size = new System.Drawing.Size(110, 50);
             this.btn_QuitReturn.TabIndex = 3;
-            this.btn_QuitReturn.Text = "退出";
+            this.btn_QuitReturn.Text = "取消";
             this.btn_QuitReturn.UseVisualStyleBackColor = false;
             this.btn_QuitReturn.Click += new System.EventHandler(this.btn_QuitReturn_Click);
             // 
