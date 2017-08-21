@@ -157,6 +157,7 @@
     <Folder Include="Resources\background\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\imagecenter.sql" />
     <Content Include="logo.ico" />
     <Content Include="Resources\buttons\button.png" />
     <Content Include="Resources\buttons\zhankai.jpg" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "动态链接库", "动态链接库", "{7227E3B6-DB3C-4258-9420-6FC66D99C96A}"
 EndProject
@@ -155,6 +155,9 @@ Global
 		{AB6CC12A-DE60-44FB-944C-F8B7F43527BC} = {5C667C7B-78E7-4F1D-A100-B55B7E8E9683}
 		{18D8945F-1696-40B3-B616-09A86C7990E5} = {16996058-40C4-49AD-A947-984C03756B69}
 		{E2E1F084-DA20-499B-872F-044583193E40} = {18D8945F-1696-40B3-B616-09A86C7990E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93F93457-B7FE-4B40-97EA-576F72DBE36C}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
