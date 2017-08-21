@@ -240,7 +240,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void CloseMainForm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ServerClose();
         }
 
         /// <summary>
@@ -826,29 +826,32 @@ namespace AdminControl
         /// </summary>
         private void ServerClose()
         {
-            if (HZOne.is_ControlConnect)
+            if (MessageBox.Show("确认退出？", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
-                HZOne.ResetMode();
+                if (HZOne.is_ControlConnect)
+                {
+                    HZOne.ResetMode();
+                }
+
+                if (HZTwo.is_ControlConnect)
+                {
+                    HZTwo.ResetMode();
+                }
+
+                if (YPOne.is_ControlConnect)
+                {
+                    YPOne.ResetMode();
+                }
+
+                if (YPTwo.is_ControlConnect)
+                {
+                    YPTwo.ResetMode();
+                }
+
+                ServerStop();
+
+                this.Close();
             }
-
-            if (HZTwo.is_ControlConnect)
-            {
-                HZTwo.ResetMode();
-            }
-
-            if (YPOne.is_ControlConnect)
-            {
-                YPOne.ResetMode();
-            }
-
-            if (YPTwo.is_ControlConnect)
-            {
-                YPTwo.ResetMode();
-            }
-
-            ServerStop();
-
-            this.Close();
         }
         #endregion
 
