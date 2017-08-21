@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+
 using DataHandleInterface;
 
 namespace DataHandleService
@@ -333,6 +335,22 @@ namespace DataHandleService
             Code = string.Format("{0:x}", CRCCode);
 
             return Code;
+        }
+
+        /// <summary>
+        /// 获得加密数据
+        /// </summary>
+        /// <param name="RawData">待加密数据</param>
+        /// <returns></returns>
+        public string GetMD5String(string RawData)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            var data = Encoding.UTF8.GetBytes(RawData);
+
+            var encs = md5.ComputeHash(data);
+
+            return BitConverter.ToString(encs).Replace("-", "");
         }
         #endregion
 

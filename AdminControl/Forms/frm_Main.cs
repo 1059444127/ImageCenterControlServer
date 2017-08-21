@@ -240,7 +240,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void CloseMainForm_Click(object sender, EventArgs e)
         {
-            ServerClose();
+            CheckIdentity();
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void label_Close_Click(object sender, EventArgs e)
         {
-            ServerClose();
+            CheckIdentity();
         }
 
         /// <summary>
@@ -298,6 +298,7 @@ namespace AdminControl
         private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Log.WriteLog("程序安全退出");
+            System.Environment.Exit(0);
         }
         #endregion
 
@@ -822,36 +823,43 @@ namespace AdminControl
 
         #region 程序关闭
         /// <summary>
+        /// 身份校验
+        /// </summary>
+        public void CheckIdentity()
+        {
+            frm_QuitCheck frm_Quit = new frm_QuitCheck(this);
+
+            frm_Quit.ShowDialog();
+        }
+
+        /// <summary>
         /// 关闭程序
         /// </summary>
-        private void ServerClose()
+        public void CloseForm()
         {
-            if (MessageBox.Show("确认退出？", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            if (HZOne.is_ControlConnect)
             {
-                if (HZOne.is_ControlConnect)
-                {
-                    HZOne.ResetMode();
-                }
-
-                if (HZTwo.is_ControlConnect)
-                {
-                    HZTwo.ResetMode();
-                }
-
-                if (YPOne.is_ControlConnect)
-                {
-                    YPOne.ResetMode();
-                }
-
-                if (YPTwo.is_ControlConnect)
-                {
-                    YPTwo.ResetMode();
-                }
-
-                ServerStop();
-
-                this.Close();
+                HZOne.ResetMode();
             }
+
+            if (HZTwo.is_ControlConnect)
+            {
+                HZTwo.ResetMode();
+            }
+
+            if (YPOne.is_ControlConnect)
+            {
+                YPOne.ResetMode();
+            }
+
+            if (YPTwo.is_ControlConnect)
+            {
+                YPTwo.ResetMode();
+            }
+
+            ServerStop();
+
+            this.Close();
         }
         #endregion
 
