@@ -79,6 +79,7 @@ namespace AutoLogCleanService
         /// </summary>
         protected void ServiceStart()
         {
+            //每隔五秒判断当前时间是不是0:00
             Timer.Interval = 5000;
             Timer.AutoReset = true;
             Timer.Elapsed += Timer_Elapsed;
@@ -95,6 +96,7 @@ namespace AutoLogCleanService
         {
             if ((e.SignalTime.Hour == 0) && (e.SignalTime.Minute == 0))
             {
+                //删除日志（正在使用中的文件不会被删除）
                 Log.DeleteLogFiles(LogPath);
             }
         }
