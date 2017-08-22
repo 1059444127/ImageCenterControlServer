@@ -453,7 +453,7 @@ namespace AdminControl
                     ControlRefresh.RefreshLabelStatus(label_Light, Heart.Light, Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_Noise, Heart.Noise, Color.Black);
 
-                    SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}\", room_hum = \"{1}\", room_light = \"{2}\",room_noise = \"{3}\" where room_name = \"{4}\";", Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise, "阅片室2");
+                    SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0} + ℃\", room_hum = \"{1} + ％\", room_light = \"{2} + LUX\",room_noise = \"{3} + DB\" where room_name = \"{4}\";", Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise, "阅片室2");
                     frm_Main.DataBase.UpdateTable(SQLString);
                 }
                 catch (Exception ex)
