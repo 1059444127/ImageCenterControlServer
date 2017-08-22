@@ -72,7 +72,7 @@
             this.btn_BUGReport.TabIndex = 2;
             this.btn_BUGReport.Text = "问题反馈";
             this.btn_BUGReport.UseVisualStyleBackColor = false;
-            this.btn_BUGReport.Click += new System.EventHandler(this.btn_BUGReport_Click);
+            this.btn_BUGReport.Click += new System.EventHandler(this.Btn_BUGReport_Click);
             // 
             // label1
             // 
@@ -117,7 +117,7 @@
             this.btn_BUGReportSend.TabIndex = 8;
             this.btn_BUGReportSend.Text = "发送";
             this.btn_BUGReportSend.UseVisualStyleBackColor = false;
-            this.btn_BUGReportSend.Click += new System.EventHandler(this.btn_BUGReportSend_Click);
+            this.btn_BUGReportSend.Click += new System.EventHandler(this.Btn_BUGReportSend_Click);
             // 
             // btn_BUGReportBack
             // 
@@ -136,7 +136,7 @@
             this.btn_BUGReportBack.TabIndex = 7;
             this.btn_BUGReportBack.Text = "返回";
             this.btn_BUGReportBack.UseVisualStyleBackColor = false;
-            this.btn_BUGReportBack.Click += new System.EventHandler(this.btn_BUGReportBack_Click);
+            this.btn_BUGReportBack.Click += new System.EventHandler(this.Btn_BUGReportBack_Click);
             // 
             // txt_EmailFilePath
             // 

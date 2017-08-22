@@ -70,7 +70,7 @@ namespace AdminControl
         /// <summary>
         /// 主窗体
         /// </summary>
-        private frm_Main frm_Main;
+        private Frm_Main frm_Main;
 
         /// <summary>
         /// 客户端套接字
@@ -87,7 +87,7 @@ namespace AdminControl
         /// <summary>
         /// 构造器
         /// </summary>
-        public ConsultationRoomOne(frm_Main frm_Main)
+        public ConsultationRoomOne(Frm_Main frm_Main)
         {
             InitializeComponent();
             InitServices(frm_Main);
@@ -331,7 +331,7 @@ namespace AdminControl
         /// 初始化各类服务
         /// </summary>
         /// <param name="frm_Main"></param>
-        private void InitServices(frm_Main frm_Main)
+        private void InitServices(Frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 

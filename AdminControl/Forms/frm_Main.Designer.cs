@@ -1,6 +1,6 @@
 ﻿namespace AdminControl
 {
-    partial class frm_Main
+    partial class Frm_Main
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel_Information = new System.Windows.Forms.Panel();
             this.label_Close = new System.Windows.Forms.Label();
             this.label_Minnor = new System.Windows.Forms.Label();
@@ -84,8 +84,8 @@
             this.panel_Information.Name = "panel_Information";
             this.panel_Information.Size = new System.Drawing.Size(1024, 80);
             this.panel_Information.TabIndex = 0;
-            this.panel_Information.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Information_MouseDown);
-            this.panel_Information.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_Information_MouseMove);
+            this.panel_Information.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_Information_MouseDown);
+            this.panel_Information.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_Information_MouseMove);
             // 
             // label_Close
             // 
@@ -97,7 +97,7 @@
             this.label_Close.Size = new System.Drawing.Size(24, 16);
             this.label_Close.TabIndex = 8;
             this.label_Close.Text = "×";
-            this.label_Close.Click += new System.EventHandler(this.label_Close_Click);
+            this.label_Close.Click += new System.EventHandler(this.Label_Close_Click);
             // 
             // label_Minnor
             // 
@@ -109,7 +109,7 @@
             this.label_Minnor.Size = new System.Drawing.Size(22, 24);
             this.label_Minnor.TabIndex = 7;
             this.label_Minnor.Text = "-";
-            this.label_Minnor.Click += new System.EventHandler(this.label_Minnor_Click);
+            this.label_Minnor.Click += new System.EventHandler(this.Label_Minnor_Click);
             // 
             // label3
             // 
@@ -226,7 +226,7 @@
             this.btn_About.TabIndex = 7;
             this.btn_About.Text = "关于";
             this.btn_About.UseVisualStyleBackColor = false;
-            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
+            this.btn_About.Click += new System.EventHandler(this.Btn_About_Click);
             // 
             // pBx_Index4
             // 
@@ -289,7 +289,7 @@
             this.btn_ReadingRoomTwo.TabIndex = 3;
             this.btn_ReadingRoomTwo.Text = "阅片室2";
             this.btn_ReadingRoomTwo.UseVisualStyleBackColor = false;
-            this.btn_ReadingRoomTwo.Click += new System.EventHandler(this.btn_ReadingRoomTwo_Click);
+            this.btn_ReadingRoomTwo.Click += new System.EventHandler(this.Btn_ReadingRoomTwo_Click);
             // 
             // btn_ReadingRoomOne
             // 
@@ -308,7 +308,7 @@
             this.btn_ReadingRoomOne.TabIndex = 2;
             this.btn_ReadingRoomOne.Text = "阅片室1";
             this.btn_ReadingRoomOne.UseVisualStyleBackColor = false;
-            this.btn_ReadingRoomOne.Click += new System.EventHandler(this.btn_ReadingRoomOne_Click);
+            this.btn_ReadingRoomOne.Click += new System.EventHandler(this.Btn_ReadingRoomOne_Click);
             // 
             // btn_ConsultationRoomTwo
             // 
@@ -327,7 +327,7 @@
             this.btn_ConsultationRoomTwo.TabIndex = 1;
             this.btn_ConsultationRoomTwo.Text = "会诊室2";
             this.btn_ConsultationRoomTwo.UseVisualStyleBackColor = false;
-            this.btn_ConsultationRoomTwo.Click += new System.EventHandler(this.btn_ConsultationRoomTwo_Click);
+            this.btn_ConsultationRoomTwo.Click += new System.EventHandler(this.Btn_ConsultationRoomTwo_Click);
             // 
             // btn_ConsultationRoomOne
             // 
@@ -346,7 +346,7 @@
             this.btn_ConsultationRoomOne.TabIndex = 0;
             this.btn_ConsultationRoomOne.Text = "会诊室1";
             this.btn_ConsultationRoomOne.UseVisualStyleBackColor = false;
-            this.btn_ConsultationRoomOne.Click += new System.EventHandler(this.btn_ConsultationRoomOne_Click);
+            this.btn_ConsultationRoomOne.Click += new System.EventHandler(this.Btn_ConsultationRoomOne_Click);
             // 
             // panel_UserControl
             // 
@@ -409,7 +409,7 @@
             this.CloseMainForm.Text = "退出";
             this.CloseMainForm.Click += new System.EventHandler(this.CloseMainForm_Click);
             // 
-            // frm_Main
+            // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -420,14 +420,14 @@
             this.Controls.Add(this.panel_Information);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frm_Main";
+            this.Name = "Frm_Main";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "影像中心总控端";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Main_FormClosed);
-            this.Load += new System.EventHandler(this.frm_Main_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Main_FormClosed);
+            this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.panel_Information.ResumeLayout(false);
             this.panel_Information.PerformLayout();
             this.panel_Menu.ResumeLayout(false);

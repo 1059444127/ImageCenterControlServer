@@ -21,7 +21,7 @@ namespace AdminControl
     /// <summary>
     /// 服务器主窗体
     /// </summary>
-    public partial class frm_Main : Form
+    public partial class Frm_Main : Form
     {
         #region 全局变量
         /// <summary>
@@ -124,7 +124,7 @@ namespace AdminControl
         /// <summary>
         /// 构造器
         /// </summary>
-        public frm_Main()
+        public Frm_Main()
         {
             InitializeComponent();
             InitService();
@@ -137,7 +137,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frm_Main_Load(object sender, EventArgs e)
+        private void Frm_Main_Load(object sender, EventArgs e)
         {
             AnimateWindow(this.Handle, 500, AW_BLEND);
         }
@@ -147,7 +147,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void panel_Information_MouseDown(object sender, MouseEventArgs e)
+        private void Panel_Information_MouseDown(object sender, MouseEventArgs e)
         {
             base.OnMouseDown(e);
             this.mousePoint.X = e.X;
@@ -159,7 +159,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void panel_Information_MouseMove(object sender, MouseEventArgs e)
+        private void Panel_Information_MouseMove(object sender, MouseEventArgs e)
         {
             base.OnMouseMove(e);
             if (e.Button == MouseButtons.Left)
@@ -174,7 +174,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ConsultationRoomOne_Click(object sender, EventArgs e)
+        private void Btn_ConsultationRoomOne_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(1);
             ShowSelectUserControl(HZOne);
@@ -185,7 +185,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ConsultationRoomTwo_Click(object sender, EventArgs e)
+        private void Btn_ConsultationRoomTwo_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(2);
             ShowSelectUserControl(HZTwo);
@@ -196,7 +196,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ReadingRoomOne_Click(object sender, EventArgs e)
+        private void Btn_ReadingRoomOne_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(3);
             ShowSelectUserControl(YPOne);
@@ -207,7 +207,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ReadingRoomTwo_Click(object sender, EventArgs e)
+        private void Btn_ReadingRoomTwo_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(4);
             ShowSelectUserControl(YPTwo);
@@ -218,7 +218,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_About_Click(object sender, EventArgs e)
+        private void Btn_About_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(5);
             ShowSelectUserControl(HI);
@@ -229,7 +229,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void label_Minnor_Click(object sender, EventArgs e)
+        private void Label_Minnor_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
@@ -259,7 +259,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void label_Close_Click(object sender, EventArgs e)
+        private void Label_Close_Click(object sender, EventArgs e)
         {
             CheckIdentity();
         }
@@ -286,7 +286,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        private void Frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             AnimateWindow(this.Handle, 500, AW_BLEND + AW_HIDE);
         }
@@ -296,7 +296,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
+        private void Frm_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Log.WriteLog("程序安全退出");
             System.Environment.Exit(0);
@@ -359,9 +359,11 @@ namespace AdminControl
         /// </summary>
         private void StartTime()
         {
-            Thread TimeThread = new Thread(TimeRefreshThread);
-            TimeThread.Name = "时间动态刷新线程";
-            TimeThread.IsBackground = true;
+            Thread TimeThread = new Thread(TimeRefreshThread)
+            {
+                Name = "时间动态刷新线程",
+                IsBackground = true
+            };
             TimeThread.Start();
             Log.WriteLog("时间动态刷新服务启动成功");
         }
@@ -602,9 +604,11 @@ namespace AdminControl
         /// </summary>
         private void StartServer()
         {
-            Thread ListenThread = new Thread(ListenConnect);
-            ListenThread.Name = "服务器监听线程";
-            ListenThread.IsBackground = true;
+            Thread ListenThread = new Thread(ListenConnect)
+            {
+                Name = "服务器监听线程",
+                IsBackground = true
+            };
             ListenThread.Start();
         }
         #endregion
@@ -828,7 +832,7 @@ namespace AdminControl
         /// </summary>
         public void CheckIdentity()
         {
-            frm_QuitCheck frm_Quit = new frm_QuitCheck(this);
+            Frm_QuitCheck frm_Quit = new Frm_QuitCheck(this);
 
             frm_Quit.ShowDialog();
         }

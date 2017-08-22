@@ -152,7 +152,7 @@
             this.btn_ModeLK.TabIndex = 3;
             this.btn_ModeLK.Text = "离开模式";
             this.btn_ModeLK.UseVisualStyleBackColor = false;
-            this.btn_ModeLK.Click += new System.EventHandler(this.btn_ModeLK_Click);
+            this.btn_ModeLK.Click += new System.EventHandler(this.Btn_ModeLK_Click);
             // 
             // btn_ModeXX
             // 
@@ -171,7 +171,7 @@
             this.btn_ModeXX.TabIndex = 2;
             this.btn_ModeXX.Text = "休息模式";
             this.btn_ModeXX.UseVisualStyleBackColor = false;
-            this.btn_ModeXX.Click += new System.EventHandler(this.btn_ModeXX_Click);
+            this.btn_ModeXX.Click += new System.EventHandler(this.Btn_ModeXX_Click);
             // 
             // btn_ModeYP
             // 
@@ -190,7 +190,7 @@
             this.btn_ModeYP.TabIndex = 1;
             this.btn_ModeYP.Text = "阅片模式";
             this.btn_ModeYP.UseVisualStyleBackColor = false;
-            this.btn_ModeYP.Click += new System.EventHandler(this.btn_ModeYP_Click);
+            this.btn_ModeYP.Click += new System.EventHandler(this.Btn_ModeYP_Click);
             // 
             // gBx_DeviceControl
             // 
@@ -225,7 +225,7 @@
             this.btn_WindowsTwo_Off.TabIndex = 42;
             this.btn_WindowsTwo_Off.Text = "关";
             this.btn_WindowsTwo_Off.UseVisualStyleBackColor = false;
-            this.btn_WindowsTwo_Off.Click += new System.EventHandler(this.btn_WindowsTwo_Off_Click);
+            this.btn_WindowsTwo_Off.Click += new System.EventHandler(this.Btn_WindowsTwo_Off_Click);
             // 
             // btn_WindowsTwo_On
             // 
@@ -245,7 +245,7 @@
             this.btn_WindowsTwo_On.TabIndex = 41;
             this.btn_WindowsTwo_On.Text = "开";
             this.btn_WindowsTwo_On.UseVisualStyleBackColor = false;
-            this.btn_WindowsTwo_On.Click += new System.EventHandler(this.btn_WindowsTwo_On_Click);
+            this.btn_WindowsTwo_On.Click += new System.EventHandler(this.Btn_WindowsTwo_On_Click);
             // 
             // label_WindowsTwo
             // 
@@ -275,7 +275,7 @@
             this.btn_WindowsOne_Off.TabIndex = 38;
             this.btn_WindowsOne_Off.Text = "关";
             this.btn_WindowsOne_Off.UseVisualStyleBackColor = false;
-            this.btn_WindowsOne_Off.Click += new System.EventHandler(this.btn_WindowsOne_Off_Click);
+            this.btn_WindowsOne_Off.Click += new System.EventHandler(this.Btn_WindowsOne_Off_Click);
             // 
             // btn_WindowsOne_On
             // 
@@ -295,7 +295,7 @@
             this.btn_WindowsOne_On.TabIndex = 34;
             this.btn_WindowsOne_On.Text = "开";
             this.btn_WindowsOne_On.UseVisualStyleBackColor = false;
-            this.btn_WindowsOne_On.Click += new System.EventHandler(this.btn_WindowsOne_On_Click);
+            this.btn_WindowsOne_On.Click += new System.EventHandler(this.Btn_WindowsOne_On_Click);
             // 
             // label_WindowsOne
             // 
@@ -355,7 +355,7 @@
             this.btn_TopLight_On.TabIndex = 14;
             this.btn_TopLight_On.Text = "开";
             this.btn_TopLight_On.UseVisualStyleBackColor = false;
-            this.btn_TopLight_On.Click += new System.EventHandler(this.btn_TopLight_On_Click);
+            this.btn_TopLight_On.Click += new System.EventHandler(this.Btn_TopLight_On_Click);
             // 
             // btn_WallLight_On
             // 
@@ -375,7 +375,7 @@
             this.btn_WallLight_On.TabIndex = 26;
             this.btn_WallLight_On.Text = "开";
             this.btn_WallLight_On.UseVisualStyleBackColor = false;
-            this.btn_WallLight_On.Click += new System.EventHandler(this.btn_WallLight_On_Click);
+            this.btn_WallLight_On.Click += new System.EventHandler(this.Btn_WallLight_On_Click);
             // 
             // btn_RoundLight_On
             // 
@@ -395,7 +395,7 @@
             this.btn_RoundLight_On.TabIndex = 27;
             this.btn_RoundLight_On.Text = "开";
             this.btn_RoundLight_On.UseVisualStyleBackColor = false;
-            this.btn_RoundLight_On.Click += new System.EventHandler(this.btn_RoundLight_On_Click);
+            this.btn_RoundLight_On.Click += new System.EventHandler(this.Btn_RoundLight_On_Click);
             // 
             // btn_RoundLight_Off
             // 
@@ -415,7 +415,7 @@
             this.btn_RoundLight_Off.TabIndex = 28;
             this.btn_RoundLight_Off.Text = "关";
             this.btn_RoundLight_Off.UseVisualStyleBackColor = false;
-            this.btn_RoundLight_Off.Click += new System.EventHandler(this.btn_RoundLight_Off_Click);
+            this.btn_RoundLight_Off.Click += new System.EventHandler(this.Btn_RoundLight_Off_Click);
             // 
             // btn_WallLight_Off
             // 
@@ -435,7 +435,7 @@
             this.btn_WallLight_Off.TabIndex = 29;
             this.btn_WallLight_Off.Text = "关";
             this.btn_WallLight_Off.UseVisualStyleBackColor = false;
-            this.btn_WallLight_Off.Click += new System.EventHandler(this.btn_WallLight_Off_Click);
+            this.btn_WallLight_Off.Click += new System.EventHandler(this.Btn_WallLight_Off_Click);
             // 
             // btn_TopLight_Off
             // 
@@ -455,7 +455,7 @@
             this.btn_TopLight_Off.TabIndex = 30;
             this.btn_TopLight_Off.Text = "关";
             this.btn_TopLight_Off.UseVisualStyleBackColor = false;
-            this.btn_TopLight_Off.Click += new System.EventHandler(this.btn_TopLight_Off_Click);
+            this.btn_TopLight_Off.Click += new System.EventHandler(this.Btn_TopLight_Off_Click);
             // 
             // btn_AllLights_On
             // 
@@ -475,7 +475,7 @@
             this.btn_AllLights_On.TabIndex = 5;
             this.btn_AllLights_On.Text = "全开";
             this.btn_AllLights_On.UseVisualStyleBackColor = false;
-            this.btn_AllLights_On.Click += new System.EventHandler(this.btn_AllLights_On_Click);
+            this.btn_AllLights_On.Click += new System.EventHandler(this.Btn_AllLights_On_Click);
             // 
             // btn_AllLights_Off
             // 
@@ -495,7 +495,7 @@
             this.btn_AllLights_Off.TabIndex = 31;
             this.btn_AllLights_Off.Text = "全关";
             this.btn_AllLights_Off.UseVisualStyleBackColor = false;
-            this.btn_AllLights_Off.Click += new System.EventHandler(this.btn_AllLights_Off_Click);
+            this.btn_AllLights_Off.Click += new System.EventHandler(this.Btn_AllLights_Off_Click);
             // 
             // gBx_LightsControl
             // 

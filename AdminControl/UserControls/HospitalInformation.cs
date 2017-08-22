@@ -27,7 +27,7 @@ namespace AdminControl
         /// <summary>
         /// 主窗体实例
         /// </summary>
-        private frm_Main frm_Main;
+        private Frm_Main frm_Main;
 
         /// <summary>
         /// 数据传输实例
@@ -39,7 +39,7 @@ namespace AdminControl
         /// <summary>
         /// 构造器
         /// </summary>
-        public HospitalInformation(frm_Main frm_Main)
+        public HospitalInformation(Frm_Main frm_Main)
         {
             InitializeComponent();
             InitItems(frm_Main);
@@ -62,7 +62,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_BUGReport_Click(object sender, EventArgs e)
+        private void Btn_BUGReport_Click(object sender, EventArgs e)
         {
             GetLogFile();
         }
@@ -72,7 +72,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_BUGReportSend_Click(object sender, EventArgs e)
+        private void Btn_BUGReportSend_Click(object sender, EventArgs e)
         {
             SendEmail();
         }
@@ -82,7 +82,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_BUGReportBack_Click(object sender, EventArgs e)
+        private void Btn_BUGReportBack_Click(object sender, EventArgs e)
         {
             CleanBUGReportLog();
         }
@@ -92,7 +92,7 @@ namespace AdminControl
         /// <summary>
         /// 初始化
         /// </summary>
-        private void InitItems(frm_Main frm_Main)
+        private void InitItems(Frm_Main frm_Main)
         {
             panel_BUGReport.Visible = false;
 

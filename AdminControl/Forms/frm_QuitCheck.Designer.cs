@@ -1,6 +1,6 @@
 ﻿namespace AdminControl
 {
-    partial class frm_QuitCheck
+    partial class Frm_QuitCheck
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.btn_QuitConfirm.TabIndex = 2;
             this.btn_QuitConfirm.Text = "确认";
             this.btn_QuitConfirm.UseVisualStyleBackColor = false;
-            this.btn_QuitConfirm.Click += new System.EventHandler(this.btn_QuitConfirm_Click);
+            this.btn_QuitConfirm.Click += new System.EventHandler(this.Btn_QuitConfirm_Click);
             // 
             // btn_QuitReturn
             // 
@@ -92,7 +92,7 @@
             this.btn_QuitReturn.TabIndex = 3;
             this.btn_QuitReturn.Text = "取消";
             this.btn_QuitReturn.UseVisualStyleBackColor = false;
-            this.btn_QuitReturn.Click += new System.EventHandler(this.btn_QuitReturn_Click);
+            this.btn_QuitReturn.Click += new System.EventHandler(this.Btn_QuitReturn_Click);
             // 
             // frm_QuitCheck
             // 
@@ -110,7 +110,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "身份校验";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.frm_QuitCheck_Load);
+            this.Load += new System.EventHandler(this.Frm_QuitCheck_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

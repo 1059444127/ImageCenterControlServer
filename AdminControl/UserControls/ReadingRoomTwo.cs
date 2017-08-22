@@ -59,7 +59,7 @@ namespace AdminControl
         /// <summary>
         /// 主窗体
         /// </summary>
-        private frm_Main frm_Main;
+        private Frm_Main frm_Main;
 
         /// <summary>
         /// 客户端套接字
@@ -77,7 +77,7 @@ namespace AdminControl
         /// 构造器
         /// </summary>
         /// <param name="frm_Main"></param>
-        public ReadingRoomTwo(frm_Main frm_Main)
+        public ReadingRoomTwo(Frm_Main frm_Main)
         {
             InitializeComponent();
             InitService(frm_Main);
@@ -100,7 +100,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ModeYP_Click(object sender, EventArgs e)
+        private void Btn_ModeYP_Click(object sender, EventArgs e)
         {
             ModeChange(1);
         }
@@ -110,7 +110,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ModeXX_Click(object sender, EventArgs e)
+        private void Btn_ModeXX_Click(object sender, EventArgs e)
         {
             ModeChange(2);
         }
@@ -120,7 +120,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ModeLK_Click(object sender, EventArgs e)
+        private void Btn_ModeLK_Click(object sender, EventArgs e)
         {
             ModeChange(3);
         }
@@ -130,7 +130,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_TopLight_On_Click(object sender, EventArgs e)
+        private void Btn_TopLight_On_Click(object sender, EventArgs e)
         {
             LightControl(LightList[0].RelayNumber, true);
         }
@@ -140,7 +140,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_TopLight_Off_Click(object sender, EventArgs e)
+        private void Btn_TopLight_Off_Click(object sender, EventArgs e)
         {
             LightControl(LightList[0].RelayNumber, false);
         }
@@ -150,7 +150,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WallLight_On_Click(object sender, EventArgs e)
+        private void Btn_WallLight_On_Click(object sender, EventArgs e)
         {
             LightControl(LightList[1].RelayNumber, true);
         }
@@ -160,7 +160,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WallLight_Off_Click(object sender, EventArgs e)
+        private void Btn_WallLight_Off_Click(object sender, EventArgs e)
         {
             LightControl(LightList[1].RelayNumber, false);
         }
@@ -170,7 +170,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_RoundLight_On_Click(object sender, EventArgs e)
+        private void Btn_RoundLight_On_Click(object sender, EventArgs e)
         {
             LightControl(LightList[2].RelayNumber, true);
         }
@@ -180,7 +180,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_RoundLight_Off_Click(object sender, EventArgs e)
+        private void Btn_RoundLight_Off_Click(object sender, EventArgs e)
         {
             LightControl(LightList[2].RelayNumber, false);
         }
@@ -190,7 +190,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_AllLights_On_Click(object sender, EventArgs e)
+        private void Btn_AllLights_On_Click(object sender, EventArgs e)
         {
             LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
         }
@@ -200,7 +200,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_AllLights_Off_Click(object sender, EventArgs e)
+        private void Btn_AllLights_Off_Click(object sender, EventArgs e)
         {
             LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
         }
@@ -210,7 +210,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WindowsOne_On_Click(object sender, EventArgs e)
+        private void Btn_WindowsOne_On_Click(object sender, EventArgs e)
         {
             WindowsControl(WindowsList[0].RelayNumber.Split(',')[0], WindowsList[0].RelayNumber.Split(',')[1]);
         }
@@ -220,7 +220,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WindowsOne_Off_Click(object sender, EventArgs e)
+        private void Btn_WindowsOne_Off_Click(object sender, EventArgs e)
         {
             WindowsControl(WindowsList[0].RelayNumber.Split(',')[1], WindowsList[0].RelayNumber.Split(',')[0]);
         }
@@ -230,7 +230,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WindowsTwo_On_Click(object sender, EventArgs e)
+        private void Btn_WindowsTwo_On_Click(object sender, EventArgs e)
         {
             WindowsControl(WindowsList[1].RelayNumber.Split(',')[0], WindowsList[1].RelayNumber.Split(',')[1]);
         }
@@ -240,7 +240,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_WindowsTwo_Off_Click(object sender, EventArgs e)
+        private void Btn_WindowsTwo_Off_Click(object sender, EventArgs e)
         {
             WindowsControl(WindowsList[1].RelayNumber.Split(',')[1], WindowsList[1].RelayNumber.Split(',')[0]);
         }
@@ -251,7 +251,7 @@ namespace AdminControl
         /// 初始化
         /// </summary>
         /// <param name="frm_Main"></param>
-        private void InitService(frm_Main frm_Main)
+        private void InitService(Frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 
@@ -295,8 +295,10 @@ namespace AdminControl
             //读取模式配置
             ModeList = new List<ModeConfig>();
             XmlDocument ModeDoc = new XmlDocument();
-            XmlReaderSettings ModeSetting = new XmlReaderSettings();
-            ModeSetting.IgnoreComments = true;
+            XmlReaderSettings ModeSetting = new XmlReaderSettings
+            {
+                IgnoreComments = true
+            };
             XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
@@ -315,8 +317,10 @@ namespace AdminControl
             //读取灯光配置
             LightList = new List<LightConfig>();
             XmlDocument LightDoc = new XmlDocument();
-            XmlReaderSettings LightSetting = new XmlReaderSettings();
-            LightSetting.IgnoreComments = true;
+            XmlReaderSettings LightSetting = new XmlReaderSettings
+            {
+                IgnoreComments = true
+            };
             XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
@@ -335,8 +339,10 @@ namespace AdminControl
             //读取窗帘配置
             WindowsList = new List<WindowsConfig>();
             XmlDocument WindowsDoc = new XmlDocument();
-            XmlReaderSettings WindowsSetting = new XmlReaderSettings();
-            WindowsSetting.IgnoreComments = true;
+            XmlReaderSettings WindowsSetting = new XmlReaderSettings
+            {
+                IgnoreComments = true
+            };
             XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\WindowsConfig.xml", WindowsSetting);
             WindowsDoc.Load(WindowsReader);
             XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
@@ -369,9 +375,11 @@ namespace AdminControl
             string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室2控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
 
-            Thread RecvDeviceStatusThread = new Thread(RecvEnviroumentData);
-            RecvDeviceStatusThread.Name = "阅片室2环境数据接收线程";
-            RecvDeviceStatusThread.IsBackground = true;
+            Thread RecvDeviceStatusThread = new Thread(RecvEnviroumentData)
+            {
+                Name = "阅片室2环境数据接收线程",
+                IsBackground = true
+            };
             RecvDeviceStatusThread.Start(ControlSocket);
 
             ControlRefresh.RefreshButtons(gBx_ModeChange, true);
@@ -482,9 +490,11 @@ namespace AdminControl
             string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室2客户端");
             frm_Main.DataBase.UpdateTable(SQLString);
 
-            Thread RecvClientCommandThread = new Thread(RecvClientCommand);
-            RecvClientCommandThread.Name = "阅片室2用户指令接收线程";
-            RecvClientCommandThread.IsBackground = true;
+            Thread RecvClientCommandThread = new Thread(RecvClientCommand)
+            {
+                Name = "阅片室2用户指令接收线程",
+                IsBackground = true
+            };
             RecvClientCommandThread.Start(Connection);
         }
 

@@ -15,13 +15,13 @@ namespace AdminControl
     /// <summary>
     /// 退出确认界面
     /// </summary>
-    public partial class frm_QuitCheck : Form
+    public partial class Frm_QuitCheck : Form
     {
         #region 全局变量
         /// <summary>
         /// 主窗体实例
         /// </summary>
-        private frm_Main frm_Main;
+        private Frm_Main frm_Main;
 
         /// <summary>
         /// 数据处理实例
@@ -34,7 +34,7 @@ namespace AdminControl
         /// 构造器
         /// </summary>
         /// <param name="frm_Main"></param>
-        public frm_QuitCheck(frm_Main frm_Main)
+        public Frm_QuitCheck(Frm_Main frm_Main)
         {
             InitializeComponent();
             InitItem(frm_Main);
@@ -47,7 +47,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frm_QuitCheck_Load(object sender, EventArgs e)
+        private void Frm_QuitCheck_Load(object sender, EventArgs e)
         {
 
         }
@@ -57,7 +57,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_QuitConfirm_Click(object sender, EventArgs e)
+        private void Btn_QuitConfirm_Click(object sender, EventArgs e)
         {
             ConfirmQuit();
         }
@@ -67,7 +67,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_QuitReturn_Click(object sender, EventArgs e)
+        private void Btn_QuitReturn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -78,7 +78,7 @@ namespace AdminControl
         /// 初始化
         /// </summary>
         /// <param name="frm_Main"></param>
-        private void InitItem(frm_Main frm_Main)
+        private void InitItem(Frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 

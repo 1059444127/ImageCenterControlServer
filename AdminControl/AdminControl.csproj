@@ -64,11 +64,11 @@
     <Compile Include="Data\ModeConfig.cs" />
     <Compile Include="Data\LightConfig.cs" />
     <Compile Include="Data\FilmConfig.cs" />
-    <Compile Include="Forms\frm_QuitCheck.cs">
+    <Compile Include="Forms\Frm_QuitCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_QuitCheck.Designer.cs">
-      <DependentUpon>frm_QuitCheck.cs</DependentUpon>
+    <Compile Include="Forms\Frm_QuitCheck.Designer.cs">
+      <DependentUpon>Frm_QuitCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
@@ -89,11 +89,11 @@
     <Compile Include="UserControls\ConsultationRoomTwo.Designer.cs">
       <DependentUpon>ConsultationRoomTwo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Main.cs">
+    <Compile Include="Forms\Frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Main.Designer.cs">
-      <DependentUpon>frm_Main.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,8 +110,8 @@
       <DependentUpon>ReadingRoomTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\WindowsConfig.cs" />
-    <EmbeddedResource Include="Forms\frm_QuitCheck.resx">
-      <DependentUpon>frm_QuitCheck.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_QuitCheck.resx">
+      <DependentUpon>Frm_QuitCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ConsultationRoomOne.resx">
       <DependentUpon>ConsultationRoomOne.cs</DependentUpon>
@@ -119,8 +119,8 @@
     <EmbeddedResource Include="UserControls\ConsultationRoomTwo.resx">
       <DependentUpon>ConsultationRoomTwo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Main.resx">
-      <DependentUpon>frm_Main.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
