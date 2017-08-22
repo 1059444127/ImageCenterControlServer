@@ -70,7 +70,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "性能分析", "性能分析", "{FF0919B8-B415-48D5-9FA6-DDE1C381F2CC}"
 	ProjectSection(SolutionItems) = preProject
 		AdminControl.psess = AdminControl.psess
-		AdminControl170815.vsp = AdminControl170815.vsp
+		AdminControl170822.vspx = AdminControl170822.vspx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows服务", "Windows服务", "{16996058-40C4-49AD-A947-984C03756B69}"
@@ -83,6 +83,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLogCleanService", "Auto
 	EndProjectSection
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

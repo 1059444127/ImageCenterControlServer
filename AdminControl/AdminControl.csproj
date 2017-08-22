@@ -70,6 +70,7 @@
     <Compile Include="Forms\frm_QuitCheck.Designer.cs">
       <DependentUpon>frm_QuitCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
