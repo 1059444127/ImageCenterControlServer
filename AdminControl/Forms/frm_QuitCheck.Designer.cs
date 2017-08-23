@@ -94,7 +94,7 @@
             this.btn_QuitReturn.UseVisualStyleBackColor = false;
             this.btn_QuitReturn.Click += new System.EventHandler(this.Btn_QuitReturn_Click);
             // 
-            // frm_QuitCheck
+            // Frm_QuitCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +105,9 @@
             this.Controls.Add(this.txt_AdminPasswd);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_QuitCheck";
+            this.Name = "Frm_QuitCheck";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "身份校验";
             this.TopMost = true;
