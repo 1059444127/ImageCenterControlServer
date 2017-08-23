@@ -15,6 +15,7 @@ using System.IO;
 
 using LogService;
 using DataBaseService;
+using System.Diagnostics;
 
 namespace AdminControl
 {
@@ -60,6 +61,17 @@ namespace AdminControl
         private delegate void RefreshTimeDelegate();
 
         /// <summary>
+        /// 子线程异常处理委托
+        /// </summary>
+        /// <param name="Message"></param>
+        private delegate void ChildThreadExceptionHandler(string Message);
+
+        /// <summary>
+        /// 子线程异常处理事件实例
+        /// </summary>
+        private event ChildThreadExceptionHandler ChildThreadException;
+
+        /// <summary>
         /// 日志记录实例
         /// </summary>
         public LogHelper Log;
@@ -93,16 +105,6 @@ namespace AdminControl
         /// 信息提示控件
         /// </summary>
         private HospitalInformation HI;
-
-        /// <summary>
-        /// 保存用户连接的集合
-        /// </summary>
-        public Dictionary<string, Socket> DictSockets = new Dictionary<string, Socket>();
-
-        /// <summary>
-        /// 保存用户线程的集合
-        /// </summary>
-        public Dictionary<string, Thread> DictThreads = new Dictionary<string, Thread>();
         #endregion
 
         #region 加载动画
@@ -311,23 +313,32 @@ namespace AdminControl
         /// </summary>
         private void InitService()
         {
-            //日志服务
-            StartLog();
+            try
+            {
+                //日志服务
+                StartLog();
 
-            //时间刷新服务
-            StartTime();
+                //时间刷新服务
+                StartTime();
 
-            //读取配置
-            ReadConfig();
+                //读取配置
+                ReadConfig();
 
-            //用户控件
-            StartUserControl();
+                //用户控件
+                StartUserControl();
 
-            //数据库服务
-            StartDataBase();
+                //数据库服务
+                StartDataBase();
 
-            //服务器启动
-            StartServer();
+                //服务器启动
+                StartServer();
+            }
+            catch (Exception ex)
+            {
+                Log.WriteLog(ex.Message);
+                MessageBox.Show(ex.Message, "错误");
+                System.Environment.Exit(0);
+            }
         }
 
         #endregion
@@ -345,10 +356,9 @@ namespace AdminControl
                 Log = new LogHelper(LogPath);
                 Log.WriteLog("日志服务初始化成功");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "日志服务初始化失败");
-                System.Environment.Exit(0);
+                throw new Exception("日志服务初始化失败");
             }
         }
         #endregion
@@ -504,15 +514,11 @@ namespace AdminControl
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("服务器配置文件丢失！请重新安装程序！", "错误");
-                Log.WriteLog("服务器配置文件丢失，程序无法启动");
-                System.Environment.Exit(0);
+                throw new Exception("服务器配置文件丢失，程序无法启动");
             }
             catch (FormatException)
             {
-                MessageBox.Show("服务器配置文件格式错误！", "错误");
-                Log.WriteLog("服务器配置文件格式错误，程序无法启动");
-                System.Environment.Exit(0);
+                throw new Exception("服务器配置文件格式错误，程序无法启动");
             }
 
             try
@@ -527,15 +533,11 @@ namespace AdminControl
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("客户端类型配置文件丢失！请重新安装程序！", "错误");
-                Log.WriteLog("客户端类型配置文件丢失，程序无法启动");
-                System.Environment.Exit(0);
+                throw new Exception("客户端类型配置文件丢失，程序无法启动");
             }
             catch (FormatException)
             {
-                MessageBox.Show("客户端类型配置文件格式错误！", "错误");
-                Log.WriteLog("客户端类型配置文件格式错误，程序无法启动");
-                System.Environment.Exit(0);
+                throw new Exception("客户端类型配置文件格式错误，程序无法启动");
             }
 
             try
@@ -547,9 +549,7 @@ namespace AdminControl
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("数据库配置文件丢失！请重新安装程序！", "错误");
-                Log.WriteLog("数据库配置文件丢失，程序无法启动");
-                System.Environment.Exit(0);
+                throw new Exception("数据库配置文件丢失，程序无法启动");
             }
         }
         #endregion
@@ -569,11 +569,9 @@ namespace AdminControl
                 HI = new HospitalInformation(this);
                 Log.WriteLog("用户控件初始化成功");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Log.WriteLog("用户控件初始化失败");
-                MessageBox.Show(ex.Message, "错误");
-                System.Environment.Exit(0);
+                throw new Exception("用户控件初始化失败");
             }
         }
         #endregion
@@ -589,11 +587,9 @@ namespace AdminControl
                 DataBase = new DataBaseHelper(DataBaseConfig);
                 Log.WriteLog("数据库初始化成功");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Log.WriteLog("数据库初始化失败：" + ex.Message);
-                MessageBox.Show(ex.Message, "错误");
-                System.Environment.Exit(0);
+                throw new Exception("数据库初始化失败");
             }
         }
         #endregion
@@ -604,12 +600,36 @@ namespace AdminControl
         /// </summary>
         private void StartServer()
         {
+            //注册异常捕获事件，发生异常时调用ChildThreadExceptionHandle
+            ChildThreadException += new ChildThreadExceptionHandler(ChildThreadExceptionHandle);
+
             Thread ListenThread = new Thread(ListenConnect)
             {
                 Name = "服务器监听线程",
                 IsBackground = true
             };
+
             ListenThread.Start();
+        }
+
+        /// <summary>
+        /// 子线程异常处理公用方法（子类可重写）
+        /// </summary>
+        /// <param name="message"></param>
+        public virtual void OnChildThreadException(string Message)
+        {
+            ChildThreadException?.Invoke(Message);
+        }
+
+        /// <summary>
+        /// 子线程异常处理
+        /// </summary>
+        /// <param name="Message"></param>
+        private void ChildThreadExceptionHandle(string Message)
+        {
+            Log.WriteLog(Message);
+            MessageBox.Show(Message, "错误");
+            System.Environment.Exit(0);
         }
         #endregion
 
@@ -634,11 +654,9 @@ namespace AdminControl
                 WatchSocket.Bind(ServerEndPoint);
                 Log.WriteLog("服务器绑定IP成功");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Log.WriteLog("服务器绑定IP失败，程序已退出" + ex.Message);
-                MessageBox.Show("绑定IP失败！请检查配置文件ServerConfig.bin", "错误");
-                System.Environment.Exit(0);
+                OnChildThreadException("服务器绑定IP失败，请检查配置文件");
             }
 
             //监听队列长度20
