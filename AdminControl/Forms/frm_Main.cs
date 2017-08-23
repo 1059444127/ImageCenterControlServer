@@ -636,8 +636,9 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                Log.WriteLog("服务器绑定IP失败：" + ex.Message);
-                return;
+                Log.WriteLog("服务器绑定IP失败，程序已退出" + ex.Message);
+                MessageBox.Show("绑定IP失败！请检查配置文件ServerConfig.bin", "错误");
+                System.Environment.Exit(0);
             }
 
             //监听队列长度20
