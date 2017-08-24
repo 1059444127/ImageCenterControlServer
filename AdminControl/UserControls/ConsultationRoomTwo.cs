@@ -253,7 +253,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_TopLight_On_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[0].RelayNumber, true);
+            LightControl(LightList[0].RelayNumber, false);
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_TopLight_Off_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[0].RelayNumber, false);
+            LightControl(LightList[0].RelayNumber, true);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_WallLight_On_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[1].RelayNumber, true);
+            LightControl(LightList[1].RelayNumber, false);
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_WallLight_Off_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[1].RelayNumber, false);
+            LightControl(LightList[1].RelayNumber, true);
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_RoundLight_On_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[2].RelayNumber, true);
+            LightControl(LightList[2].RelayNumber, false);
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_RoundLight_Off_Click(object sender, EventArgs e)
         {
-            LightControl(LightList[2].RelayNumber, false);
+            LightControl(LightList[2].RelayNumber, true);
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_AllLights_On_Click(object sender, EventArgs e)
         {
-            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_AllLights_Off_Click(object sender, EventArgs e)
         {
-            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), false);
+            LightControl(string.Format("{0},{1},{2}", LightList[0].RelayNumber, LightList[1].RelayNumber, LightList[2].RelayNumber), true);
         }
         #endregion
 

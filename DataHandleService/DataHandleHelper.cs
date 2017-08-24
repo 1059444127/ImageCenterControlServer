@@ -123,7 +123,7 @@ namespace DataHandleService
                             Heart.Temp = Value.Insert(Value.Length-1,".");
                             break;
                         case "Hum":
-                            Heart.Hum = Value.Insert(Value.Length - 1, ".");
+                            Heart.Hum = Value.Insert(Value.Length-1, ".");
                             break;
                         case "Light":
                             Heart.Light = Value;
