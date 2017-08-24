@@ -626,19 +626,19 @@ namespace AdminControl
             switch (Mode)
             {
                 case 1:
-                    //继电器状态修改
+                    //阅片模式 继电器状态修改
                     Command = DataHandle.GetRelayCommand(ModeList[0].Relays.Split(' ')[0], ModeList[0].Relays.Split(' ')[1]);
                     break;
                 case 2:
-                    //继电器状态修改
+                    //休息模式 继电器状态修改
                     Command = DataHandle.GetRelayCommand(ModeList[1].Relays.Split(' ')[0], ModeList[1].Relays.Split(' ')[1]);
                     break;
                 case 3:
-                    //继电器状态修改
+                    //离开模式 继电器状态修改
                     Command = DataHandle.GetRelayCommand(ModeList[2].Relays.Split(' ')[0], ModeList[2].Relays.Split(' ')[1]);
                     break;
                 case 4:
-                    //继电器状态修改
+                    //初始模式 继电器状态修改
                     Command = DataHandle.GetRelayCommand(ModeList[3].Relays.Split(' ')[0], ModeList[3].Relays.Split(' ')[1]);
                     break;
                 default:
