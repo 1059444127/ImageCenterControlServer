@@ -70,13 +70,8 @@
     <Compile Include="Forms\Frm_QuitCheck.Designer.cs">
       <DependentUpon>Frm_QuitCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_RoomList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_RoomList.Designer.cs">
-      <DependentUpon>Frm_RoomList.cs</DependentUpon>
-    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Data\RoomInformation.cs" />
     <Compile Include="UserControls\HospitalInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,9 +113,6 @@
     <Compile Include="Data\WindowsConfig.cs" />
     <EmbeddedResource Include="Forms\Frm_QuitCheck.resx">
       <DependentUpon>Frm_QuitCheck.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_RoomList.resx">
-      <DependentUpon>Frm_RoomList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ConsultationRoomOne.resx">
       <DependentUpon>ConsultationRoomOne.cs</DependentUpon>
