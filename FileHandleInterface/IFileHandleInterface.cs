@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FileHandleInterface
+﻿namespace FileHandleInterface
 {
     /// <summary>
     /// 文件操作接口

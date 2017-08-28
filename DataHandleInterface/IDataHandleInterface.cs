@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataHandleInterface
+﻿namespace DataHandleInterface
 {
     /// <summary>
     /// 数据处理接口
