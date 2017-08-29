@@ -485,7 +485,7 @@ namespace AdminControl
             try
             {
                 StreamReader Reader = new StreamReader(Application.StartupPath + "\\Config\\ClientTypeConfig.bin");
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     ClientTypeConfig[i] = Reader.ReadLine().Split(':')[1];
                 }

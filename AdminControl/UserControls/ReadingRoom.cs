@@ -299,7 +299,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\ModeConfig.xml", ModeSetting);
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
             XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
@@ -321,7 +321,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\LightConfig.xml", LightSetting);
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
@@ -343,7 +343,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomTwo\\WindowsConfig.xml", WindowsSetting);
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\WindowsConfig.xml", WindowsSetting);
             WindowsDoc.Load(WindowsReader);
             XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
             XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
