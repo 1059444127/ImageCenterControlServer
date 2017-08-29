@@ -1,6 +1,6 @@
 ﻿namespace AdminControl
 {
-    partial class ConsultationRoomOne
+    partial class ConsultationRoom
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -85,9 +85,9 @@
             this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(335, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(200, 56);
+            this.label4.Size = new System.Drawing.Size(174, 56);
             this.label4.TabIndex = 1;
-            this.label4.Text = "会诊室1";
+            this.label4.Text = "会诊室";
             // 
             // gBx_ModeChange
             // 
@@ -784,7 +784,7 @@
             this.label13.TabIndex = 44;
             this.label13.Text = "矩阵输入:";
             // 
-            // ConsultationRoomOne
+            // ConsultationRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -805,7 +805,7 @@
             this.Controls.Add(this.gBx_LightsControl);
             this.Controls.Add(this.gBx_ModeChange);
             this.Controls.Add(this.label4);
-            this.Name = "ConsultationRoomOne";
+            this.Name = "ConsultationRoom";
             this.Size = new System.Drawing.Size(864, 520);
             this.Load += new System.EventHandler(this.ConsultationRoomOne_Load);
             this.gBx_ModeChange.ResumeLayout(false);

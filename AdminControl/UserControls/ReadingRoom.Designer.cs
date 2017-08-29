@@ -1,6 +1,6 @@
 ﻿namespace AdminControl
 {
-    partial class ReadingRoomTwo
+    partial class ReadingRoom
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -610,11 +610,11 @@
             this.label4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(335, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(200, 56);
+            this.label4.Size = new System.Drawing.Size(174, 56);
             this.label4.TabIndex = 29;
-            this.label4.Text = "阅片室2";
+            this.label4.Text = "阅片室";
             // 
-            // ReadingRoomTwo
+            // ReadingRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -628,7 +628,7 @@
             this.Controls.Add(this.label_ControlStatus);
             this.Controls.Add(this.label_Control);
             this.Controls.Add(this.label4);
-            this.Name = "ReadingRoomTwo";
+            this.Name = "ReadingRoom";
             this.Size = new System.Drawing.Size(864, 520);
             this.Load += new System.EventHandler(this.ReadingRoomTwo_Load);
             this.gBx_Enviroument.ResumeLayout(false);

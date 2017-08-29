@@ -75,24 +75,14 @@ namespace AdminControl
         public DataBaseHelper DataBase;
 
         /// <summary>
-        /// 会诊室1控件
+        /// 会诊室控件
         /// </summary>
-        private ConsultationRoomOne HZOne;
+        private ConsultationRoom HZ;
 
         /// <summary>
-        /// 会诊室2控件
+        /// 阅片室控件 
         /// </summary>
-        private ConsultationRoomTwo HZTwo;
-
-        /// <summary>
-        /// 阅片室1控件
-        /// </summary>
-        private ReadingRoomOne YPOne;
-
-        /// <summary>
-        /// 阅片室2控件 
-        /// </summary>
-        private ReadingRoomTwo YPTwo;
+        private ReadingRoom YP;
 
         /// <summary>
         /// 信息提示控件
@@ -172,29 +162,7 @@ namespace AdminControl
         private void Btn_ConsultationRoomOne_Click(object sender, EventArgs e)
         {
             ShowSelectedIndex(1);
-            ShowSelectUserControl(HZOne);
-        }
-
-        /// <summary>
-        /// 会诊室2
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_ConsultationRoomTwo_Click(object sender, EventArgs e)
-        {
-            ShowSelectedIndex(2);
-            ShowSelectUserControl(HZTwo);
-        }
-
-        /// <summary>
-        /// 阅片室1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_ReadingRoomOne_Click(object sender, EventArgs e)
-        {
-            ShowSelectedIndex(3);
-            ShowSelectUserControl(YPOne);
+            ShowSelectUserControl(HZ);
         }
 
         /// <summary>
@@ -204,8 +172,8 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_ReadingRoomTwo_Click(object sender, EventArgs e)
         {
-            ShowSelectedIndex(4);
-            ShowSelectUserControl(YPTwo);
+            ShowSelectedIndex(2);
+            ShowSelectUserControl(YP);
         }
 
         /// <summary>
@@ -215,7 +183,7 @@ namespace AdminControl
         /// <param name="e"></param>
         private void Btn_About_Click(object sender, EventArgs e)
         {
-            ShowSelectedIndex(5);
+            ShowSelectedIndex(3);
             ShowSelectUserControl(HI);
         }
 
@@ -555,10 +523,8 @@ namespace AdminControl
         {
             try
             {
-                HZOne = new ConsultationRoomOne(this);
-                HZTwo = new ConsultationRoomTwo(this);
-                YPOne = new ReadingRoomOne(this);
-                YPTwo = new ReadingRoomTwo(this);
+                HZ = new ConsultationRoom(this);
+                YP = new ReadingRoom(this);
                 HI = new HospitalInformation(this);
                 Log.WriteLog("用户控件初始化成功");
             }
@@ -683,69 +649,38 @@ namespace AdminControl
         /// <param name="UserConnection"></param>
         private void SwitchClientType(string ClientIP, Socket UserConnection)
         {
+            
             if (ClientIP.Equals(ClientTypeConfig[0]))
             {
-                //阅片室1控制端连接
-                Log.WriteLog(string.Format("阅片室1控制端{0}连接成功", ClientIP));
+                //会诊室1控制端连接
+                Log.WriteLog(string.Format("会诊室控制端{0}连接成功", ClientIP));
 
-                //启动数据接收线程
-                YPOne.RecvEnviroumentDataThreadStart(UserConnection);
+                //启动设备状态接收线程
+                HZ.RecvDeviceStatusThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[1]))
             {
-                //阅片室1客户端连接
-                Log.WriteLog(string.Format("阅片室1客户端{0}连接成功", ClientIP));
+                //会诊室1客户端连接
+                Log.WriteLog(string.Format("会诊室客户端{0}连接成功", ClientIP));
 
-                //启动指令接收线程
-                YPOne.RecvClientCommandThreadStart(UserConnection);
+                //启动客户端指令接收线程
+                HZ.RecvClientCommandThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[2]))
             {
-                //会诊室1控制端连接
-                Log.WriteLog(string.Format("会诊室1控制端{0}连接成功", ClientIP));
+                //阅片室2控制端连接
+                Log.WriteLog(string.Format("阅片室控制端{0}连接成功", ClientIP));
 
-                //启动设备状态接收线程
-                HZOne.RecvDeviceStatusThreadStart(UserConnection);
+                //启动数据接收线程
+                YP.RecvEnviroumentDataThreadStart(UserConnection);
             }
             else if (ClientIP.Equals(ClientTypeConfig[3]))
             {
-                //会诊室1客户端连接
-                Log.WriteLog(string.Format("会诊室1客户端{0}连接成功", ClientIP));
-
-                //启动客户端指令接收线程
-                HZOne.RecvClientCommandThreadStart(UserConnection);
-            }
-            else if (ClientIP.Equals(ClientTypeConfig[4]))
-            {
-                //阅片室2控制端连接
-                Log.WriteLog(string.Format("阅片室2控制端{0}连接成功", ClientIP));
-
-                //启动数据接收线程
-                YPTwo.RecvEnviroumentDataThreadStart(UserConnection);
-            }
-            else if (ClientIP.Equals(ClientTypeConfig[5]))
-            {
                 //阅片室2客户端连接
-                Log.WriteLog(string.Format("阅片室2客户端{0}连接成功", ClientIP));
+                Log.WriteLog(string.Format("阅片室客户端{0}连接成功", ClientIP));
 
                 //启动指令接收线程
-                YPTwo.RecvClientCommandThreadStart(UserConnection);
-            }
-            else if (ClientIP.Equals(ClientTypeConfig[6]))
-            {
-                //会诊室2控制端连接
-                Log.WriteLog(string.Format("会诊室2控制端{0}连接成功", ClientIP));
-
-                //启动设备状态接收线程
-                HZTwo.RecvDeviceStatusThreadStart(UserConnection);
-            }
-            else if (ClientIP.Equals(ClientTypeConfig[7]))
-            {
-                //会诊室2客户端连接
-                Log.WriteLog(string.Format("会诊室2客户端{0}连接成功", ClientIP));
-
-                //启动客户端指令接收线程
-                HZTwo.RecvClientCommandThreadStart(UserConnection);
+                YP.RecvClientCommandThreadStart(UserConnection);
             }
             else
             {
@@ -787,36 +722,16 @@ namespace AdminControl
                     pBx_Index1.Visible = true;
                     pBx_Index2.Visible = false;
                     pBx_Index3.Visible = false;
-                    pBx_Index4.Visible = false;
-                    pBx_Index5.Visible = false;
                     break;
                 case 2:
                     pBx_Index1.Visible = false;
                     pBx_Index2.Visible = true;
                     pBx_Index3.Visible = false;
-                    pBx_Index4.Visible = false;
-                    pBx_Index5.Visible = false;
                     break;
                 case 3:
                     pBx_Index1.Visible = false;
                     pBx_Index2.Visible = false;
                     pBx_Index3.Visible = true;
-                    pBx_Index4.Visible = false;
-                    pBx_Index5.Visible = false;
-                    break;
-                case 4:
-                    pBx_Index1.Visible = false;
-                    pBx_Index2.Visible = false;
-                    pBx_Index3.Visible = false;
-                    pBx_Index4.Visible = true;
-                    pBx_Index5.Visible = false;
-                    break;
-                case 5:
-                    pBx_Index1.Visible = false;
-                    pBx_Index2.Visible = false;
-                    pBx_Index3.Visible = false;
-                    pBx_Index4.Visible = false;
-                    pBx_Index5.Visible = true;
                     break;
                 default:
                     break;
@@ -854,24 +769,14 @@ namespace AdminControl
         /// </summary>
         public void CloseForm()
         {
-            if (HZOne.is_ControlConnect)
+            if (HZ.is_ControlConnect)
             {
-                HZOne.ResetMode();
+                HZ.ResetMode();
             }
 
-            if (HZTwo.is_ControlConnect)
+            if (YP.is_ControlConnect)
             {
-                HZTwo.ResetMode();
-            }
-
-            if (YPOne.is_ControlConnect)
-            {
-                YPOne.ResetMode();
-            }
-
-            if (YPTwo.is_ControlConnect)
-            {
-                YPTwo.ResetMode();
+                YP.ResetMode();
             }
 
             ServerStop();

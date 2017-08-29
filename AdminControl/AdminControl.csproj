@@ -78,17 +78,11 @@
     <Compile Include="UserControls\HospitalInformation.Designer.cs">
       <DependentUpon>HospitalInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ConsultationRoomOne.cs">
+    <Compile Include="UserControls\ConsultationRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ConsultationRoomOne.Designer.cs">
-      <DependentUpon>ConsultationRoomOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ConsultationRoomTwo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ConsultationRoomTwo.Designer.cs">
-      <DependentUpon>ConsultationRoomTwo.cs</DependentUpon>
+    <Compile Include="UserControls\ConsultationRoom.Designer.cs">
+      <DependentUpon>ConsultationRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Main.cs">
       <SubType>Form</SubType>
@@ -98,27 +92,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\ReadingRoomOne.cs">
+    <Compile Include="UserControls\ReadingRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ReadingRoomOne.Designer.cs">
-      <DependentUpon>ReadingRoomOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ReadingRoomTwo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ReadingRoomTwo.Designer.cs">
-      <DependentUpon>ReadingRoomTwo.cs</DependentUpon>
+    <Compile Include="UserControls\ReadingRoom.Designer.cs">
+      <DependentUpon>ReadingRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\WindowsConfig.cs" />
     <EmbeddedResource Include="Forms\Frm_QuitCheck.resx">
       <DependentUpon>Frm_QuitCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ConsultationRoomOne.resx">
-      <DependentUpon>ConsultationRoomOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ConsultationRoomTwo.resx">
-      <DependentUpon>ConsultationRoomTwo.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ConsultationRoom.resx">
+      <DependentUpon>ConsultationRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
@@ -136,11 +121,8 @@
     <EmbeddedResource Include="UserControls\HospitalInformation.resx">
       <DependentUpon>HospitalInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ReadingRoomOne.resx">
-      <DependentUpon>ReadingRoomOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ReadingRoomTwo.resx">
-      <DependentUpon>ReadingRoomTwo.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ReadingRoom.resx">
+      <DependentUpon>ReadingRoom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
