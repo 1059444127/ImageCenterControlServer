@@ -368,7 +368,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml", ModeSetting);
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
             XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
@@ -394,7 +394,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml", LightSetting);
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
@@ -416,7 +416,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\WindowsConfig.xml", WindowsSetting);
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\WindowsConfig.xml", WindowsSetting);
             WindowsDoc.Load(WindowsReader);
             XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
             XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
@@ -438,7 +438,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\FilmConfig.xml", FilmSetting);
+            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\FilmConfig.xml", FilmSetting);
             FilmDoc.Load(FilmReader);
             XmlNode FilmRootNode = FilmDoc.SelectSingleNode("Films");
             XmlNodeList FilmRootChilds = FilmRootNode.ChildNodes;
