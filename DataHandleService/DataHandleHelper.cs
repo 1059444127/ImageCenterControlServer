@@ -93,7 +93,7 @@ namespace DataHandleService
         /// <returns>心跳包结构体</returns>
         public HeartStruct GetHeartbeat(string Data)
         {
-            HeartStruct Heart = new HeartStruct();
+            var Heart = new HeartStruct();
 
             string Key = string.Empty;
 
