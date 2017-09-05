@@ -40,16 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label_Hour = new System.Windows.Forms.Label();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.pBx_Index5 = new System.Windows.Forms.PictureBox();
-            this.btn_About = new System.Windows.Forms.Button();
-            this.pBx_Index4 = new System.Windows.Forms.PictureBox();
             this.pBx_Index3 = new System.Windows.Forms.PictureBox();
+            this.btn_About = new System.Windows.Forms.Button();
             this.pBx_Index2 = new System.Windows.Forms.PictureBox();
             this.pBx_Index1 = new System.Windows.Forms.PictureBox();
-            this.btn_ReadingRoomTwo = new System.Windows.Forms.Button();
-            this.btn_ReadingRoomOne = new System.Windows.Forms.Button();
-            this.btn_ConsultationRoomTwo = new System.Windows.Forms.Button();
-            this.btn_ConsultationRoomOne = new System.Windows.Forms.Button();
+            this.btn_ReadingRoom = new System.Windows.Forms.Button();
+            this.btn_ConsultationRoom = new System.Windows.Forms.Button();
             this.panel_UserControl = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,8 +55,6 @@
             this.CloseMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Information.SuspendLayout();
             this.panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index1)).BeginInit();
@@ -182,32 +176,28 @@
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.LightGray;
-            this.panel_Menu.Controls.Add(this.pBx_Index5);
-            this.panel_Menu.Controls.Add(this.btn_About);
-            this.panel_Menu.Controls.Add(this.pBx_Index4);
             this.panel_Menu.Controls.Add(this.pBx_Index3);
+            this.panel_Menu.Controls.Add(this.btn_About);
             this.panel_Menu.Controls.Add(this.pBx_Index2);
             this.panel_Menu.Controls.Add(this.pBx_Index1);
-            this.panel_Menu.Controls.Add(this.btn_ReadingRoomTwo);
-            this.panel_Menu.Controls.Add(this.btn_ReadingRoomOne);
-            this.panel_Menu.Controls.Add(this.btn_ConsultationRoomTwo);
-            this.panel_Menu.Controls.Add(this.btn_ConsultationRoomOne);
+            this.panel_Menu.Controls.Add(this.btn_ReadingRoom);
+            this.panel_Menu.Controls.Add(this.btn_ConsultationRoom);
             this.panel_Menu.Location = new System.Drawing.Point(0, 80);
             this.panel_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(160, 520);
             this.panel_Menu.TabIndex = 1;
             // 
-            // pBx_Index5
+            // pBx_Index3
             // 
-            this.pBx_Index5.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index5.Location = new System.Drawing.Point(116, 414);
-            this.pBx_Index5.Name = "pBx_Index5";
-            this.pBx_Index5.Size = new System.Drawing.Size(44, 25);
-            this.pBx_Index5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBx_Index5.TabIndex = 8;
-            this.pBx_Index5.TabStop = false;
-            this.pBx_Index5.Visible = false;
+            this.pBx_Index3.Image = global::AdminControl.Properties.Resources.zhankai;
+            this.pBx_Index3.Location = new System.Drawing.Point(116, 414);
+            this.pBx_Index3.Name = "pBx_Index3";
+            this.pBx_Index3.Size = new System.Drawing.Size(44, 25);
+            this.pBx_Index3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBx_Index3.TabIndex = 8;
+            this.pBx_Index3.TabStop = false;
+            this.pBx_Index3.Visible = false;
             // 
             // btn_About
             // 
@@ -228,36 +218,14 @@
             this.btn_About.UseVisualStyleBackColor = false;
             this.btn_About.Click += new System.EventHandler(this.Btn_About_Click);
             // 
-            // pBx_Index4
-            // 
-            this.pBx_Index4.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index4.Location = new System.Drawing.Point(116, 329);
-            this.pBx_Index4.Name = "pBx_Index4";
-            this.pBx_Index4.Size = new System.Drawing.Size(44, 25);
-            this.pBx_Index4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBx_Index4.TabIndex = 6;
-            this.pBx_Index4.TabStop = false;
-            this.pBx_Index4.Visible = false;
-            // 
-            // pBx_Index3
-            // 
-            this.pBx_Index3.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index3.Location = new System.Drawing.Point(116, 243);
-            this.pBx_Index3.Name = "pBx_Index3";
-            this.pBx_Index3.Size = new System.Drawing.Size(44, 25);
-            this.pBx_Index3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBx_Index3.TabIndex = 5;
-            this.pBx_Index3.TabStop = false;
-            this.pBx_Index3.Visible = false;
-            // 
             // pBx_Index2
             // 
             this.pBx_Index2.Image = global::AdminControl.Properties.Resources.zhankai;
-            this.pBx_Index2.Location = new System.Drawing.Point(116, 157);
+            this.pBx_Index2.Location = new System.Drawing.Point(116, 242);
             this.pBx_Index2.Name = "pBx_Index2";
             this.pBx_Index2.Size = new System.Drawing.Size(44, 25);
             this.pBx_Index2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBx_Index2.TabIndex = 4;
+            this.pBx_Index2.TabIndex = 6;
             this.pBx_Index2.TabStop = false;
             this.pBx_Index2.Visible = false;
             // 
@@ -272,81 +240,43 @@
             this.pBx_Index1.TabStop = false;
             this.pBx_Index1.Visible = false;
             // 
-            // btn_ReadingRoomTwo
+            // btn_ReadingRoom
             // 
-            this.btn_ReadingRoomTwo.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomTwo.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_ReadingRoomTwo.FlatAppearance.BorderSize = 0;
-            this.btn_ReadingRoomTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomTwo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ReadingRoomTwo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ReadingRoomTwo.ForeColor = System.Drawing.Color.White;
-            this.btn_ReadingRoomTwo.Location = new System.Drawing.Point(9, 316);
-            this.btn_ReadingRoomTwo.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_ReadingRoomTwo.Name = "btn_ReadingRoomTwo";
-            this.btn_ReadingRoomTwo.Size = new System.Drawing.Size(110, 50);
-            this.btn_ReadingRoomTwo.TabIndex = 3;
-            this.btn_ReadingRoomTwo.Text = "阅片室2";
-            this.btn_ReadingRoomTwo.UseVisualStyleBackColor = false;
-            this.btn_ReadingRoomTwo.Click += new System.EventHandler(this.Btn_ReadingRoomTwo_Click);
+            this.btn_ReadingRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ReadingRoom.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ReadingRoom.FlatAppearance.BorderSize = 0;
+            this.btn_ReadingRoom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ReadingRoom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ReadingRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ReadingRoom.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ReadingRoom.ForeColor = System.Drawing.Color.White;
+            this.btn_ReadingRoom.Location = new System.Drawing.Point(9, 230);
+            this.btn_ReadingRoom.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ReadingRoom.Name = "btn_ReadingRoom";
+            this.btn_ReadingRoom.Size = new System.Drawing.Size(110, 50);
+            this.btn_ReadingRoom.TabIndex = 3;
+            this.btn_ReadingRoom.Text = "阅片室";
+            this.btn_ReadingRoom.UseVisualStyleBackColor = false;
+            this.btn_ReadingRoom.Click += new System.EventHandler(this.Btn_ReadingRoomTwo_Click);
             // 
-            // btn_ReadingRoomOne
+            // btn_ConsultationRoom
             // 
-            this.btn_ReadingRoomOne.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomOne.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_ReadingRoomOne.FlatAppearance.BorderSize = 0;
-            this.btn_ReadingRoomOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomOne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_ReadingRoomOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ReadingRoomOne.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ReadingRoomOne.ForeColor = System.Drawing.Color.White;
-            this.btn_ReadingRoomOne.Location = new System.Drawing.Point(9, 230);
-            this.btn_ReadingRoomOne.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_ReadingRoomOne.Name = "btn_ReadingRoomOne";
-            this.btn_ReadingRoomOne.Size = new System.Drawing.Size(110, 50);
-            this.btn_ReadingRoomOne.TabIndex = 2;
-            this.btn_ReadingRoomOne.Text = "阅片室1";
-            this.btn_ReadingRoomOne.UseVisualStyleBackColor = false;
-            this.btn_ReadingRoomOne.Click += new System.EventHandler(this.Btn_ReadingRoomOne_Click);
-            // 
-            // btn_ConsultationRoomTwo
-            // 
-            this.btn_ConsultationRoomTwo.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomTwo.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_ConsultationRoomTwo.FlatAppearance.BorderSize = 0;
-            this.btn_ConsultationRoomTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomTwo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ConsultationRoomTwo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ConsultationRoomTwo.ForeColor = System.Drawing.Color.White;
-            this.btn_ConsultationRoomTwo.Location = new System.Drawing.Point(9, 144);
-            this.btn_ConsultationRoomTwo.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_ConsultationRoomTwo.Name = "btn_ConsultationRoomTwo";
-            this.btn_ConsultationRoomTwo.Size = new System.Drawing.Size(110, 50);
-            this.btn_ConsultationRoomTwo.TabIndex = 1;
-            this.btn_ConsultationRoomTwo.Text = "会诊室2";
-            this.btn_ConsultationRoomTwo.UseVisualStyleBackColor = false;
-            this.btn_ConsultationRoomTwo.Click += new System.EventHandler(this.Btn_ConsultationRoomTwo_Click);
-            // 
-            // btn_ConsultationRoomOne
-            // 
-            this.btn_ConsultationRoomOne.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomOne.BackgroundImage = global::AdminControl.Properties.Resources.button;
-            this.btn_ConsultationRoomOne.FlatAppearance.BorderSize = 0;
-            this.btn_ConsultationRoomOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomOne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_ConsultationRoomOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ConsultationRoomOne.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ConsultationRoomOne.ForeColor = System.Drawing.Color.White;
-            this.btn_ConsultationRoomOne.Location = new System.Drawing.Point(9, 58);
-            this.btn_ConsultationRoomOne.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_ConsultationRoomOne.Name = "btn_ConsultationRoomOne";
-            this.btn_ConsultationRoomOne.Size = new System.Drawing.Size(110, 50);
-            this.btn_ConsultationRoomOne.TabIndex = 0;
-            this.btn_ConsultationRoomOne.Text = "会诊室1";
-            this.btn_ConsultationRoomOne.UseVisualStyleBackColor = false;
-            this.btn_ConsultationRoomOne.Click += new System.EventHandler(this.Btn_ConsultationRoomOne_Click);
+            this.btn_ConsultationRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ConsultationRoom.BackgroundImage = global::AdminControl.Properties.Resources.button;
+            this.btn_ConsultationRoom.FlatAppearance.BorderSize = 0;
+            this.btn_ConsultationRoom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_ConsultationRoom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ConsultationRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ConsultationRoom.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ConsultationRoom.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultationRoom.Location = new System.Drawing.Point(9, 58);
+            this.btn_ConsultationRoom.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ConsultationRoom.Name = "btn_ConsultationRoom";
+            this.btn_ConsultationRoom.Size = new System.Drawing.Size(110, 50);
+            this.btn_ConsultationRoom.TabIndex = 0;
+            this.btn_ConsultationRoom.Text = "会诊室";
+            this.btn_ConsultationRoom.UseVisualStyleBackColor = false;
+            this.btn_ConsultationRoom.Click += new System.EventHandler(this.Btn_ConsultationRoomOne_Click);
             // 
             // panel_UserControl
             // 
@@ -430,8 +360,6 @@
             this.panel_Information.ResumeLayout(false);
             this.panel_Information.PerformLayout();
             this.panel_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBx_Index4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBx_Index1)).EndInit();
@@ -446,10 +374,8 @@
 
         private System.Windows.Forms.Panel panel_Information;
         private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.Button btn_ConsultationRoomOne;
-        private System.Windows.Forms.Button btn_ReadingRoomTwo;
-        private System.Windows.Forms.Button btn_ReadingRoomOne;
-        private System.Windows.Forms.Button btn_ConsultationRoomTwo;
+        private System.Windows.Forms.Button btn_ConsultationRoom;
+        private System.Windows.Forms.Button btn_ReadingRoom;
         private System.Windows.Forms.Panel panel_UserControl;
         private System.Windows.Forms.Label label_Hour;
         private System.Windows.Forms.Label label2;
@@ -457,13 +383,11 @@
         private System.Windows.Forms.Label label_Week;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pBx_Index4;
-        private System.Windows.Forms.PictureBox pBx_Index3;
         private System.Windows.Forms.PictureBox pBx_Index2;
         private System.Windows.Forms.PictureBox pBx_Index1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pBx_Index5;
+        private System.Windows.Forms.PictureBox pBx_Index3;
         private System.Windows.Forms.Button btn_About;
         private System.Windows.Forms.Label label_Close;
         private System.Windows.Forms.Label label_Minnor;

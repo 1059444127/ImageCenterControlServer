@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading;
-using System.Xml;
 using System.Net.Sockets;
 using DataTransferService;
+using System.Threading;
+using System.Xml;
 using DataHandleService;
 
 namespace AdminControl
 {
     /// <summary>
-    /// 阅片室1
+    /// 阅片室2
     /// </summary>
-    public partial class ReadingRoomOne : UserControl
+    public partial class ReadingRoom : UserControl
     {
         #region 全局变量
         /// <summary>
@@ -77,10 +77,10 @@ namespace AdminControl
         /// 构造器
         /// </summary>
         /// <param name="frm_Main"></param>
-        public ReadingRoomOne(Frm_Main frm_Main)
+        public ReadingRoom(Frm_Main frm_Main)
         {
             InitializeComponent();
-            InitServices(frm_Main);
+            InitService(frm_Main);
         }
         #endregion
 
@@ -90,7 +90,7 @@ namespace AdminControl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ReadingRoomOne_Load(object sender, EventArgs e)
+        private void ReadingRoomTwo_Load(object sender, EventArgs e)
         {
             InitControls();
         }
@@ -248,10 +248,10 @@ namespace AdminControl
 
         #region 初始化
         /// <summary>
-        /// 初始化各类服务
+        /// 初始化
         /// </summary>
         /// <param name="frm_Main"></param>
-        private void InitServices(Frm_Main frm_Main)
+        private void InitService(Frm_Main frm_Main)
         {
             this.frm_Main = frm_Main;
 
@@ -299,7 +299,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\ModeConfig.xml", ModeSetting);
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
             XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
@@ -321,7 +321,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\LightConfig.xml", LightSetting);
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
@@ -343,7 +343,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoomOne\\WindowsConfig.xml", WindowsSetting);
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ReadingRoom\\WindowsConfig.xml", WindowsSetting);
             WindowsDoc.Load(WindowsReader);
             XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
             XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
@@ -372,12 +372,12 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ControlStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室1控制器");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室2控制器");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvDeviceStatusThread = new Thread(RecvEnviroumentData)
             {
-                Name = "阅片室1环境数据接收线程",
+                Name = "阅片室2环境数据接收线程",
                 IsBackground = true
             };
             RecvDeviceStatusThread.Start(ControlSocket);
@@ -409,9 +409,9 @@ namespace AdminControl
                 }
                 catch (Exception)
                 {
-                    frm_Main.Log.WriteLog(string.Format("阅片室1控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                    frm_Main.Log.WriteLog(string.Format("阅片室2控制端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
+                    SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室2控制器");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ControlConnect = false;
@@ -442,7 +442,9 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("阅片室1环境数据：" + EnviroumentData.Replace("\r\n", ""));
+                /*
+                frm_Main.Log.WriteLog("阅片室2环境数据：" + EnviroumentData.Replace("\r\n", ""));
+                */
 
                 try
                 {
@@ -453,17 +455,17 @@ namespace AdminControl
                     ControlRefresh.RefreshLabelStatus(label_Light, Heart.Light, Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_Noise, Heart.Noise, Color.Black);
 
-                    SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}℃\", room_hum = \"{1}％\", room_light = \"{2}LUX\",room_noise = \"{3}DB\" where room_name = \"{4}\";", Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise, "阅片室1");
+                    SQLString = string.Format("update tb_roomenviroument set room_temp = \"{0}℃\", room_hum = \"{1}％\", room_light = \"{2}LUX\",room_noise = \"{3}DB\" where room_name = \"{4}\";", Heart.Temp, Heart.Hum, Heart.Light, Heart.Noise, "阅片室2");
                     frm_Main.DataBase.UpdateTable(SQLString);
                 }
                 catch (Exception ex)
                 {
-                    frm_Main.Log.WriteLog("阅片室1环境数据错误：" + ex.Message);
+                    frm_Main.Log.WriteLog("阅片室2环境数据错误：" + ex.Message);
                     continue;
                 }
 
                 /*
-                环境数据发送 
+                环境数据发送
                 */
                 if (is_ClientConnect)
                 {
@@ -487,12 +489,12 @@ namespace AdminControl
 
             ControlRefresh.RefreshLabelStatus(label_ClientStatus, "已连接", Color.Black);
 
-            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室1客户端");
+            string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Online", "阅片室2客户端");
             frm_Main.DataBase.UpdateTable(SQLString);
 
             Thread RecvClientCommandThread = new Thread(RecvClientCommand)
             {
-                Name = "阅片室1用户指令接收线程",
+                Name = "阅片室2用户指令接收线程",
                 IsBackground = true
             };
             RecvClientCommandThread.Start(Connection);
@@ -516,9 +518,9 @@ namespace AdminControl
                 }
                 catch (Exception)
                 {
-                    frm_Main.Log.WriteLog(string.Format("阅片室1客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
+                    frm_Main.Log.WriteLog(string.Format("阅片室2客户端{0}已下线", Socket.RemoteEndPoint.ToString().Split(':')[0]));
 
-                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1客户端");
+                    string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室2客户端");
                     frm_Main.DataBase.UpdateTable(SQLString);
 
                     is_ClientConnect = false;
@@ -527,8 +529,8 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("接收到阅片室1客户端指令：" + Command.Replace("\r\n", ""));
-
+                frm_Main.Log.WriteLog("接收到阅片室2客户端指令：" + Command.Replace("\r\n", ""));
+                
                 /*
                 指令解析与发送
                 */
@@ -539,10 +541,6 @@ namespace AdminControl
                         if (DataHandle.CheckData(Command))
                         {
                             SendControlCommand(Command);
-                        }
-                        else
-                        {
-                            frm_Main.Log.WriteLog("指令校验失败" + Command);
                         }
                     }
                     catch (Exception ex)
@@ -568,10 +566,10 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("阅片室1环境数据发送失败");
-                MessageBox.Show(ex.Message, "阅片室1客户端已离线");
+                frm_Main.Log.WriteLog("阅片室2环境数据发送失败");
+                MessageBox.Show(ex.Message, "阅片室2客户端已离线");
 
-                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1客户端");
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ClientSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室2客户端");
                 frm_Main.DataBase.UpdateTable(SQLString);
 
                 ControlRefresh.RefreshLabelStatus(label_ClientStatus, "未连接", Color.Red);
@@ -594,10 +592,10 @@ namespace AdminControl
             }
             catch (Exception ex)
             {
-                frm_Main.Log.WriteLog("阅片室1控制指令发送失败，控制端不在线");
-                MessageBox.Show(ex.Message, "阅片室1控制端已离线");
+                frm_Main.Log.WriteLog("阅片室2控制指令发送失败，控制端不在线");
+                MessageBox.Show(ex.Message, "阅片室2控制端已离线");
 
-                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室1控制器");
+                string SQLString = string.Format("update tb_clientinformation set client_ip = \"{0}\", client_status = \"{1}\" where client_name = \"{2}\";", ControlSocket.RemoteEndPoint.ToString().Split(':')[0], "Offline", "阅片室2控制器");
                 frm_Main.DataBase.UpdateTable(SQLString);
 
                 ControlRefresh.RefreshLabelStatus(label_ControlStatus, "未连接", Color.Red);
