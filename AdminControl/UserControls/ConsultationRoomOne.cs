@@ -544,6 +544,7 @@ namespace AdminControl
                 {
                     Heart = DataHandle.GetHeartbeat(Status);
 
+
                     ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, Heart.Projector, Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_CameraStatus, Heart.CameraPower, Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_MatrixIn, Heart.VideoIn, Color.Black);
