@@ -442,7 +442,9 @@ namespace AdminControl
                     break;
                 }
 
+                /*
                 frm_Main.Log.WriteLog("阅片室2环境数据：" + EnviroumentData.Replace("\r\n", ""));
+                */
 
                 try
                 {
