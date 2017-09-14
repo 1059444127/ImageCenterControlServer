@@ -35,8 +35,9 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataBaseService">
-      <HintPath>..\DataBaseService\bin\Debug\DataBaseService.dll</HintPath>
+    <Reference Include="DataBaseService, Version=1.17.7.18, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataBaseService\bin\Release\DataBaseService.dll</HintPath>
     </Reference>
     <Reference Include="DataHandleService">
       <HintPath>..\DataHandleService\bin\Debug\DataHandleService.dll</HintPath>
