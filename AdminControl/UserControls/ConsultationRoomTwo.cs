@@ -535,7 +535,7 @@ namespace AdminControl
                     break;
                 }
 
-                frm_Main.Log.WriteLog("会诊室2设备状态：" + Status.Replace("\r\n",""));
+                //frm_Main.Log.WriteLog("会诊室2设备状态：" + Status.Replace("\r\n",""));
 
                 /*
                 状态刷新
