@@ -14,7 +14,7 @@ namespace AdminControl
     /// <summary>
     /// 会诊室1
     /// </summary>
-    public partial class ConsultationRoomOne : UserControl
+    public partial class ConsultationRoom : UserControl
     {
         #region 全局变量
         /// <summary>
@@ -82,7 +82,7 @@ namespace AdminControl
         /// <summary>
         /// 构造器
         /// </summary>
-        public ConsultationRoomOne(Frm_Main frm_Main)
+        public ConsultationRoom(Frm_Main frm_Main)
         {
             InitializeComponent();
             InitServices(frm_Main);
@@ -368,7 +368,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\ModeConfig.xml", ModeSetting);
+            XmlReader ModeReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\ModeConfig.xml", ModeSetting);
             ModeDoc.Load(ModeReader);
             XmlNode ModeRootNode = ModeDoc.SelectSingleNode("Modes");
             XmlNodeList ModeRootChilds = ModeRootNode.ChildNodes;
@@ -394,7 +394,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\LightConfig.xml", LightSetting);
+            XmlReader LightReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\LightConfig.xml", LightSetting);
             LightDoc.Load(LightReader);
             XmlNode LightRootNode = LightDoc.SelectSingleNode("Lights");
             XmlNodeList LightRootChilds = LightRootNode.ChildNodes;
@@ -416,7 +416,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\WindowsConfig.xml", WindowsSetting);
+            XmlReader WindowsReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\WindowsConfig.xml", WindowsSetting);
             WindowsDoc.Load(WindowsReader);
             XmlNode WindowsRootNode = WindowsDoc.SelectSingleNode("Windows");
             XmlNodeList WindowsRootChilds = WindowsRootNode.ChildNodes;
@@ -438,7 +438,7 @@ namespace AdminControl
             {
                 IgnoreComments = true
             };
-            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoomOne\\FilmConfig.xml", FilmSetting);
+            XmlReader FilmReader = XmlReader.Create(Application.StartupPath + "\\Config\\ConsultationRoom\\FilmConfig.xml", FilmSetting);
             FilmDoc.Load(FilmReader);
             XmlNode FilmRootNode = FilmDoc.SelectSingleNode("Films");
             XmlNodeList FilmRootChilds = FilmRootNode.ChildNodes;
@@ -535,7 +535,7 @@ namespace AdminControl
                     break;
                 }
 
-                //frm_Main.Log.WriteLog("会诊室1设备状态：" + Status.Replace("\r\n",""));
+                frm_Main.Log.WriteLog("会诊室1设备状态：" + Status.Replace("\r\n",""));
 
                 /*
                 状态刷新
@@ -543,6 +543,7 @@ namespace AdminControl
                 try
                 {
                     Heart = DataHandle.GetHeartbeat(Status);
+
 
                     ControlRefresh.RefreshLabelStatus(label_ProjectorStatus, Heart.Projector, Color.Black);
                     ControlRefresh.RefreshLabelStatus(label_CameraStatus, Heart.CameraPower, Color.Black);
